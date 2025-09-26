@@ -28,10 +28,10 @@ Count_Max   EQU 10 ; am doing 10 iterations of the overflow
 
 ;;;; Actual start of my code ;;;;
 
-ORG $0000
+ORG 0000h
 LJMP BEGIN
 
-ORG $000B ; When the timer overflows, it jumps here so I wanna execute
+ORG 000Bh ; When the timer overflows, it jumps here so I wanna execute
 LJMP ISR_TIMER0
 
 BEGIN: 
@@ -40,7 +40,10 @@ BEGIN:
     MOV P1, #00h      ; Set Port 1 as output (LEDs)
 
     ;; TIMER0 SETUP
-    MOV TMOD, #01h    ; Timer0 in mode 1 bc I want 16-bits
+	SETB ET0          ; Enable Timer0 interrupt
+    SETB EA           ; Enable global interrupts
+	
+    MOV TMOD, #0x01     ; Timer0 in mode 1 bc I want 16-bits
 
     ; preload!
     MOV TH0, #Timer0_High  ; 0x02 - from my calculations earlier
@@ -49,11 +52,12 @@ BEGIN:
     ;; also want to staart a counter to count how many times I've overflowed
     MOV R0, #Count_Max
 
-    SETB TR0          ; Start Timer0
-    SETB ET0          ; Enable Timer0 interrupt
-    SETB EA           ; Enable global interrupts
+	SETB TR0          ; Start Timer0
 
-    AJMP *            ; Infinite loop to the same address until the interrupt changes the address
+    AJMP LOOP
+	
+LOOP:
+	AJMP LOOP		; Infinite loop to the same address until the interrupt changes the address
 
 ISR_TIMER0:
     ; Timer0 interrupt service routine
