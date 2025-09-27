@@ -37,7 +37,7 @@ LJMP ISR_TIMER0
 BEGIN: 
     MOV SP, #70h      ; Initialize stack pointer
 
-    MOV P1, #00h      ; Set Port 1 as output (LEDs)
+    ;;MOV P1, #00h      ; Set Port 1 as output (LEDs)
 
     ;; TIMER0 SETUP
 	SETB ET0          ; Enable Timer0 interrupt
@@ -76,6 +76,7 @@ ISR_TIMER0:
     ;; Then i'll still go into the skip toggle to exit the ISR
 
 SKIP_TOGGLE:
-    CLR ISR_PIN          ; Clear P1.2 to indicate ISR exit
-    RETI              ; Return from interrupt (also clears my overflow flag)
+    CLR ISR_PIN         ; Clear P1.2 to indicate ISR exit
+	CLR TF0				; Clear interrupt flag
+    RETI                ; Return from interrupt
     END
