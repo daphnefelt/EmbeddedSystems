@@ -1,0 +1,128 @@
+A51 MACRO ASSEMBLER  FLASHLED                                                             09/27/2025 13:17:38 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\FlashLED.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE FlashLED.a51 SET(SMALL) DEBUG PRINT(.\Listings\FlashLED.lst) OBJECT(.\O
+                      bjects\FlashLED.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;; DAPHNE FELT
+                       2     
+                       3     ; Pins
+  0091                 4     LED_PIN  EQU P1.1  ; Pin for LED
+  0092                 5     ISR_PIN  EQU P1.2  ; Pin for when I'm inside the ISR
+                       6     
+                       7     ; MY TIMER CALCULATIONS
+                       8     ; Frequency is 11.0592 MHz so time for one clock cycle is 1/11.0592MHz = 0.0904us
+                       9     ; And one machine cycle is 12 clock cycles = 1.0848 us
+                      10     ; Want to toggle LED fully (twice) every 1/.71Hz = 1.408s -- err is 0.4% = 5.6 ms allowed
+                      11     ; 1.408s / 1.0848us = 1297935 machine cycles
+                      12     
+                      13     ; Timer0 in mode 1 (16-bit timer) so it overflows at 2^16 = 65536 - or every 71 ms
+                      14     ; 1408 ms / 71 ms = 19.8 overflows - so I'm just gonna do 20 overflows
+                      15     ; 1297935 cycles / 20 = 64897 cycles per overflow (err of 5 cycles, or 5.4 us so we're good)
+                      16     ; Preloading the timer makes it start at a later value so it overflows sooner
+                      17     ; So need to load timer with 65536 - 64897 = 639
+                      18     
+                      19     ; 639 needs to be split into high and low bytes
+                      20     ; 639 = 0x027F
+                      21     ; High byte = 0x02
+                      22     ; Low byte = 0x7F
+                      23     
+  0002                24     Timer0_High EQU 0x02
+  007F                25     Timer0_Low  EQU 0x7F
+                      26     ;; REMEMBER I HAVE TO TOGGLE TWICE IN THE TIME I CALCULATED (so every 20/2 = 10 overflows)
+  000A                27     Count_Max   EQU 10 ; am doing 10 iterations of the overflow
+                      28     
+                      29     ;;;; Actual start of my code ;;;;
+                      30     
+0000                  31     ORG 0000h
+0000 02000E           32     LJMP BEGIN
+                      33     
+000B                  34     ORG 000Bh ; When the timer overflows, it jumps here so I wanna execute
+000B 020026           35     LJMP ISR_TIMER0
+                      36     
+000E                  37     BEGIN: 
+000E 758170           38         MOV SP, #70h      ; Initialize stack pointer
+                      39     
+                      40         ;;MOV P1, #00h      ; Set Port 1 as output (LEDs)
+                      41     
+                      42         ;; TIMER0 SETUP
+0011 D2A9             43             SETB ET0          ; Enable Timer0 interrupt
+0013 D2AF             44         SETB EA           ; Enable global interrupts
+                      45             
+0015 758901           46         MOV TMOD, #0x01     ; Timer0 in mode 1 bc I want 16-bits
+                      47     
+                      48         ; preload!
+0018 758C02           49         MOV TH0, #Timer0_High  ; 0x02 - from my calculations earlier
+001B 758A7F           50         MOV TL0, #Timer0_Low   ; 0x7F
+                      51     
+                      52         ;; also want to staart a counter to count how many times I've overflowed
+001E 780A             53         MOV R0, #Count_Max
+                      54     
+0020 D28C             55             SETB TR0          ; Start Timer0
+                      56     
+0022 0124             57         AJMP LOOP
+A51 MACRO ASSEMBLER  FLASHLED                                                             09/27/2025 13:17:38 PAGE     2
+
+                      58             
+0024                  59     LOOP:
+0024 0124             60             AJMP LOOP               ; Infinite loop to the same address until the interrupt cha
+                             nges the address
+                      61     
+0026                  62     ISR_TIMER0:
+                      63         ; Timer0 interrupt service routine
+                      64     
+0026 D292             65         SETB ISR_PIN         ; Set P1.2 high to show ISR entry
+                      66     
+                      67         ; Reload timer values bc it just overflowed
+0028 758C02           68         MOV TH0, #Timer0_High
+002B 758A7F           69         MOV TL0, #Timer0_Low
+                      70     
+002E D804             71         DJNZ R0, SKIP_TOGGLE ; subrtract 1 from R0 and if it's not zero, skip the toggle. Only 
+                             want to toggle after 20 overflows
+                      72         
+                      73         ;; Toggling and resetting counter
+0030 780A             74         MOV R0, #Count_Max ; reset counter
+0032 B291             75         CPL LED_PIN          ; Complement Port 1.1 (TOGGLE IT)
+                      76         ;; Then i'll still go into the skip toggle to exit the ISR
+                      77     
+0034                  78     SKIP_TOGGLE:
+0034 C292             79         CLR ISR_PIN         ; Clear P1.2 to indicate ISR exit
+0036 C28D             80             CLR TF0                         ; Clear interrupt flag
+0038 32               81         RETI                ; Return from interrupt
+                      82         END
+A51 MACRO ASSEMBLER  FLASHLED                                                             09/27/2025 13:17:38 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BEGIN. . . . . . .  C ADDR   000EH   A   
+COUNT_MAX. . . . .  N NUMB   000AH   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ET0. . . . . . . .  B ADDR   00A8H.1 A   
+ISR_PIN. . . . . .  B ADDR   0090H.2 A   
+ISR_TIMER0 . . . .  C ADDR   0026H   A   
+LED_PIN. . . . . .  B ADDR   0090H.1 A   
+LOOP . . . . . . .  C ADDR   0024H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+SKIP_TOGGLE. . . .  C ADDR   0034H   A   
+SP . . . . . . . .  D ADDR   0081H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TIMER0_HIGH. . . .  N NUMB   0002H   A   
+TIMER0_LOW . . . .  N NUMB   007FH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
