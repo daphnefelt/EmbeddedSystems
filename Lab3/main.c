@@ -58,34 +58,41 @@ void SystemClock_Config(void)
 #define GREEN 12
 #define BLUE 15
 
+volatile int enableToggle = 1;
+
 void setColor(char color){
-	if (color == 'r'){
-		GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER14_0;
-		GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BS14_Msk;
-	} else if (color == 'g'){
-		GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER12_0;
-		GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BS12_Msk;
-	} else if (color == 'b'){
-		GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER15_0;
-		GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BS15_Msk;
+	if (enableToggle == 1){
+		if (color == 'r'){
+			GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER14_0;
+			GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BS14_Msk;
+		} else if (color == 'g'){
+			GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER12_0;
+			GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BS12_Msk;
+		} else if (color == 'b'){
+			GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER15_0;
+			GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BS15_Msk;
+		}
 	}
 }
 
 void resetColor(char color){
-	if (color == 'r'){
-		GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER14_0;
-		GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BR14_Msk;
-	} else if (color == 'g'){
-		GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER12_0;
-		GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BR12_Msk;
-	} else if (color == 'b'){
-		GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER15_0;
-		GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BR15_Msk;
+	if (enableToggle == 1){
+		if (color == 'r'){
+			GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER14_0;
+			GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BR14_Msk;
+		} else if (color == 'g'){
+			GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER12_0;
+			GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BR12_Msk;
+		} else if (color == 'b'){
+			GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER15_0;
+			GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BR15_Msk;
+		}
 	}
 }
 
 int state = 0;
 int done = 0;
+char part = 'c';
 
 void Toggle(void){
 	state = ~state;
@@ -100,25 +107,42 @@ void Toggle(void){
 }
 
 void EXTI0_IRQHandler(void){
-	Toggle();
 
 	if (EXTI->PR & (1<<0)) {
+
+		//Toggle();
+		enableToggle = ~ enableToggle;
+
 		EXTI->PR |= (1<<0);
 	}
 }
 
 void TIM2_IRQHandler(void){
-	state = ~state;
-
-	if (state){
-		resetColor('g');
-		setColor('b');
-	} else {
-		resetColor('b');
-		setColor('g');
-	}
 
 	if (TIM2->SR & (1<<0)) {
+
+		state = ~ state;
+
+		if (state){
+			if (part == 'c'){
+				resetColor('g');
+				setColor('b');
+			} else {
+				setColor('r');
+				GPIOD->BSRR |= GPIO_BSRR_BS1;  // PD1 HIGH
+			}
+
+		} else {
+			if (part == 'c'){
+				resetColor('b');
+				setColor('g');
+			} else {
+				resetColor('r');
+				GPIOD->BSRR |= GPIO_BSRR_BR1;  // PD1 LOW
+			}
+		}
+
+
 		TIM2->SR &= ~(1<<0);
 	}
 }
@@ -146,15 +170,23 @@ int main(void)
 
 	// Config Timer 2
 	TIM2->PSC = 15999;
-	TIM2->ARR = 1000;
+	TIM2->ARR = 660;
+	if (part == 'c'){
+		TIM2->ARR = 2000; // go slower here
+	}
 	TIM2->EGR |= (1<<0);
 	TIM2->DIER |= (1<<0);
 	TIM2->CR1 |= (1<<0);
 
+	GPIOD->MODER |= GPIO_MODER_MODER1_0;  // PD1 = General purpose output
+	GPIOD->MODER &= ~GPIO_MODER_MODER1_1; // Ensure it's not set as alternate function
+
 	setColor('g');
 
 	// Enable Interrupt in VNIC
-	NVIC_EnableIRQ(EXTI0_IRQn);
+	if (part == 'c'){
+		NVIC_EnableIRQ(EXTI0_IRQn);
+	}
 	NVIC_EnableIRQ(TIM2_IRQn);
 
 	/* USER CODE BEGIN WHILE */
