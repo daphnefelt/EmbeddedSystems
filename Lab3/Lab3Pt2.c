@@ -283,7 +283,7 @@ void main(void)
     // OK IF WE GOT HERE, WE WERE SUCCESSFUL
     print_phase_one_info(student_number, &buffers);
 
-    putstr("\n\r=== Program Complete ===\n\r");
+    putstr("\n\r=== PHASE ONE Complete ===\n\r");
     
     while(1) {
         // Program ends here, stay in loop

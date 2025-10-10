@@ -1,0 +1,590 @@
+// Includes
+#include <mcs51/8051.h>
+#include <at89c51ed2.h>
+#include <mcs51reg.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+
+#define HEAP_SIZE 8192
+
+// global heap space in XRAM
+extern __xdata unsigned char _sdcc_heap[HEAP_SIZE];
+
+// macro to check if character is alphabet (A-Z, a-z). lowkey didn't know you could do this
+#define IS_ALPHA(c) (((c) >= 'A' && (c) <= 'Z') || ((c) >= 'a' && (c) <= 'z'))
+
+// I/O pin for timing (using P1.0, gonna probe w oscilloscope)
+#define TIMING_PIN P1_0
+#define TIMING_PIN_HIGH() (P1 |= 0x01)
+#define TIMING_PIN_LOW()  (P1 &= ~0x01)
+
+// struct to hold all buffer information
+typedef struct {
+    __xdata void *buffer_0;
+    __xdata void *buffer_1;
+    __xdata void *buffer_2;  // Will be NULL after freeing
+    __xdata void *buffer_3;
+    __xdata void *buffer_4;
+    __xdata void *buffer_5;
+    uint16_t user_buffer_size;
+    uint16_t buffer_4_size;
+    uint16_t buffer_5_size;
+} BufferSet;
+
+// buffer tracking structure. Wanted it all in one place
+typedef struct {
+    uint16_t alphabet_count;  // Characters in buffer_0
+    uint16_t command_count;   // Characters in buffer_1
+    uint16_t total_count;     // Total characters since last '?'
+    uint16_t buffer_3_count;  // Characters in buffer_3
+} CharCounts;
+
+unsigned char __sdcc_external_startup(void)
+{
+    // Enabling internal RAM
+    // 1KB IRAM (0x000-0x3FF) + 31KB XRAM (0x400-0x7FFF)
+    AUXR |= 0x02; // Enable EXTRAM bit - allows access to internal XRAM
+    AUXR |= 0x0C; // Set XRS1:XRS0 to 11b - maximum internal XRAM
+    return 0;
+}
+
+// putchar takes a char and TX's it. Blocking.
+int putchar (int c)
+{
+    while (!TI); // Wait till ready to transmit, TI = 1
+    SBUF = c;    // load serial port with transmit value
+    TI = 0;      // clear TI flag
+    return c;
+}
+
+// getchar gets a char from RX. Blocking. Returns char.
+int getchar (void)
+{
+    while (!RI);     // Wait till ready to receive, RI = 1
+    RI = 0;          // clear RI flag
+    return SBUF;     // return character from SBUF
+}
+
+// putstr takes a string (char array) and prints till it finds a NULL.
+int putstr (char *s)
+{
+    int i = 0;
+    while (*s) {     // output characters until NULL found
+        putchar(*s++);
+        i++;
+    }
+    return i+1;
+}
+
+//////////// PHASE ONEEEE ////////////
+
+// Function to get some number input from user
+uint16_t get_number(void)
+{
+    int max_digits = 4; // max 4 digits for 0-9999, which covers student num and buffer size
+
+    char buffer[max_digits + 1]; // adding in Null char
+    uint8_t idx = 0;
+    char c;
+    
+    while(1) {
+        c = getchar();
+        
+        if (c == '\r' || c == '\n') {
+            buffer[idx] = '\0';
+            putstr("\n\r");
+            break; // only exit once they're done entering the number
+        }
+        else if (c >= '0' && c <= '9' && idx < max_digits) { // is a number and also space in buffer
+            buffer[idx++] = c; // adding the char and then moving the buffer up
+            putchar(c);  // Echo the character onto the terminal
+        }
+    }
+    
+    return atoi(buffer);
+}
+
+uint16_t get_student_number(void)
+{
+    // get student number
+    uint8_t student_number;
+    putstr("Enter the last two digits of your CU student ID (00-99): ");
+    student_number = (uint8_t)get_number();
+    
+    // and validate it
+    while(student_number > 99) {
+        putstr("Invalid input. Please enter a number between 00 and 99: ");
+        student_number = (uint8_t)get_number();
+    }
+    
+    printf("Student number: %u\n\r\n\r", (uint16_t)student_number);
+    return student_number;
+}
+
+uint16_t get_buffer_size(void)
+{
+    uint16_t size;
+    putstr("Enter buffer size (48-1024 bytes, must be divisible by 16): ");
+    size = get_number();
+    
+    // Validate buffer size
+    while(size < 48 || size > 1024 || size % 16 != 0) {
+        if (size < 48 || size > 1024) {
+            putstr("Error: Buffer size must be between 48 and 1024 bytes.\n\r");
+        } else if (size % 16 != 0) {
+            putstr("Error: Buffer size must be evenly divisible by 16.\n\r");
+        }
+        putstr("Please enter a valid buffer size: ");
+        size = get_number();
+    }
+    
+    printf("Buffer size: %u bytes\n\r\n\r", size);
+    return size;
+}
+
+// Function to allocate buffers, returns 1 on success, 0 on failure
+uint8_t allocate_buffers(BufferSet *buffers, uint8_t student_number)
+{
+    while(1) {
+        putstr("\nAllocating buffers...\n\r");
+        
+        buffers->user_buffer_size = get_buffer_size();
+        
+        buffers->buffer_0 = malloc(buffers->user_buffer_size);
+        if (buffers->buffer_0 == NULL) {
+            putstr("Error: Failed to allocate buffer_0\n\r");
+            putstr("Please choose a smaller buffer size.\n\r\n\r");
+            continue;
+        }
+        printf("buffer_0 allocated at 0x%04X\n\r", (uint16_t)buffers->buffer_0);
+        
+        buffers->buffer_1 = malloc(buffers->user_buffer_size);
+        if (buffers->buffer_1 == NULL) {
+            putstr("Error: Failed to allocate buffer_1\n\r");
+            free(buffers->buffer_0);
+            buffers->buffer_0 = NULL;
+            putstr("Freed buffer_0. Please choose a smaller buffer size.\n\r\n\r");
+            continue;
+        }
+        printf("buffer_1 allocated at 0x%04X\n\r", (uint16_t)buffers->buffer_1);
+        
+        buffers->buffer_2 = malloc(buffers->user_buffer_size);
+        if (buffers->buffer_2 == NULL) {
+            putstr("Error: Failed to allocate buffer_2\n\r");
+            free(buffers->buffer_0);
+            free(buffers->buffer_1);
+            buffers->buffer_0 = NULL;
+            buffers->buffer_1 = NULL;
+            putstr("Freed buffers. Please choose a smaller buffer size.\n\r\n\r");
+            continue;
+        }
+        printf("buffer_2 allocated at 0x%04X\n\r", (uint16_t)buffers->buffer_2);
+        
+        buffers->buffer_3 = malloc(buffers->user_buffer_size);
+        if (buffers->buffer_3 == NULL) {
+            putstr("Error: Failed to allocate buffer_3\n\r");
+            free(buffers->buffer_0);
+            free(buffers->buffer_1);
+            free(buffers->buffer_2);
+            buffers->buffer_0 = NULL;
+            buffers->buffer_1 = NULL;
+            buffers->buffer_2 = NULL;
+            putstr("Freed buffers. Please choose a smaller buffer size.\n\r\n\r");
+            continue;
+        }
+        printf("buffer_3 allocated at 0x%04X\n\r", (uint16_t)buffers->buffer_3);
+        
+        // free buffer_2
+        putstr("Freeing buffer_2...\n\r");
+        free(buffers->buffer_2);
+        buffers->buffer_2 = NULL;
+        putstr("buffer_2 freed.\n\r\n\r");
+        
+        buffers->buffer_4_size = 10 * (student_number + 1);
+        printf("Allocating buffer_4 (size: %u bytes)...\n\r", buffers->buffer_4_size);
+        buffers->buffer_4 = malloc(buffers->buffer_4_size);
+        if (buffers->buffer_4 == NULL) {
+            putstr("Error: Failed to allocate buffer_4\n\r");
+            free(buffers->buffer_0);
+            free(buffers->buffer_1);
+            free(buffers->buffer_3);
+            buffers->buffer_0 = NULL;
+            buffers->buffer_1 = NULL;
+            buffers->buffer_3 = NULL;
+            putstr("Freed buffers. Please choose a smaller buffer size.\n\r\n\r");
+            continue;
+        }
+        printf("buffer_4 allocated at 0x%04X\n\r", (uint16_t)buffers->buffer_4);
+        
+        // last one, buffer_5
+        buffers->buffer_5_size = 2 * buffers->user_buffer_size;
+        printf("Allocating buffer_5 (size: %u bytes)...\n\r", buffers->buffer_5_size);
+        buffers->buffer_5 = malloc(buffers->buffer_5_size);
+        if (buffers->buffer_5 == NULL) {
+            putstr("Error: Failed to allocate buffer_5\n\r");
+            free(buffers->buffer_0);
+            free(buffers->buffer_1);
+            free(buffers->buffer_3);
+            free(buffers->buffer_4);
+            buffers->buffer_0 = NULL;
+            buffers->buffer_1 = NULL;
+            buffers->buffer_3 = NULL;
+            buffers->buffer_4 = NULL;
+            putstr("Freed buffers. Please choose a smaller buffer size.\n\r\n\r");
+            continue;
+        }
+        printf("buffer_5 allocated at 0x%04X\n\r", (uint16_t)buffers->buffer_5);
+        
+        // All buffers allocated successfully
+        putstr("All buffers allocated successfully!\n\r\n\r");
+        break;
+    }
+    
+    return 1;  // Success!!
+}
+
+// Function to print buffer information
+void print_buffer_info(const char *name, __xdata void *ptr, uint16_t size)
+{
+    uint16_t start_addr = (uint16_t)ptr;
+    uint16_t end_addr = start_addr + size - 1;
+    
+    printf("%s:\n\r", name);
+    printf("  Start Address: 0x%04X\n\r", start_addr);
+    printf("  End Address:   0x%04X\n\r", end_addr);
+    printf("  Size:          %u bytes\n\r", size);
+}
+
+void print_phase_one_info(uint8_t student_number, BufferSet *buffers)
+{
+    putstr("=== MEMORY ALLOCATION SUMMARY ===\n\r\n\r");
+    printf("Student Number: %u\n\r", (uint16_t)student_number);
+    printf("User Buffer Size: %u bytes\n\r\n\r", buffers->user_buffer_size);
+
+    // Print heap information
+    printf("HEAP:\n\r");
+    printf("  Start Address: 0x%04X\n\r", (uint16_t)_sdcc_heap);
+    printf("  End Address:   0x%04X\n\r", (uint16_t)_sdcc_heap + HEAP_SIZE - 1);
+    printf("  Size:          %u bytes\n\r\n\r", HEAP_SIZE);
+    
+    // Print buffer information
+    if (buffers->buffer_0) print_buffer_info("buffer_0", buffers->buffer_0, buffers->user_buffer_size);
+    if (buffers->buffer_1) print_buffer_info("buffer_1", buffers->buffer_1, buffers->user_buffer_size);
+    if (buffers->buffer_2) print_buffer_info("buffer_2", buffers->buffer_2, buffers->user_buffer_size);
+    if (buffers->buffer_3) print_buffer_info("buffer_3", buffers->buffer_3, buffers->user_buffer_size);
+    if (buffers->buffer_4) print_buffer_info("buffer_4", buffers->buffer_4, buffers->buffer_4_size);
+    if (buffers->buffer_5) print_buffer_info("buffer_5", buffers->buffer_5, buffers->buffer_5_size);
+}
+
+//////////// PHASE TWOOOOO ////////////
+
+// convert buffer to lowercase for chars up to count
+void to_lowercase(__xdata uint8_t *buffer, uint16_t count)
+{
+    uint16_t i;
+    for (i = 0; i < count; i++) {
+        if (buffer[i] >= 'A' && buffer[i] <= 'Z') {
+            buffer[i] = buffer[i] + 32;  // Convert to lowercase, can do this because ASCII
+        }
+    }
+}
+
+// display buffer contents in hex format (16 bytes per line)
+void display_hex_buffer(const char *name, __xdata uint8_t *buffer, uint16_t count)
+{
+    uint16_t i, j;
+    uint16_t addr;
+    
+    printf("\n\r%s (Hex Dump):\n\r", name);
+    
+    if (count == 0) {
+        putstr("  Buffer is empty\n\r");
+        return;
+    }
+    
+    for (i = 0; i < count; i += 16) {
+        addr = (uint16_t)buffer + i;
+        printf("%04X: ", addr);
+        
+        // Print up to 16 bytes
+        for (j = 0; j < 16 && (i + j) < count; j++) {
+            printf("%02X ", buffer[i + j]);
+        }
+        putstr("\n\r");
+    }
+}
+
+// Display buffer contents as ASCII (48 chars per line)
+void display_ascii_buffer(__xdata uint8_t *buffer, uint16_t count)
+{
+    uint16_t i;
+    uint8_t line_count = 0;
+    
+    for (i = 0; i < count; i++) {
+        putchar(buffer[i]);
+        line_count++;
+        
+        if (line_count >= 48) {
+            putstr("\n\r");
+            line_count = 0;
+        }
+    }
+    
+    if (line_count > 0) {
+        putstr("\n\r");
+    }
+}
+
+// Generate heap report
+void generate_heap_report(BufferSet *buffers, CharCounts *counts)
+{
+    putstr("\n\r");
+    putstr("----------HEAP STATUS REPORT----------\n\r");
+    
+    printf("Total characters received: %u\n\r", counts->total_count);
+    printf("Alphabet characters: %u\n\r", counts->alphabet_count);
+    printf("Command characters: %u\n\r\n\r", counts->command_count);
+    
+    // Heap info
+    printf("HEAP:\n\r");
+    printf("  Start: 0x%04X  End: 0x%04X  Size: %u bytes\n\r\n\r",
+           (uint16_t)_sdcc_heap,
+           (uint16_t)_sdcc_heap + HEAP_SIZE - 1,
+           HEAP_SIZE);
+    
+    // Buffer 0
+    if (buffers->buffer_0) {
+        printf("buffer_0:\n\r");
+        printf("  Start: 0x%04X  End: 0x%04X  Size: %u bytes\n\r",
+               (uint16_t)buffers->buffer_0,
+               (uint16_t)buffers->buffer_0 + buffers->user_buffer_size - 1,
+               buffers->user_buffer_size);
+        printf("  Alphabet chars: %u  Free: %u\n\r\n\r",
+               counts->alphabet_count,
+               buffers->user_buffer_size - counts->alphabet_count);
+    }
+    
+    // Buffer 1
+    if (buffers->buffer_1) {
+        printf("buffer_1:\n\r");
+        printf("  Start: 0x%04X  End: 0x%04X  Size: %u bytes\n\r",
+               (uint16_t)buffers->buffer_1,
+               (uint16_t)buffers->buffer_1 + buffers->user_buffer_size - 1,
+               buffers->user_buffer_size);
+        printf("  Command chars: %u  Free: %u\n\r\n\r",
+               counts->command_count,
+               buffers->user_buffer_size - counts->command_count);
+    }
+    
+    // Buffer 3
+    if (buffers->buffer_3) {
+        printf("buffer_3:\n\r");
+        printf("  Start: 0x%04X  End: 0x%04X  Size: %u bytes\n\r",
+               (uint16_t)buffers->buffer_3,
+               (uint16_t)buffers->buffer_3 + buffers->user_buffer_size - 1,
+               buffers->user_buffer_size);
+        printf("  Characters: %u  Free: %u\n\r\n\r",
+               counts->buffer_3_count,
+               buffers->user_buffer_size - counts->buffer_3_count);
+    }
+    
+    // Buffer 4
+    if (buffers->buffer_4) {
+        printf("buffer_4:\n\r");
+        printf("  Start: 0x%04X  End: 0x%04X  Size: %u bytes\n\r\n\r",
+               (uint16_t)buffers->buffer_4,
+               (uint16_t)buffers->buffer_4 + buffers->buffer_4_size - 1,
+               buffers->buffer_4_size);
+    }
+    
+    // Buffer 5
+    if (buffers->buffer_5) {
+        printf("buffer_5:\n\r");
+        printf("  Start: 0x%04X  End: 0x%04X  Size: %u bytes\n\r\n\r",
+               (uint16_t)buffers->buffer_5,
+               (uint16_t)buffers->buffer_5 + buffers->buffer_5_size - 1,
+               buffers->buffer_5_size);
+    }
+    
+    putstr("---------------------\n\r\n\r");
+}
+
+// Clear all buffers (set to 0x00)
+void clear_all_buffers(BufferSet *buffers, CharCounts *counts)
+{
+    uint16_t i;
+    
+    putstr("\n\rClearing all buffers...\n\r");
+    
+    if (buffers->buffer_0) {
+        for (i = 0; i < buffers->user_buffer_size; i++) {
+            ((__xdata uint8_t *)buffers->buffer_0)[i] = 0x00;
+        }
+    }
+    
+    if (buffers->buffer_1) {
+        for (i = 0; i < buffers->user_buffer_size; i++) {
+            ((__xdata uint8_t *)buffers->buffer_1)[i] = 0x00;
+        }
+    }
+    
+    if (buffers->buffer_3) {
+        for (i = 0; i < buffers->user_buffer_size; i++) {
+            ((__xdata uint8_t *)buffers->buffer_3)[i] = 0x00;
+        }
+    }
+    
+    if (buffers->buffer_4) {
+        for (i = 0; i < buffers->buffer_4_size; i++) {
+            ((__xdata uint8_t *)buffers->buffer_4)[i] = 0x00;
+        }
+    }
+    
+    if (buffers->buffer_5) {
+        for (i = 0; i < buffers->buffer_5_size; i++) {
+            ((__xdata uint8_t *)buffers->buffer_5)[i] = 0x00;
+        }
+    }
+    
+    // Reset counts
+    counts->alphabet_count = 0;
+    counts->command_count = 0;
+    counts->buffer_3_count = 0;
+    
+    putstr("All buffers cleared!\n\r\n\r");
+}
+
+// Free all buffers
+void free_all_buffers(BufferSet *buffers)
+{
+    putstr("\n\rFreeing all buffers...\n\r");
+    
+    if (buffers->buffer_0) { free(buffers->buffer_0); buffers->buffer_0 = NULL; }
+    if (buffers->buffer_1) { free(buffers->buffer_1); buffers->buffer_1 = NULL; }
+    if (buffers->buffer_3) { free(buffers->buffer_3); buffers->buffer_3 = NULL; }
+    if (buffers->buffer_4) { free(buffers->buffer_4); buffers->buffer_4 = NULL; }
+    if (buffers->buffer_5) { free(buffers->buffer_5); buffers->buffer_5 = NULL; }
+    
+    putstr("All buffers freed!\n\r\n\r");
+}
+
+// character processing loop
+void phase_two(BufferSet *buffers)
+{
+    char c;
+    CharCounts counts = {0, 0, 0, 0};
+
+    //  just save these as their own bc gonna use them so much
+    __xdata uint8_t *buf0 = (__xdata uint8_t *)buffers->buffer_0;
+    __xdata uint8_t *buf1 = (__xdata uint8_t *)buffers->buffer_1;
+    __xdata uint8_t *buf3 = (__xdata uint8_t *)buffers->buffer_3;
+    
+    putstr("\n\r---- starting character processing ----\n\r");
+    putstr("commands:\n\r");
+    putstr("  ?  = Heap report and empty buffers\n\r");
+    putstr("  =  = Display hex dump (no empty)\n\r");
+    putstr("  %%  = Clear all buffers to 0x00\n\r");
+    putstr("  @  = Free all and restart\n\r");
+    putstr("  $  = Copy buffer_0 to buffer_3\n\r");
+    putstr("  #  = Convert buffer_3 to lowercase\n\r");
+    putstr("\nstart...\n\r\n\r");
+    
+    while(1) {
+        c = getchar();
+        putchar(c);  // echo charactero immediately
+        
+        counts.total_count++;
+        
+        // check for special commands
+        if (c == '?') { // Generate report and empty buffers
+            generate_heap_report(buffers, &counts);
+            
+            putstr("Buffer contents:\n\r");
+            if (counts.alphabet_count > 0) {
+                putstr("Alphabet characters:\n\r");
+                display_ascii_buffer(buf0, counts.alphabet_count);
+            }
+            if (counts.command_count > 0) {
+                putstr("Command characters:\n\r");
+                display_ascii_buffer(buf1, counts.command_count);
+            }
+            
+            // Empty buffers
+            counts.alphabet_count = 0;
+            counts.command_count = 0;
+            counts.total_count = 0;
+        }
+        else if (c == '=') {
+            // Display hex dump without emptying
+            putstr("\n\r");
+            display_hex_buffer("buffer_0", buf0, counts.alphabet_count);
+            display_hex_buffer("buffer_1", buf1, counts.command_count);
+            putstr("\n\r");
+        }
+        else if (c == '%') {
+            // Clear all buffers
+            clear_all_buffers(buffers, &counts);
+            counts.total_count = 0;
+        }
+        else if (c == '@') {
+            // Free all and restart
+            free_all_buffers(buffers);
+            return;  // Return to main to restart
+        }
+        else if (c == '$') {
+            // Copy buffer_0 to buffer_3
+            putstr("\n\rCopying buffer_0 to buffer_3...\n\r");
+            TIMING_PIN_HIGH();
+            memcpy(buf3, buf0, counts.alphabet_count); // built in function that goes real fast
+            TIMING_PIN_LOW();
+            counts.buffer_3_count = counts.alphabet_count;
+            putstr("Copy complete!\n\r\n\r");
+        }
+        else if (c == '#') {
+            // Convert buffer_3 to lowercase
+            putstr("\n\rConverting buffer_3 to lowercase...\n\r");
+            TIMING_PIN_HIGH();
+            to_lowercase(buf3, counts.buffer_3_count);
+            TIMING_PIN_LOW();
+            putstr("Conversion complete!\n\r\n\r");
+        }
+        else if (IS_ALPHA(c)) {
+            // Store alphabet character in buffer_0
+            if (counts.alphabet_count < buffers->user_buffer_size) {
+                buf0[counts.alphabet_count++] = c;
+            }
+            // Otherwise discard (buffer full)
+        }
+        else {
+            // Store command character in buffer_1
+            if (counts.command_count < buffers->user_buffer_size) {
+                buf1[counts.command_count++] = c;
+            }
+            // Otherwise discard (buffer full)
+        }
+    }
+}
+
+// ========== MAIN ==========
+
+void main(void)
+{
+    uint8_t student_number;
+    BufferSet buffers = {0};
+    
+    // init timing pin as output (P1.0)
+    P1 = 0x00;
+    
+    while(1){
+        putstr("\n\r -------- Heap Memory Management Program ---------------\n\r");
+    
+        // get student number and allocate buffers
+        student_number = get_student_number();
+        allocate_buffers(&buffers, student_number);
+        print_phase_one_info(student_number, &buffers);
+        
+        // now do the whole character processing buffer thing in phase two
+        phase_two(&buffers); // only returns if user pressed '@', which means free all and restart
+    }
+}
