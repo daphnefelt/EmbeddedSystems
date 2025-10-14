@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <string.h>
 
 // my debugging port. Just comment out the define when I don't want to use it
 #define DEBUG
@@ -23,17 +24,28 @@ extern __xdata unsigned char _sdcc_heap[HEAP_SIZE];
 #define TIMING_PIN_HIGH() (P1 |= 0x01)
 #define TIMING_PIN_LOW()  (P1 &= ~0x01)
 
+// adding in the dynamic buffer. Had to name it in both places so I could reference it inside of it
+typedef struct DynamicBuffer {
+    void __xdata *ptr;
+    uint16_t size;
+    uint8_t buffer_number;
+    struct DynamicBuffer __xdata *next;  // node lives in XDATA
+} DynamicBuffer;
+
 // struct to hold all buffer information
 typedef struct {
-    __xdata void *buffer_0;
-    __xdata void *buffer_1;
-    __xdata void *buffer_2;  // Will be NULL after freeing
-    __xdata void *buffer_3;
-    __xdata void *buffer_4;
-    __xdata void *buffer_5;
+    void __xdata *buffer_0;
+    void __xdata *buffer_1;
+    void __xdata *buffer_2;  // Will be NULL after freeing
+    void __xdata *buffer_3;
+    void __xdata *buffer_4;
+    void __xdata *buffer_5;
     uint16_t user_buffer_size;
     uint16_t buffer_4_size;
     uint16_t buffer_5_size;
+
+    DynamicBuffer __xdata *dynamic_buffers_head;
+    uint8_t next_buffer_number; // Next number to assign to a new dynamic buffer
 } BufferSet;
 
 // buffer tracking structure. Wanted it all in one place
@@ -155,7 +167,7 @@ uint8_t allocate_buffers(BufferSet *buffers, uint8_t student_number)
         
         buffers->user_buffer_size = get_buffer_size();
         
-        buffers->buffer_0 = malloc(buffers->user_buffer_size);
+        buffers->buffer_0 = (void __xdata *)malloc(buffers->user_buffer_size);
         if (buffers->buffer_0 == NULL) {
             putstr("Error: Failed to allocate buffer_0\n\r");
             putstr("Please choose a smaller buffer size.\n\r\n\r");
@@ -163,7 +175,7 @@ uint8_t allocate_buffers(BufferSet *buffers, uint8_t student_number)
         }
         printf("buffer_0 allocated at 0x%04X\n\r", (uint16_t)buffers->buffer_0);
         
-        buffers->buffer_1 = malloc(buffers->user_buffer_size);
+        buffers->buffer_1 = (void __xdata *)malloc(buffers->user_buffer_size);
         if (buffers->buffer_1 == NULL) {
             putstr("Error: Failed to allocate buffer_1\n\r");
             free(buffers->buffer_0);
@@ -173,7 +185,7 @@ uint8_t allocate_buffers(BufferSet *buffers, uint8_t student_number)
         }
         printf("buffer_1 allocated at 0x%04X\n\r", (uint16_t)buffers->buffer_1);
         
-        buffers->buffer_2 = malloc(buffers->user_buffer_size);
+        buffers->buffer_2 = (void __xdata *)malloc(buffers->user_buffer_size);
         if (buffers->buffer_2 == NULL) {
             putstr("Error: Failed to allocate buffer_2\n\r");
             free(buffers->buffer_0);
@@ -185,7 +197,7 @@ uint8_t allocate_buffers(BufferSet *buffers, uint8_t student_number)
         }
         printf("buffer_2 allocated at 0x%04X\n\r", (uint16_t)buffers->buffer_2);
         
-        buffers->buffer_3 = malloc(buffers->user_buffer_size);
+        buffers->buffer_3 = (void __xdata *)malloc(buffers->user_buffer_size);
         if (buffers->buffer_3 == NULL) {
             putstr("Error: Failed to allocate buffer_3\n\r");
             free(buffers->buffer_0);
@@ -207,7 +219,7 @@ uint8_t allocate_buffers(BufferSet *buffers, uint8_t student_number)
         
         buffers->buffer_4_size = 10 * (student_number + 1);
         printf("Allocating buffer_4 (size: %u bytes)...\n\r", buffers->buffer_4_size);
-        buffers->buffer_4 = malloc(buffers->buffer_4_size);
+        buffers->buffer_4 = (void __xdata *)malloc(buffers->buffer_4_size);
         if (buffers->buffer_4 == NULL) {
             putstr("Error: Failed to allocate buffer_4\n\r");
             free(buffers->buffer_0);
@@ -224,7 +236,7 @@ uint8_t allocate_buffers(BufferSet *buffers, uint8_t student_number)
         // last one, buffer_5
         buffers->buffer_5_size = 2 * buffers->user_buffer_size;
         printf("Allocating buffer_5 (size: %u bytes)...\n\r", buffers->buffer_5_size);
-        buffers->buffer_5 = malloc(buffers->buffer_5_size);
+        buffers->buffer_5 = (void __xdata *)malloc(buffers->buffer_5_size);
         if (buffers->buffer_5 == NULL) {
             putstr("Error: Failed to allocate buffer_5\n\r");
             free(buffers->buffer_0);
@@ -242,6 +254,11 @@ uint8_t allocate_buffers(BufferSet *buffers, uint8_t student_number)
         
         // All buffers allocated successfully
         putstr("All buffers allocated successfully!\n\r\n\r");
+
+        // Initialize dynamic buffer list (for phase 3)
+        buffers->dynamic_buffers_head = NULL;
+        buffers->next_buffer_number = 6; // bc already did buffers 0-5
+
         break;
     }
     
@@ -249,7 +266,7 @@ uint8_t allocate_buffers(BufferSet *buffers, uint8_t student_number)
 }
 
 // Function to print buffer information
-void print_buffer_info(const char *name, __xdata void *ptr, uint16_t size)
+void print_buffer_info(const char *name, void __xdata *ptr, uint16_t size)
 {
     uint16_t start_addr = (uint16_t)ptr;
     uint16_t end_addr = start_addr + size - 1;
@@ -410,6 +427,20 @@ void generate_heap_report(BufferSet *buffers, CharCounts *counts)
                (uint16_t)buffers->buffer_5 + buffers->buffer_5_size - 1,
                buffers->buffer_5_size);
     }
+
+    {
+        DynamicBuffer __xdata *node = buffers->dynamic_buffers_head;
+        if (node) putstr("Dynamic buffers:\n\r");
+        while (node) {
+            printf("  buffer_%u: Start: 0x%04X  End: 0x%04X  Size: %u bytes\n\r",
+                (uint16_t)node->buffer_number,
+                (uint16_t)node->ptr,
+                (uint16_t)node->ptr + node->size - 1,
+                node->size);
+            node = node->next;
+        }
+        if (buffers->dynamic_buffers_head) putstr("\n\r");
+    }
     
     putstr("---------------------\n\r\n\r");
 }
@@ -450,6 +481,21 @@ void clear_all_buffers(BufferSet *buffers, CharCounts *counts)
             ((__xdata uint8_t *)buffers->buffer_5)[i] = 0x00;
         }
     }
+
+    // Also clear any dynamic buffers (linked list)
+    {
+        DynamicBuffer __xdata *node = buffers->dynamic_buffers_head;
+        while (node) {
+            if (node->ptr) {
+                __xdata uint8_t *p = (__xdata uint8_t *)node->ptr;
+                uint16_t k;
+                for (k = 0; k < node->size; k++) {
+                    p[k] = 0x00;
+                }
+            }
+            node = node->next;
+        }
+    }
     
     // Reset counts
     counts->alphabet_count = 0;
@@ -469,8 +515,143 @@ void free_all_buffers(BufferSet *buffers)
     if (buffers->buffer_3) { free(buffers->buffer_3); buffers->buffer_3 = NULL; }
     if (buffers->buffer_4) { free(buffers->buffer_4); buffers->buffer_4 = NULL; }
     if (buffers->buffer_5) { free(buffers->buffer_5); buffers->buffer_5 = NULL; }
+
+    // Free dynamic buffer list
+    {
+        DynamicBuffer __xdata *curr = buffers->dynamic_buffers_head;
+        while (curr != NULL) {
+            DynamicBuffer __xdata *next = curr->next;
+            if (curr->ptr) {
+                free(curr->ptr);
+            }
+            free(curr);
+            curr = next;
+        }
+        buffers->dynamic_buffers_head = NULL;
+        buffers->next_buffer_number = 6;
+    }
     
     putstr("All buffers freed!\n\r\n\r");
+}
+
+//////////// PHASE THREEEEE ////////////
+
+// Allocate a new dynamic buffer
+void allocate_dynamic_buffer(BufferSet *buffers)
+{
+    uint16_t size;
+    void __xdata *data_ptr;
+    DynamicBuffer __xdata *node;
+
+    putstr("\n\rEnter buffer size (200-600 bytes): ");
+    size = get_number();
+
+    if (size < 200 || size > 600) {
+        putstr("Error: Buffer size must be between 200 and 600 bytes.\n\r\n\r");
+        return;
+    }
+
+    // Allocate payload first
+    data_ptr = malloc(size);
+    if (data_ptr == NULL) {
+        printf("Error: Failed to allocate buffer_%u (%u bytes)\n\r",
+               (uint16_t)buffers->next_buffer_number, size);
+        putstr("Insufficient heap space.\n\r\n\r");
+        return;
+    }
+
+    // Allocate node
+    node = (DynamicBuffer __xdata *)malloc(sizeof(DynamicBuffer));
+    if (node == NULL) {
+        // rollback payload allocation
+        free(data_ptr);
+        printf("Error: Failed to allocate control block for buffer_%u\n\r",
+               (uint16_t)buffers->next_buffer_number);
+        putstr("Insufficient heap space.\n\r\n\r");
+        return;
+    }
+
+    // Initialize and push-front
+    node->ptr = data_ptr;
+    node->size = size;
+    node->buffer_number = buffers->next_buffer_number;
+    node->next = buffers->dynamic_buffers_head;
+    buffers->dynamic_buffers_head = node;
+
+    printf("Success: buffer_%u allocated at 0x%04X (%u bytes)\n\r\n\r",
+           (uint16_t)node->buffer_number,
+           (uint16_t)node->ptr,
+           node->size);
+
+    buffers->next_buffer_number++;
+}
+
+// Delete a dynamic buffer
+void delete_dynamic_buffer(BufferSet *buffers)
+{
+    uint16_t buffer_num;
+
+    putstr("\n\rEnter buffer number to delete: ");
+    buffer_num = get_number();
+
+    // block 0 and 1
+    if (buffer_num == 0 || buffer_num == 1) {
+        putstr("Error: Cannot delete buffer_0 or buffer_1.\n\r\n\r");
+        return;
+    }
+
+    // Allow deletion of fixed buffers 3/4/5 - so not doing dynamic lookup yet
+    if (buffer_num == 3 && buffers->buffer_3 != NULL) {
+        printf("Deleting buffer_3 at 0x%04X\n\r", (uint16_t)buffers->buffer_3);
+        free(buffers->buffer_3);
+        buffers->buffer_3 = NULL;
+        putstr("buffer_3 deleted successfully.\n\r\n\r");
+        return;
+    }
+    if (buffer_num == 4 && buffers->buffer_4 != NULL) {
+        printf("Deleting buffer_4 at 0x%04X\n\r", (uint16_t)buffers->buffer_4);
+        free(buffers->buffer_4);
+        buffers->buffer_4 = NULL;
+        putstr("buffer_4 deleted successfully.\n\r\n\r");
+        return;
+    }
+    if (buffer_num == 5 && buffers->buffer_5 != NULL) {
+        printf("Deleting buffer_5 at 0x%04X\n\r", (uint16_t)buffers->buffer_5);
+        free(buffers->buffer_5);
+        buffers->buffer_5 = NULL;
+        putstr("buffer_5 deleted successfully.\n\r\n\r");
+        return;
+    }
+
+    // Look for a dynamic buffer with that number
+    {
+        DynamicBuffer __xdata *prev = NULL;
+        DynamicBuffer __xdata *curr = buffers->dynamic_buffers_head;
+
+        while (curr != NULL) {
+            if (curr->buffer_number == buffer_num) {
+                printf("Deleting buffer_%u at 0x%04X\n\r",
+                       (uint16_t)buffer_num, (uint16_t)curr->ptr);
+                // unlink
+                if (prev == NULL) {
+                    buffers->dynamic_buffers_head = curr->next;
+                } else {
+                    prev->next = curr->next;
+                }
+                // free payload and node
+                free(curr->ptr);
+                free(curr);
+                printf("buffer_%u deleted successfully.\n\r\n\r", (uint16_t)buffer_num);
+                return;
+            }
+            prev = curr;
+            curr = curr->next;
+        }
+    }
+
+    // Not found
+    printf("Error: buffer_%u does not exist or is already deleted.\n\r\n\r",
+           (uint16_t)buffer_num);
 }
 
 // character processing loop
@@ -492,6 +673,8 @@ void phase_two(BufferSet *buffers)
     putstr("  @  = Free all and restart\n\r");
     putstr("  $  = Copy buffer_0 to buffer_3\n\r");
     putstr("  #  = Convert buffer_3 to lowercase\n\r");
+    putstr("  +  = Allocate new dynamic buffer\n\r");
+    putstr("  -  = Delete a buffer by number\n\r");
     putstr("\nstart...\n\r\n\r");
     
     while(1) {
@@ -552,6 +735,12 @@ void phase_two(BufferSet *buffers)
             to_lowercase(buf3, counts.buffer_3_count);
             TIMING_PIN_LOW();
             putstr("Conversion complete!\n\r\n\r");
+        }
+        else if (c == '+') {
+            allocate_dynamic_buffer(buffers);
+        }
+        else if (c == '-') {
+            delete_dynamic_buffer(buffers);
         }
         else if (IS_ALPHA(c)) {
             // Store alphabet character in buffer_0
