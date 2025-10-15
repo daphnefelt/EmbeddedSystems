@@ -1,7 +1,27 @@
+#define HOST
+#include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#define __xdata
+#define DEBUGPORT(x)
+#define TIMING_PIN_HIGH()
+#define TIMING_PIN_LOW()
+#ifndef HEAP_SIZE
+#define HEAP_SIZE 8192
+#endif
+static unsigned char _fake_heap[HEAP_SIZE];
+#define _sdcc_heap _fake_heap
+int putchar(int c){ fputc(c, stdout); fflush(stdout); return c; }
+#include <conio.h>
+int getchar(void) {
+    int c = _getch();      // returns immediately on keypress
+    return c;              // Enter will be '\r' (0x0D)
+}
+
+// CODE
+
 // Includes
-#include <mcs51/8051.h>
-#include <at89c51ed2.h>
-#include <mcs51reg.h>
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
@@ -21,8 +41,8 @@ extern __xdata unsigned char _sdcc_heap[HEAP_SIZE];
 
 // I/O pin for timing (using P1.0, gonna probe w oscilloscope)
 #define TIMING_PIN P1_0
-#define TIMING_PIN_HIGH() (P1 |= 0x01)
-#define TIMING_PIN_LOW()  (P1 &= ~0x01)
+#define TIMING_PIN_HIGH() (putstr("TIMING_PIN HIGH\n\r"))
+#define TIMING_PIN_LOW()  (putstr("TIMING_PIN LOW\n\r"))
 
 // adding in the dynamic buffer. Had to name it in both places so I could reference it inside of it
 typedef struct DynamicBuffer {
@@ -55,32 +75,6 @@ typedef struct {
     uint16_t total_count;     // Total characters since last '?'
     uint16_t buffer_3_count;  // Characters in buffer_3
 } CharCounts;
-
-unsigned char __sdcc_external_startup(void)
-{
-    // Enabling internal RAM
-    // 1KB IRAM (0x000-0x3FF) + 31KB XRAM (0x400-0x7FFF)
-    AUXR |= 0x02; // Enable EXTRAM bit - allows access to internal XRAM
-    AUXR |= 0x0C; // Set XRS1:XRS0 to 11b - maximum internal XRAM
-    return 0;
-}
-
-// putchar takes a char and TX's it. Blocking.
-int putchar (int c)
-{
-    while (!TI); // Wait till ready to transmit, TI = 1
-    SBUF = c;    // load serial port with transmit value
-    TI = 0;      // clear TI flag
-    return c;
-}
-
-// getchar gets a char from RX. Blocking. Returns char.
-int getchar (void)
-{
-    while (!RI);     // Wait till ready to receive, RI = 1
-    RI = 0;          // clear RI flag
-    return SBUF;     // return character from SBUF
-}
 
 // putstr takes a string (char array) and prints till it finds a NULL.
 int putstr (char *s)
@@ -770,21 +764,15 @@ void main(void)
     uint8_t student_number;
     BufferSet buffers = {0};
     
-    // init timing pin as output (P1.0)
-    P1 = 0x00;
-    
     while(1){
         putstr("\n\r -------- Heap Memory Management Program ---------------\n\r");
         
-        DEBUGPORT(DEBUG_1); // starting phase 1
-
         // get student number and allocate buffers
         student_number = get_student_number();
         allocate_buffers(&buffers, student_number);
         print_phase_one_info(student_number, &buffers);
         
         // now do the whole character processing buffer thing in phase two
-        DEBUGPORT(DEBUG_2); // starting phase 2
         phase_two(&buffers); // only returns if user pressed '@', which means free all and restart
     }
 }
