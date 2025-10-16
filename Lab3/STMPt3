@@ -1,0 +1,195 @@
+#include "main.h"
+#include "stdio.h"
+#include "string.h"
+
+void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+  __disable_irq();
+  while (1)
+  {
+  }
+  /* USER CODE END Error_Handler_Debug */
+}
+
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+  /** Configure the main internal regulator output voltage
+  */
+  __HAL_RCC_PWR_CLK_ENABLE();
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
+  */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+  RCC_OscInitStruct.PLL.PLLM = 8;
+  RCC_OscInitStruct.PLL.PLLN = 192;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
+  RCC_OscInitStruct.PLL.PLLQ = 8;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+#define RED 14
+#define GREEN 12
+#define BLUE 15
+
+// globals
+volatile uint8_t rxData = 0;
+volatile uint8_t rxFlag = 0;
+volatile uint8_t dutyCycle = 40;  // default 40%
+volatile uint8_t buttonPressed = 0;
+volatile uint8_t buttonDirection = 1;  // 1 = increasing, 0 = decreasing
+
+// equiv of putchar
+void sendChar(uint8_t ch) {
+    // Wait until TX buffer is empty
+    while (!(USART2->SR & USART_SR_TXE));
+    USART2->DR = ch;
+}
+
+void sendString(const char *str) {
+    while (*str) {
+        sendChar(*str++);
+    }
+}
+
+void ReportDutyCycle(void) {
+    char buffer[32];
+    sprintf(buffer, "Duty Cycle: %d%%\r\n", dutyCycle);
+    sendString(buffer);
+}
+
+void ProcessCommand(uint8_t cmd) {
+    switch(cmd) {
+        case 'P':
+        case 'p':
+            sendString("\r\n[Query] ");
+            ReportDutyCycle();
+            break;
+            
+        case 'A':
+        case 'a':
+            if (dutyCycle <= 95) {
+                dutyCycle += 5;
+            } else {
+                dutyCycle = 100;
+            }
+            UpdatePWM(dutyCycle);
+            sendString("\r\n[Increase] ");
+            ReportDutyCycle();
+            break;
+            
+        case 'B':
+        case 'b':
+            if (dutyCycle >= 5) {
+                dutyCycle -= 5;
+            } else {
+                dutyCycle = 0;
+            }
+            UpdatePWM(dutyCycle);
+            sendString("\r\n[Decrease] ");
+            ReportDutyCycle();
+            break;
+    }
+}
+
+void setColor(char color){
+    if (color == 'r'){
+        GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER14_0;
+        GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BS14_Msk;
+    } else if (color == 'g'){
+        GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER12_0;
+        GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BS12_Msk;
+    } else if (color == 'b'){
+        GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER15_0;
+        GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BS15_Msk;
+    }
+}
+
+void resetColor(char color){
+    if (color == 'r'){
+        GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER14_0;
+        GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BR14_Msk;
+    } else if (color == 'g'){
+        GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER12_0;
+        GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BR12_Msk;
+    } else if (color == 'b'){
+        GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER15_0;
+        GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BR15_Msk;
+    }
+}
+
+// BUTTON
+void EXTI0_IRQHandler(void){
+
+	if (EXTI->PR & (1<<0)) {
+        buttonPressed = 1;
+		EXTI->PR |= (1<<0);
+	}
+}
+
+// UART
+void USART2_IRQHandler(void) {
+    // RX interrupt
+    if (USART2->SR & USART_SR_RXNE) {
+        rxData = USART2->DR;  // read data (clears RXNE flag)
+        rxFlag = 1;           // Set flag for main loop to see the character
+    }
+}
+
+int main(void)
+{
+
+	/* Configure the system clock */
+	SystemClock_Config();
+    // other setups
+	GPIO_Config();
+    UART_Config();
+    TIM_Config();
+    EXTI_Config();
+
+	setColor('g');
+
+    // Initial message
+    sendString("\r\n---------STM PWM Program-------\r\n");
+    sendString("Commands:\r\n");
+    sendString("P: Print duty cycle\r\n");
+    sendString("A: Increase duty cycle by 5%\r\n");
+    sendString("B: Decrease duty cycle by 5%\r\n");
+    sendString("Button: Change duty cycle by 10%\r\n");
+    sendString("-------------------------------\r\n");
+	/* USER CODE BEGIN WHILE */
+	while (1)
+	{
+
+	}
+
+}
+
+
