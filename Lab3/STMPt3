@@ -1,3 +1,14 @@
+/* ---------------------------------------------------------------------------------
+ * Daphne Felt
+ * ECEN 5613 - Fall 2025 - Prof. McClure
+ * University of Colorado Boulder
+ * Edited 10/22/19
+ *  --------------------------------------------------------------------------------
+ * LAB 3 Pt 3
+ * Testing UART command interface to control PWM duty cycle and frequency
+ *  ---------------------------------------------------------------------------------
+*/
+
 #include "main.h"
 #include "stdio.h"
 #include "string.h"
