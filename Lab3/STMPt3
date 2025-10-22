@@ -13,70 +13,147 @@ void Error_Handler(void)
   /* USER CODE END Error_Handler_Debug */
 }
 
-void SystemClock_Config(void)
-{
-  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+// void SystemClock_Config(void)
+// {
+//   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+//   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-  /** Configure the main internal regulator output voltage
-  */
-  __HAL_RCC_PWR_CLK_ENABLE();
-  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+//   /** Configure the main internal regulator output voltage
+//   */
+//   __HAL_RCC_PWR_CLK_ENABLE();
+//   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
 
-  /** Initializes the RCC Oscillators according to the specified parameters
-  * in the RCC_OscInitTypeDef structure.
-  */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
-  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-  RCC_OscInitStruct.PLL.PLLM = 8;
-  RCC_OscInitStruct.PLL.PLLN = 192;
-  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
-  RCC_OscInitStruct.PLL.PLLQ = 8;
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
-    Error_Handler();
-  }
+//   /** Initializes the RCC Oscillators according to the specified parameters
+//   * in the RCC_OscInitTypeDef structure.
+//   */
+//   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+//   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+//   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+//   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+//   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+//   RCC_OscInitStruct.PLL.PLLM = 8;
+//   RCC_OscInitStruct.PLL.PLLN = 192;
+//   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
+//   RCC_OscInitStruct.PLL.PLLQ = 8;
+//   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+//   {
+//     Error_Handler();
+//   }
 
-  /** Initializes the CPU, AHB and APB buses clocks
-  */
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
-  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+//   /** Initializes the CPU, AHB and APB buses clocks
+//   */
+//   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+//                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+//   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+//   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+//   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+//   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK)
-  {
-    Error_Handler();
-  }
-}
+//   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK)
+//   {
+//     Error_Handler();
+//   }
+// }
 
 #define RED 14
 #define GREEN 12
 #define BLUE 15
 
+#define UART_BUFFER_SIZE 64
+
 // globals
-volatile uint8_t rxData = 0;
-volatile uint8_t rxFlag = 0;
+// volatile uint8_t rxData = 0;
+// volatile uint8_t rxFlag = 0;
 volatile uint8_t dutyCycle = 40;  // default 40%
 volatile uint8_t buttonPressed = 0;
 volatile uint8_t buttonDirection = 1;  // 1 = increasing, 0 = decreasing
+volatile uint16_t pwmFrequency = 10000;  // 10 kHz in Hz
+
+
+// for the circular buffer for uart
+typedef struct {
+    uint8_t buffer[UART_BUFFER_SIZE];
+    uint16_t head;
+    uint16_t tail;
+    uint16_t count;
+} CircularBuffer;
+
+volatile CircularBuffer rxBuffer = {0};
+volatile CircularBuffer txBuffer = {0};
+
+// Helper functions
+void bufferPush(volatile CircularBuffer *buf, uint8_t data) {
+    if (buf->count < UART_BUFFER_SIZE) {
+        buf->buffer[buf->head] = data;
+        buf->head = (buf->head + 1) % UART_BUFFER_SIZE;
+        buf->count++;
+    }
+}
+
+uint8_t bufferPop(volatile CircularBuffer *buf) {
+    uint8_t data = 0;
+    if (buf->count > 0) {
+        data = buf->buffer[buf->tail];
+        buf->tail = (buf->tail + 1) % UART_BUFFER_SIZE;
+        buf->count--;
+    }
+    return data;
+}
+
+uint16_t bufferCount(volatile CircularBuffer *buf) {
+    return buf->count;
+}
 
 // equiv of putchar
 void sendChar(uint8_t ch) {
-    // Wait until TX buffer is empty
-    while (!(USART2->SR & USART_SR_TXE));
-    USART2->DR = ch;
+    bufferPush(&txBuffer, ch);
+    // Enable TX interrupt to drain buffer
+    USART2->CR1 |= USART_CR1_TXEIE;
+}
+
+// check if RX data available
+uint8_t getRxChar(uint8_t *ch) {
+    if (bufferCount(&rxBuffer) > 0) {
+        *ch = bufferPop(&rxBuffer);
+        return 1;  // data available
+    }
+    return 0;  // no data
 }
 
 void sendString(const char *str) {
     while (*str) {
         sendChar(*str++);
     }
+}
+
+void UpdatePWM(uint8_t duty) {
+    if (duty > 100) duty = 100;  // cap at 100%
+    if (duty < 0) duty = 0;      // cap at 0%
+
+    uint16_t psc = TIM3->PSC;
+    uint16_t arr = TIM3->ARR;
+    uint32_t ccr_value = (duty * (arr + 1)) / 100;  // For changing PSC
+
+    TIM3->CCR1 = ccr_value; // actual update
+    TIM3->CCR2 = ccr_value; // update second channel as well for the LED
+}
+
+void UpdatePWMFrequency(uint16_t frequency) {
+    if (frequency < 1000) frequency = 1000;       // min 1kHz. Don't want too low bc run into issues with psc being too high
+    if (frequency > 420000) frequency = 420000;   // max 420kHz
+
+    pwmFrequency = frequency;
+
+    // Recalculate PSC and ARR for new frequency
+    // Timer clock = 84MHz
+    // PWM frequency = 84MHz / ((PSC+1) * (ARR+1))
+    // keep ARR=99 for duty cycle scaling, solve for PSC:
+    // PSC = (84,000,000 / (frequency * (ARR+1))) - 1
+    uint32_t psc_value = (84000000 / (frequency * 100)) - 1;
+    TIM3->PSC = psc_value;
+
+    // Update duty cycle to reflect new settings
+    UpdatePWM(dutyCycle);
 }
 
 void ReportDutyCycle(void) {
@@ -116,6 +193,68 @@ void ProcessCommand(uint8_t cmd) {
             sendString("\r\n[Decrease] ");
             ReportDutyCycle();
             break;
+
+        case 'D':
+        case 'd':
+            sendString("\r\nEnter duty cycle (0-100%): ");
+           
+            // wait for input
+            {
+                char dutyBuf[8] = {0};
+                uint8_t idx = 0;
+                uint8_t ch;
+                while (1) {
+                    if (getRxChar(&ch)) {
+                        if (ch == '\r' || ch == '\n') {
+                            sendString("\r\n");
+                            break;
+                        } else if (idx < 7) {
+                            dutyBuf[idx++] = ch;
+                            sendChar(ch);  // echo
+                        }
+                    }
+                }
+                dutyBuf[idx] = '\0';
+                uint8_t newDuty = (uint8_t)atoi(dutyBuf);
+                dutyCycle = newDuty;
+            }
+
+            UpdatePWM(dutyCycle);
+            sendString("Duty: ");
+            sprintf(dutyBuf, "%u%%\r\n", dutyCycle);
+            sendString(dutyBuf);
+            break;
+
+        case 'F':
+        case 'f':
+            sendString("\r\nEnter frequency (1000-420000 Hz): ");
+           
+            // wait for input
+            {
+                char freqBuf[16] = {0};
+                uint8_t idx = 0;
+                uint8_t ch;
+                while (1) {
+                    if (getRxChar(&ch)) {
+                        if (ch == '\r' || ch == '\n') {
+                            sendString("\r\n");
+                            break;
+                        } else if (idx < 15) {
+                            freqBuf[idx++] = ch;
+                            sendChar(ch);  // echo
+                        }
+                    }
+                }
+                freqBuf[idx] = '\0';
+                uint16_t newFreq = (uint16_t)atoi(freqBuf);
+                pwmFrequency = newFreq;
+            }
+
+            UpdatePWMFrequency(pwmFrequency);
+            sendString("Freq: ");
+            sprintf(freqBuf, "%u Hz\r\n", pwmFrequency);
+            sendString(freqBuf);
+            break;
     }
 }
 
@@ -149,6 +288,8 @@ void resetColor(char color){
 void EXTI0_IRQHandler(void){
 
 	if (EXTI->PR & (1<<0)) {
+        // adding small debouncing delay
+        for (volatile uint32_t i = 0; i < 100000; i++);
         buttonPressed = 1;
 		EXTI->PR |= (1<<0);
 	}
@@ -158,9 +299,141 @@ void EXTI0_IRQHandler(void){
 void USART2_IRQHandler(void) {
     // RX interrupt
     if (USART2->SR & USART_SR_RXNE) {
-        rxData = USART2->DR;  // read data (clears RXNE flag)
-        rxFlag = 1;           // Set flag for main loop to see the character
+        uint8_t data = USART2->DR;
+        bufferPush(&rxBuffer, data); // add to my circular buffer
     }
+    
+    // TX interrupt (only fires if TXE and TXEIE are both set)
+    if ((USART2->SR & USART_SR_TXE) && (USART2->CR1 & USART_CR1_TXEIE)) {
+        if (bufferCount(&txBuffer) > 0) {
+            USART2->DR = bufferPop(&txBuffer);
+        } else {
+            // Disable TX interrupt when buffer empty
+            USART2->CR1 &= ~USART_CR1_TXEIE;
+        }
+    }
+}
+
+// System Clock Configuration (doing 84MHz for STM32F4)
+void SystemClock_Config(void) {
+    // Turn on the High Speed Internal (HSI) oscillator. Probably alr on, but just in case
+    RCC->CR |= RCC_CR_HSION;
+    while (!(RCC->CR & RCC_CR_HSIRDY)); // wait till ready
+    // also, that starts out at 16MHz
+    
+    // flash latency
+    FLASH->ACR |= FLASH_ACR_LATENCY_2WS; // 2 wait states for 84MHz, 3 CPU cycles
+    
+    // PLL is Phase Locked Loop - use it to multiply clock speed
+    // Configure PLL: HSI/16 * 336 / 4 = 84MHz
+    RCC->PLLCFGR = // PLL_M=16, PLL_N=336, PLL_P=4, HSI
+        (16U) /* PLLM */
+        | (336U << 6) /* PLLN */
+        | (2U << 16) /* PLLP encode for 4 */
+        | (0U << 22) /* PLLSRC = HSI */
+        | (7U << 24); /* PLLQ = 7 */
+
+    // Turn on PLL now that it's configured
+    RCC->CR |= RCC_CR_PLLON;
+    while (!(RCC->CR & RCC_CR_PLLRDY)); // wait till ready
+    
+    // Pick PLL as system clock
+    RCC->CFGR |= RCC_CFGR_SW_PLL;
+    while ((RCC->CFGR & RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL); // wait till ready
+}
+
+void GPIO_Config(void) {
+    // enable GPIO clocks
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN | RCC_AHB1ENR_GPIOCEN | RCC_AHB1ENR_GPIODEN;
+    
+    // PA0 (Button B1) as input with pull-down
+    GPIOA->MODER &= ~GPIO_MODER_MODER0;  // Input mode
+    GPIOA->PUPDR &= ~GPIO_PUPDR_PUPDR0;
+    GPIOA->PUPDR |= GPIO_PUPDR_PUPDR0_1;  // Pull-down
+    
+    // PA2 (UART TX) and PA3 (UART RX) as alternate functions
+    GPIOA->MODER &= ~(GPIO_MODER_MODER2 | GPIO_MODER_MODER3);
+    GPIOA->MODER |= GPIO_MODER_MODER2_1 | GPIO_MODER_MODER3_1;  // AF mode
+    GPIOA->AFR[0] |= (7 << 8) | (7 << 12);  // AF7 for USART2
+    
+    // PC6 (TIM3_CH1) for PWM output
+    GPIOC->MODER &= ~GPIO_MODER_MODER6;
+    GPIOC->MODER |= GPIO_MODER_MODER6_1;  // AF mode
+    GPIOC->AFR[0] |= (2 << 24);  // AF2 for TIM3
+
+    // PD13 (TIM3_CH2) for second PWM output
+    GPIOD->MODER &= ~GPIO_MODER_MODER13;
+    GPIOD->MODER |= GPIO_MODER_MODER13_1;  // AF mode
+    GPIOD->AFR[1] |= (2 << 4);  // AF2 for TIM3 (AFR[1] is for pins 8-15)
+
+    // don't know if I need, but set PD12 (Green), PD14 (Red), PD15 (Blue) as outputs
+    GPIOD->MODER &= ~(GPIO_MODER_MODER12 | GPIO_MODER_MODER14 | GPIO_MODER_MODER15);
+    GPIOD->MODER |= GPIO_MODER_MODER12_0 | GPIO_MODER_MODER14_0 | GPIO_MODER_MODER15_0;
+}
+
+void UART_Config(void) {
+    // Enable USART2 clock
+    RCC->APB1ENR |= RCC_APB1ENR_USART2EN;
+    // baud rate 115200 at 84MHz
+    USART2->BRR = 0x2D9; // BRR = 84,000,000 / (16 × 115200) = 45.572
+    
+    // Enable USART, TX, RX, and RXNE interrupt
+    USART2->CR1 = USART_CR1_UE | USART_CR1_TE | USART_CR1_RE | USART_CR1_RXNEIE;
+    
+    // Enable USART2 interrupt in NVIC
+    NVIC_EnableIRQ(USART2_IRQn);
+    NVIC_SetPriority(USART2_IRQn, 0); // highest priority bc want fast response
+}
+
+void TIM_Config(void) {
+    // Enable TIM3 clock
+    RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
+    
+    // Configure TIM3 for PWM
+    // Timer clock = 84MHz (APB1 * 2)
+    // PWM frequency = 84MHz / ((PSC+1) * (ARR+1))
+    // For 10kHz: PSC=83, ARR=99 -> 84MHz/(84*100) = 10kHz
+    TIM3->PSC = 83;      // Prescaler
+    TIM3->ARR = 99;     // Auto-reload (period) - using 100 for easy percentage calc
+
+    // Configure CH1 as PWM mode 1
+    TIM3->CCMR1 &= ~TIM_CCMR1_OC1M;
+    TIM3->CCMR1 |= TIM_CCMR1_OC1M_1 | TIM_CCMR1_OC1M_2;  // PWM mode 1
+    TIM3->CCMR1 |= TIM_CCMR1_OC1PE;  // Preload enable
+
+    // Ch2 PWM setup
+    TIM3->CCMR1 &= ~TIM_CCMR1_OC2M;
+    TIM3->CCMR1 |= TIM_CCMR1_OC2M_1 | TIM_CCMR1_OC2M_2;  // PWM mode 1
+    TIM3->CCMR1 |= TIM_CCMR1_OC2PE;  // Preload enable
+    
+    TIM3->CCR1 = 40; // Set initial duty cycle (40%)
+    TIM3->CCR2 = 40; // Initial duty cycle (40%)
+    
+    // Enable CH1 output
+    TIM3->CCER |= TIM_CCER_CC1E;
+    // Enable CH2 output
+    TIM3->CCER |= TIM_CCER_CC2E;
+    
+    // Enable timer
+    TIM3->CR1 |= TIM_CR1_CEN;
+}
+
+void EXTI_Config(void) {
+    // Enable SYSCFG clock
+    RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;
+    
+    // EXTI0 to PA0
+    SYSCFG->EXTICR[0] &= ~SYSCFG_EXTICR1_EXTI0;
+    SYSCFG->EXTICR[0] |= SYSCFG_EXTICR1_EXTI0_PA;
+    
+    // Configure EXTI0 for rising edge trigger
+    EXTI->IMR |= EXTI_IMR_MR0;    // Unmask interrupt
+    EXTI->RTSR |= EXTI_RTSR_TR0;  // Rising edge trigger
+    EXTI->FTSR &= ~EXTI_FTSR_TR0; // Disable falling edge
+    
+    // Enable EXTI0 interrupt in NVIC
+    NVIC_EnableIRQ(EXTI0_IRQn);
+    NVIC_SetPriority(EXTI0_IRQn, 1);
 }
 
 int main(void)
@@ -182,12 +455,44 @@ int main(void)
     sendString("P: Print duty cycle\r\n");
     sendString("A: Increase duty cycle by 5%\r\n");
     sendString("B: Decrease duty cycle by 5%\r\n");
+    sendString("F: Change cycle freq\r\n");
+    sendString("D: Directly change duty cycle\r\n");
     sendString("Button: Change duty cycle by 10%\r\n");
     sendString("-------------------------------\r\n");
-	/* USER CODE BEGIN WHILE */
+	
+    ReportDutyCycle(); // just first time saying what's up. Starts at 40%
+    
+    /* USER CODE BEGIN WHILE */
 	while (1)
 	{
+        uint8_t rxDataLocal;
+        if (getRxChar(&rxDataLocal)) {
+            sendChar(rxDataLocal);  // echo back
+            ProcessCommand(rxDataLocal);
+        }
 
+        if (buttonPressed) {
+            buttonPressed = 0;  // clear flag
+
+            if (buttonDirection) {  // increasing
+                if (dutyCycle == 100) { 
+                    buttonDirection = 0;
+                    dutyCycle = 90;  // now going down
+                } else {
+                    dutyCycle += 10;
+                }
+            } else {  // decreasing
+                if (dutyCycle == 0) { 
+                    buttonDirection = 1;
+                    dutyCycle = 10; // now going up
+                } else {
+                    dutyCycle -= 10;
+                }
+            }
+            UpdatePWM(dutyCycle);
+            sendString("\r\n[Button Press] ");
+            ReportDutyCycle();
+        }
 	}
 
 }
