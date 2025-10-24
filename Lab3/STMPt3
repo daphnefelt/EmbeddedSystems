@@ -495,7 +495,7 @@ void UART_Config(void) {
     // Enable USART2 clock
     RCC->APB1ENR |= RCC_APB1ENR_USART2EN;
     // baud rate 115200 at 84MHz
-    USART2->BRR = 0x2D9; // BRR = 84,000,000 / (16 × 115200) = 45.572
+    USART2->BRR = 0x1A1; // BRR = 84,000,000 / (16 × 115200) = 45.572
     
     // Enable USART, TX, RX, and RXNE interrupt
     USART2->CR1 = USART_CR1_UE | USART_CR1_TE | USART_CR1_RE | USART_CR1_RXNEIE;
