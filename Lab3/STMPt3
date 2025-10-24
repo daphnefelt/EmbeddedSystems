@@ -72,6 +72,11 @@ void Error_Handler(void)
 
 #define UART_BUFFER_SIZE 64
 
+// ansi color codes
+#define ANSI_RESET          "\x1b[0m"
+#define ANSI_BOLD           "\x1b[1m"
+#define ANSI_GREEN_BOLD     "\x1b[1;32m"
+
 // globals
 // volatile uint8_t rxData = 0;
 // volatile uint8_t rxFlag = 0;
@@ -122,6 +127,12 @@ void sendChar(uint8_t ch) {
     USART2->CR1 |= USART_CR1_TXEIE;
 }
 
+void sendCharGreen(uint8_t ch) {
+    sendString(ANSI_GREEN_BOLD);
+    sendChar(ch);
+    sendString(ANSI_RESET);
+}
+
 // check if RX data available
 uint8_t getRxChar(uint8_t *ch) {
     if (bufferCount(&rxBuffer) > 0) {
@@ -135,6 +146,12 @@ void sendString(const char *str) {
     while (*str) {
         sendChar(*str++);
     }
+}
+
+void sendStringGreen(const char *str) {
+    sendString(ANSI_GREEN_BOLD);
+    sendString(str);
+    sendString(ANSI_RESET);
 }
 
 /////////////// ADDING IN BAD RX, TX throught polling to comparre performance
@@ -256,7 +273,7 @@ void UpdatePWMFrequency(uint16_t frequency) {
 void ReportDutyCycle(void) {
     char buffer[32];
     sprintf(buffer, "Duty Cycle: %d%%\r\n", dutyCycle);
-    sendString(buffer);
+    sendStringGreen(buffer);
 }
 
 void ProcessCommand(uint8_t cmd) {
@@ -558,7 +575,7 @@ int main(void)
 	setColor('g');
 
     // Initial message
-    sendString("\r\n---------STM PWM Program-------\r\n");
+    sendStringGreen("\r\n---------STM PWM Program-------\r\n");
     sendString("Commands:\r\n");
     sendString("P: Print duty cycle\r\n");
     sendString("A: Increase duty cycle by 5%\r\n");
@@ -575,7 +592,7 @@ int main(void)
 	{
         uint8_t rxDataLocal;
         if (getRxChar(&rxDataLocal)) {
-            sendChar(rxDataLocal);  // echo back
+            sendCharGreen(rxDataLocal);  // echo back in green
             ProcessCommand(rxDataLocal);
         }
 
