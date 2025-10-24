@@ -4,7 +4,7 @@
  * University of Colorado Boulder
  * Edited 10/22/19
  *  --------------------------------------------------------------------------------
- * LAB 3 Pt 3
+ * LAB 3 Pt 3, STM32F4 Discovery Board
  * Testing UART command interface to control PWM duty cycle and frequency
  *  ---------------------------------------------------------------------------------
 */
@@ -137,6 +137,92 @@ void sendString(const char *str) {
     }
 }
 
+/////////////// ADDING IN BAD RX, TX throught polling to comparre performance
+// Blocking RX - CPU waits until character arrives
+int getchar_polled(void) {
+    while (!(USART2->SR & USART_SR_RXNE));  // Busy-wait
+    return USART2->DR;
+}
+
+// Blocking TX - CPU waits until FIFO has space
+void putchar_polled(int c) {
+    while (!(USART2->SR & USART_SR_TXE));  // Busy-wait
+    USART2->DR = c;
+}
+
+/////////////// For testing performance
+// Performance measurement structure
+typedef struct {
+    uint32_t tx_chars;
+    uint32_t rx_chars;
+    uint32_t cpu_cycles_used;
+    uint32_t buffer_overflows;
+    uint32_t start_time_ms;
+} PerfMetrics;
+
+volatile PerfMetrics interrupt_driven_metrics = {0};
+
+// SysTick ISR counter (1ms ticks)
+volatile uint32_t milliseconds = 0;
+
+void SysTick_Handler(void) {
+    milliseconds++;
+}
+
+// Test: Interrupt-driven throughput
+void test_interrupt_driven_throughput(void) {
+    uint32_t test_duration_ms = 5000;  // 5 second test
+    uint32_t start = milliseconds;
+    uint32_t i = 0;
+    
+    sendString("\nINTERRUPT-DRIVEN TEST (5s)\n");
+    sendString("Sending 1000 bytes...\n");
+    
+    // Send 1000 characters as fast as possible
+    for (i = 0; i < 1000; i++) {
+        sendChar('A' + (i % 26));
+        interrupt_driven_metrics.tx_chars++;
+        
+        // Check for timeout
+        if ((milliseconds - start) > 10000) break;
+    }
+    
+    uint32_t elapsed = milliseconds - start;
+    uint32_t throughput_cps = (interrupt_driven_metrics.tx_chars * 1000) / elapsed;
+    
+    printf("TX: %u chars in %u ms\n", interrupt_driven_metrics.tx_chars, elapsed);
+    printf("Throughput: %u chars/sec\n", throughput_cps);
+    printf("Utilization: %.1f%% of 115200 baud\n", 
+           (float)throughput_cps * 10 / 11520.0);
+}
+
+void test_polled_throughput(void) {
+    uint32_t test_duration_ms = 5000;  // 5 second test
+    uint32_t start = milliseconds;
+    uint32_t i = 0;
+    uint32_t tx_chars = 0;
+    
+    sendString("\nPOLLED TEST (5s)\n");
+    sendString("Sending 1000 bytes...\n");
+    
+    // Send 1000 characters as fast as possible
+    for (i = 0; i < 1000; i++) {
+        putchar_polled('A' + (i % 26));
+        tx_chars++;
+        
+        // Check for timeout
+        if ((milliseconds - start) > 10000) break;
+    }
+    
+    uint32_t elapsed = milliseconds - start;
+    uint32_t throughput_cps = (tx_chars * 1000) / elapsed;
+    
+    printf("TX: %u chars in %u ms\n", tx_chars, elapsed);
+    printf("Throughput: %u chars/sec\n", throughput_cps);
+    printf("Utilization: %.1f%% of 115200 baud\n", 
+           (float)throughput_cps * 10 / 11520.0);
+}
+
 void UpdatePWM(uint8_t duty) {
     if (duty > 100) duty = 100;  // cap at 100%
     if (duty < 0) duty = 0;      // cap at 0%
@@ -265,6 +351,12 @@ void ProcessCommand(uint8_t cmd) {
             sendString("Freq: ");
             sprintf(freqBuf, "%u Hz\r\n", pwmFrequency);
             sendString(freqBuf);
+            break;
+
+        case 'T':  // Trigger performance test
+        case 't':
+            test_interrupt_driven_throughput();
+            test_polled_throughput();
             break;
     }
 }
@@ -457,6 +549,11 @@ int main(void)
     UART_Config();
     TIM_Config();
     EXTI_Config();
+
+    // Configure SysTick for 1ms interrupts (84 MHz clock)
+    SysTick->LOAD = 84000 - 1;
+    SysTick->VAL = 0;
+    SysTick->CTRL = 0x07;  // Enable with system clock
 
 	setColor('g');
 
