@@ -1,3 +1,4 @@
+
 /* ---------------------------------------------------------------------------------
  * Daphne Felt
  * ECEN 5613 - Fall 2025 - Prof. McClure
@@ -9,8 +10,15 @@
  *  ---------------------------------------------------------------------------------
 */
 
-#include <reg51.h>
+// #include <8051.h>
+#include <mcs51/8051.h>
+#include <at89c51ed2.h>
+#include <mcs51reg.h>
 #include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+
 
 // all my usual funcs
 // putchar takes a char and TX's it. Blocking.
@@ -39,6 +47,7 @@ int putstr (char *s){
 }
 
 // SFR Definitions for AT89C51RC2
+/*
 sfr CCON   = 0xD8;  // PCA Counter Control
 sfr CMOD   = 0xD9;  // PCA Counter Mode
 sfr CCAPM0 = 0xDA;  // PCA Module 0 Mode
@@ -57,25 +66,51 @@ sfr AUXR   = 0x8E;  // Auxiliary Register
 sfr AUXR1  = 0xA2;  // Auxiliary Register 1
 sfr CKRL   = 0x97;  // Clock Reload Register
 sfr PCON   = 0x87;  // Power Control
+*/
+
+#define EIE (*(volatile unsigned char *)(0xE8))// EIE
 
 // CCON Bit Definitions
-sbit CF  = CCON^7;  // PCA Counter Overflow Flag
-sbit CR  = CCON^6;  // PCA Counter Run Control
-sbit CCF4 = CCON^4; // PCA Module 4 Interrupt Flag
-sbit CCF1 = CCON^1; // PCA Module 1 Interrupt Flag
-sbit CCF0 = CCON^0; // PCA Module 0 Interrupt Flag
+#define CF_BIT     0x80  // PCA Counter Overflow Flag (bit 7)
+#define CR_BIT     0x40  // PCA Counter Run Control (bit 6)
+#define CCF4_BIT   0x10  // PCA Module 4 Interrupt Flag (bit 4)
+#define CCF1_BIT   0x02  // PCA Module 1 Interrupt Flag (bit 1)
+#define CCF0_BIT   0x01  // PCA Module 0 Interrupt Flag (bit 0)
 
-// TCON Bit Definitions
-sbit TR0 = TCON^4;  // Timer 0 Run Control
+// Helper macros for bit manipulation
+#define SET_BIT(reg, bit)    ((reg) |= (bit))
+#define CLEAR_BIT(reg, bit)  ((reg) &= ~(bit))
+#define GET_BIT(reg, bit)    ((reg) & (bit))
+
+// Convenience macros
+#define CR_SET()    SET_BIT(CCON, CR_BIT)
+#define CR_CLR()    CLEAR_BIT(CCON, CR_BIT)
+#define CR_GET()    GET_BIT(CCON, CR_BIT)
+
+#define CF_SET()    SET_BIT(CCON, CF_BIT)
+#define CF_CLR()    CLEAR_BIT(CCON, CF_BIT)
+#define CF_GET()    GET_BIT(CCON, CF_BIT)
+
+#define CCF4_SET()  SET_BIT(CCON, CCF4_BIT)
+#define CCF4_CLR()  CLEAR_BIT(CCON, CCF4_BIT)
+#define CCF4_GET()  GET_BIT(CCON, CCF4_BIT)
+
+#define CCF1_SET()  SET_BIT(CCON, CCF1_BIT)
+#define CCF1_CLR()  CLEAR_BIT(CCON, CCF1_BIT)
+#define CCF1_GET()  GET_BIT(CCON, CCF1_BIT)
+
+#define CCF0_SET()  SET_BIT(CCON, CCF0_BIT)
+#define CCF0_CLR()  CLEAR_BIT(CCON, CCF0_BIT)
+#define CCF0_GET()  GET_BIT(CCON, CCF0_BIT)
 
 // Port Pins
-sbit LED = P1^1;        // Status LED. Already had LED hooked up here from before
-sbit PWM_OUT = P1^3;    // CEX0 - PWM Output
-sbit CAPTURE_IN = P1^4; // CEX1 - Capture Input
+#define LED P1_1;        // Status LED. Already had LED hooked up here from before
+#define PWM_OUT = P1_3;    // CEX0 - PWM Output
+#define CAPTURE_IN = P1_4; // CEX1 - Capture Input
 
 // Global Variables
-volatile bit idle_wakeup = 0;
-volatile bit watchdog_feed_enabled = 1;
+volatile int idle_wakeup = 0;
+volatile int watchdog_feed_enabled = 1;
 volatile unsigned int capture_count = 0;
 volatile unsigned int last_capture_value = 0;
 volatile unsigned long capture_timestamp_ms = 0;
@@ -83,7 +118,7 @@ volatile unsigned long capture_timestamp_ms = 0;
 void init_system(void) {
     // Enable X2 Mode (6 clocks per machine cycle instead of 12)
     AUXR1 |= 0x40;  // Set DPS bit for X2 mode
-    
+
     // Set max frequency (CKRL = 0xFF)
     CKRL = 0xFF;
 
@@ -95,13 +130,13 @@ void init_system(void) {
     // Enable Timer 0 interrupt and start timer
     ET0 = 1;        // Enable Timer 0 interrupt
     TR0 = 1;        // Start Timer 0
-    
+
     // Configure external interrupt 0 for Idle wake-up
     IT0 = 1;        // Edge triggered
     EX0 = 1;        // Enable INT0
 
     // Enable PCA interrupt for capture mode
-    EPCA = 1;       // Enable PCA interrupt
+    EIE |= 0x40;       // Enable PCA interrupt
 
     EA = 1;         // Enable global interrupts
 }
@@ -115,15 +150,15 @@ void init_system(void) {
 //  * - Output toggles when CL matches CCAP0L
 
 void init_pca_pwm(void) {
-    CR = 0;         // Stop PCA counter during configuration
-    
+    CR_CLR();         // Stop PCA counter during configuration
+
     // Configure PCA Counter Mode (CMOD register)
     // Bit 7 (CIDL): 0 = PCA continues in Idle mode
     // Bit 6-4: Reserved
     // Bit 3-1 (CPS2-0): 000 = FCLK_PERIPH/2 as clock source
     // Bit 0 (ECF): 0 = Disable PCA overflow interrupt
     CMOD = 0x00;    // FCLK_PERIPH/2, continue in Idle
-    
+
     // Configure Module 0 for PWM Mode (CCAPM0 register)
     // Bit 7 (ECOM0): 1 = Enable comparator
     // Bit 6 (CAPP0): 0 = Disable positive edge capture
@@ -134,15 +169,17 @@ void init_pca_pwm(void) {
     // Bit 1 (ECCF0): 0 = Disable interrupt
     // Bit 0: Reserved
     CCAPM0 = 0x42;  // Enable Comparator + PWM mode (0100 0010)
-    
+
     // Set 33% duty cycle
     // In PWM mode: Duty = (256 - CCAP0L) / 256
     // For 33%: CCAP0L = 256 - 84.48 = 171 = 0xAB
     CCAP0L = 0xAB;  // 33% duty cycle (approx 171/256)
-    
+    CCAP0H = 0xAB; // same thing
+
     // Initialize PCA counter
     CL = 0;
     CH = 0;
+    CR_SET();
 }
 
 // Configure PCA Module 4 as Watchdog Timer
@@ -163,7 +200,7 @@ void init_watchdog(void) {
     // Bit 1 (ECCF4): 0 = Disable interrupt
     // Bit 0: Reserved
     CCAPM4 = 0x9C;  // Watchdog mode (1001 1100)
-    
+
     // Set watchdog timeout period
     // 0xFFFF is maximum timeout. Depends on the frequency of PCA clock. But at lowest freq, it's like 3s
     CCAP4H = 0xFF;
@@ -191,14 +228,14 @@ void init_capture_mode(void) {
 }
 
 void start_pwm(void) {
-    CR = 1;         // Start PCA counter
-    printf("PWM Started - 33%% duty cycle\n");
-    printf("Monitor CEX0 (P1.3) on oscilloscope\n");
+    CR_SET();         // Start PCA counter
+    printf("PWM Started - 33%% duty cycle\n\r");
+    printf("Monitor CEX0 (P1.3) on oscilloscope\n\r");
 }
 
 void stop_pwm(void) {
-    CR = 0;         // Stop PCA counter
-    printf("PWM Stopped\n");
+    CR_CLR();         // Stop PCA counter
+    printf("PWM Stopped\n\r");
 }
 
 
@@ -210,30 +247,30 @@ void stop_pwm(void) {
 
 void set_max_frequency(void) {
     CKRL = 0xFF;
-    printf("CKRL set to MAX (0xFF)\n");
-    printf("FCLK_PERIPH = FOSC / 1\n");
+    printf("CKRL set to MAX (0xFF)\n\r");
+    printf("FCLK_PERIPH = FOSC / 1\n\r");
     // ale frequency should increase
 }
 
 void set_min_frequency(void) {
     CKRL = 0x00;
-    printf("CKRL set to MIN (0x00)\n");
-    printf("FCLK_PERIPH = FOSC / 256\n");
+    printf("CKRL set to MIN (0x00)\n\r");
+    printf("FCLK_PERIPH = FOSC / 256\n\r");
     //  same thing, ale frequency should decrease
 }
 
 // ale and psen stop toggling in idle mode
 // but xtal2 will still oscillate, and the timers and PCA will keep running
 void enter_idle_mode(void) {
-    printf("Entering IDLE mode...\n");
-    printf("Trigger INT0 (P3.2) to wake up\n\n");
-    
+    printf("Entering IDLE mode...\n\r");
+    printf("Trigger INT0 (P3.2) to wake up\n\r\n\r");
+
     idle_wakeup = 0;
     PCON |= 0x01;   // Set IDL bit to enter Idle mode
-    
+
     // Execution continues here after wake-up
     if (idle_wakeup) {
-        printf("waking up!!\n");
+        printf("waking up!!\n\r");
     }
 }
 
@@ -241,11 +278,11 @@ void enter_idle_mode(void) {
 // power down mode - everything stops except rtc (real time clock)
 // can still wake up on external reset
 void enter_power_down_mode(void) {
-    printf("Entering POWER DOWN mode...\n");
-    printf("Press RESET to wake up\n\n");
-    
+    printf("Entering POWER DOWN mode...\n\r");
+    printf("Press RESET to wake up\n\r\n\r");
+
     PCON |= 0x02;   // Set PDE bit to enter Power Down mode
-    
+
     // Execution continues here after reset
 }
 
@@ -254,173 +291,182 @@ void refresh_watchdog(void) {
     // Reset PCA counter to prevent watchdog timeout
     CH = 0;
     CL = 0;
-    CCF4 = 0;       // Clear watchdog flag
+    CCF4_CLR();       // Clear watchdog flag
 }
 
 void stop_feeding_watchdog(void) {
-    printf("Stopping Watchdog feeding. Sys will reset soon!\n");
+    printf("Stopping Watchdog feeding. Sys will reset soon!\n\r");
     watchdog_feed_enabled = 0;
 }
 
 void start_feeding_watchdog(void) {
-    printf("Continuing Watchdog feeding.\n");
+    printf("Continuing Watchdog feeding.\n\r");
     watchdog_feed_enabled = 1;
 }
 
 // showing the display menu
 void display_menu(void) {
-    printf("\n");
-    printf("Here is everything you can do:\n");
-    printf("1. Run PWM (33%% duty cycle on CEX0)\n");
-    printf("2. Stop PWM\n");
-    printf("3. Set CKRL to MAX frequency (0xFF)\n");
-    printf("4. Set CKRL to MIN frequency (0x00)\n");
-    printf("5. Enter IDLE mode\n");
-    printf("6. Enter POWER DOWN mode\n");
-    printf("7. Show PCA status\n");
-    printf("8. Refresh Watchdog Timer\n");
-    printf("9. Toggle Watchdog Auto-Refresh (currently: %s)\n", 
+    printf("\n\r");
+    printf("Here is everything you can do:\n\r");
+    printf("1. Run PWM (33%% duty cycle on CEX0)\n\r");
+    printf("2. Stop PWM\n\r");
+    printf("3. Set CKRL to MAX frequency (0xFF)\n\r");
+    printf("4. Set CKRL to MIN frequency (0x00)\n\r");
+    printf("5. Enter IDLE mode\n\r");
+    printf("6. Enter POWER DOWN mode\n\r");
+    printf("7. Show PCA status\n\r");
+    printf("8. Refresh Watchdog Timer\n\r");
+    printf("9. Toggle Watchdog Auto-Refresh (currently: %s)\n\r",
            watchdog_feed_enabled ? "ON" : "OFF");
 }
 
 void display_pca_status(void) {
+    //printf("Displaying");
+
     unsigned int pca_count;
     float pca_clock_mhz, pwm_freq_khz, watchdog_timeout_ms;
-    
+
     // Read current PCA counter value
     pca_count = (((unsigned int)CH) << 8) | CL;
-    
+
     // Calculate frequencies based on CKRL
     pca_clock_mhz = 11.0592 / (256.0 - CKRL) / 2.0;
     pwm_freq_khz = pca_clock_mhz * 1000.0 / 256.0;
     watchdog_timeout_ms = 65536.0 / (pca_clock_mhz * 1000.0);
-    
+
+    printf("%u", pca_count);
+
+    /*
+
     printf("\nPCA Status:\n");
-    printf("PCA Running: %s\n", CR ? "YES" : "NO");
-    printf("Counter (CH:CL): 0x%04X (%u)\n", pca_count, pca_count);
-    printf("CMOD: 0x%02X (Clock: FCLK_PERIPH/2)\n", (unsigned int)CMOD);
-    printf("CKRL: 0x%02X\n", (unsigned int)CKRL);
-    printf("PCA Clock: %.3f MHz\n", pca_clock_mhz);
-    
+    printf("PCA Running: %s\n", CR_GET() ? "YES" : "NO");
+    printf("Counter (CH:CL): (%u)\n", pca_count);
+    printf("CMOD: %x (Clock: FCLK_PERIPH/2)\n", (unsigned int)CMOD);
+    printf("CKRL: %x\n", (unsigned int)CKRL);
+    printf("PCA Clock: %u MHz\n", pca_clock_mhz);
+
     printf("\nModule 0 (PWM):\n");
-    printf("  Mode: 0x%02X\n", (unsigned int)CCAPM0);
-    printf("  CCAP0L: 0x%02X\n", (unsigned int)CCAP0L);
-    printf("  Duty Cycle: %u%%\n", 
+    printf("  Mode: %x\n", (unsigned int)CCAPM0);
+    printf("  CCAP0L: %x\n", (unsigned int)CCAP0L);
+    printf("  Duty Cycle: %u%%\n",
            (unsigned int)((256 - CCAP0L) * 100 / 256));
-    printf("  PWM Frequency: %.2f kHz\n", pwm_freq_khz);
-    
+    printf("  PWM Frequency: %u kHz\n", pwm_freq_khz);
+
     printf("\nModule 1 (Capture):\n");
-    printf("  Mode: 0x%02X\n", (unsigned int)CCAPM1);
-    printf("  Last Capture: 0x%04X (%u)\n", last_capture_value, last_capture_value);
+    printf("  Mode: %x\n", (unsigned int)CCAPM1);
+    printf("  Last Capture: %x (%u)\n", last_capture_value, last_capture_value);
     printf("  Total Captures: %u\n", capture_count);
-    
+
     printf("\nModule 4 (Watchdog):\n");
-    printf("  Mode: 0x%02X\n", (unsigned int)CCAPM4);
-    printf("  Timeout Value: 0x%02X%02X (65536)\n", 
+    printf("  Mode: %x\n", (unsigned int)CCAPM4);
+    printf("  Timeout Value: %x (65536)\n",
            (unsigned int)CCAP4H, (unsigned int)CCAP4L);
-    printf("  Timeout Period: %.2f ms\n", watchdog_timeout_ms);
+    printf("  Timeout Period: %u ms\n", watchdog_timeout_ms);
     printf("  Auto-Refresh: %s\n", watchdog_feed_enabled ? "ENABLED" : "DISABLED");
-    
+
     if (!watchdog_feed_enabled) {
-        float time_until_reset = (65536.0 - pca_count) / (pca_clock_mhz * 1000.0);
-        printf("  WARNING: Time until reset: %.2f ms\n", time_until_reset);
+        int time_until_reset = (65536.0 - pca_count) / (pca_clock_mhz * 1000.0);
+        // putstr(" You should enable the watchdog!");
+        //printf("  WARNING: Time until reset: %u ms\n", (uint16_t)time_until_reset);
     }
+    */
 }
 
 // External Interrupt 0 Service Routine, wakes up from IDLE mode
-void ext_int0_isr(void) __interrupt 0 {
+void ext_int0_isr(void) __interrupt{
+    // putstr("Triggered");
     idle_wakeup = 1;
-    LED = ~LED;     // Toggle LED to show wake-up
+    P1_1 = ~P1_1;     // Toggle LED to show wake-up
 }
 
 // this is the automatic feeding of the watchdog using timer0
-void timer0_isr(void) __interrupt 1 {
+void timer0_isr(void) __interrupt{
     // Auto-refresh watchdog if enabled
     if (watchdog_feed_enabled) {
         refresh_watchdog();
     }
 }
 
-void pca_isr(void) __interrupt 6 {
+void pca_isr(void) __interrupt{
     // Check if Module 1 (Capture) triggered the interrupt
-    if (CCF1) {
-        CCF1 = 0;   // Clear capture flag
-        
+    if (CCF1_GET()) {
+        CCF1_CLR();   // Clear capture flag
+
         // Read captured value
         last_capture_value = (((unsigned int)CCAP1H) << 8) | CCAP1L;
         capture_count++;
-        
+
         // Toggle LED to show something happened
-        LED = ~LED;
-        
+        P1_1 = ~P1_1;
+
         // Print capture event (be careful with printf in ISR - keep it brief!)
-        printf("\nRising Edge Detected:\n");
-        printf("    Captured PCA value: 0x%04X (%u)\n", 
+        printf("\n\rRising Edge Detected:\n\r");
+        printf("    Captured PCA value: 0x%04X (%u)\n\r",
                last_capture_value, last_capture_value);
     }
-    
+
     // Check for other PCA interrupts (overflow, etc.)
-    if (CF) {
-        CF = 0;     // Clear overflow flag
+    if (CF_GET()) {
+        CF_CLR();     // Clear overflow flag
     }
 }
 
 // MAIN
 void main(void) {
     char choice;
-    
+
     // Initialize system and PCA modules
     init_system();
     init_pca_pwm();
     init_watchdog();
     init_capture_mode();
-    
-    printf("\n\n");
-    printf("\nPCA Features Configured:\n");
-    printf("  Module 0: PWM Mode (33%% duty)\n");
-    printf("  Module 1: Capture Mode (rising edge)\n");
-    printf("  Module 4: Watchdog Timer\n");
-    printf("\nClock Configuration:\n");
-    printf("  Source: FCLK_PERIPH/2\n");
-    printf("  CKRL: 0xFF (Maximum frequency)\n");
-    
+
+    printf("\n\r\n\r");
+    printf("\n\rPCA Features Configured:\n\r");
+    printf("  Module 0: PWM Mode (33%% duty)\n\r");
+    printf("  Module 1: Capture Mode (rising edge)\n\r");
+    printf("  Module 4: Watchdog Timer\n\r");
+    printf("\n\rClock Configuration:\n\r");
+    printf("  Source: FCLK_PERIPH/2\n\r");
+    printf("  CKRL: 0xFF (Maximum frequency)\n\r");
+
     while(1) {
         display_menu();
         choice = getchar();
-        printf("%c\n", choice);
-        
+        printf("%c\n\r", choice);
+
         switch(choice) {
             case '1':
                 start_pwm();
                 break;
-                
+
             case '2':
                 stop_pwm();
                 break;
-                
+
             case '3':
                 set_max_frequency();
                 break;
-                
+
             case '4':
                 set_min_frequency();
                 break;
-                
+
             case '5':
                 enter_idle_mode();
                 break;
-                
+
             case '6':
                 enter_power_down_mode();
                 break;
-                
+
             case '7':
                 display_pca_status();
                 break;
-                
+
             case '8':
                 refresh_watchdog();
-                printf("Watchdog refreshed\n");
+                printf("Watchdog refreshed\n\r");
                 break;
 
             case '9':
@@ -430,12 +476,12 @@ void main(void) {
                     start_feeding_watchdog();
                 }
                 break;
-                
+
             default:
-                printf("Invalid option\n");
+                printf("Invalid option\n\r");
                 break;
         }
-        
+
         // // Periodically refresh watchdog in main loop
         // refresh_watchdog();
     }
@@ -443,7 +489,7 @@ void main(void) {
 
 /*
  * PCA MODES
- * 
+ *
  * 1. PWM MODE (Module 0):
  *    - 8-bit PWM resolution (256 steps)
  *    - PWM frequency = PCA_Clock / 256
@@ -451,20 +497,20 @@ void main(void) {
  *    - Output high when CL < CCAPnL
  *    - Output low when CL >= CCAPnL
  *    - CCAPnH not used in 8-bit mode
- * 
+ *
  *    For 33% duty cycle:
  *    - Need output high for 33% of period
  *    - CCAP0L = 256 - (256 * 0.33) = 171 (0xAB)
  *    - When CL counts 0-170: output HIGH
  *    - When CL counts 171-255: output LOW
- * 
+ *
  * 2. WATCHDOG MODE (Module 4):
  *    - Compares CH:CL with CCAP4H:CCAP4L
  *    - When match occurs: System reset triggered
  *    - Must periodically write to CH/CL to prevent timeout
  *    - Timeout period = (CCAP4H:CCAP4L) * PCA_clock_period
  *    - Used to recover from software hangs
- * 
+ *
  * 3. CAPTURE MODE (Module 1):
  *    - Captures PCA counter on external event
  *    - Can trigger on rising edge (CAPP=1)
@@ -473,10 +519,11 @@ void main(void) {
  *    - Captured value in CCAP1H:CCAP1L
  *    - Sets CCF1 flag, can generate interrupt
  *    - Useful for measuring pulse widths, frequencies
- * 
+ *
  * CLOCK FREQUENCY EFFECTS (CKRL Register):
  * FCLK_PERIPH = FOSC / (256 - CKRL)
- * 
+ *
  * With FOSC = 11.0592 MHz:
  * - CKRL = 0xFF: FCLK_PERIPH = 11.0592 MHz / 1 = 11.0592 MHz
  * - CKRL = 0x00: FCLK_PERIPH = 11.0592 MHz / 256 = 43.2 kHz
+ */
