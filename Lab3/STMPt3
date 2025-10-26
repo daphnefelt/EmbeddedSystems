@@ -35,6 +35,7 @@ volatile uint8_t buttonPressed = 0;
 volatile uint8_t buttonDirection = 1;  // 1 = increasing, 0 = decreasing
 volatile uint16_t pwmFrequency = 10000;  // 10 kHz in Hz
 
+/////////////// UART
 
 // for the circular buffer for uart
 typedef struct {
@@ -196,6 +197,20 @@ void test_polled_throughput(void) {
     char printBuff[80] = {0};
 	sprintf(printBuff, "TX: %u chars in %u ms\n\r", tx_chars, elapsed);
 	sendString(printBuff);
+}
+
+/////// COLORS
+void setColor(char color){
+    if (color == 'r'){
+        GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER14_0;
+        GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BS14_Msk;
+    } else if (color == 'g'){
+        GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER12_0;
+        GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BS12_Msk;
+    } else if (color == 'b'){
+        GPIOD->MODER = GPIOD->MODER | GPIO_MODER_MODER15_0;
+        GPIOD->BSRR = GPIOD->BSRR | GPIO_BSRR_BS15_Msk;
+    }
 }
 
 ////// BASE FUNCS
@@ -383,7 +398,7 @@ void GPIO_Config(void) {
     GPIOA->MODER |= GPIO_MODER_MODER2_1 | GPIO_MODER_MODER3_1;  // AF mode
     GPIOA->AFR[0] |= (7 << 8) | (7 << 12);  // AF7 for USART2
 
-    // PC6 (TIM3_CH1) for PWM output
+    // PC6 (TIM4_CH2) for PWM output
     GPIOC->MODER &= ~GPIO_MODER_MODER6;
     GPIOC->MODER |= GPIO_MODER_MODER6_1;  // AF mode
     GPIOC->AFR[0] |= (2 << 24);  // AF2 for TIM3
@@ -494,6 +509,7 @@ int main(void)
 	sendString("-------------------------------\r\n");
 
 	ReportDutyCycle(); // just first time saying what's up. Starts at 40%
+	setColor('g');
 
 	while (1)
 	{
