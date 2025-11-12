@@ -1,0 +1,2191 @@
+ASxxxx Linker V03.00 + NoICE + sdld,  page 1.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000000  l_BIT_BANK                      
+C:   00000000  l_CABS                          
+C:   00000000  l_GSINIT                        
+C:   00000000  l_GSINIT1                       
+C:   00000000  l_GSINIT5                       
+C:   00000000  l_IABS                          
+C:   00000000  l_ISEG                          
+C:   00000000  l_PSEG                          
+C:   00000000  l_REG_BANK_1                    
+C:   00000000  l_REG_BANK_2                    
+C:   00000000  l_REG_BANK_3                    
+C:   00000000  l_RSEG                          
+C:   00000000  l_RSEG0                         
+C:   00000000  l_RSEG1                         
+C:   00000000  l_XABS                          
+C:   00000000  l__CODE                         
+C:   00000000  s_BSEG                          
+C:   00000000  s_CABS                          
+C:   00000000  s_DSEG                          
+C:   00000000  s_IABS                          
+C:   00000000  s_ISEG                          
+C:   00000000  s_REG_BANK_0                    
+C:   00000000  s_RSEG                          
+C:   00000000  s_RSEG0                         
+C:   00000000  s_RSEG1                         
+C:   00000000  s_XABS                          
+C:   00000001  l_BSEG                          
+C:   00000001  l_BSEG_BYTES                    
+C:   00000001  l_OSEG                          
+C:   00000003  l_GSFINAL                       
+C:   00000003  l_GSINIT0                       
+C:   00000004  l_XINIT                         
+C:   00000004  l_XISEG                         
+C:   00000006  l_HOME                          
+C:   00000008  l_REG_BANK_0                    
+C:   00000008  s_REG_BANK_1                    
+C:   0000000A  l_GSINIT2                       
+C:   00000010  s_REG_BANK_2                    
+C:   00000018  s_BIT_BANK                      
+C:   00000018  s_REG_BANK_3                    
+C:   0000001B  s_OSEG                          
+C:   00000020  s_BSEG_BYTES                    
+C:   00000020  s__CODE                         
+C:   00000022  l_GSINIT3                       
+C:   0000002A  l_GSINIT4                       
+C:   0000002B  s_SSEG                          
+C:   00000055  l_SSEG                          
+C:   0000007C  l_DSEG                          
+C:   00000080  l_IRAM                          
+C:   00000173  l_XSEG                          
+ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000024F  l_CONST                         
+C:   00000400  s_PSEG                          
+C:   00000400  s_XSEG                          
+C:   00000573  s_XISEG                         
+C:   00001851  l_CSEG                          
+C:   00002000  s_HOME                          
+C:   00002006  s_GSINIT0                       
+C:   00002009  s_GSINIT1                       
+C:   00002009  s_GSINIT2                       
+C:   00002013  s_GSINIT3                       
+C:   00002035  s_GSINIT4                       
+C:   0000205F  s_GSFINAL                       
+C:   0000205F  s_GSINIT                        
+C:   0000205F  s_GSINIT5                       
+C:   00002062  s_CSEG                          
+C:   000038B3  s_CONST                         
+C:   00003B02  s_XINIT                         
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000000  .__.ABS.                           _fsget1arg
+     00000080  G$P0$0_0$0                         DAC_Control
+     00000080  G$P0_0$0_0$0                       DAC_Control
+     00000080  _P0                                DAC_Control
+     00000080  _P0_0                              DAC_Control
+     00000081  G$P0_1$0_0$0                       DAC_Control
+     00000081  G$SP$0_0$0                         DAC_Control
+     00000081  _P0_1                              DAC_Control
+     00000081  _SP                                DAC_Control
+     00000082  G$DPL$0_0$0                        DAC_Control
+     00000082  G$P0_2$0_0$0                       DAC_Control
+     00000082  _DPL                               DAC_Control
+     00000082  _P0_2                              DAC_Control
+     00000083  G$DPH$0_0$0                        DAC_Control
+     00000083  G$P0_3$0_0$0                       DAC_Control
+     00000083  _DPH                               DAC_Control
+     00000083  _P0_3                              DAC_Control
+     00000084  G$P0_4$0_0$0                       DAC_Control
+     00000084  _P0_4                              DAC_Control
+     00000085  G$P0_5$0_0$0                       DAC_Control
+     00000085  _P0_5                              DAC_Control
+     00000086  G$P0_6$0_0$0                       DAC_Control
+     00000086  _P0_6                              DAC_Control
+     00000087  G$P0_7$0_0$0                       DAC_Control
+     00000087  G$PCON$0_0$0                       DAC_Control
+     00000087  _P0_7                              DAC_Control
+     00000087  _PCON                              DAC_Control
+     00000088  G$IT0$0_0$0                        DAC_Control
+     00000088  G$TCON$0_0$0                       DAC_Control
+     00000088  _IT0                               DAC_Control
+     00000088  _TCON                              DAC_Control
+     00000089  G$IE0$0_0$0                        DAC_Control
+     00000089  G$TMOD$0_0$0                       DAC_Control
+     00000089  _IE0                               DAC_Control
+     00000089  _TMOD                              DAC_Control
+     0000008A  G$IT1$0_0$0                        DAC_Control
+     0000008A  G$TL0$0_0$0                        DAC_Control
+     0000008A  _IT1                               DAC_Control
+     0000008A  _TL0                               DAC_Control
+     0000008B  G$IE1$0_0$0                        DAC_Control
+     0000008B  G$TL1$0_0$0                        DAC_Control
+     0000008B  _IE1                               DAC_Control
+     0000008B  _TL1                               DAC_Control
+     0000008C  G$TH0$0_0$0                        DAC_Control
+     0000008C  G$TR0$0_0$0                        DAC_Control
+     0000008C  _TH0                               DAC_Control
+     0000008C  _TR0                               DAC_Control
+     0000008D  G$TF0$0_0$0                        DAC_Control
+     0000008D  G$TH1$0_0$0                        DAC_Control
+     0000008D  _TF0                               DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000008D  _TH1                               DAC_Control
+     0000008E  G$TR1$0_0$0                        DAC_Control
+     0000008E  _TR1                               DAC_Control
+     0000008F  G$TF1$0_0$0                        DAC_Control
+     0000008F  _TF1                               DAC_Control
+     00000090  G$P1$0_0$0                         DAC_Control
+     00000090  G$P1_0$0_0$0                       DAC_Control
+     00000090  _P1                                DAC_Control
+     00000090  _P1_0                              DAC_Control
+     00000091  G$P1_1$0_0$0                       DAC_Control
+     00000091  _P1_1                              DAC_Control
+     00000092  G$P1_2$0_0$0                       DAC_Control
+     00000092  _P1_2                              DAC_Control
+     00000093  G$P1_3$0_0$0                       DAC_Control
+     00000093  _P1_3                              DAC_Control
+     00000094  G$P1_4$0_0$0                       DAC_Control
+     00000094  _P1_4                              DAC_Control
+     00000095  G$P1_5$0_0$0                       DAC_Control
+     00000095  _P1_5                              DAC_Control
+     00000096  G$P1_6$0_0$0                       DAC_Control
+     00000096  _P1_6                              DAC_Control
+     00000097  G$P1_7$0_0$0                       DAC_Control
+     00000097  _P1_7                              DAC_Control
+     00000098  G$RI$0_0$0                         DAC_Control
+     00000098  G$SCON$0_0$0                       DAC_Control
+     00000098  _RI                                DAC_Control
+     00000098  _SCON                              DAC_Control
+     00000099  G$SBUF$0_0$0                       DAC_Control
+     00000099  G$TI$0_0$0                         DAC_Control
+     00000099  _SBUF                              DAC_Control
+     00000099  _TI                                DAC_Control
+     0000009A  G$RB8$0_0$0                        DAC_Control
+     0000009A  _RB8                               DAC_Control
+     0000009B  G$TB8$0_0$0                        DAC_Control
+     0000009B  _TB8                               DAC_Control
+     0000009C  G$REN$0_0$0                        DAC_Control
+     0000009C  _REN                               DAC_Control
+     0000009D  G$SM2$0_0$0                        DAC_Control
+     0000009D  _SM2                               DAC_Control
+     0000009E  G$SM1$0_0$0                        DAC_Control
+     0000009E  _SM1                               DAC_Control
+     0000009F  G$SM0$0_0$0                        DAC_Control
+     0000009F  _SM0                               DAC_Control
+     000000A0  G$P2$0_0$0                         DAC_Control
+     000000A0  G$P2_0$0_0$0                       DAC_Control
+     000000A0  _P2                                DAC_Control
+     000000A0  _P2_0                              DAC_Control
+     000000A0  __XPAGE                            
+     000000A1  G$P2_1$0_0$0                       DAC_Control
+     000000A1  _P2_1                              DAC_Control
+     000000A2  G$P2_2$0_0$0                       DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000A2  _P2_2                              DAC_Control
+     000000A3  G$P2_3$0_0$0                       DAC_Control
+     000000A3  _P2_3                              DAC_Control
+     000000A4  G$P2_4$0_0$0                       DAC_Control
+     000000A4  _P2_4                              DAC_Control
+     000000A5  G$P2_5$0_0$0                       DAC_Control
+     000000A5  _P2_5                              DAC_Control
+     000000A6  G$P2_6$0_0$0                       DAC_Control
+     000000A6  _P2_6                              DAC_Control
+     000000A7  G$P2_7$0_0$0                       DAC_Control
+     000000A7  _P2_7                              DAC_Control
+     000000A8  G$EX0$0_0$0                        DAC_Control
+     000000A8  G$IE$0_0$0                         DAC_Control
+     000000A8  _EX0                               DAC_Control
+     000000A8  _IE                                DAC_Control
+     000000A9  G$ET0$0_0$0                        DAC_Control
+     000000A9  _ET0                               DAC_Control
+     000000AA  G$EX1$0_0$0                        DAC_Control
+     000000AA  _EX1                               DAC_Control
+     000000AB  G$ET1$0_0$0                        DAC_Control
+     000000AB  _ET1                               DAC_Control
+     000000AC  G$ES$0_0$0                         DAC_Control
+     000000AC  _ES                                DAC_Control
+     000000AF  G$EA$0_0$0                         DAC_Control
+     000000AF  _EA                                DAC_Control
+     000000B0  G$P3$0_0$0                         DAC_Control
+     000000B0  G$P3_0$0_0$0                       DAC_Control
+     000000B0  G$RXD$0_0$0                        DAC_Control
+     000000B0  _P3                                DAC_Control
+     000000B0  _P3_0                              DAC_Control
+     000000B0  _RXD                               DAC_Control
+     000000B1  G$P3_1$0_0$0                       DAC_Control
+     000000B1  G$TXD$0_0$0                        DAC_Control
+     000000B1  _P3_1                              DAC_Control
+     000000B1  _TXD                               DAC_Control
+     000000B2  G$INT0$0_0$0                       DAC_Control
+     000000B2  G$P3_2$0_0$0                       DAC_Control
+     000000B2  _INT0                              DAC_Control
+     000000B2  _P3_2                              DAC_Control
+     000000B3  G$INT1$0_0$0                       DAC_Control
+     000000B3  G$P3_3$0_0$0                       DAC_Control
+     000000B3  _INT1                              DAC_Control
+     000000B3  _P3_3                              DAC_Control
+     000000B4  G$P3_4$0_0$0                       DAC_Control
+     000000B4  G$T0$0_0$0                         DAC_Control
+     000000B4  _P3_4                              DAC_Control
+     000000B4  _T0                                DAC_Control
+     000000B5  G$P3_5$0_0$0                       DAC_Control
+     000000B5  G$T1$0_0$0                         DAC_Control
+     000000B5  _P3_5                              DAC_Control
+     000000B5  _T1                                DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000B6  G$P3_6$0_0$0                       DAC_Control
+     000000B6  G$WR$0_0$0                         DAC_Control
+     000000B6  _P3_6                              DAC_Control
+     000000B6  _WR                                DAC_Control
+     000000B7  G$P3_7$0_0$0                       DAC_Control
+     000000B7  G$RD$0_0$0                         DAC_Control
+     000000B7  _P3_7                              DAC_Control
+     000000B7  _RD                                DAC_Control
+     000000B8  G$IP$0_0$0                         DAC_Control
+     000000B8  G$PX0$0_0$0                        DAC_Control
+     000000B8  _IP                                DAC_Control
+     000000B8  _PX0                               DAC_Control
+     000000B9  G$PT0$0_0$0                        DAC_Control
+     000000B9  _PT0                               DAC_Control
+     000000BA  G$PX1$0_0$0                        DAC_Control
+     000000BA  _PX1                               DAC_Control
+     000000BB  G$PT1$0_0$0                        DAC_Control
+     000000BB  _PT1                               DAC_Control
+     000000BC  G$PS$0_0$0                         DAC_Control
+     000000BC  _PS                                DAC_Control
+     000000C3  G$SPCON$0_0$0                      DAC_Control
+     000000C3  _SPCON                             DAC_Control
+     000000C4  G$SPSTA$0_0$0                      DAC_Control
+     000000C4  _SPSTA                             DAC_Control
+     000000C5  G$SPDAT$0_0$0                      DAC_Control
+     000000C5  _SPDAT                             DAC_Control
+     000000D0  G$P$0_0$0                          DAC_Control
+     000000D0  G$PSW$0_0$0                        DAC_Control
+     000000D0  _P                                 DAC_Control
+     000000D0  _PSW                               DAC_Control
+     000000D1  G$F1$0_0$0                         DAC_Control
+     000000D1  _F1                                DAC_Control
+     000000D2  G$OV$0_0$0                         DAC_Control
+     000000D2  _OV                                DAC_Control
+     000000D3  G$RS0$0_0$0                        DAC_Control
+     000000D3  _RS0                               DAC_Control
+     000000D4  G$RS1$0_0$0                        DAC_Control
+     000000D4  _RS1                               DAC_Control
+     000000D5  G$F0$0_0$0                         DAC_Control
+     000000D5  _F0                                DAC_Control
+     000000D6  G$AC$0_0$0                         DAC_Control
+     000000D6  _AC                                DAC_Control
+     000000D7  G$CY$0_0$0                         DAC_Control
+     000000D7  _CY                                DAC_Control
+     000000E0  G$ACC$0_0$0                        DAC_Control
+     000000E0  _ACC                               DAC_Control
+     000000F0  G$B$0_0$0                          DAC_Control
+     000000F0  _B                                 DAC_Control
+     000000F5  _B_5                               _gptrget
+     000000F6  _B_6                               _gptrget
+     000000F7  _B_7                               _gptrget
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+BSEG_BYTES                          00000020    00000001 =           1. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+REG_BANK_0                          00000000    00000008 =           8. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+DSEG                                00000000    0000007C =         124. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000008  LDAC_Control.simple_sin$sloc0$0_   DAC_Control
+     0000000C  LDAC_Control.simple_sin$sloc1$0_   DAC_Control
+     00000010  LDAC_Control.generate_sin_table$   DAC_Control
+     00000013  LDAC_Control.generate_sin_table$   DAC_Control
+     00000017  LDAC_Control.generate_sin_table$   DAC_Control
+     0000001A  _bp                                _bp
+ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+OSEG                                0000001B    00000001 =           1. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+SSEG                                0000002B    00000055 =          85. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000002B  __start__stack                     DAC_Control
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+XSEG                                00000400    00000173 =         371. bytes (REL,CON,XDATA)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+D:   00000400  G$sin_table$0_0$0                  DAC_Control
+D:   00000400  _sin_table                         DAC_Control
+D:   00000500  LDAC_Control.simple_sin$x$1_0$67   DAC_Control
+D:   00000504  LDAC_Control.generate_sin_table$   DAC_Control
+D:   00000504  _generate_sin_table_PARM_2         DAC_Control
+D:   00000506  LDAC_Control.generate_sin_table$   DAC_Control
+D:   00000509  LDAC_Control.putchar$c$1_0$74      DAC_Control
+D:   0000050B  LDAC_Control.putstr$s$1_0$78       DAC_Control
+D:   0000050E  LDAC_Control.spi_transfer$data$1   DAC_Control
+D:   0000050F  LDAC_Control.spi_transfer_bitban   DAC_Control
+D:   00000510  LDAC_Control.spi_transfer_bitban   DAC_Control
+D:   00000511  LDAC_Control.dac_write$value$1_0   DAC_Control
+D:   00000512  LDAC_Control.test_dc_levels$test   DAC_Control
+D:   00000517  LDAC_Control.test_dc_levels$labe   DAC_Control
+D:   00000526  LDAC_Control.get_number$buffer$1   DAC_Control
+D:   0000052A  LDAC_Control.main$i$5_0$121        DAC_Control
+D:   0000052C  __divuint_PARM_2                   _divuint
+D:   00000539  __gptrput_PARM_2                   _gptrput
+D:   0000053A  __mulint_PARM_2                    _mulint
+D:   0000053C  _vprintf_PARM_2                    vprintf
+D:   00000551  __print_format_PARM_2              printf_large
+D:   00000554  __print_format_PARM_3              printf_large
+D:   00000557  __print_format_PARM_4              printf_large
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+XISEG                               00000573    00000004 =           4. bytes (REL,CON,XDATA)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+D:   00000573  G$sin_index$0_0$0                  DAC_Control
+D:   00000573  _sin_index                         DAC_Control
+D:   00000574  G$wave_frequency$0_0$0             DAC_Control
+D:   00000574  _wave_frequency                    DAC_Control
+D:   00000576  G$bit_bang_mode$0_0$0              DAC_Control
+D:   00000576  _bit_bang_mode                     DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+HOME                                00002000    00000006 =           6. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002000  A$DAC_Control$471                  DAC_Control
+C:   00002003  A$DAC_Control$493                  DAC_Control
+C:   00002003  __sdcc_program_startup             DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT0                             00002006    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002006  __sdcc_gsinit_startup              
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 16.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT2                             00002009    0000000A =          10. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT3                             00002013    00000022 =          34. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002013  __mcs51_genXINIT                   
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT4                             00002035    0000002A =          42. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002035  __mcs51_genRAMCLEAR                
+C:   0000203B  __mcs51_genXRAMCLEAR               
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSFINAL                             0000205F    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000205F  A$DAC_Control$486                  DAC_Control
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002062  A$DAC_Control$524                  DAC_Control
+C:   00002062  C$DAC_Control.c$37$0_0$68          DAC_Control
+C:   00002062  G$simple_sin$0$0                   DAC_Control
+C:   00002062  _simple_sin                        DAC_Control
+C:   00002064  A$DAC_Control$525                  DAC_Control
+C:   00002066  A$DAC_Control$526                  DAC_Control
+C:   00002068  A$DAC_Control$527                  DAC_Control
+C:   00002069  A$DAC_Control$528                  DAC_Control
+C:   0000206C  A$DAC_Control$529                  DAC_Control
+C:   0000206D  A$DAC_Control$530                  DAC_Control
+C:   0000206E  A$DAC_Control$531                  DAC_Control
+C:   0000206F  A$DAC_Control$532                  DAC_Control
+C:   00002070  A$DAC_Control$533                  DAC_Control
+C:   00002071  A$DAC_Control$534                  DAC_Control
+C:   00002072  A$DAC_Control$535                  DAC_Control
+C:   00002073  A$DAC_Control$536                  DAC_Control
+C:   00002074  A$DAC_Control$537                  DAC_Control
+C:   00002075  A$DAC_Control$538                  DAC_Control
+C:   00002076  A$DAC_Control$539                  DAC_Control
+C:   00002077  A$DAC_Control$543                  DAC_Control
+C:   00002077  C$DAC_Control.c$39$1_0$68          DAC_Control
+C:   0000207A  A$DAC_Control$544                  DAC_Control
+C:   0000207B  A$DAC_Control$545                  DAC_Control
+C:   0000207C  A$DAC_Control$546                  DAC_Control
+C:   0000207D  A$DAC_Control$547                  DAC_Control
+C:   0000207E  A$DAC_Control$548                  DAC_Control
+C:   0000207F  A$DAC_Control$549                  DAC_Control
+C:   00002080  A$DAC_Control$550                  DAC_Control
+C:   00002081  A$DAC_Control$551                  DAC_Control
+C:   00002082  A$DAC_Control$552                  DAC_Control
+C:   00002083  A$DAC_Control$553                  DAC_Control
+C:   00002084  A$DAC_Control$554                  DAC_Control
+C:   00002085  A$DAC_Control$555                  DAC_Control
+C:   00002087  A$DAC_Control$556                  DAC_Control
+C:   00002089  A$DAC_Control$557                  DAC_Control
+C:   0000208B  A$DAC_Control$558                  DAC_Control
+C:   0000208D  A$DAC_Control$559                  DAC_Control
+C:   0000208F  A$DAC_Control$560                  DAC_Control
+C:   00002091  A$DAC_Control$561                  DAC_Control
+C:   00002093  A$DAC_Control$562                  DAC_Control
+C:   00002095  A$DAC_Control$563                  DAC_Control
+C:   00002098  A$DAC_Control$564                  DAC_Control
+C:   0000209B  A$DAC_Control$565                  DAC_Control
+C:   0000209D  A$DAC_Control$566                  DAC_Control
+C:   000020A0  A$DAC_Control$567                  DAC_Control
+C:   000020A2  A$DAC_Control$568                  DAC_Control
+C:   000020A4  A$DAC_Control$569                  DAC_Control
+C:   000020A6  A$DAC_Control$570                  DAC_Control
+C:   000020A8  A$DAC_Control$571                  DAC_Control
+C:   000020AA  A$DAC_Control$572                  DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000020AC  A$DAC_Control$573                  DAC_Control
+C:   000020AE  A$DAC_Control$574                  DAC_Control
+C:   000020B0  A$DAC_Control$575                  DAC_Control
+C:   000020B1  A$DAC_Control$576                  DAC_Control
+C:   000020B3  A$DAC_Control$577                  DAC_Control
+C:   000020B5  A$DAC_Control$578                  DAC_Control
+C:   000020B7  A$DAC_Control$579                  DAC_Control
+C:   000020B9  A$DAC_Control$580                  DAC_Control
+C:   000020BB  A$DAC_Control$581                  DAC_Control
+C:   000020BD  A$DAC_Control$582                  DAC_Control
+C:   000020BF  A$DAC_Control$583                  DAC_Control
+C:   000020C1  A$DAC_Control$584                  DAC_Control
+C:   000020C3  A$DAC_Control$585                  DAC_Control
+C:   000020C5  A$DAC_Control$586                  DAC_Control
+C:   000020C7  A$DAC_Control$587                  DAC_Control
+C:   000020C9  A$DAC_Control$588                  DAC_Control
+C:   000020CA  A$DAC_Control$589                  DAC_Control
+C:   000020CD  A$DAC_Control$590                  DAC_Control
+C:   000020CF  A$DAC_Control$591                  DAC_Control
+C:   000020D1  A$DAC_Control$592                  DAC_Control
+C:   000020D3  A$DAC_Control$593                  DAC_Control
+C:   000020D4  A$DAC_Control$594                  DAC_Control
+C:   000020D6  A$DAC_Control$595                  DAC_Control
+C:   000020D8  A$DAC_Control$596                  DAC_Control
+C:   000020DA  A$DAC_Control$597                  DAC_Control
+C:   000020DD  A$DAC_Control$598                  DAC_Control
+C:   000020DE  A$DAC_Control$599                  DAC_Control
+C:   000020DF  A$DAC_Control$600                  DAC_Control
+C:   000020E0  A$DAC_Control$601                  DAC_Control
+C:   000020E1  A$DAC_Control$602                  DAC_Control
+C:   000020E2  A$DAC_Control$603                  DAC_Control
+C:   000020E3  A$DAC_Control$604                  DAC_Control
+C:   000020E4  A$DAC_Control$605                  DAC_Control
+C:   000020E5  A$DAC_Control$606                  DAC_Control
+C:   000020E6  A$DAC_Control$607                  DAC_Control
+C:   000020E7  A$DAC_Control$608                  DAC_Control
+C:   000020E8  A$DAC_Control$611                  DAC_Control
+C:   000020E8  C$DAC_Control.c$40$1_0$68          DAC_Control
+C:   000020EA  A$DAC_Control$613                  DAC_Control
+C:   000020ED  A$DAC_Control$614                  DAC_Control
+C:   000020EE  A$DAC_Control$615                  DAC_Control
+C:   000020EF  A$DAC_Control$616                  DAC_Control
+C:   000020F0  A$DAC_Control$617                  DAC_Control
+C:   000020F1  A$DAC_Control$618                  DAC_Control
+C:   000020F2  A$DAC_Control$619                  DAC_Control
+C:   000020F3  A$DAC_Control$620                  DAC_Control
+C:   000020F4  A$DAC_Control$621                  DAC_Control
+C:   000020F5  A$DAC_Control$622                  DAC_Control
+C:   000020F6  A$DAC_Control$623                  DAC_Control
+C:   000020F7  A$DAC_Control$624                  DAC_Control
+C:   000020F8  A$DAC_Control$625                  DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 22.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000020FA  A$DAC_Control$626                  DAC_Control
+C:   000020FC  A$DAC_Control$627                  DAC_Control
+C:   000020FE  A$DAC_Control$628                  DAC_Control
+C:   00002100  A$DAC_Control$629                  DAC_Control
+C:   00002102  A$DAC_Control$630                  DAC_Control
+C:   00002104  A$DAC_Control$631                  DAC_Control
+C:   00002106  A$DAC_Control$632                  DAC_Control
+C:   00002108  A$DAC_Control$633                  DAC_Control
+C:   0000210A  A$DAC_Control$634                  DAC_Control
+C:   0000210C  A$DAC_Control$635                  DAC_Control
+C:   0000210E  A$DAC_Control$636                  DAC_Control
+C:   00002110  A$DAC_Control$637                  DAC_Control
+C:   00002112  A$DAC_Control$638                  DAC_Control
+C:   00002114  A$DAC_Control$639                  DAC_Control
+C:   00002116  A$DAC_Control$640                  DAC_Control
+C:   00002117  A$DAC_Control$641                  DAC_Control
+C:   0000211A  A$DAC_Control$642                  DAC_Control
+C:   0000211C  A$DAC_Control$643                  DAC_Control
+C:   0000211E  A$DAC_Control$644                  DAC_Control
+C:   00002120  A$DAC_Control$645                  DAC_Control
+C:   00002122  A$DAC_Control$646                  DAC_Control
+C:   00002124  A$DAC_Control$647                  DAC_Control
+C:   00002126  A$DAC_Control$648                  DAC_Control
+C:   00002128  A$DAC_Control$649                  DAC_Control
+C:   0000212A  A$DAC_Control$650                  DAC_Control
+C:   0000212B  A$DAC_Control$651                  DAC_Control
+C:   0000212D  A$DAC_Control$652                  DAC_Control
+C:   0000212F  A$DAC_Control$653                  DAC_Control
+C:   00002131  A$DAC_Control$654                  DAC_Control
+C:   00002133  A$DAC_Control$655                  DAC_Control
+C:   00002135  A$DAC_Control$656                  DAC_Control
+C:   00002137  A$DAC_Control$657                  DAC_Control
+C:   00002139  A$DAC_Control$658                  DAC_Control
+C:   0000213B  A$DAC_Control$659                  DAC_Control
+C:   0000213D  A$DAC_Control$660                  DAC_Control
+C:   0000213F  A$DAC_Control$661                  DAC_Control
+C:   00002141  A$DAC_Control$662                  DAC_Control
+C:   00002143  A$DAC_Control$663                  DAC_Control
+C:   00002144  A$DAC_Control$664                  DAC_Control
+C:   00002147  A$DAC_Control$665                  DAC_Control
+C:   00002149  A$DAC_Control$666                  DAC_Control
+C:   0000214B  A$DAC_Control$667                  DAC_Control
+C:   0000214D  A$DAC_Control$668                  DAC_Control
+C:   0000214E  A$DAC_Control$669                  DAC_Control
+C:   00002150  A$DAC_Control$670                  DAC_Control
+C:   00002152  A$DAC_Control$671                  DAC_Control
+C:   00002154  A$DAC_Control$672                  DAC_Control
+C:   00002157  A$DAC_Control$673                  DAC_Control
+C:   00002158  A$DAC_Control$674                  DAC_Control
+C:   00002159  A$DAC_Control$675                  DAC_Control
+C:   0000215A  A$DAC_Control$676                  DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 23.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000215B  A$DAC_Control$677                  DAC_Control
+C:   0000215C  A$DAC_Control$678                  DAC_Control
+C:   0000215D  A$DAC_Control$679                  DAC_Control
+C:   0000215E  A$DAC_Control$680                  DAC_Control
+C:   0000215F  A$DAC_Control$681                  DAC_Control
+C:   00002160  A$DAC_Control$682                  DAC_Control
+C:   00002161  A$DAC_Control$683                  DAC_Control
+C:   00002162  A$DAC_Control$684                  DAC_Control
+C:   00002164  A$DAC_Control$688                  DAC_Control
+C:   00002164  C$DAC_Control.c$43$1_1$68          DAC_Control
+C:   00002166  A$DAC_Control$689                  DAC_Control
+C:   00002168  A$DAC_Control$690                  DAC_Control
+C:   0000216A  A$DAC_Control$691                  DAC_Control
+C:   0000216C  A$DAC_Control$692                  DAC_Control
+C:   0000216E  A$DAC_Control$693                  DAC_Control
+C:   00002170  A$DAC_Control$694                  DAC_Control
+C:   00002172  A$DAC_Control$695                  DAC_Control
+C:   00002174  A$DAC_Control$698                  DAC_Control
+C:   00002174  C$DAC_Control.c$44$1_1$68          DAC_Control
+C:   00002176  A$DAC_Control$699                  DAC_Control
+C:   00002178  A$DAC_Control$700                  DAC_Control
+C:   0000217A  A$DAC_Control$701                  DAC_Control
+C:   0000217B  A$DAC_Control$702                  DAC_Control
+C:   0000217E  A$DAC_Control$703                  DAC_Control
+C:   00002181  A$DAC_Control$704                  DAC_Control
+C:   00002184  A$DAC_Control$705                  DAC_Control
+C:   00002187  A$DAC_Control$706                  DAC_Control
+C:   00002189  A$DAC_Control$707                  DAC_Control
+C:   0000218B  A$DAC_Control$708                  DAC_Control
+C:   0000218D  A$DAC_Control$709                  DAC_Control
+C:   0000218F  A$DAC_Control$710                  DAC_Control
+C:   00002191  A$DAC_Control$711                  DAC_Control
+C:   00002193  A$DAC_Control$712                  DAC_Control
+C:   00002195  A$DAC_Control$713                  DAC_Control
+C:   00002197  A$DAC_Control$714                  DAC_Control
+C:   00002199  A$DAC_Control$715                  DAC_Control
+C:   0000219B  A$DAC_Control$716                  DAC_Control
+C:   0000219D  A$DAC_Control$717                  DAC_Control
+C:   0000219F  A$DAC_Control$718                  DAC_Control
+C:   000021A1  A$DAC_Control$719                  DAC_Control
+C:   000021A3  A$DAC_Control$720                  DAC_Control
+C:   000021A5  A$DAC_Control$721                  DAC_Control
+C:   000021A7  A$DAC_Control$724                  DAC_Control
+C:   000021A7  C$DAC_Control.c$45$1_1$68          DAC_Control
+C:   000021AA  A$DAC_Control$725                  DAC_Control
+C:   000021AD  A$DAC_Control$726                  DAC_Control
+C:   000021B0  A$DAC_Control$727                  DAC_Control
+C:   000021B2  A$DAC_Control$728                  DAC_Control
+C:   000021B5  A$DAC_Control$729                  DAC_Control
+C:   000021B8  A$DAC_Control$730                  DAC_Control
+C:   000021BB  A$DAC_Control$731                  DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 24.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000021BE  A$DAC_Control$732                  DAC_Control
+C:   000021C0  A$DAC_Control$733                  DAC_Control
+C:   000021C2  A$DAC_Control$734                  DAC_Control
+C:   000021C4  A$DAC_Control$735                  DAC_Control
+C:   000021C6  A$DAC_Control$736                  DAC_Control
+C:   000021C8  A$DAC_Control$737                  DAC_Control
+C:   000021CA  A$DAC_Control$738                  DAC_Control
+C:   000021CC  A$DAC_Control$739                  DAC_Control
+C:   000021CE  A$DAC_Control$742                  DAC_Control
+C:   000021CE  C$DAC_Control.c$47$1_1$68          DAC_Control
+C:   000021D1  A$DAC_Control$743                  DAC_Control
+C:   000021D4  A$DAC_Control$744                  DAC_Control
+C:   000021D7  A$DAC_Control$745                  DAC_Control
+C:   000021D9  A$DAC_Control$746                  DAC_Control
+C:   000021DC  A$DAC_Control$747                  DAC_Control
+C:   000021DF  A$DAC_Control$748                  DAC_Control
+C:   000021E2  A$DAC_Control$749                  DAC_Control
+C:   000021E5  A$DAC_Control$750                  DAC_Control
+C:   000021E7  A$DAC_Control$751                  DAC_Control
+C:   000021E9  A$DAC_Control$752                  DAC_Control
+C:   000021EB  A$DAC_Control$753                  DAC_Control
+C:   000021ED  A$DAC_Control$754                  DAC_Control
+C:   000021EE  A$DAC_Control$755                  DAC_Control
+C:   000021F0  A$DAC_Control$756                  DAC_Control
+C:   000021F2  A$DAC_Control$757                  DAC_Control
+C:   000021F4  A$DAC_Control$758                  DAC_Control
+C:   000021F6  A$DAC_Control$759                  DAC_Control
+C:   000021F8  A$DAC_Control$760                  DAC_Control
+C:   000021FA  A$DAC_Control$761                  DAC_Control
+C:   000021FD  A$DAC_Control$762                  DAC_Control
+C:   00002200  A$DAC_Control$763                  DAC_Control
+C:   00002203  A$DAC_Control$764                  DAC_Control
+C:   00002205  A$DAC_Control$765                  DAC_Control
+C:   00002208  A$DAC_Control$766                  DAC_Control
+C:   0000220A  A$DAC_Control$767                  DAC_Control
+C:   0000220C  A$DAC_Control$768                  DAC_Control
+C:   0000220E  A$DAC_Control$769                  DAC_Control
+C:   0000220F  A$DAC_Control$770                  DAC_Control
+C:   00002211  A$DAC_Control$771                  DAC_Control
+C:   00002213  A$DAC_Control$772                  DAC_Control
+C:   00002215  A$DAC_Control$773                  DAC_Control
+C:   00002217  A$DAC_Control$774                  DAC_Control
+C:   00002219  A$DAC_Control$775                  DAC_Control
+C:   0000221B  A$DAC_Control$776                  DAC_Control
+C:   0000221D  A$DAC_Control$777                  DAC_Control
+C:   0000221F  A$DAC_Control$778                  DAC_Control
+C:   00002221  A$DAC_Control$779                  DAC_Control
+C:   00002223  A$DAC_Control$780                  DAC_Control
+C:   00002225  A$DAC_Control$781                  DAC_Control
+C:   00002227  A$DAC_Control$782                  DAC_Control
+C:   00002229  A$DAC_Control$783                  DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 25.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000222B  A$DAC_Control$784                  DAC_Control
+C:   0000222C  A$DAC_Control$785                  DAC_Control
+C:   0000222F  A$DAC_Control$786                  DAC_Control
+C:   00002231  A$DAC_Control$787                  DAC_Control
+C:   00002233  A$DAC_Control$788                  DAC_Control
+C:   00002235  A$DAC_Control$789                  DAC_Control
+C:   00002236  A$DAC_Control$790                  DAC_Control
+C:   00002238  A$DAC_Control$791                  DAC_Control
+C:   0000223A  A$DAC_Control$792                  DAC_Control
+C:   0000223C  A$DAC_Control$793                  DAC_Control
+C:   0000223E  A$DAC_Control$794                  DAC_Control
+C:   00002240  A$DAC_Control$795                  DAC_Control
+C:   00002242  A$DAC_Control$796                  DAC_Control
+C:   00002244  A$DAC_Control$797                  DAC_Control
+C:   00002245  A$DAC_Control$798                  DAC_Control
+C:   00002247  A$DAC_Control$799                  DAC_Control
+C:   00002249  A$DAC_Control$800                  DAC_Control
+C:   0000224B  A$DAC_Control$801                  DAC_Control
+C:   0000224D  A$DAC_Control$802                  DAC_Control
+C:   0000224F  A$DAC_Control$803                  DAC_Control
+C:   00002251  A$DAC_Control$804                  DAC_Control
+C:   00002254  A$DAC_Control$805                  DAC_Control
+C:   00002257  A$DAC_Control$806                  DAC_Control
+C:   0000225A  A$DAC_Control$807                  DAC_Control
+C:   0000225C  A$DAC_Control$808                  DAC_Control
+C:   0000225F  A$DAC_Control$809                  DAC_Control
+C:   00002261  A$DAC_Control$810                  DAC_Control
+C:   00002263  A$DAC_Control$811                  DAC_Control
+C:   00002265  A$DAC_Control$812                  DAC_Control
+C:   00002266  A$DAC_Control$813                  DAC_Control
+C:   00002268  A$DAC_Control$814                  DAC_Control
+C:   0000226A  A$DAC_Control$815                  DAC_Control
+C:   0000226C  A$DAC_Control$816                  DAC_Control
+C:   0000226E  A$DAC_Control$817                  DAC_Control
+C:   00002270  A$DAC_Control$818                  DAC_Control
+C:   00002272  A$DAC_Control$819                  DAC_Control
+C:   00002274  A$DAC_Control$820                  DAC_Control
+C:   00002276  A$DAC_Control$821                  DAC_Control
+C:   00002278  A$DAC_Control$822                  DAC_Control
+C:   0000227A  A$DAC_Control$823                  DAC_Control
+C:   0000227C  A$DAC_Control$824                  DAC_Control
+C:   0000227E  A$DAC_Control$825                  DAC_Control
+C:   00002280  A$DAC_Control$826                  DAC_Control
+C:   00002282  A$DAC_Control$827                  DAC_Control
+C:   00002283  A$DAC_Control$828                  DAC_Control
+C:   00002286  A$DAC_Control$829                  DAC_Control
+C:   00002288  A$DAC_Control$830                  DAC_Control
+C:   0000228A  A$DAC_Control$831                  DAC_Control
+C:   0000228C  A$DAC_Control$832                  DAC_Control
+C:   0000228D  A$DAC_Control$833                  DAC_Control
+C:   0000228F  A$DAC_Control$834                  DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 26.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002291  A$DAC_Control$835                  DAC_Control
+C:   00002293  A$DAC_Control$836                  DAC_Control
+C:   00002295  A$DAC_Control$837                  DAC_Control
+C:   00002297  A$DAC_Control$838                  DAC_Control
+C:   00002299  A$DAC_Control$839                  DAC_Control
+C:   0000229A  A$DAC_Control$844                  DAC_Control
+C:   0000229A  C$DAC_Control.c$48$1_1$68          DAC_Control
+C:   0000229A  XG$simple_sin$0$0                  DAC_Control
+C:   0000229B  A$DAC_Control$865                  DAC_Control
+C:   0000229B  C$DAC_Control.c$49$1_1$72          DAC_Control
+C:   0000229B  G$generate_sin_table$0$0           DAC_Control
+C:   0000229B  _generate_sin_table                DAC_Control
+C:   0000229D  A$DAC_Control$866                  DAC_Control
+C:   0000229F  A$DAC_Control$867                  DAC_Control
+C:   000022A1  A$DAC_Control$868                  DAC_Control
+C:   000022A4  A$DAC_Control$869                  DAC_Control
+C:   000022A5  A$DAC_Control$870                  DAC_Control
+C:   000022A6  A$DAC_Control$871                  DAC_Control
+C:   000022A7  A$DAC_Control$872                  DAC_Control
+C:   000022A8  A$DAC_Control$873                  DAC_Control
+C:   000022A9  A$DAC_Control$874                  DAC_Control
+C:   000022AA  A$DAC_Control$875                  DAC_Control
+C:   000022AB  A$DAC_Control$878                  DAC_Control
+C:   000022AB  C$DAC_Control.c$50$3_0$73          DAC_Control
+C:   000022AE  A$DAC_Control$879                  DAC_Control
+C:   000022AF  A$DAC_Control$880                  DAC_Control
+C:   000022B1  A$DAC_Control$881                  DAC_Control
+C:   000022B2  A$DAC_Control$882                  DAC_Control
+C:   000022B3  A$DAC_Control$883                  DAC_Control
+C:   000022B5  A$DAC_Control$884                  DAC_Control
+C:   000022B6  A$DAC_Control$885                  DAC_Control
+C:   000022B7  A$DAC_Control$886                  DAC_Control
+C:   000022B9  A$DAC_Control$887                  DAC_Control
+C:   000022BC  A$DAC_Control$888                  DAC_Control
+C:   000022BD  A$DAC_Control$889                  DAC_Control
+C:   000022BE  A$DAC_Control$890                  DAC_Control
+C:   000022BF  A$DAC_Control$891                  DAC_Control
+C:   000022C0  A$DAC_Control$892                  DAC_Control
+C:   000022C1  A$DAC_Control$893                  DAC_Control
+C:   000022C3  A$DAC_Control$894                  DAC_Control
+C:   000022C5  A$DAC_Control$896                  DAC_Control
+C:   000022C6  A$DAC_Control$897                  DAC_Control
+C:   000022C7  A$DAC_Control$898                  DAC_Control
+C:   000022C8  A$DAC_Control$899                  DAC_Control
+C:   000022C9  A$DAC_Control$900                  DAC_Control
+C:   000022CA  A$DAC_Control$901                  DAC_Control
+C:   000022CC  A$DAC_Control$902                  DAC_Control
+C:   000022CF  A$DAC_Control$906                  DAC_Control
+C:   000022CF  C$DAC_Control.c$53$2_0$72          DAC_Control
+C:   000022D1  A$DAC_Control$907                  DAC_Control
+C:   000022D3  A$DAC_Control$908                  DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 27.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000022D5  A$DAC_Control$909                  DAC_Control
+C:   000022D7  A$DAC_Control$910                  DAC_Control
+C:   000022D9  A$DAC_Control$911                  DAC_Control
+C:   000022DB  A$DAC_Control$912                  DAC_Control
+C:   000022DE  A$DAC_Control$913                  DAC_Control
+C:   000022E0  A$DAC_Control$914                  DAC_Control
+C:   000022E2  A$DAC_Control$915                  DAC_Control
+C:   000022E4  A$DAC_Control$916                  DAC_Control
+C:   000022E5  A$DAC_Control$917                  DAC_Control
+C:   000022E7  A$DAC_Control$918                  DAC_Control
+C:   000022E9  A$DAC_Control$919                  DAC_Control
+C:   000022EB  A$DAC_Control$920                  DAC_Control
+C:   000022ED  A$DAC_Control$921                  DAC_Control
+C:   000022F0  A$DAC_Control$922                  DAC_Control
+C:   000022F3  A$DAC_Control$923                  DAC_Control
+C:   000022F5  A$DAC_Control$924                  DAC_Control
+C:   000022F8  A$DAC_Control$925                  DAC_Control
+C:   000022FB  A$DAC_Control$926                  DAC_Control
+C:   000022FE  A$DAC_Control$927                  DAC_Control
+C:   00002301  A$DAC_Control$928                  DAC_Control
+C:   00002303  A$DAC_Control$929                  DAC_Control
+C:   00002305  A$DAC_Control$930                  DAC_Control
+C:   00002307  A$DAC_Control$931                  DAC_Control
+C:   00002309  A$DAC_Control$932                  DAC_Control
+C:   0000230B  A$DAC_Control$933                  DAC_Control
+C:   0000230D  A$DAC_Control$934                  DAC_Control
+C:   0000230F  A$DAC_Control$935                  DAC_Control
+C:   00002311  A$DAC_Control$936                  DAC_Control
+C:   00002313  A$DAC_Control$937                  DAC_Control
+C:   00002315  A$DAC_Control$938                  DAC_Control
+C:   00002317  A$DAC_Control$939                  DAC_Control
+C:   00002319  A$DAC_Control$940                  DAC_Control
+C:   0000231B  A$DAC_Control$941                  DAC_Control
+C:   0000231D  A$DAC_Control$942                  DAC_Control
+C:   00002320  A$DAC_Control$943                  DAC_Control
+C:   00002322  A$DAC_Control$944                  DAC_Control
+C:   00002324  A$DAC_Control$945                  DAC_Control
+C:   00002326  A$DAC_Control$946                  DAC_Control
+C:   00002327  A$DAC_Control$947                  DAC_Control
+C:   00002329  A$DAC_Control$948                  DAC_Control
+C:   0000232B  A$DAC_Control$949                  DAC_Control
+C:   0000232D  A$DAC_Control$950                  DAC_Control
+C:   0000232F  A$DAC_Control$953                  DAC_Control
+C:   0000232F  C$DAC_Control.c$54$2_0$72          DAC_Control
+C:   00002332  A$DAC_Control$954                  DAC_Control
+C:   00002335  A$DAC_Control$955                  DAC_Control
+C:   00002338  A$DAC_Control$956                  DAC_Control
+C:   0000233A  A$DAC_Control$957                  DAC_Control
+C:   0000233D  A$DAC_Control$958                  DAC_Control
+C:   0000233F  A$DAC_Control$959                  DAC_Control
+C:   00002341  A$DAC_Control$960                  DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 28.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002343  A$DAC_Control$961                  DAC_Control
+C:   00002344  A$DAC_Control$962                  DAC_Control
+C:   00002346  A$DAC_Control$963                  DAC_Control
+C:   00002348  A$DAC_Control$964                  DAC_Control
+C:   0000234A  A$DAC_Control$965                  DAC_Control
+C:   0000234C  A$DAC_Control$966                  DAC_Control
+C:   0000234E  A$DAC_Control$967                  DAC_Control
+C:   00002350  A$DAC_Control$968                  DAC_Control
+C:   00002351  A$DAC_Control$969                  DAC_Control
+C:   00002354  A$DAC_Control$970                  DAC_Control
+C:   00002356  A$DAC_Control$971                  DAC_Control
+C:   00002358  A$DAC_Control$972                  DAC_Control
+C:   0000235A  A$DAC_Control$973                  DAC_Control
+C:   0000235B  A$DAC_Control$976                  DAC_Control
+C:   0000235B  C$DAC_Control.c$55$2_0$72          DAC_Control
+C:   0000235C  A$DAC_Control$977                  DAC_Control
+C:   0000235E  A$DAC_Control$978                  DAC_Control
+C:   00002360  A$DAC_Control$979                  DAC_Control
+C:   00002362  A$DAC_Control$980                  DAC_Control
+C:   00002364  A$DAC_Control$981                  DAC_Control
+C:   00002366  A$DAC_Control$982                  DAC_Control
+C:   00002368  A$DAC_Control$983                  DAC_Control
+C:   0000236A  A$DAC_Control$984                  DAC_Control
+C:   0000236C  A$DAC_Control$985                  DAC_Control
+C:   0000236E  A$DAC_Control$986                  DAC_Control
+C:   0000236F  A$DAC_Control$987                  DAC_Control
+C:   00002372  A$DAC_Control$988                  DAC_Control
+C:   00002374  A$DAC_Control$989                  DAC_Control
+C:   00002376  A$DAC_Control$990                  DAC_Control
+C:   00002378  A$DAC_Control$991                  DAC_Control
+C:   00002379  A$DAC_Control$992                  DAC_Control
+C:   0000237B  A$DAC_Control$993                  DAC_Control
+C:   0000237D  A$DAC_Control$994                  DAC_Control
+C:   0000237F  A$DAC_Control$995                  DAC_Control
+C:   00002381  A$DAC_Control$996                  DAC_Control
+C:   00002383  A$DAC_Control$997                  DAC_Control
+C:   00002385  A$DAC_Control$998                  DAC_Control
+C:   00002387  A$DAC_Control$1001                 DAC_Control
+C:   00002387  C$DAC_Control.c$56$2_0$72          DAC_Control
+C:   0000238A  A$DAC_Control$1002                 DAC_Control
+C:   0000238D  A$DAC_Control$1003                 DAC_Control
+C:   0000238F  A$DAC_Control$1004                 DAC_Control
+C:   00002392  A$DAC_Control$1005                 DAC_Control
+C:   00002395  A$DAC_Control$1006                 DAC_Control
+C:   00002398  A$DAC_Control$1007                 DAC_Control
+C:   0000239B  A$DAC_Control$1008                 DAC_Control
+C:   0000239D  A$DAC_Control$1009                 DAC_Control
+C:   0000239F  A$DAC_Control$1010                 DAC_Control
+C:   000023A1  A$DAC_Control$1011                 DAC_Control
+C:   000023A3  A$DAC_Control$1012                 DAC_Control
+C:   000023A5  A$DAC_Control$1013                 DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 29.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000023A7  A$DAC_Control$1014                 DAC_Control
+C:   000023A9  A$DAC_Control$1015                 DAC_Control
+C:   000023AB  A$DAC_Control$1016                 DAC_Control
+C:   000023AD  A$DAC_Control$1017                 DAC_Control
+C:   000023AF  A$DAC_Control$1018                 DAC_Control
+C:   000023B0  A$DAC_Control$1019                 DAC_Control
+C:   000023B2  A$DAC_Control$1020                 DAC_Control
+C:   000023B4  A$DAC_Control$1021                 DAC_Control
+C:   000023B5  A$DAC_Control$1022                 DAC_Control
+C:   000023B7  A$DAC_Control$1023                 DAC_Control
+C:   000023B9  A$DAC_Control$1024                 DAC_Control
+C:   000023BC  A$DAC_Control$1025                 DAC_Control
+C:   000023BE  A$DAC_Control$1026                 DAC_Control
+C:   000023C0  A$DAC_Control$1027                 DAC_Control
+C:   000023C2  A$DAC_Control$1028                 DAC_Control
+C:   000023C4  A$DAC_Control$1029                 DAC_Control
+C:   000023C5  A$DAC_Control$1030                 DAC_Control
+C:   000023C7  A$DAC_Control$1031                 DAC_Control
+C:   000023C9  A$DAC_Control$1032                 DAC_Control
+C:   000023CB  A$DAC_Control$1033                 DAC_Control
+C:   000023CD  A$DAC_Control$1034                 DAC_Control
+C:   000023CF  A$DAC_Control$1035                 DAC_Control
+C:   000023D2  A$DAC_Control$1036                 DAC_Control
+C:   000023D5  A$DAC_Control$1037                 DAC_Control
+C:   000023D8  A$DAC_Control$1038                 DAC_Control
+C:   000023DA  A$DAC_Control$1039                 DAC_Control
+C:   000023DD  A$DAC_Control$1040                 DAC_Control
+C:   000023DF  A$DAC_Control$1041                 DAC_Control
+C:   000023E1  A$DAC_Control$1042                 DAC_Control
+C:   000023E3  A$DAC_Control$1043                 DAC_Control
+C:   000023E4  A$DAC_Control$1044                 DAC_Control
+C:   000023E6  A$DAC_Control$1045                 DAC_Control
+C:   000023E8  A$DAC_Control$1046                 DAC_Control
+C:   000023EA  A$DAC_Control$1047                 DAC_Control
+C:   000023EC  A$DAC_Control$1048                 DAC_Control
+C:   000023EE  A$DAC_Control$1049                 DAC_Control
+C:   000023F0  A$DAC_Control$1050                 DAC_Control
+C:   000023F1  A$DAC_Control$1051                 DAC_Control
+C:   000023F4  A$DAC_Control$1052                 DAC_Control
+C:   000023F6  A$DAC_Control$1053                 DAC_Control
+C:   000023F8  A$DAC_Control$1054                 DAC_Control
+C:   000023FA  A$DAC_Control$1055                 DAC_Control
+C:   000023FC  A$DAC_Control$1056                 DAC_Control
+C:   000023FE  A$DAC_Control$1057                 DAC_Control
+C:   00002401  A$DAC_Control$1058                 DAC_Control
+C:   00002404  A$DAC_Control$1059                 DAC_Control
+C:   00002407  A$DAC_Control$1060                 DAC_Control
+C:   00002408  A$DAC_Control$1061                 DAC_Control
+C:   0000240B  A$DAC_Control$1064                 DAC_Control
+C:   0000240B  C$DAC_Control.c$50$2_0$72          DAC_Control
+C:   0000240C  A$DAC_Control$1065                 DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 30.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000240F  A$DAC_Control$1066                 DAC_Control
+C:   00002410  A$DAC_Control$1068                 DAC_Control
+C:   00002412  A$DAC_Control$1069                 DAC_Control
+C:   00002414  A$DAC_Control$1070                 DAC_Control
+C:   00002417  A$DAC_Control$1076                 DAC_Control
+C:   00002417  C$DAC_Control.c$58$2_0$72          DAC_Control
+C:   00002417  XG$generate_sin_table$0$0          DAC_Control
+C:   00002418  A$DAC_Control$1089                 DAC_Control
+C:   00002418  C$DAC_Control.c$66$2_0$75          DAC_Control
+C:   00002418  G$putchar$0$0                      DAC_Control
+C:   00002418  _putchar                           DAC_Control
+C:   0000241A  A$DAC_Control$1090                 DAC_Control
+C:   0000241C  A$DAC_Control$1091                 DAC_Control
+C:   0000241F  A$DAC_Control$1092                 DAC_Control
+C:   00002420  A$DAC_Control$1093                 DAC_Control
+C:   00002421  A$DAC_Control$1094                 DAC_Control
+C:   00002422  A$DAC_Control$1095                 DAC_Control
+C:   00002423  A$DAC_Control$1099                 DAC_Control
+C:   00002423  C$DAC_Control.c$67$1_0$75          DAC_Control
+C:   00002426  A$DAC_Control$1102                 DAC_Control
+C:   00002426  C$DAC_Control.c$68$1_0$75          DAC_Control
+C:   00002429  A$DAC_Control$1103                 DAC_Control
+C:   0000242A  A$DAC_Control$1104                 DAC_Control
+C:   0000242B  A$DAC_Control$1105                 DAC_Control
+C:   0000242C  A$DAC_Control$1106                 DAC_Control
+C:   0000242D  A$DAC_Control$1107                 DAC_Control
+C:   0000242E  A$DAC_Control$1108                 DAC_Control
+C:   00002430  A$DAC_Control$1112                 DAC_Control
+C:   00002430  C$DAC_Control.c$69$1_0$75          DAC_Control
+C:   00002432  A$DAC_Control$1115                 DAC_Control
+C:   00002432  C$DAC_Control.c$70$1_0$75          DAC_Control
+C:   00002434  A$DAC_Control$1116                 DAC_Control
+C:   00002436  A$DAC_Control$1121                 DAC_Control
+C:   00002436  C$DAC_Control.c$71$1_0$75          DAC_Control
+C:   00002436  XG$putchar$0$0                     DAC_Control
+C:   00002437  A$DAC_Control$1138                 DAC_Control
+C:   00002437  C$DAC_Control.c$73$1_0$77          DAC_Control
+C:   00002437  C$DAC_Control.c$74$1_0$77          DAC_Control
+C:   00002437  C$DAC_Control.c$75$1_0$77          DAC_Control
+C:   00002437  G$getchar$0$0                      DAC_Control
+C:   00002437  _getchar                           DAC_Control
+C:   0000243A  A$DAC_Control$1139                 DAC_Control
+C:   0000243C  A$DAC_Control$1143                 DAC_Control
+C:   0000243C  C$DAC_Control.c$76$1_0$77          DAC_Control
+C:   0000243E  A$DAC_Control$1144                 DAC_Control
+C:   00002440  A$DAC_Control$1145                 DAC_Control
+C:   00002442  A$DAC_Control$1146                 DAC_Control
+C:   00002444  A$DAC_Control$1151                 DAC_Control
+C:   00002444  C$DAC_Control.c$77$1_0$77          DAC_Control
+C:   00002444  XG$getchar$0$0                     DAC_Control
+C:   00002445  A$DAC_Control$1164                 DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 31.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002445  C$DAC_Control.c$79$1_0$79          DAC_Control
+C:   00002445  G$putstr$0$0                       DAC_Control
+C:   00002445  _putstr                            DAC_Control
+C:   00002447  A$DAC_Control$1165                 DAC_Control
+C:   00002449  A$DAC_Control$1166                 DAC_Control
+C:   0000244B  A$DAC_Control$1167                 DAC_Control
+C:   0000244E  A$DAC_Control$1168                 DAC_Control
+C:   0000244F  A$DAC_Control$1169                 DAC_Control
+C:   00002450  A$DAC_Control$1170                 DAC_Control
+C:   00002451  A$DAC_Control$1171                 DAC_Control
+C:   00002452  A$DAC_Control$1172                 DAC_Control
+C:   00002453  A$DAC_Control$1173                 DAC_Control
+C:   00002454  A$DAC_Control$1174                 DAC_Control
+C:   00002455  A$DAC_Control$1177                 DAC_Control
+C:   00002455  C$DAC_Control.c$80$1_0$79          DAC_Control
+C:   00002458  A$DAC_Control$1178                 DAC_Control
+C:   00002459  A$DAC_Control$1179                 DAC_Control
+C:   0000245A  A$DAC_Control$1180                 DAC_Control
+C:   0000245B  A$DAC_Control$1181                 DAC_Control
+C:   0000245C  A$DAC_Control$1182                 DAC_Control
+C:   0000245D  A$DAC_Control$1183                 DAC_Control
+C:   0000245E  A$DAC_Control$1184                 DAC_Control
+C:   0000245F  A$DAC_Control$1185                 DAC_Control
+C:   00002460  A$DAC_Control$1187                 DAC_Control
+C:   00002462  A$DAC_Control$1188                 DAC_Control
+C:   00002464  A$DAC_Control$1189                 DAC_Control
+C:   00002466  A$DAC_Control$1190                 DAC_Control
+C:   00002469  A$DAC_Control$1191                 DAC_Control
+C:   0000246A  A$DAC_Control$1192                 DAC_Control
+C:   0000246C  A$DAC_Control$1195                 DAC_Control
+C:   0000246C  C$DAC_Control.c$81$2_0$80          DAC_Control
+C:   0000246D  A$DAC_Control$1196                 DAC_Control
+C:   00002470  A$DAC_Control$1197                 DAC_Control
+C:   00002471  A$DAC_Control$1199                 DAC_Control
+C:   00002474  A$DAC_Control$1200                 DAC_Control
+C:   00002475  A$DAC_Control$1201                 DAC_Control
+C:   00002476  A$DAC_Control$1202                 DAC_Control
+C:   00002477  A$DAC_Control$1203                 DAC_Control
+C:   00002478  A$DAC_Control$1204                 DAC_Control
+C:   00002479  A$DAC_Control$1205                 DAC_Control
+C:   0000247A  A$DAC_Control$1206                 DAC_Control
+C:   0000247B  A$DAC_Control$1207                 DAC_Control
+C:   0000247C  A$DAC_Control$1208                 DAC_Control
+C:   0000247E  A$DAC_Control$1209                 DAC_Control
+C:   00002480  A$DAC_Control$1210                 DAC_Control
+C:   00002482  A$DAC_Control$1211                 DAC_Control
+C:   00002484  A$DAC_Control$1212                 DAC_Control
+C:   00002486  A$DAC_Control$1213                 DAC_Control
+C:   00002488  A$DAC_Control$1214                 DAC_Control
+C:   0000248B  A$DAC_Control$1215                 DAC_Control
+C:   0000248D  A$DAC_Control$1216                 DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 32.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000248F  A$DAC_Control$1217                 DAC_Control
+C:   00002491  A$DAC_Control$1218                 DAC_Control
+C:   00002493  A$DAC_Control$1220                 DAC_Control
+C:   00002496  A$DAC_Control$1221                 DAC_Control
+C:   00002497  A$DAC_Control$1222                 DAC_Control
+C:   00002498  A$DAC_Control$1223                 DAC_Control
+C:   00002499  A$DAC_Control$1224                 DAC_Control
+C:   0000249A  A$DAC_Control$1225                 DAC_Control
+C:   0000249B  A$DAC_Control$1226                 DAC_Control
+C:   0000249C  A$DAC_Control$1227                 DAC_Control
+C:   0000249D  A$DAC_Control$1228                 DAC_Control
+C:   0000249E  A$DAC_Control$1233                 DAC_Control
+C:   0000249E  C$DAC_Control.c$83$1_0$79          DAC_Control
+C:   0000249E  XG$putstr$0$0                      DAC_Control
+C:   0000249F  A$DAC_Control$1247                 DAC_Control
+C:   0000249F  C$DAC_Control.c$86$1_0$82          DAC_Control
+C:   0000249F  C$DAC_Control.c$88$1_0$82          DAC_Control
+C:   0000249F  G$spi_init$0$0                     DAC_Control
+C:   0000249F  _spi_init                          DAC_Control
+C:   000024A1  A$DAC_Control$1251                 DAC_Control
+C:   000024A1  C$DAC_Control.c$89$1_0$82          DAC_Control
+C:   000024A3  A$DAC_Control$1255                 DAC_Control
+C:   000024A3  C$DAC_Control.c$90$1_0$82          DAC_Control
+C:   000024A5  A$DAC_Control$1258                 DAC_Control
+C:   000024A5  C$DAC_Control.c$101$1_0$82         DAC_Control
+C:   000024A8  A$DAC_Control$1261                 DAC_Control
+C:   000024A8  C$DAC_Control.c$103$1_0$82         DAC_Control
+C:   000024AB  A$DAC_Control$1264                 DAC_Control
+C:   000024AB  C$DAC_Control.c$105$1_0$82         DAC_Control
+C:   000024AE  A$DAC_Control$1265                 DAC_Control
+C:   000024B1  A$DAC_Control$1266                 DAC_Control
+C:   000024B4  A$DAC_Control$1271                 DAC_Control
+C:   000024B4  C$DAC_Control.c$106$1_0$82         DAC_Control
+C:   000024B4  XG$spi_init$0$0                    DAC_Control
+C:   000024B5  A$DAC_Control$1284                 DAC_Control
+C:   000024B5  C$DAC_Control.c$108$1_0$84         DAC_Control
+C:   000024B5  C$DAC_Control.c$109$1_0$84         DAC_Control
+C:   000024B5  G$spi_deinit$0$0                   DAC_Control
+C:   000024B5  _spi_deinit                        DAC_Control
+C:   000024B8  A$DAC_Control$1289                 DAC_Control
+C:   000024B8  C$DAC_Control.c$110$1_0$84         DAC_Control
+C:   000024B8  XG$spi_deinit$0$0                  DAC_Control
+C:   000024B9  A$DAC_Control$1302                 DAC_Control
+C:   000024B9  C$DAC_Control.c$113$1_0$86         DAC_Control
+C:   000024B9  G$spi_transfer$0$0                 DAC_Control
+C:   000024B9  _spi_transfer                      DAC_Control
+C:   000024BB  A$DAC_Control$1303                 DAC_Control
+C:   000024BE  A$DAC_Control$1304                 DAC_Control
+C:   000024BF  A$DAC_Control$1307                 DAC_Control
+C:   000024BF  C$DAC_Control.c$115$1_0$86         DAC_Control
+C:   000024C0  A$DAC_Control$1308                 DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 33.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000024C2  A$DAC_Control$1312                 DAC_Control
+C:   000024C2  C$DAC_Control.c$116$1_0$86         DAC_Control
+C:   000024C4  A$DAC_Control$1313                 DAC_Control
+C:   000024C7  A$DAC_Control$1316                 DAC_Control
+C:   000024C7  C$DAC_Control.c$117$1_0$86         DAC_Control
+C:   000024CA  A$DAC_Control$1319                 DAC_Control
+C:   000024CA  C$DAC_Control.c$118$1_0$86         DAC_Control
+C:   000024CD  A$DAC_Control$1324                 DAC_Control
+C:   000024CD  C$DAC_Control.c$120$1_0$86         DAC_Control
+C:   000024CD  XG$spi_transfer$0$0                DAC_Control
+C:   000024CE  A$DAC_Control$1337                 DAC_Control
+C:   000024CE  C$DAC_Control.c$123$1_0$88         DAC_Control
+C:   000024CE  C$DAC_Control.c$126$1_0$88         DAC_Control
+C:   000024CE  G$_nop_$0$0                        DAC_Control
+C:   000024CE  __nop_                             DAC_Control
+C:   000024CF  A$DAC_Control$1342                 DAC_Control
+C:   000024CF  C$DAC_Control.c$127$1_0$88         DAC_Control
+C:   000024CF  XG$_nop_$0$0                       DAC_Control
+C:   000024D0  A$DAC_Control$1357                 DAC_Control
+C:   000024D0  C$DAC_Control.c$128$1_0$90         DAC_Control
+C:   000024D0  G$spi_transfer_bitbang$0$0         DAC_Control
+C:   000024D0  _spi_transfer_bitbang              DAC_Control
+C:   000024D2  A$DAC_Control$1358                 DAC_Control
+C:   000024D5  A$DAC_Control$1359                 DAC_Control
+C:   000024D6  A$DAC_Control$1362                 DAC_Control
+C:   000024D6  C$DAC_Control.c$129$2_0$90         DAC_Control
+C:   000024D9  A$DAC_Control$1363                 DAC_Control
+C:   000024DA  A$DAC_Control$1364                 DAC_Control
+C:   000024DB  A$DAC_Control$1367                 DAC_Control
+C:   000024DB  C$DAC_Control.c$132$1_0$90         DAC_Control
+C:   000024DD  A$DAC_Control$1371                 DAC_Control
+C:   000024DD  C$DAC_Control.c$134$3_0$92         DAC_Control
+C:   000024E0  A$DAC_Control$1372                 DAC_Control
+C:   000024E1  A$DAC_Control$1373                 DAC_Control
+C:   000024E2  A$DAC_Control$1374                 DAC_Control
+C:   000024E3  A$DAC_Control$1375                 DAC_Control
+C:   000024E6  A$DAC_Control$1376                 DAC_Control
+C:   000024E8  A$DAC_Control$1378                 DAC_Control
+C:   000024E9  A$DAC_Control$1379                 DAC_Control
+C:   000024EA  A$DAC_Control$1380                 DAC_Control
+C:   000024EC  A$DAC_Control$1381                 DAC_Control
+C:   000024EE  A$DAC_Control$1384                 DAC_Control
+C:   000024EE  C$DAC_Control.c$135$3_0$92         DAC_Control
+C:   000024EF  A$DAC_Control$1385                 DAC_Control
+C:   000024F0  A$DAC_Control$1386                 DAC_Control
+C:   000024F3  A$DAC_Control$1387                 DAC_Control
+C:   000024F4  A$DAC_Control$1390                 DAC_Control
+C:   000024F4  C$DAC_Control.c$138$3_0$92         DAC_Control
+C:   000024F6  A$DAC_Control$1391                 DAC_Control
+C:   000024F9  A$DAC_Control$1392                 DAC_Control
+C:   000024FB  A$DAC_Control$1396                 DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 34.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000024FB  C$DAC_Control.c$141$3_0$92         DAC_Control
+C:   000024FD  A$DAC_Control$1399                 DAC_Control
+C:   000024FD  C$DAC_Control.c$144$3_0$92         DAC_Control
+C:   00002500  A$DAC_Control$1400                 DAC_Control
+C:   00002501  A$DAC_Control$1401                 DAC_Control
+C:   00002503  A$DAC_Control$1402                 DAC_Control
+C:   00002504  A$DAC_Control$1405                 DAC_Control
+C:   00002504  C$DAC_Control.c$145$3_0$92         DAC_Control
+C:   00002507  A$DAC_Control$1408                 DAC_Control
+C:   00002507  C$DAC_Control.c$146$4_0$93         DAC_Control
+C:   0000250A  A$DAC_Control$1409                 DAC_Control
+C:   0000250B  A$DAC_Control$1410                 DAC_Control
+C:   0000250E  A$DAC_Control$1411                 DAC_Control
+C:   0000250F  A$DAC_Control$1415                 DAC_Control
+C:   0000250F  C$DAC_Control.c$150$3_0$92         DAC_Control
+C:   00002511  A$DAC_Control$1416                 DAC_Control
+C:   00002514  A$DAC_Control$1420                 DAC_Control
+C:   00002514  C$DAC_Control.c$153$3_0$92         DAC_Control
+C:   00002516  A$DAC_Control$1423                 DAC_Control
+C:   00002516  C$DAC_Control.c$156$3_0$92         DAC_Control
+C:   00002519  A$DAC_Control$1424                 DAC_Control
+C:   0000251B  A$DAC_Control$1427                 DAC_Control
+C:   0000251B  C$DAC_Control.c$132$2_0$91         DAC_Control
+C:   0000251C  A$DAC_Control$1428                 DAC_Control
+C:   0000251F  A$DAC_Control$1430                 DAC_Control
+C:   00002521  A$DAC_Control$1433                 DAC_Control
+C:   00002521  C$DAC_Control.c$159$1_0$90         DAC_Control
+C:   00002524  A$DAC_Control$1434                 DAC_Control
+C:   00002525  A$DAC_Control$1439                 DAC_Control
+C:   00002525  C$DAC_Control.c$160$1_0$90         DAC_Control
+C:   00002525  XG$spi_transfer_bitbang$0$0        DAC_Control
+C:   00002527  A$DAC_Control$1440                 DAC_Control
+C:   00002528  A$DAC_Control$1454                 DAC_Control
+C:   00002528  C$DAC_Control.c$163$1_0$95         DAC_Control
+C:   00002528  G$dac_write$0$0                    DAC_Control
+C:   00002528  _dac_write                         DAC_Control
+C:   0000252A  A$DAC_Control$1455                 DAC_Control
+C:   0000252D  A$DAC_Control$1456                 DAC_Control
+C:   0000252E  A$DAC_Control$1460                 DAC_Control
+C:   0000252E  C$DAC_Control.c$167$1_0$95         DAC_Control
+C:   00002530  A$DAC_Control$1463                 DAC_Control
+C:   00002530  C$DAC_Control.c$171$1_0$95         DAC_Control
+C:   00002533  A$DAC_Control$1464                 DAC_Control
+C:   00002534  A$DAC_Control$1465                 DAC_Control
+C:   00002536  A$DAC_Control$1468                 DAC_Control
+C:   00002536  C$DAC_Control.c$172$2_0$96         DAC_Control
+C:   00002539  A$DAC_Control$1469                 DAC_Control
+C:   0000253A  A$DAC_Control$1470                 DAC_Control
+C:   0000253B  A$DAC_Control$1471                 DAC_Control
+C:   0000253C  A$DAC_Control$1472                 DAC_Control
+C:   0000253E  A$DAC_Control$1473                 DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 35.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002540  A$DAC_Control$1474                 DAC_Control
+C:   00002542  A$DAC_Control$1475                 DAC_Control
+C:   00002544  A$DAC_Control$1476                 DAC_Control
+C:   00002547  A$DAC_Control$1477                 DAC_Control
+C:   00002549  A$DAC_Control$1480                 DAC_Control
+C:   00002549  C$DAC_Control.c$173$2_0$96         DAC_Control
+C:   0000254A  A$DAC_Control$1481                 DAC_Control
+C:   0000254B  A$DAC_Control$1482                 DAC_Control
+C:   0000254D  A$DAC_Control$1483                 DAC_Control
+C:   0000254E  A$DAC_Control$1484                 DAC_Control
+C:   00002551  A$DAC_Control$1485                 DAC_Control
+C:   00002553  A$DAC_Control$1486                 DAC_Control
+C:   00002556  A$DAC_Control$1487                 DAC_Control
+C:   00002558  A$DAC_Control$1491                 DAC_Control
+C:   00002558  C$DAC_Control.c$175$2_0$97         DAC_Control
+C:   0000255B  A$DAC_Control$1492                 DAC_Control
+C:   0000255C  A$DAC_Control$1493                 DAC_Control
+C:   0000255D  A$DAC_Control$1494                 DAC_Control
+C:   0000255E  A$DAC_Control$1495                 DAC_Control
+C:   00002560  A$DAC_Control$1496                 DAC_Control
+C:   00002562  A$DAC_Control$1497                 DAC_Control
+C:   00002564  A$DAC_Control$1498                 DAC_Control
+C:   00002566  A$DAC_Control$1499                 DAC_Control
+C:   00002569  A$DAC_Control$1500                 DAC_Control
+C:   0000256B  A$DAC_Control$1503                 DAC_Control
+C:   0000256B  C$DAC_Control.c$176$2_0$97         DAC_Control
+C:   0000256C  A$DAC_Control$1504                 DAC_Control
+C:   0000256D  A$DAC_Control$1505                 DAC_Control
+C:   0000256F  A$DAC_Control$1506                 DAC_Control
+C:   00002570  A$DAC_Control$1507                 DAC_Control
+C:   00002573  A$DAC_Control$1508                 DAC_Control
+C:   00002575  A$DAC_Control$1509                 DAC_Control
+C:   00002578  A$DAC_Control$1514                 DAC_Control
+C:   00002578  C$DAC_Control.c$179$1_0$95         DAC_Control
+C:   0000257A  A$DAC_Control$1519                 DAC_Control
+C:   0000257A  C$DAC_Control.c$180$1_0$95         DAC_Control
+C:   0000257A  XG$dac_write$0$0                   DAC_Control
+C:   0000257B  A$DAC_Control$1534                 DAC_Control
+C:   0000257B  C$DAC_Control.c$183$1_0$98         DAC_Control
+C:   0000257B  C$DAC_Control.c$184$1_0$98         DAC_Control
+C:   0000257B  G$generate_sin_wave$0$0            DAC_Control
+C:   0000257B  _generate_sin_wave                 DAC_Control
+C:   0000257E  A$DAC_Control$1535                 DAC_Control
+C:   0000257F  A$DAC_Control$1536                 DAC_Control
+C:   00002581  A$DAC_Control$1537                 DAC_Control
+C:   00002583  A$DAC_Control$1538                 DAC_Control
+C:   00002584  A$DAC_Control$1539                 DAC_Control
+C:   00002586  A$DAC_Control$1540                 DAC_Control
+C:   00002588  A$DAC_Control$1541                 DAC_Control
+C:   00002589  A$DAC_Control$1544                 DAC_Control
+C:   00002589  C$DAC_Control.c$185$1_0$98         DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 36.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000258B  A$DAC_Control$1545                 DAC_Control
+C:   0000258E  A$DAC_Control$1548                 DAC_Control
+C:   0000258E  C$DAC_Control.c$188$1_0$98         DAC_Control
+C:   00002591  A$DAC_Control$1549                 DAC_Control
+C:   00002592  A$DAC_Control$1550                 DAC_Control
+C:   00002593  A$DAC_Control$1551                 DAC_Control
+C:   00002594  A$DAC_Control$1558                 DAC_Control
+C:   00002594  C$DAC_Control.c$190$1_0$98         DAC_Control
+C:   00002594  C$DAC_Control.c$192$1_0$98         DAC_Control
+C:   00002594  XG$generate_sin_wave$0$0           DAC_Control
+C:   00002595  A$DAC_Control$1575                 DAC_Control
+C:   00002595  C$DAC_Control.c$195$1_0$101        DAC_Control
+C:   00002595  C$DAC_Control.c$196$1_0$101        DAC_Control
+C:   00002595  G$test_dc_levels$0$0               DAC_Control
+C:   00002595  _test_dc_levels                    DAC_Control
+C:   00002598  A$DAC_Control$1576                 DAC_Control
+C:   0000259B  A$DAC_Control$1577                 DAC_Control
+C:   0000259E  A$DAC_Control$1580                 DAC_Control
+C:   0000259E  C$DAC_Control.c$199$2_0$103        DAC_Control
+C:   000025A1  A$DAC_Control$1581                 DAC_Control
+C:   000025A2  A$DAC_Control$1582                 DAC_Control
+C:   000025A3  A$DAC_Control$1583                 DAC_Control
+C:   000025A6  A$DAC_Control$1584                 DAC_Control
+C:   000025A8  A$DAC_Control$1585                 DAC_Control
+C:   000025A9  A$DAC_Control$1586                 DAC_Control
+C:   000025AC  A$DAC_Control$1587                 DAC_Control
+C:   000025AD  A$DAC_Control$1588                 DAC_Control
+C:   000025AE  A$DAC_Control$1589                 DAC_Control
+C:   000025B1  A$DAC_Control$1590                 DAC_Control
+C:   000025B3  A$DAC_Control$1591                 DAC_Control
+C:   000025B4  A$DAC_Control$1592                 DAC_Control
+C:   000025B7  A$DAC_Control$1593                 DAC_Control
+C:   000025B9  A$DAC_Control$1594                 DAC_Control
+C:   000025BA  A$DAC_Control$1597                 DAC_Control
+C:   000025BA  C$DAC_Control.c$200$2_0$103        DAC_Control
+C:   000025BD  A$DAC_Control$1598                 DAC_Control
+C:   000025BF  A$DAC_Control$1599                 DAC_Control
+C:   000025C0  A$DAC_Control$1600                 DAC_Control
+C:   000025C2  A$DAC_Control$1601                 DAC_Control
+C:   000025C3  A$DAC_Control$1602                 DAC_Control
+C:   000025C4  A$DAC_Control$1603                 DAC_Control
+C:   000025C6  A$DAC_Control$1604                 DAC_Control
+C:   000025C7  A$DAC_Control$1605                 DAC_Control
+C:   000025C8  A$DAC_Control$1606                 DAC_Control
+C:   000025CB  A$DAC_Control$1607                 DAC_Control
+C:   000025CD  A$DAC_Control$1608                 DAC_Control
+C:   000025CE  A$DAC_Control$1609                 DAC_Control
+C:   000025D0  A$DAC_Control$1610                 DAC_Control
+C:   000025D1  A$DAC_Control$1611                 DAC_Control
+C:   000025D2  A$DAC_Control$1612                 DAC_Control
+C:   000025D4  A$DAC_Control$1613                 DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 37.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000025D5  A$DAC_Control$1614                 DAC_Control
+C:   000025D6  A$DAC_Control$1615                 DAC_Control
+C:   000025D9  A$DAC_Control$1616                 DAC_Control
+C:   000025DB  A$DAC_Control$1617                 DAC_Control
+C:   000025DC  A$DAC_Control$1618                 DAC_Control
+C:   000025DE  A$DAC_Control$1619                 DAC_Control
+C:   000025DF  A$DAC_Control$1620                 DAC_Control
+C:   000025E0  A$DAC_Control$1621                 DAC_Control
+C:   000025E2  A$DAC_Control$1622                 DAC_Control
+C:   000025E3  A$DAC_Control$1623                 DAC_Control
+C:   000025E4  A$DAC_Control$1624                 DAC_Control
+C:   000025E7  A$DAC_Control$1625                 DAC_Control
+C:   000025E9  A$DAC_Control$1626                 DAC_Control
+C:   000025EA  A$DAC_Control$1627                 DAC_Control
+C:   000025EC  A$DAC_Control$1628                 DAC_Control
+C:   000025ED  A$DAC_Control$1629                 DAC_Control
+C:   000025EE  A$DAC_Control$1630                 DAC_Control
+C:   000025F0  A$DAC_Control$1631                 DAC_Control
+C:   000025F1  A$DAC_Control$1632                 DAC_Control
+C:   000025F2  A$DAC_Control$1633                 DAC_Control
+C:   000025F5  A$DAC_Control$1634                 DAC_Control
+C:   000025F7  A$DAC_Control$1635                 DAC_Control
+C:   000025F8  A$DAC_Control$1636                 DAC_Control
+C:   000025FA  A$DAC_Control$1637                 DAC_Control
+C:   000025FB  A$DAC_Control$1638                 DAC_Control
+C:   000025FC  A$DAC_Control$1639                 DAC_Control
+C:   000025FE  A$DAC_Control$1640                 DAC_Control
+C:   000025FF  A$DAC_Control$1641                 DAC_Control
+C:   00002600  A$DAC_Control$1644                 DAC_Control
+C:   00002600  C$DAC_Control.c$202$3_1$104        DAC_Control
+C:   00002602  A$DAC_Control$1646                 DAC_Control
+C:   00002605  A$DAC_Control$1648                 DAC_Control
+C:   00002607  A$DAC_Control$1651                 DAC_Control
+C:   00002607  C$DAC_Control.c$203$3_1$104        DAC_Control
+C:   00002608  A$DAC_Control$1652                 DAC_Control
+C:   0000260B  A$DAC_Control$1653                 DAC_Control
+C:   0000260C  A$DAC_Control$1654                 DAC_Control
+C:   0000260E  A$DAC_Control$1655                 DAC_Control
+C:   00002610  A$DAC_Control$1656                 DAC_Control
+C:   00002612  A$DAC_Control$1657                 DAC_Control
+C:   00002614  A$DAC_Control$1658                 DAC_Control
+C:   00002616  A$DAC_Control$1659                 DAC_Control
+C:   00002617  A$DAC_Control$1660                 DAC_Control
+C:   00002618  A$DAC_Control$1661                 DAC_Control
+C:   00002619  A$DAC_Control$1662                 DAC_Control
+C:   0000261A  A$DAC_Control$1663                 DAC_Control
+C:   0000261B  A$DAC_Control$1664                 DAC_Control
+C:   0000261C  A$DAC_Control$1665                 DAC_Control
+C:   0000261D  A$DAC_Control$1666                 DAC_Control
+C:   0000261E  A$DAC_Control$1667                 DAC_Control
+C:   00002620  A$DAC_Control$1668                 DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 38.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002622  A$DAC_Control$1669                 DAC_Control
+C:   00002624  A$DAC_Control$1670                 DAC_Control
+C:   00002626  A$DAC_Control$1671                 DAC_Control
+C:   00002628  A$DAC_Control$1672                 DAC_Control
+C:   0000262A  A$DAC_Control$1673                 DAC_Control
+C:   0000262C  A$DAC_Control$1674                 DAC_Control
+C:   0000262E  A$DAC_Control$1675                 DAC_Control
+C:   00002630  A$DAC_Control$1676                 DAC_Control
+C:   00002632  A$DAC_Control$1677                 DAC_Control
+C:   00002635  A$DAC_Control$1678                 DAC_Control
+C:   00002637  A$DAC_Control$1679                 DAC_Control
+C:   00002639  A$DAC_Control$1680                 DAC_Control
+C:   0000263B  A$DAC_Control$1681                 DAC_Control
+C:   0000263D  A$DAC_Control$1684                 DAC_Control
+C:   0000263D  C$DAC_Control.c$204$3_1$104        DAC_Control
+C:   0000263E  A$DAC_Control$1685                 DAC_Control
+C:   00002640  A$DAC_Control$1686                 DAC_Control
+C:   00002642  A$DAC_Control$1687                 DAC_Control
+C:   00002643  A$DAC_Control$1688                 DAC_Control
+C:   00002645  A$DAC_Control$1689                 DAC_Control
+C:   00002647  A$DAC_Control$1690                 DAC_Control
+C:   00002648  A$DAC_Control$1691                 DAC_Control
+C:   0000264A  A$DAC_Control$1692                 DAC_Control
+C:   0000264C  A$DAC_Control$1693                 DAC_Control
+C:   0000264F  A$DAC_Control$1696                 DAC_Control
+C:   0000264F  C$DAC_Control.c$206$3_1$104        DAC_Control
+C:   00002652  A$DAC_Control$1697                 DAC_Control
+C:   00002655  A$DAC_Control$1698                 DAC_Control
+C:   00002658  A$DAC_Control$1701                 DAC_Control
+C:   00002658  C$DAC_Control.c$207$3_1$104        DAC_Control
+C:   0000265B  A$DAC_Control$1702                 DAC_Control
+C:   0000265D  A$DAC_Control$1705                 DAC_Control
+C:   0000265D  C$DAC_Control.c$202$2_1$103        DAC_Control
+C:   0000265E  A$DAC_Control$1706                 DAC_Control
+C:   00002660  A$DAC_Control$1712                 DAC_Control
+C:   00002660  C$DAC_Control.c$209$2_1$101        DAC_Control
+C:   00002660  XG$test_dc_levels$0$0              DAC_Control
+C:   00002661  A$DAC_Control$1729                 DAC_Control
+C:   00002661  C$DAC_Control.c$211$2_1$106        DAC_Control
+C:   00002661  C$DAC_Control.c$216$3_0$109        DAC_Control
+C:   00002661  G$get_number$0$0                   DAC_Control
+C:   00002661  _get_number                        DAC_Control
+C:   00002663  A$DAC_Control$1733                 DAC_Control
+C:   00002663  C$DAC_Control.c$217$2_0$107        DAC_Control
+C:   00002665  A$DAC_Control$1734                 DAC_Control
+C:   00002668  A$DAC_Control$1735                 DAC_Control
+C:   0000266A  A$DAC_Control$1736                 DAC_Control
+C:   0000266C  A$DAC_Control$1737                 DAC_Control
+C:   0000266E  A$DAC_Control$1740                 DAC_Control
+C:   0000266E  C$DAC_Control.c$219$2_0$107        DAC_Control
+C:   00002671  A$DAC_Control$1741                 DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 39.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002673  A$DAC_Control$1743                 DAC_Control
+C:   00002676  A$DAC_Control$1747                 DAC_Control
+C:   00002676  C$DAC_Control.c$220$3_0$108        DAC_Control
+C:   00002677  A$DAC_Control$1748                 DAC_Control
+C:   00002679  A$DAC_Control$1749                 DAC_Control
+C:   0000267B  A$DAC_Control$1750                 DAC_Control
+C:   0000267C  A$DAC_Control$1751                 DAC_Control
+C:   0000267E  A$DAC_Control$1752                 DAC_Control
+C:   00002680  A$DAC_Control$1753                 DAC_Control
+C:   00002681  A$DAC_Control$1754                 DAC_Control
+C:   00002682  A$DAC_Control$1757                 DAC_Control
+C:   00002682  C$DAC_Control.c$221$3_0$108        DAC_Control
+C:   00002685  A$DAC_Control$1758                 DAC_Control
+C:   00002688  A$DAC_Control$1759                 DAC_Control
+C:   0000268B  A$DAC_Control$1762                 DAC_Control
+C:   0000268B  C$DAC_Control.c$222$3_0$108        DAC_Control
+C:   0000268D  A$DAC_Control$1766                 DAC_Control
+C:   0000268D  C$DAC_Control.c$224$2_0$107        DAC_Control
+C:   00002690  A$DAC_Control$1768                 DAC_Control
+C:   00002692  A$DAC_Control$1769                 DAC_Control
+C:   00002693  A$DAC_Control$1770                 DAC_Control
+C:   00002695  A$DAC_Control$1771                 DAC_Control
+C:   00002697  A$DAC_Control$1772                 DAC_Control
+C:   0000269A  A$DAC_Control$1774                 DAC_Control
+C:   0000269C  A$DAC_Control$1777                 DAC_Control
+C:   0000269C  C$DAC_Control.c$225$3_0$109        DAC_Control
+C:   0000269D  A$DAC_Control$1778                 DAC_Control
+C:   0000269F  A$DAC_Control$1779                 DAC_Control
+C:   000026A1  A$DAC_Control$1780                 DAC_Control
+C:   000026A2  A$DAC_Control$1781                 DAC_Control
+C:   000026A4  A$DAC_Control$1782                 DAC_Control
+C:   000026A6  A$DAC_Control$1783                 DAC_Control
+C:   000026A7  A$DAC_Control$1784                 DAC_Control
+C:   000026A8  A$DAC_Control$1785                 DAC_Control
+C:   000026A9  A$DAC_Control$1788                 DAC_Control
+C:   000026A9  C$DAC_Control.c$226$3_0$109        DAC_Control
+C:   000026AB  A$DAC_Control$1789                 DAC_Control
+C:   000026AD  A$DAC_Control$1790                 DAC_Control
+C:   000026AF  A$DAC_Control$1791                 DAC_Control
+C:   000026B1  A$DAC_Control$1792                 DAC_Control
+C:   000026B4  A$DAC_Control$1793                 DAC_Control
+C:   000026B6  A$DAC_Control$1794                 DAC_Control
+C:   000026B8  A$DAC_Control$1798                 DAC_Control
+C:   000026B8  C$DAC_Control.c$230$1_0$106        DAC_Control
+C:   000026BB  A$DAC_Control$1799                 DAC_Control
+C:   000026BE  A$DAC_Control$1800                 DAC_Control
+C:   000026C1  A$DAC_Control$1805                 DAC_Control
+C:   000026C1  C$DAC_Control.c$231$1_0$106        DAC_Control
+C:   000026C1  XG$get_number$0$0                  DAC_Control
+C:   000026C2  A$DAC_Control$1820                 DAC_Control
+C:   000026C2  C$DAC_Control.c$233$1_0$111        DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 40.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000026C2  C$DAC_Control.c$235$1_0$111        DAC_Control
+C:   000026C2  G$manual_dac_control$0$0           DAC_Control
+C:   000026C2  _manual_dac_control                DAC_Control
+C:   000026C5  A$DAC_Control$1821                 DAC_Control
+C:   000026C8  A$DAC_Control$1822                 DAC_Control
+C:   000026CB  A$DAC_Control$1825                 DAC_Control
+C:   000026CB  C$DAC_Control.c$236$1_1$112        DAC_Control
+C:   000026CE  A$DAC_Control$1826                 DAC_Control
+C:   000026D0  A$DAC_Control$1827                 DAC_Control
+C:   000026D2  A$DAC_Control$1830                 DAC_Control
+C:   000026D2  C$DAC_Control.c$238$1_1$112        DAC_Control
+C:   000026D4  A$DAC_Control$1831                 DAC_Control
+C:   000026D6  A$DAC_Control$1832                 DAC_Control
+C:   000026D7  A$DAC_Control$1833                 DAC_Control
+C:   000026D9  A$DAC_Control$1834                 DAC_Control
+C:   000026DA  A$DAC_Control$1835                 DAC_Control
+C:   000026DB  A$DAC_Control$1836                 DAC_Control
+C:   000026DC  A$DAC_Control$1837                 DAC_Control
+C:   000026DE  A$DAC_Control$1840                 DAC_Control
+C:   000026DE  C$DAC_Control.c$239$2_1$113        DAC_Control
+C:   000026E1  A$DAC_Control$1841                 DAC_Control
+C:   000026E4  A$DAC_Control$1842                 DAC_Control
+C:   000026E7  A$DAC_Control$1845                 DAC_Control
+C:   000026E7  C$DAC_Control.c$240$2_1$113        DAC_Control
+C:   000026E9  A$DAC_Control$1849                 DAC_Control
+C:   000026E9  C$DAC_Control.c$243$1_1$112        DAC_Control
+C:   000026EB  A$DAC_Control$1850                 DAC_Control
+C:   000026ED  A$DAC_Control$1851                 DAC_Control
+C:   000026F0  A$DAC_Control$1854                 DAC_Control
+C:   000026F0  C$DAC_Control.c$245$1_1$112        DAC_Control
+C:   000026F2  A$DAC_Control$1857                 DAC_Control
+C:   000026F2  C$DAC_Control.c$244$1_1$112        DAC_Control
+C:   000026F4  A$DAC_Control$1858                 DAC_Control
+C:   000026F6  A$DAC_Control$1859                 DAC_Control
+C:   000026F8  A$DAC_Control$1860                 DAC_Control
+C:   000026FA  A$DAC_Control$1861                 DAC_Control
+C:   000026FC  A$DAC_Control$1862                 DAC_Control
+C:   000026FE  A$DAC_Control$1863                 DAC_Control
+C:   00002700  A$DAC_Control$1864                 DAC_Control
+C:   00002703  A$DAC_Control$1865                 DAC_Control
+C:   00002705  A$DAC_Control$1866                 DAC_Control
+C:   00002707  A$DAC_Control$1867                 DAC_Control
+C:   00002709  A$DAC_Control$1873                 DAC_Control
+C:   00002709  C$DAC_Control.c$246$1_1$111        DAC_Control
+C:   00002709  XG$manual_dac_control$0$0          DAC_Control
+C:   0000270A  A$DAC_Control$1886                 DAC_Control
+C:   0000270A  C$DAC_Control.c$249$1_1$115        DAC_Control
+C:   0000270A  C$DAC_Control.c$250$1_0$115        DAC_Control
+C:   0000270A  G$print_menu$0$0                   DAC_Control
+C:   0000270A  _print_menu                        DAC_Control
+C:   0000270D  A$DAC_Control$1887                 DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 41.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002710  A$DAC_Control$1888                 DAC_Control
+C:   00002713  A$DAC_Control$1891                 DAC_Control
+C:   00002713  C$DAC_Control.c$251$1_0$115        DAC_Control
+C:   00002716  A$DAC_Control$1892                 DAC_Control
+C:   00002719  A$DAC_Control$1893                 DAC_Control
+C:   0000271C  A$DAC_Control$1896                 DAC_Control
+C:   0000271C  C$DAC_Control.c$252$1_0$115        DAC_Control
+C:   0000271F  A$DAC_Control$1897                 DAC_Control
+C:   00002722  A$DAC_Control$1898                 DAC_Control
+C:   00002725  A$DAC_Control$1901                 DAC_Control
+C:   00002725  C$DAC_Control.c$253$1_0$115        DAC_Control
+C:   00002728  A$DAC_Control$1902                 DAC_Control
+C:   0000272B  A$DAC_Control$1903                 DAC_Control
+C:   0000272E  A$DAC_Control$1906                 DAC_Control
+C:   0000272E  C$DAC_Control.c$254$1_0$115        DAC_Control
+C:   00002731  A$DAC_Control$1907                 DAC_Control
+C:   00002734  A$DAC_Control$1908                 DAC_Control
+C:   00002737  A$DAC_Control$1911                 DAC_Control
+C:   00002737  C$DAC_Control.c$255$1_0$115        DAC_Control
+C:   0000273A  A$DAC_Control$1912                 DAC_Control
+C:   0000273D  A$DAC_Control$1913                 DAC_Control
+C:   00002740  A$DAC_Control$1916                 DAC_Control
+C:   00002740  C$DAC_Control.c$256$1_0$115        DAC_Control
+C:   00002743  A$DAC_Control$1917                 DAC_Control
+C:   00002746  A$DAC_Control$1918                 DAC_Control
+C:   00002749  A$DAC_Control$1921                 DAC_Control
+C:   00002749  C$DAC_Control.c$257$1_0$115        DAC_Control
+C:   0000274C  A$DAC_Control$1922                 DAC_Control
+C:   0000274F  A$DAC_Control$1923                 DAC_Control
+C:   00002752  A$DAC_Control$1928                 DAC_Control
+C:   00002752  C$DAC_Control.c$258$1_0$115        DAC_Control
+C:   00002752  XG$print_menu$0$0                  DAC_Control
+C:   00002753  A$DAC_Control$1944                 DAC_Control
+C:   00002753  C$DAC_Control.c$261$1_0$117        DAC_Control
+C:   00002753  C$DAC_Control.c$264$1_0$117        DAC_Control
+C:   00002753  G$main$0$0                         DAC_Control
+C:   00002753  _main                              DAC_Control
+C:   00002756  A$DAC_Control$1947                 DAC_Control
+C:   00002756  C$DAC_Control.c$265$1_0$117        DAC_Control
+C:   00002759  A$DAC_Control$1948                 DAC_Control
+C:   0000275A  A$DAC_Control$1949                 DAC_Control
+C:   0000275B  A$DAC_Control$1950                 DAC_Control
+C:   0000275C  A$DAC_Control$1951                 DAC_Control
+C:   0000275D  A$DAC_Control$1952                 DAC_Control
+C:   0000275E  A$DAC_Control$1953                 DAC_Control
+C:   00002761  A$DAC_Control$1954                 DAC_Control
+C:   00002764  A$DAC_Control$1955                 DAC_Control
+C:   00002767  A$DAC_Control$1958                 DAC_Control
+C:   00002767  C$DAC_Control.c$266$1_0$117        DAC_Control
+C:   0000276A  A$DAC_Control$1964                 DAC_Control
+C:   0000276A  C$DAC_Control.c$268$1_0$117        DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 42.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000276A  C$DAC_Control.c$269$2_0$118        DAC_Control
+C:   0000276D  A$DAC_Control$1965                 DAC_Control
+C:   00002770  A$DAC_Control$1966                 DAC_Control
+C:   00002773  A$DAC_Control$1969                 DAC_Control
+C:   00002773  C$DAC_Control.c$270$2_0$118        DAC_Control
+C:   00002776  A$DAC_Control$1970                 DAC_Control
+C:   00002778  A$DAC_Control$1973                 DAC_Control
+C:   00002778  C$DAC_Control.c$271$2_0$118        DAC_Control
+C:   0000277A  A$DAC_Control$1974                 DAC_Control
+C:   0000277C  A$DAC_Control$1975                 DAC_Control
+C:   0000277E  A$DAC_Control$1976                 DAC_Control
+C:   00002780  A$DAC_Control$1977                 DAC_Control
+C:   00002782  A$DAC_Control$1978                 DAC_Control
+C:   00002785  A$DAC_Control$1981                 DAC_Control
+C:   00002785  C$DAC_Control.c$272$2_0$118        DAC_Control
+C:   00002788  A$DAC_Control$1982                 DAC_Control
+C:   0000278B  A$DAC_Control$1983                 DAC_Control
+C:   0000278E  A$DAC_Control$1984                 DAC_Control
+C:   00002790  A$DAC_Control$1987                 DAC_Control
+C:   00002790  C$DAC_Control.c$274$2_0$118        DAC_Control
+C:   00002793  A$DAC_Control$1988                 DAC_Control
+C:   00002795  A$DAC_Control$1990                 DAC_Control
+C:   00002798  A$DAC_Control$1991                 DAC_Control
+C:   0000279A  A$DAC_Control$1993                 DAC_Control
+C:   0000279D  A$DAC_Control$1994                 DAC_Control
+C:   000027A0  A$DAC_Control$1996                 DAC_Control
+C:   000027A3  A$DAC_Control$1997                 DAC_Control
+C:   000027A6  A$DAC_Control$1999                 DAC_Control
+C:   000027A9  A$DAC_Control$2000                 DAC_Control
+C:   000027AC  A$DAC_Control$2002                 DAC_Control
+C:   000027AF  A$DAC_Control$2003                 DAC_Control
+C:   000027B2  A$DAC_Control$2005                 DAC_Control
+C:   000027B5  A$DAC_Control$2011                 DAC_Control
+C:   000027B5  C$DAC_Control.c$275$3_0$119        DAC_Control
+C:   000027B5  C$DAC_Control.c$276$3_0$119        DAC_Control
+C:   000027B8  A$DAC_Control$2016                 DAC_Control
+C:   000027B8  C$DAC_Control.c$277$3_0$119        DAC_Control
+C:   000027B8  C$DAC_Control.c$279$3_0$119        DAC_Control
+C:   000027BA  A$DAC_Control$2020                 DAC_Control
+C:   000027BA  C$DAC_Control.c$280$3_0$119        DAC_Control
+C:   000027BD  A$DAC_Control$2021                 DAC_Control
+C:   000027C0  A$DAC_Control$2022                 DAC_Control
+C:   000027C3  A$DAC_Control$2026                 DAC_Control
+C:   000027C3  C$DAC_Control.c$281$3_0$119        DAC_Control
+C:   000027C6  A$DAC_Control$2029                 DAC_Control
+C:   000027C6  C$DAC_Control.c$282$4_0$120        DAC_Control
+C:   000027C9  A$DAC_Control$2032                 DAC_Control
+C:   000027C9  C$DAC_Control.c$284$6_0$121        DAC_Control
+C:   000027CC  A$DAC_Control$2033                 DAC_Control
+C:   000027CD  A$DAC_Control$2034                 DAC_Control
+C:   000027CE  A$DAC_Control$2035                 DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 43.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000027CF  A$DAC_Control$2036                 DAC_Control
+C:   000027D0  A$DAC_Control$2038                 DAC_Control
+C:   000027D3  A$DAC_Control$2039                 DAC_Control
+C:   000027D4  A$DAC_Control$2040                 DAC_Control
+C:   000027D5  A$DAC_Control$2041                 DAC_Control
+C:   000027D6  A$DAC_Control$2042                 DAC_Control
+C:   000027D7  A$DAC_Control$2043                 DAC_Control
+C:   000027D8  A$DAC_Control$2044                 DAC_Control
+C:   000027DB  A$DAC_Control$2045                 DAC_Control
+C:   000027DC  A$DAC_Control$2046                 DAC_Control
+C:   000027DD  A$DAC_Control$2047                 DAC_Control
+C:   000027DE  A$DAC_Control$2048                 DAC_Control
+C:   000027DF  A$DAC_Control$2049                 DAC_Control
+C:   000027E0  A$DAC_Control$2050                 DAC_Control
+C:   000027E3  A$DAC_Control$2051                 DAC_Control
+C:   000027E6  A$DAC_Control$2052                 DAC_Control
+C:   000027E8  A$DAC_Control$2053                 DAC_Control
+C:   000027EA  A$DAC_Control$2054                 DAC_Control
+C:   000027ED  A$DAC_Control$2055                 DAC_Control
+C:   000027EE  A$DAC_Control$2056                 DAC_Control
+C:   000027EF  A$DAC_Control$2057                 DAC_Control
+C:   000027F0  A$DAC_Control$2058                 DAC_Control
+C:   000027F1  A$DAC_Control$2059                 DAC_Control
+C:   000027F2  A$DAC_Control$2060                 DAC_Control
+C:   000027F3  A$DAC_Control$2061                 DAC_Control
+C:   000027F4  A$DAC_Control$2062                 DAC_Control
+C:   000027F5  A$DAC_Control$2063                 DAC_Control
+C:   000027F6  A$DAC_Control$2064                 DAC_Control
+C:   000027F7  A$DAC_Control$2065                 DAC_Control
+C:   000027F9  A$DAC_Control$2066                 DAC_Control
+C:   000027FC  A$DAC_Control$2067                 DAC_Control
+C:   000027FD  A$DAC_Control$2068                 DAC_Control
+C:   000027FE  A$DAC_Control$2069                 DAC_Control
+C:   000027FF  A$DAC_Control$2070                 DAC_Control
+C:   00002800  A$DAC_Control$2071                 DAC_Control
+C:   00002801  A$DAC_Control$2072                 DAC_Control
+C:   00002804  A$DAC_Control$2073                 DAC_Control
+C:   00002806  A$DAC_Control$2074                 DAC_Control
+C:   00002807  A$DAC_Control$2075                 DAC_Control
+C:   00002808  A$DAC_Control$2076                 DAC_Control
+C:   00002809  A$DAC_Control$2077                 DAC_Control
+C:   0000280A  A$DAC_Control$2078                 DAC_Control
+C:   0000280B  A$DAC_Control$2079                 DAC_Control
+C:   0000280C  A$DAC_Control$2080                 DAC_Control
+C:   0000280E  A$DAC_Control$2084                 DAC_Control
+C:   0000280E  C$DAC_Control.c$286$3_0$119        DAC_Control
+C:   00002811  A$DAC_Control$2087                 DAC_Control
+C:   00002811  C$DAC_Control.c$287$3_0$119        DAC_Control
+C:   00002814  A$DAC_Control$2088                 DAC_Control
+C:   00002817  A$DAC_Control$2089                 DAC_Control
+C:   0000281A  A$DAC_Control$2092                 DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 44.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000281A  C$DAC_Control.c$288$3_0$119        DAC_Control
+C:   0000281D  A$DAC_Control$2098                 DAC_Control
+C:   0000281D  C$DAC_Control.c$290$3_0$119        DAC_Control
+C:   0000281D  C$DAC_Control.c$291$3_0$119        DAC_Control
+C:   00002820  A$DAC_Control$2101                 DAC_Control
+C:   00002820  C$DAC_Control.c$292$3_0$119        DAC_Control
+C:   00002823  A$DAC_Control$2107                 DAC_Control
+C:   00002823  C$DAC_Control.c$294$3_0$119        DAC_Control
+C:   00002823  C$DAC_Control.c$295$3_0$119        DAC_Control
+C:   00002826  A$DAC_Control$2108                 DAC_Control
+C:   00002827  A$DAC_Control$2109                 DAC_Control
+C:   0000282A  A$DAC_Control$2111                 DAC_Control
+C:   0000282B  A$DAC_Control$2112                 DAC_Control
+C:   0000282C  A$DAC_Control$2113                 DAC_Control
+C:   0000282D  A$DAC_Control$2116                 DAC_Control
+C:   0000282D  C$DAC_Control.c$296$3_0$119        DAC_Control
+C:   00002830  A$DAC_Control$2117                 DAC_Control
+C:   00002831  A$DAC_Control$2118                 DAC_Control
+C:   00002833  A$DAC_Control$2121                 DAC_Control
+C:   00002833  C$DAC_Control.c$297$4_0$122        DAC_Control
+C:   00002836  A$DAC_Control$2122                 DAC_Control
+C:   00002838  A$DAC_Control$2126                 DAC_Control
+C:   00002838  C$DAC_Control.c$299$4_0$123        DAC_Control
+C:   0000283B  A$DAC_Control$2130                 DAC_Control
+C:   0000283B  C$DAC_Control.c$301$3_0$119        DAC_Control
+C:   0000283E  A$DAC_Control$2131                 DAC_Control
+C:   0000283F  A$DAC_Control$2132                 DAC_Control
+C:   00002841  A$DAC_Control$2133                 DAC_Control
+C:   00002843  A$DAC_Control$2134                 DAC_Control
+C:   00002845  A$DAC_Control$2135                 DAC_Control
+C:   00002847  A$DAC_Control$2137                 DAC_Control
+C:   00002849  A$DAC_Control$2138                 DAC_Control
+C:   0000284B  A$DAC_Control$2140                 DAC_Control
+C:   0000284D  A$DAC_Control$2141                 DAC_Control
+C:   0000284F  A$DAC_Control$2142                 DAC_Control
+C:   00002851  A$DAC_Control$2143                 DAC_Control
+C:   00002853  A$DAC_Control$2144                 DAC_Control
+C:   00002855  A$DAC_Control$2145                 DAC_Control
+C:   00002857  A$DAC_Control$2146                 DAC_Control
+C:   00002859  A$DAC_Control$2147                 DAC_Control
+C:   0000285B  A$DAC_Control$2148                 DAC_Control
+C:   0000285C  A$DAC_Control$2149                 DAC_Control
+C:   0000285E  A$DAC_Control$2150                 DAC_Control
+C:   00002861  A$DAC_Control$2151                 DAC_Control
+C:   00002863  A$DAC_Control$2152                 DAC_Control
+C:   00002865  A$DAC_Control$2153                 DAC_Control
+C:   00002867  A$DAC_Control$2156                 DAC_Control
+C:   00002867  C$DAC_Control.c$302$3_0$119        DAC_Control
+C:   0000286A  A$DAC_Control$2162                 DAC_Control
+C:   0000286A  C$DAC_Control.c$305$3_0$119        DAC_Control
+C:   0000286A  C$DAC_Control.c$306$3_0$119        DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 45.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000286D  A$DAC_Control$2165                 DAC_Control
+C:   0000286D  C$DAC_Control.c$307$3_0$119        DAC_Control
+C:   00002870  A$DAC_Control$2171                 DAC_Control
+C:   00002870  C$DAC_Control.c$309$3_0$119        DAC_Control
+C:   00002870  C$DAC_Control.c$310$3_0$119        DAC_Control
+C:   00002873  A$DAC_Control$2172                 DAC_Control
+C:   00002876  A$DAC_Control$2173                 DAC_Control
+C:   00002879  A$DAC_Control$2176                 DAC_Control
+C:   00002879  C$DAC_Control.c$312$1_0$117        DAC_Control
+C:   0000287C  A$DAC_Control$2183                 DAC_Control
+C:   0000287C  C$DAC_Control.c$315$1_0$117        DAC_Control
+C:   0000287C  C$DAC_Control.c$316$1_0$117        DAC_Control
+C:   0000287C  XG$main$0$0                        DAC_Control
+C:   0000287D  FDAC_Control$__str_1$0_0$0         DAC_Control
+C:   0000287D  FDAC_Control$__str_10$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_11$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_12$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_13$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_14$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_15$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_16$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_17$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_18$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_19$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_2$0_0$0         DAC_Control
+C:   0000287D  FDAC_Control$__str_20$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_21$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_22$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_23$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_24$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_25$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_26$0_0$0        DAC_Control
+C:   0000287D  FDAC_Control$__str_3$0_0$0         DAC_Control
+C:   0000287D  FDAC_Control$__str_4$0_0$0         DAC_Control
+C:   0000287D  FDAC_Control$__str_5$0_0$0         DAC_Control
+C:   0000287D  FDAC_Control$__str_6$0_0$0         DAC_Control
+C:   0000287D  FDAC_Control$__str_7$0_0$0         DAC_Control
+C:   0000287D  FDAC_Control$__str_8$0_0$0         DAC_Control
+C:   0000287D  FDAC_Control$__str_9$0_0$0         DAC_Control
+C:   0000287D  ___fssub                           _fssub
+C:   00002888  __divuint                          _divuint
+C:   00002915  ___fsmul                           _fsmul
+C:   000029B8  fsgetargs                          _fsget2args
+C:   000029E6  fs_normalize_a                     _fsnormalize
+C:   00002A19  _atoi                              atoi
+C:   00002B3D  __gptrput                          _gptrput
+C:   00002B58  ___fslt                            _fslt
+C:   00002B88  __mulint                           _mulint
+C:   00002BA8  ___fsadd                           _fsadd
+C:   00002BAB  fsadd_direct_entry                 _fsadd
+C:   00002C01  fs_compare_uint32                  _fscmp
+ASxxxx Linker V03.00 + NoICE + sdld,  page 46.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002062    00001851 =        6225. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002C1F  fs_check_negative_zeros            _fscmp
+C:   00002C4A  ___uint2fs                         _uint2fs
+C:   00002C56  fs_round_and_return                _fsreturnval
+C:   00002C6E  fs_zerocheck_return                _fsreturnval
+C:   00002C77  fs_return_zero                     _fsreturnval
+C:   00002C7F  fs_direct_return                   _fsreturnval
+C:   00002C8D  fs_return_inf                      _fsreturnval
+C:   00002C9A  fs_return_nan                      _fsreturnval
+C:   00002CB4  _vprintf                           vprintf
+C:   00002CF3  _printf                            vprintf
+C:   00002DF9  __print_format                     printf_large
+C:   00003707  fs_swap_a_b                        _fsswapargs
+C:   00003721  _strlen                            _strlen
+C:   00003739  ___fsdiv                           _fsdiv
+C:   000037FC  ___fs2uchar                        _fs2uchar
+C:   00003804  __gptrget                          _gptrget
+C:   00003820  ___ulong2fs                        _ulong2fs
+C:   00003829  ulong2fs_doit                      _ulong2fs
+C:   00003833  fs_rshift_a                        _fsrshift
+C:   00003876  __sdcc_external_startup            _startup
+C:   0000387A  ___fs2ulong                        _fs2ulong
+C:   0000387C  fs2ulong_begin                     _fs2ulong
+C:   000038A1  fsgetarg                           _fsget1arg
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 47.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CONST                               000038B3    0000024F =         591. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000038B3  FDAC_Control$__str_0$0_0$0         DAC_Control
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 48.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+XINIT                               00003B02    00000004 =           4. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00003B02  FDAC_Control$__xinit_sin_index$0   DAC_Control
+C:   00003B03  FDAC_Control$__xinit_wave_freque   DAC_Control
+C:   00003B05  FDAC_Control$__xinit_bit_bang_mo   DAC_Control
+ASxxxx Linker V03.00 + NoICE + sdld,  page 49.
+
+Files Linked                              [ module(s) ]
+
+build/obj/DAC_Control.rel                 [  ]
+
+
+Libraries Linked                          [ object file ]
+
+C:\Program Files\SDCC\bin\..\lib\large/libfloat.lib
+                                          [ _fssub.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libint.lib
+                                          [ _divuint.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libfloat.lib
+                                          [ _fsmul.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libfloat.lib
+                                          [ _fsget2args.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/mcs51.lib
+                                          [ crtclear.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libfloat.lib
+                                          [ _fsnormalize.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ atoi.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/mcs51.lib
+                                          [ crtxinit.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ _gptrput.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libfloat.lib
+                                          [ _fslt.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libint.lib
+                                          [ _mulint.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/mcs51.lib
+                                          [ crtxclear.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libfloat.lib
+                                          [ _fsadd.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libfloat.lib
+                                          [ _fscmp.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libfloat.lib
+                                          [ _uint2fs.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libfloat.lib
+                                          [ _fsreturnval.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ vprintf.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ printf_large.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/mcs51.lib
+                                          [ crtpagesfr.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libfloat.lib
+                                          [ _fsswapargs.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ _strlen.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libfloat.lib
+                                          [ _fsdiv.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/mcs51.lib
+                                          [ crtstart.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libfloat.lib
+                                          [ _fs2uchar.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ _gptrget.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libfloat.lib
+                                          [ _ulong2fs.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libfloat.lib
+                                          [ _fsrshift.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ _startup.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libfloat.lib
+                                          [ _fs2ulong.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ _bp.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libfloat.lib
+                                          [ _fsget1arg.rel ]
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 50.
+
+User Base Address Definitions
+
+HOME = 0x2000
+XSEG = 0x0400
+PSEG = 0x0400
+ISEG = 0x0000
+BSEG = 0x0000
+
+

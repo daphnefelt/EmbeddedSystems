@@ -1,0 +1,20 @@
+-muwx
+-i build/bin/LCD_Driver.ihx
+-M
+-I 0x0400
+-X 0x7c00
+-C 0x6000
+-b HOME = 0x2000
+-b XSEG = 0x0400
+-b PSEG = 0x0400
+-b ISEG = 0x0000
+-b BSEG = 0x0000
+-k C:\Program Files\SDCC\bin\..\lib\large
+-l mcs51
+-l libsdcc
+-l libint
+-l liblong
+-l libfloat
+build/obj/LCD_Driver.rel
+
+-e

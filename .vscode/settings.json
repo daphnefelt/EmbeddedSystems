@@ -2,6 +2,7 @@
     "files.associations": {
         "stdlib.h": "c",
         "stmpt3": "c",
-        "8051pt3": "c"
+        "8051pt3": "c",
+        "eeprom_interface.h": "c"
     }
 }

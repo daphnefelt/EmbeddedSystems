@@ -1,0 +1,2191 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 1.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000001 L
+    A                                                           =  0000E0 L
+ 17 A$DAC_Control$1001                                             000325 GR
+ 17 A$DAC_Control$1002                                             000328 GR
+ 17 A$DAC_Control$1003                                             00032B GR
+ 17 A$DAC_Control$1004                                             00032D GR
+ 17 A$DAC_Control$1005                                             000330 GR
+ 17 A$DAC_Control$1006                                             000333 GR
+ 17 A$DAC_Control$1007                                             000336 GR
+ 17 A$DAC_Control$1008                                             000339 GR
+ 17 A$DAC_Control$1009                                             00033B GR
+ 17 A$DAC_Control$1010                                             00033D GR
+ 17 A$DAC_Control$1011                                             00033F GR
+ 17 A$DAC_Control$1012                                             000341 GR
+ 17 A$DAC_Control$1013                                             000343 GR
+ 17 A$DAC_Control$1014                                             000345 GR
+ 17 A$DAC_Control$1015                                             000347 GR
+ 17 A$DAC_Control$1016                                             000349 GR
+ 17 A$DAC_Control$1017                                             00034B GR
+ 17 A$DAC_Control$1018                                             00034D GR
+ 17 A$DAC_Control$1019                                             00034E GR
+ 17 A$DAC_Control$1020                                             000350 GR
+ 17 A$DAC_Control$1021                                             000352 GR
+ 17 A$DAC_Control$1022                                             000353 GR
+ 17 A$DAC_Control$1023                                             000355 GR
+ 17 A$DAC_Control$1024                                             000357 GR
+ 17 A$DAC_Control$1025                                             00035A GR
+ 17 A$DAC_Control$1026                                             00035C GR
+ 17 A$DAC_Control$1027                                             00035E GR
+ 17 A$DAC_Control$1028                                             000360 GR
+ 17 A$DAC_Control$1029                                             000362 GR
+ 17 A$DAC_Control$1030                                             000363 GR
+ 17 A$DAC_Control$1031                                             000365 GR
+ 17 A$DAC_Control$1032                                             000367 GR
+ 17 A$DAC_Control$1033                                             000369 GR
+ 17 A$DAC_Control$1034                                             00036B GR
+ 17 A$DAC_Control$1035                                             00036D GR
+ 17 A$DAC_Control$1036                                             000370 GR
+ 17 A$DAC_Control$1037                                             000373 GR
+ 17 A$DAC_Control$1038                                             000376 GR
+ 17 A$DAC_Control$1039                                             000378 GR
+ 17 A$DAC_Control$1040                                             00037B GR
+ 17 A$DAC_Control$1041                                             00037D GR
+ 17 A$DAC_Control$1042                                             00037F GR
+ 17 A$DAC_Control$1043                                             000381 GR
+ 17 A$DAC_Control$1044                                             000382 GR
+ 17 A$DAC_Control$1045                                             000384 GR
+ 17 A$DAC_Control$1046                                             000386 GR
+ 17 A$DAC_Control$1047                                             000388 GR
+ 17 A$DAC_Control$1048                                             00038A GR
+ 17 A$DAC_Control$1049                                             00038C GR
+ 17 A$DAC_Control$1050                                             00038E GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 2.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$1051                                             00038F GR
+ 17 A$DAC_Control$1052                                             000392 GR
+ 17 A$DAC_Control$1053                                             000394 GR
+ 17 A$DAC_Control$1054                                             000396 GR
+ 17 A$DAC_Control$1055                                             000398 GR
+ 17 A$DAC_Control$1056                                             00039A GR
+ 17 A$DAC_Control$1057                                             00039C GR
+ 17 A$DAC_Control$1058                                             00039F GR
+ 17 A$DAC_Control$1059                                             0003A2 GR
+ 17 A$DAC_Control$1060                                             0003A5 GR
+ 17 A$DAC_Control$1061                                             0003A6 GR
+ 17 A$DAC_Control$1064                                             0003A9 GR
+ 17 A$DAC_Control$1065                                             0003AA GR
+ 17 A$DAC_Control$1066                                             0003AD GR
+ 17 A$DAC_Control$1068                                             0003AE GR
+ 17 A$DAC_Control$1069                                             0003B0 GR
+ 17 A$DAC_Control$1070                                             0003B2 GR
+ 17 A$DAC_Control$1076                                             0003B5 GR
+ 17 A$DAC_Control$1089                                             0003B6 GR
+ 17 A$DAC_Control$1090                                             0003B8 GR
+ 17 A$DAC_Control$1091                                             0003BA GR
+ 17 A$DAC_Control$1092                                             0003BD GR
+ 17 A$DAC_Control$1093                                             0003BE GR
+ 17 A$DAC_Control$1094                                             0003BF GR
+ 17 A$DAC_Control$1095                                             0003C0 GR
+ 17 A$DAC_Control$1099                                             0003C1 GR
+ 17 A$DAC_Control$1102                                             0003C4 GR
+ 17 A$DAC_Control$1103                                             0003C7 GR
+ 17 A$DAC_Control$1104                                             0003C8 GR
+ 17 A$DAC_Control$1105                                             0003C9 GR
+ 17 A$DAC_Control$1106                                             0003CA GR
+ 17 A$DAC_Control$1107                                             0003CB GR
+ 17 A$DAC_Control$1108                                             0003CC GR
+ 17 A$DAC_Control$1112                                             0003CE GR
+ 17 A$DAC_Control$1115                                             0003D0 GR
+ 17 A$DAC_Control$1116                                             0003D2 GR
+ 17 A$DAC_Control$1121                                             0003D4 GR
+ 17 A$DAC_Control$1138                                             0003D5 GR
+ 17 A$DAC_Control$1139                                             0003D8 GR
+ 17 A$DAC_Control$1143                                             0003DA GR
+ 17 A$DAC_Control$1144                                             0003DC GR
+ 17 A$DAC_Control$1145                                             0003DE GR
+ 17 A$DAC_Control$1146                                             0003E0 GR
+ 17 A$DAC_Control$1151                                             0003E2 GR
+ 17 A$DAC_Control$1164                                             0003E3 GR
+ 17 A$DAC_Control$1165                                             0003E5 GR
+ 17 A$DAC_Control$1166                                             0003E7 GR
+ 17 A$DAC_Control$1167                                             0003E9 GR
+ 17 A$DAC_Control$1168                                             0003EC GR
+ 17 A$DAC_Control$1169                                             0003ED GR
+ 17 A$DAC_Control$1170                                             0003EE GR
+ 17 A$DAC_Control$1171                                             0003EF GR
+ 17 A$DAC_Control$1172                                             0003F0 GR
+ 17 A$DAC_Control$1173                                             0003F1 GR
+ 17 A$DAC_Control$1174                                             0003F2 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 3.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$1177                                             0003F3 GR
+ 17 A$DAC_Control$1178                                             0003F6 GR
+ 17 A$DAC_Control$1179                                             0003F7 GR
+ 17 A$DAC_Control$1180                                             0003F8 GR
+ 17 A$DAC_Control$1181                                             0003F9 GR
+ 17 A$DAC_Control$1182                                             0003FA GR
+ 17 A$DAC_Control$1183                                             0003FB GR
+ 17 A$DAC_Control$1184                                             0003FC GR
+ 17 A$DAC_Control$1185                                             0003FD GR
+ 17 A$DAC_Control$1187                                             0003FE GR
+ 17 A$DAC_Control$1188                                             000400 GR
+ 17 A$DAC_Control$1189                                             000402 GR
+ 17 A$DAC_Control$1190                                             000404 GR
+ 17 A$DAC_Control$1191                                             000407 GR
+ 17 A$DAC_Control$1192                                             000408 GR
+ 17 A$DAC_Control$1195                                             00040A GR
+ 17 A$DAC_Control$1196                                             00040B GR
+ 17 A$DAC_Control$1197                                             00040E GR
+ 17 A$DAC_Control$1199                                             00040F GR
+ 17 A$DAC_Control$1200                                             000412 GR
+ 17 A$DAC_Control$1201                                             000413 GR
+ 17 A$DAC_Control$1202                                             000414 GR
+ 17 A$DAC_Control$1203                                             000415 GR
+ 17 A$DAC_Control$1204                                             000416 GR
+ 17 A$DAC_Control$1205                                             000417 GR
+ 17 A$DAC_Control$1206                                             000418 GR
+ 17 A$DAC_Control$1207                                             000419 GR
+ 17 A$DAC_Control$1208                                             00041A GR
+ 17 A$DAC_Control$1209                                             00041C GR
+ 17 A$DAC_Control$1210                                             00041E GR
+ 17 A$DAC_Control$1211                                             000420 GR
+ 17 A$DAC_Control$1212                                             000422 GR
+ 17 A$DAC_Control$1213                                             000424 GR
+ 17 A$DAC_Control$1214                                             000426 GR
+ 17 A$DAC_Control$1215                                             000429 GR
+ 17 A$DAC_Control$1216                                             00042B GR
+ 17 A$DAC_Control$1217                                             00042D GR
+ 17 A$DAC_Control$1218                                             00042F GR
+ 17 A$DAC_Control$1220                                             000431 GR
+ 17 A$DAC_Control$1221                                             000434 GR
+ 17 A$DAC_Control$1222                                             000435 GR
+ 17 A$DAC_Control$1223                                             000436 GR
+ 17 A$DAC_Control$1224                                             000437 GR
+ 17 A$DAC_Control$1225                                             000438 GR
+ 17 A$DAC_Control$1226                                             000439 GR
+ 17 A$DAC_Control$1227                                             00043A GR
+ 17 A$DAC_Control$1228                                             00043B GR
+ 17 A$DAC_Control$1233                                             00043C GR
+ 17 A$DAC_Control$1247                                             00043D GR
+ 17 A$DAC_Control$1251                                             00043F GR
+ 17 A$DAC_Control$1255                                             000441 GR
+ 17 A$DAC_Control$1258                                             000443 GR
+ 17 A$DAC_Control$1261                                             000446 GR
+ 17 A$DAC_Control$1264                                             000449 GR
+ 17 A$DAC_Control$1265                                             00044C GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 4.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$1266                                             00044F GR
+ 17 A$DAC_Control$1271                                             000452 GR
+ 17 A$DAC_Control$1284                                             000453 GR
+ 17 A$DAC_Control$1289                                             000456 GR
+ 17 A$DAC_Control$1302                                             000457 GR
+ 17 A$DAC_Control$1303                                             000459 GR
+ 17 A$DAC_Control$1304                                             00045C GR
+ 17 A$DAC_Control$1307                                             00045D GR
+ 17 A$DAC_Control$1308                                             00045E GR
+ 17 A$DAC_Control$1312                                             000460 GR
+ 17 A$DAC_Control$1313                                             000462 GR
+ 17 A$DAC_Control$1316                                             000465 GR
+ 17 A$DAC_Control$1319                                             000468 GR
+ 17 A$DAC_Control$1324                                             00046B GR
+ 17 A$DAC_Control$1337                                             00046C GR
+ 17 A$DAC_Control$1342                                             00046D GR
+ 17 A$DAC_Control$1357                                             00046E GR
+ 17 A$DAC_Control$1358                                             000470 GR
+ 17 A$DAC_Control$1359                                             000473 GR
+ 17 A$DAC_Control$1362                                             000474 GR
+ 17 A$DAC_Control$1363                                             000477 GR
+ 17 A$DAC_Control$1364                                             000478 GR
+ 17 A$DAC_Control$1367                                             000479 GR
+ 17 A$DAC_Control$1371                                             00047B GR
+ 17 A$DAC_Control$1372                                             00047E GR
+ 17 A$DAC_Control$1373                                             00047F GR
+ 17 A$DAC_Control$1374                                             000480 GR
+ 17 A$DAC_Control$1375                                             000481 GR
+ 17 A$DAC_Control$1376                                             000484 GR
+ 17 A$DAC_Control$1378                                             000486 GR
+ 17 A$DAC_Control$1379                                             000487 GR
+ 17 A$DAC_Control$1380                                             000488 GR
+ 17 A$DAC_Control$1381                                             00048A GR
+ 17 A$DAC_Control$1384                                             00048C GR
+ 17 A$DAC_Control$1385                                             00048D GR
+ 17 A$DAC_Control$1386                                             00048E GR
+ 17 A$DAC_Control$1387                                             000491 GR
+ 17 A$DAC_Control$1390                                             000492 GR
+ 17 A$DAC_Control$1391                                             000494 GR
+ 17 A$DAC_Control$1392                                             000497 GR
+ 17 A$DAC_Control$1396                                             000499 GR
+ 17 A$DAC_Control$1399                                             00049B GR
+ 17 A$DAC_Control$1400                                             00049E GR
+ 17 A$DAC_Control$1401                                             00049F GR
+ 17 A$DAC_Control$1402                                             0004A1 GR
+ 17 A$DAC_Control$1405                                             0004A2 GR
+ 17 A$DAC_Control$1408                                             0004A5 GR
+ 17 A$DAC_Control$1409                                             0004A8 GR
+ 17 A$DAC_Control$1410                                             0004A9 GR
+ 17 A$DAC_Control$1411                                             0004AC GR
+ 17 A$DAC_Control$1415                                             0004AD GR
+ 17 A$DAC_Control$1416                                             0004AF GR
+ 17 A$DAC_Control$1420                                             0004B2 GR
+ 17 A$DAC_Control$1423                                             0004B4 GR
+ 17 A$DAC_Control$1424                                             0004B7 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 5.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$1427                                             0004B9 GR
+ 17 A$DAC_Control$1428                                             0004BA GR
+ 17 A$DAC_Control$1430                                             0004BD GR
+ 17 A$DAC_Control$1433                                             0004BF GR
+ 17 A$DAC_Control$1434                                             0004C2 GR
+ 17 A$DAC_Control$1439                                             0004C3 GR
+ 17 A$DAC_Control$1440                                             0004C5 GR
+ 17 A$DAC_Control$1454                                             0004C6 GR
+ 17 A$DAC_Control$1455                                             0004C8 GR
+ 17 A$DAC_Control$1456                                             0004CB GR
+ 17 A$DAC_Control$1460                                             0004CC GR
+ 17 A$DAC_Control$1463                                             0004CE GR
+ 17 A$DAC_Control$1464                                             0004D1 GR
+ 17 A$DAC_Control$1465                                             0004D2 GR
+ 17 A$DAC_Control$1468                                             0004D4 GR
+ 17 A$DAC_Control$1469                                             0004D7 GR
+ 17 A$DAC_Control$1470                                             0004D8 GR
+ 17 A$DAC_Control$1471                                             0004D9 GR
+ 17 A$DAC_Control$1472                                             0004DA GR
+ 17 A$DAC_Control$1473                                             0004DC GR
+ 17 A$DAC_Control$1474                                             0004DE GR
+ 17 A$DAC_Control$1475                                             0004E0 GR
+ 17 A$DAC_Control$1476                                             0004E2 GR
+ 17 A$DAC_Control$1477                                             0004E5 GR
+ 17 A$DAC_Control$1480                                             0004E7 GR
+ 17 A$DAC_Control$1481                                             0004E8 GR
+ 17 A$DAC_Control$1482                                             0004E9 GR
+ 17 A$DAC_Control$1483                                             0004EB GR
+ 17 A$DAC_Control$1484                                             0004EC GR
+ 17 A$DAC_Control$1485                                             0004EF GR
+ 17 A$DAC_Control$1486                                             0004F1 GR
+ 17 A$DAC_Control$1487                                             0004F4 GR
+ 17 A$DAC_Control$1491                                             0004F6 GR
+ 17 A$DAC_Control$1492                                             0004F9 GR
+ 17 A$DAC_Control$1493                                             0004FA GR
+ 17 A$DAC_Control$1494                                             0004FB GR
+ 17 A$DAC_Control$1495                                             0004FC GR
+ 17 A$DAC_Control$1496                                             0004FE GR
+ 17 A$DAC_Control$1497                                             000500 GR
+ 17 A$DAC_Control$1498                                             000502 GR
+ 17 A$DAC_Control$1499                                             000504 GR
+ 17 A$DAC_Control$1500                                             000507 GR
+ 17 A$DAC_Control$1503                                             000509 GR
+ 17 A$DAC_Control$1504                                             00050A GR
+ 17 A$DAC_Control$1505                                             00050B GR
+ 17 A$DAC_Control$1506                                             00050D GR
+ 17 A$DAC_Control$1507                                             00050E GR
+ 17 A$DAC_Control$1508                                             000511 GR
+ 17 A$DAC_Control$1509                                             000513 GR
+ 17 A$DAC_Control$1514                                             000516 GR
+ 17 A$DAC_Control$1519                                             000518 GR
+ 17 A$DAC_Control$1534                                             000519 GR
+ 17 A$DAC_Control$1535                                             00051C GR
+ 17 A$DAC_Control$1536                                             00051D GR
+ 17 A$DAC_Control$1537                                             00051F GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 6.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$1538                                             000521 GR
+ 17 A$DAC_Control$1539                                             000522 GR
+ 17 A$DAC_Control$1540                                             000524 GR
+ 17 A$DAC_Control$1541                                             000526 GR
+ 17 A$DAC_Control$1544                                             000527 GR
+ 17 A$DAC_Control$1545                                             000529 GR
+ 17 A$DAC_Control$1548                                             00052C GR
+ 17 A$DAC_Control$1549                                             00052F GR
+ 17 A$DAC_Control$1550                                             000530 GR
+ 17 A$DAC_Control$1551                                             000531 GR
+ 17 A$DAC_Control$1558                                             000532 GR
+ 17 A$DAC_Control$1575                                             000533 GR
+ 17 A$DAC_Control$1576                                             000536 GR
+ 17 A$DAC_Control$1577                                             000539 GR
+ 17 A$DAC_Control$1580                                             00053C GR
+ 17 A$DAC_Control$1581                                             00053F GR
+ 17 A$DAC_Control$1582                                             000540 GR
+ 17 A$DAC_Control$1583                                             000541 GR
+ 17 A$DAC_Control$1584                                             000544 GR
+ 17 A$DAC_Control$1585                                             000546 GR
+ 17 A$DAC_Control$1586                                             000547 GR
+ 17 A$DAC_Control$1587                                             00054A GR
+ 17 A$DAC_Control$1588                                             00054B GR
+ 17 A$DAC_Control$1589                                             00054C GR
+ 17 A$DAC_Control$1590                                             00054F GR
+ 17 A$DAC_Control$1591                                             000551 GR
+ 17 A$DAC_Control$1592                                             000552 GR
+ 17 A$DAC_Control$1593                                             000555 GR
+ 17 A$DAC_Control$1594                                             000557 GR
+ 17 A$DAC_Control$1597                                             000558 GR
+ 17 A$DAC_Control$1598                                             00055B GR
+ 17 A$DAC_Control$1599                                             00055D GR
+ 17 A$DAC_Control$1600                                             00055E GR
+ 17 A$DAC_Control$1601                                             000560 GR
+ 17 A$DAC_Control$1602                                             000561 GR
+ 17 A$DAC_Control$1603                                             000562 GR
+ 17 A$DAC_Control$1604                                             000564 GR
+ 17 A$DAC_Control$1605                                             000565 GR
+ 17 A$DAC_Control$1606                                             000566 GR
+ 17 A$DAC_Control$1607                                             000569 GR
+ 17 A$DAC_Control$1608                                             00056B GR
+ 17 A$DAC_Control$1609                                             00056C GR
+ 17 A$DAC_Control$1610                                             00056E GR
+ 17 A$DAC_Control$1611                                             00056F GR
+ 17 A$DAC_Control$1612                                             000570 GR
+ 17 A$DAC_Control$1613                                             000572 GR
+ 17 A$DAC_Control$1614                                             000573 GR
+ 17 A$DAC_Control$1615                                             000574 GR
+ 17 A$DAC_Control$1616                                             000577 GR
+ 17 A$DAC_Control$1617                                             000579 GR
+ 17 A$DAC_Control$1618                                             00057A GR
+ 17 A$DAC_Control$1619                                             00057C GR
+ 17 A$DAC_Control$1620                                             00057D GR
+ 17 A$DAC_Control$1621                                             00057E GR
+ 17 A$DAC_Control$1622                                             000580 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 7.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$1623                                             000581 GR
+ 17 A$DAC_Control$1624                                             000582 GR
+ 17 A$DAC_Control$1625                                             000585 GR
+ 17 A$DAC_Control$1626                                             000587 GR
+ 17 A$DAC_Control$1627                                             000588 GR
+ 17 A$DAC_Control$1628                                             00058A GR
+ 17 A$DAC_Control$1629                                             00058B GR
+ 17 A$DAC_Control$1630                                             00058C GR
+ 17 A$DAC_Control$1631                                             00058E GR
+ 17 A$DAC_Control$1632                                             00058F GR
+ 17 A$DAC_Control$1633                                             000590 GR
+ 17 A$DAC_Control$1634                                             000593 GR
+ 17 A$DAC_Control$1635                                             000595 GR
+ 17 A$DAC_Control$1636                                             000596 GR
+ 17 A$DAC_Control$1637                                             000598 GR
+ 17 A$DAC_Control$1638                                             000599 GR
+ 17 A$DAC_Control$1639                                             00059A GR
+ 17 A$DAC_Control$1640                                             00059C GR
+ 17 A$DAC_Control$1641                                             00059D GR
+ 17 A$DAC_Control$1644                                             00059E GR
+ 17 A$DAC_Control$1646                                             0005A0 GR
+ 17 A$DAC_Control$1648                                             0005A3 GR
+ 17 A$DAC_Control$1651                                             0005A5 GR
+ 17 A$DAC_Control$1652                                             0005A6 GR
+ 17 A$DAC_Control$1653                                             0005A9 GR
+ 17 A$DAC_Control$1654                                             0005AA GR
+ 17 A$DAC_Control$1655                                             0005AC GR
+ 17 A$DAC_Control$1656                                             0005AE GR
+ 17 A$DAC_Control$1657                                             0005B0 GR
+ 17 A$DAC_Control$1658                                             0005B2 GR
+ 17 A$DAC_Control$1659                                             0005B4 GR
+ 17 A$DAC_Control$1660                                             0005B5 GR
+ 17 A$DAC_Control$1661                                             0005B6 GR
+ 17 A$DAC_Control$1662                                             0005B7 GR
+ 17 A$DAC_Control$1663                                             0005B8 GR
+ 17 A$DAC_Control$1664                                             0005B9 GR
+ 17 A$DAC_Control$1665                                             0005BA GR
+ 17 A$DAC_Control$1666                                             0005BB GR
+ 17 A$DAC_Control$1667                                             0005BC GR
+ 17 A$DAC_Control$1668                                             0005BE GR
+ 17 A$DAC_Control$1669                                             0005C0 GR
+ 17 A$DAC_Control$1670                                             0005C2 GR
+ 17 A$DAC_Control$1671                                             0005C4 GR
+ 17 A$DAC_Control$1672                                             0005C6 GR
+ 17 A$DAC_Control$1673                                             0005C8 GR
+ 17 A$DAC_Control$1674                                             0005CA GR
+ 17 A$DAC_Control$1675                                             0005CC GR
+ 17 A$DAC_Control$1676                                             0005CE GR
+ 17 A$DAC_Control$1677                                             0005D0 GR
+ 17 A$DAC_Control$1678                                             0005D3 GR
+ 17 A$DAC_Control$1679                                             0005D5 GR
+ 17 A$DAC_Control$1680                                             0005D7 GR
+ 17 A$DAC_Control$1681                                             0005D9 GR
+ 17 A$DAC_Control$1684                                             0005DB GR
+ 17 A$DAC_Control$1685                                             0005DC GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 8.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$1686                                             0005DE GR
+ 17 A$DAC_Control$1687                                             0005E0 GR
+ 17 A$DAC_Control$1688                                             0005E1 GR
+ 17 A$DAC_Control$1689                                             0005E3 GR
+ 17 A$DAC_Control$1690                                             0005E5 GR
+ 17 A$DAC_Control$1691                                             0005E6 GR
+ 17 A$DAC_Control$1692                                             0005E8 GR
+ 17 A$DAC_Control$1693                                             0005EA GR
+ 17 A$DAC_Control$1696                                             0005ED GR
+ 17 A$DAC_Control$1697                                             0005F0 GR
+ 17 A$DAC_Control$1698                                             0005F3 GR
+ 17 A$DAC_Control$1701                                             0005F6 GR
+ 17 A$DAC_Control$1702                                             0005F9 GR
+ 17 A$DAC_Control$1705                                             0005FB GR
+ 17 A$DAC_Control$1706                                             0005FC GR
+ 17 A$DAC_Control$1712                                             0005FE GR
+ 17 A$DAC_Control$1729                                             0005FF GR
+ 17 A$DAC_Control$1733                                             000601 GR
+ 17 A$DAC_Control$1734                                             000603 GR
+ 17 A$DAC_Control$1735                                             000606 GR
+ 17 A$DAC_Control$1736                                             000608 GR
+ 17 A$DAC_Control$1737                                             00060A GR
+ 17 A$DAC_Control$1740                                             00060C GR
+ 17 A$DAC_Control$1741                                             00060F GR
+ 17 A$DAC_Control$1743                                             000611 GR
+ 17 A$DAC_Control$1747                                             000614 GR
+ 17 A$DAC_Control$1748                                             000615 GR
+ 17 A$DAC_Control$1749                                             000617 GR
+ 17 A$DAC_Control$1750                                             000619 GR
+ 17 A$DAC_Control$1751                                             00061A GR
+ 17 A$DAC_Control$1752                                             00061C GR
+ 17 A$DAC_Control$1753                                             00061E GR
+ 17 A$DAC_Control$1754                                             00061F GR
+ 17 A$DAC_Control$1757                                             000620 GR
+ 17 A$DAC_Control$1758                                             000623 GR
+ 17 A$DAC_Control$1759                                             000626 GR
+ 17 A$DAC_Control$1762                                             000629 GR
+ 17 A$DAC_Control$1766                                             00062B GR
+ 17 A$DAC_Control$1768                                             00062E GR
+ 17 A$DAC_Control$1769                                             000630 GR
+ 17 A$DAC_Control$1770                                             000631 GR
+ 17 A$DAC_Control$1771                                             000633 GR
+ 17 A$DAC_Control$1772                                             000635 GR
+ 17 A$DAC_Control$1774                                             000638 GR
+ 17 A$DAC_Control$1777                                             00063A GR
+ 17 A$DAC_Control$1778                                             00063B GR
+ 17 A$DAC_Control$1779                                             00063D GR
+ 17 A$DAC_Control$1780                                             00063F GR
+ 17 A$DAC_Control$1781                                             000640 GR
+ 17 A$DAC_Control$1782                                             000642 GR
+ 17 A$DAC_Control$1783                                             000644 GR
+ 17 A$DAC_Control$1784                                             000645 GR
+ 17 A$DAC_Control$1785                                             000646 GR
+ 17 A$DAC_Control$1788                                             000647 GR
+ 17 A$DAC_Control$1789                                             000649 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 9.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$1790                                             00064B GR
+ 17 A$DAC_Control$1791                                             00064D GR
+ 17 A$DAC_Control$1792                                             00064F GR
+ 17 A$DAC_Control$1793                                             000652 GR
+ 17 A$DAC_Control$1794                                             000654 GR
+ 17 A$DAC_Control$1798                                             000656 GR
+ 17 A$DAC_Control$1799                                             000659 GR
+ 17 A$DAC_Control$1800                                             00065C GR
+ 17 A$DAC_Control$1805                                             00065F GR
+ 17 A$DAC_Control$1820                                             000660 GR
+ 17 A$DAC_Control$1821                                             000663 GR
+ 17 A$DAC_Control$1822                                             000666 GR
+ 17 A$DAC_Control$1825                                             000669 GR
+ 17 A$DAC_Control$1826                                             00066C GR
+ 17 A$DAC_Control$1827                                             00066E GR
+ 17 A$DAC_Control$1830                                             000670 GR
+ 17 A$DAC_Control$1831                                             000672 GR
+ 17 A$DAC_Control$1832                                             000674 GR
+ 17 A$DAC_Control$1833                                             000675 GR
+ 17 A$DAC_Control$1834                                             000677 GR
+ 17 A$DAC_Control$1835                                             000678 GR
+ 17 A$DAC_Control$1836                                             000679 GR
+ 17 A$DAC_Control$1837                                             00067A GR
+ 17 A$DAC_Control$1840                                             00067C GR
+ 17 A$DAC_Control$1841                                             00067F GR
+ 17 A$DAC_Control$1842                                             000682 GR
+ 17 A$DAC_Control$1845                                             000685 GR
+ 17 A$DAC_Control$1849                                             000687 GR
+ 17 A$DAC_Control$1850                                             000689 GR
+ 17 A$DAC_Control$1851                                             00068B GR
+ 17 A$DAC_Control$1854                                             00068E GR
+ 17 A$DAC_Control$1857                                             000690 GR
+ 17 A$DAC_Control$1858                                             000692 GR
+ 17 A$DAC_Control$1859                                             000694 GR
+ 17 A$DAC_Control$1860                                             000696 GR
+ 17 A$DAC_Control$1861                                             000698 GR
+ 17 A$DAC_Control$1862                                             00069A GR
+ 17 A$DAC_Control$1863                                             00069C GR
+ 17 A$DAC_Control$1864                                             00069E GR
+ 17 A$DAC_Control$1865                                             0006A1 GR
+ 17 A$DAC_Control$1866                                             0006A3 GR
+ 17 A$DAC_Control$1867                                             0006A5 GR
+ 17 A$DAC_Control$1873                                             0006A7 GR
+ 17 A$DAC_Control$1886                                             0006A8 GR
+ 17 A$DAC_Control$1887                                             0006AB GR
+ 17 A$DAC_Control$1888                                             0006AE GR
+ 17 A$DAC_Control$1891                                             0006B1 GR
+ 17 A$DAC_Control$1892                                             0006B4 GR
+ 17 A$DAC_Control$1893                                             0006B7 GR
+ 17 A$DAC_Control$1896                                             0006BA GR
+ 17 A$DAC_Control$1897                                             0006BD GR
+ 17 A$DAC_Control$1898                                             0006C0 GR
+ 17 A$DAC_Control$1901                                             0006C3 GR
+ 17 A$DAC_Control$1902                                             0006C6 GR
+ 17 A$DAC_Control$1903                                             0006C9 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 10.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$1906                                             0006CC GR
+ 17 A$DAC_Control$1907                                             0006CF GR
+ 17 A$DAC_Control$1908                                             0006D2 GR
+ 17 A$DAC_Control$1911                                             0006D5 GR
+ 17 A$DAC_Control$1912                                             0006D8 GR
+ 17 A$DAC_Control$1913                                             0006DB GR
+ 17 A$DAC_Control$1916                                             0006DE GR
+ 17 A$DAC_Control$1917                                             0006E1 GR
+ 17 A$DAC_Control$1918                                             0006E4 GR
+ 17 A$DAC_Control$1921                                             0006E7 GR
+ 17 A$DAC_Control$1922                                             0006EA GR
+ 17 A$DAC_Control$1923                                             0006ED GR
+ 17 A$DAC_Control$1928                                             0006F0 GR
+ 17 A$DAC_Control$1944                                             0006F1 GR
+ 17 A$DAC_Control$1947                                             0006F4 GR
+ 17 A$DAC_Control$1948                                             0006F7 GR
+ 17 A$DAC_Control$1949                                             0006F8 GR
+ 17 A$DAC_Control$1950                                             0006F9 GR
+ 17 A$DAC_Control$1951                                             0006FA GR
+ 17 A$DAC_Control$1952                                             0006FB GR
+ 17 A$DAC_Control$1953                                             0006FC GR
+ 17 A$DAC_Control$1954                                             0006FF GR
+ 17 A$DAC_Control$1955                                             000702 GR
+ 17 A$DAC_Control$1958                                             000705 GR
+ 17 A$DAC_Control$1964                                             000708 GR
+ 17 A$DAC_Control$1965                                             00070B GR
+ 17 A$DAC_Control$1966                                             00070E GR
+ 17 A$DAC_Control$1969                                             000711 GR
+ 17 A$DAC_Control$1970                                             000714 GR
+ 17 A$DAC_Control$1973                                             000716 GR
+ 17 A$DAC_Control$1974                                             000718 GR
+ 17 A$DAC_Control$1975                                             00071A GR
+ 17 A$DAC_Control$1976                                             00071C GR
+ 17 A$DAC_Control$1977                                             00071E GR
+ 17 A$DAC_Control$1978                                             000720 GR
+ 17 A$DAC_Control$1981                                             000723 GR
+ 17 A$DAC_Control$1982                                             000726 GR
+ 17 A$DAC_Control$1983                                             000729 GR
+ 17 A$DAC_Control$1984                                             00072C GR
+ 17 A$DAC_Control$1987                                             00072E GR
+ 17 A$DAC_Control$1988                                             000731 GR
+ 17 A$DAC_Control$1990                                             000733 GR
+ 17 A$DAC_Control$1991                                             000736 GR
+ 17 A$DAC_Control$1993                                             000738 GR
+ 17 A$DAC_Control$1994                                             00073B GR
+ 17 A$DAC_Control$1996                                             00073E GR
+ 17 A$DAC_Control$1997                                             000741 GR
+ 17 A$DAC_Control$1999                                             000744 GR
+ 17 A$DAC_Control$2000                                             000747 GR
+ 17 A$DAC_Control$2002                                             00074A GR
+ 17 A$DAC_Control$2003                                             00074D GR
+ 17 A$DAC_Control$2005                                             000750 GR
+ 17 A$DAC_Control$2011                                             000753 GR
+ 17 A$DAC_Control$2016                                             000756 GR
+ 17 A$DAC_Control$2020                                             000758 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 11.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$2021                                             00075B GR
+ 17 A$DAC_Control$2022                                             00075E GR
+ 17 A$DAC_Control$2026                                             000761 GR
+ 17 A$DAC_Control$2029                                             000764 GR
+ 17 A$DAC_Control$2032                                             000767 GR
+ 17 A$DAC_Control$2033                                             00076A GR
+ 17 A$DAC_Control$2034                                             00076B GR
+ 17 A$DAC_Control$2035                                             00076C GR
+ 17 A$DAC_Control$2036                                             00076D GR
+ 17 A$DAC_Control$2038                                             00076E GR
+ 17 A$DAC_Control$2039                                             000771 GR
+ 17 A$DAC_Control$2040                                             000772 GR
+ 17 A$DAC_Control$2041                                             000773 GR
+ 17 A$DAC_Control$2042                                             000774 GR
+ 17 A$DAC_Control$2043                                             000775 GR
+ 17 A$DAC_Control$2044                                             000776 GR
+ 17 A$DAC_Control$2045                                             000779 GR
+ 17 A$DAC_Control$2046                                             00077A GR
+ 17 A$DAC_Control$2047                                             00077B GR
+ 17 A$DAC_Control$2048                                             00077C GR
+ 17 A$DAC_Control$2049                                             00077D GR
+ 17 A$DAC_Control$2050                                             00077E GR
+ 17 A$DAC_Control$2051                                             000781 GR
+ 17 A$DAC_Control$2052                                             000784 GR
+ 17 A$DAC_Control$2053                                             000786 GR
+ 17 A$DAC_Control$2054                                             000788 GR
+ 17 A$DAC_Control$2055                                             00078B GR
+ 17 A$DAC_Control$2056                                             00078C GR
+ 17 A$DAC_Control$2057                                             00078D GR
+ 17 A$DAC_Control$2058                                             00078E GR
+ 17 A$DAC_Control$2059                                             00078F GR
+ 17 A$DAC_Control$2060                                             000790 GR
+ 17 A$DAC_Control$2061                                             000791 GR
+ 17 A$DAC_Control$2062                                             000792 GR
+ 17 A$DAC_Control$2063                                             000793 GR
+ 17 A$DAC_Control$2064                                             000794 GR
+ 17 A$DAC_Control$2065                                             000795 GR
+ 17 A$DAC_Control$2066                                             000797 GR
+ 17 A$DAC_Control$2067                                             00079A GR
+ 17 A$DAC_Control$2068                                             00079B GR
+ 17 A$DAC_Control$2069                                             00079C GR
+ 17 A$DAC_Control$2070                                             00079D GR
+ 17 A$DAC_Control$2071                                             00079E GR
+ 17 A$DAC_Control$2072                                             00079F GR
+ 17 A$DAC_Control$2073                                             0007A2 GR
+ 17 A$DAC_Control$2074                                             0007A4 GR
+ 17 A$DAC_Control$2075                                             0007A5 GR
+ 17 A$DAC_Control$2076                                             0007A6 GR
+ 17 A$DAC_Control$2077                                             0007A7 GR
+ 17 A$DAC_Control$2078                                             0007A8 GR
+ 17 A$DAC_Control$2079                                             0007A9 GR
+ 17 A$DAC_Control$2080                                             0007AA GR
+ 17 A$DAC_Control$2084                                             0007AC GR
+ 17 A$DAC_Control$2087                                             0007AF GR
+ 17 A$DAC_Control$2088                                             0007B2 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 12.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$2089                                             0007B5 GR
+ 17 A$DAC_Control$2092                                             0007B8 GR
+ 17 A$DAC_Control$2098                                             0007BB GR
+ 17 A$DAC_Control$2101                                             0007BE GR
+ 17 A$DAC_Control$2107                                             0007C1 GR
+ 17 A$DAC_Control$2108                                             0007C4 GR
+ 17 A$DAC_Control$2109                                             0007C5 GR
+ 17 A$DAC_Control$2111                                             0007C8 GR
+ 17 A$DAC_Control$2112                                             0007C9 GR
+ 17 A$DAC_Control$2113                                             0007CA GR
+ 17 A$DAC_Control$2116                                             0007CB GR
+ 17 A$DAC_Control$2117                                             0007CE GR
+ 17 A$DAC_Control$2118                                             0007CF GR
+ 17 A$DAC_Control$2121                                             0007D1 GR
+ 17 A$DAC_Control$2122                                             0007D4 GR
+ 17 A$DAC_Control$2126                                             0007D6 GR
+ 17 A$DAC_Control$2130                                             0007D9 GR
+ 17 A$DAC_Control$2131                                             0007DC GR
+ 17 A$DAC_Control$2132                                             0007DD GR
+ 17 A$DAC_Control$2133                                             0007DF GR
+ 17 A$DAC_Control$2134                                             0007E1 GR
+ 17 A$DAC_Control$2135                                             0007E3 GR
+ 17 A$DAC_Control$2137                                             0007E5 GR
+ 17 A$DAC_Control$2138                                             0007E7 GR
+ 17 A$DAC_Control$2140                                             0007E9 GR
+ 17 A$DAC_Control$2141                                             0007EB GR
+ 17 A$DAC_Control$2142                                             0007ED GR
+ 17 A$DAC_Control$2143                                             0007EF GR
+ 17 A$DAC_Control$2144                                             0007F1 GR
+ 17 A$DAC_Control$2145                                             0007F3 GR
+ 17 A$DAC_Control$2146                                             0007F5 GR
+ 17 A$DAC_Control$2147                                             0007F7 GR
+ 17 A$DAC_Control$2148                                             0007F9 GR
+ 17 A$DAC_Control$2149                                             0007FA GR
+ 17 A$DAC_Control$2150                                             0007FC GR
+ 17 A$DAC_Control$2151                                             0007FF GR
+ 17 A$DAC_Control$2152                                             000801 GR
+ 17 A$DAC_Control$2153                                             000803 GR
+ 17 A$DAC_Control$2156                                             000805 GR
+ 17 A$DAC_Control$2162                                             000808 GR
+ 17 A$DAC_Control$2165                                             00080B GR
+ 17 A$DAC_Control$2171                                             00080E GR
+ 17 A$DAC_Control$2172                                             000811 GR
+ 17 A$DAC_Control$2173                                             000814 GR
+ 17 A$DAC_Control$2176                                             000817 GR
+ 17 A$DAC_Control$2183                                             00081A GR
+  E A$DAC_Control$471                                              000000 GR
+ 16 A$DAC_Control$486                                              000000 GR
+  E A$DAC_Control$493                                              000003 GR
+ 17 A$DAC_Control$524                                              000000 GR
+ 17 A$DAC_Control$525                                              000002 GR
+ 17 A$DAC_Control$526                                              000004 GR
+ 17 A$DAC_Control$527                                              000006 GR
+ 17 A$DAC_Control$528                                              000007 GR
+ 17 A$DAC_Control$529                                              00000A GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 13.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$530                                              00000B GR
+ 17 A$DAC_Control$531                                              00000C GR
+ 17 A$DAC_Control$532                                              00000D GR
+ 17 A$DAC_Control$533                                              00000E GR
+ 17 A$DAC_Control$534                                              00000F GR
+ 17 A$DAC_Control$535                                              000010 GR
+ 17 A$DAC_Control$536                                              000011 GR
+ 17 A$DAC_Control$537                                              000012 GR
+ 17 A$DAC_Control$538                                              000013 GR
+ 17 A$DAC_Control$539                                              000014 GR
+ 17 A$DAC_Control$543                                              000015 GR
+ 17 A$DAC_Control$544                                              000018 GR
+ 17 A$DAC_Control$545                                              000019 GR
+ 17 A$DAC_Control$546                                              00001A GR
+ 17 A$DAC_Control$547                                              00001B GR
+ 17 A$DAC_Control$548                                              00001C GR
+ 17 A$DAC_Control$549                                              00001D GR
+ 17 A$DAC_Control$550                                              00001E GR
+ 17 A$DAC_Control$551                                              00001F GR
+ 17 A$DAC_Control$552                                              000020 GR
+ 17 A$DAC_Control$553                                              000021 GR
+ 17 A$DAC_Control$554                                              000022 GR
+ 17 A$DAC_Control$555                                              000023 GR
+ 17 A$DAC_Control$556                                              000025 GR
+ 17 A$DAC_Control$557                                              000027 GR
+ 17 A$DAC_Control$558                                              000029 GR
+ 17 A$DAC_Control$559                                              00002B GR
+ 17 A$DAC_Control$560                                              00002D GR
+ 17 A$DAC_Control$561                                              00002F GR
+ 17 A$DAC_Control$562                                              000031 GR
+ 17 A$DAC_Control$563                                              000033 GR
+ 17 A$DAC_Control$564                                              000036 GR
+ 17 A$DAC_Control$565                                              000039 GR
+ 17 A$DAC_Control$566                                              00003B GR
+ 17 A$DAC_Control$567                                              00003E GR
+ 17 A$DAC_Control$568                                              000040 GR
+ 17 A$DAC_Control$569                                              000042 GR
+ 17 A$DAC_Control$570                                              000044 GR
+ 17 A$DAC_Control$571                                              000046 GR
+ 17 A$DAC_Control$572                                              000048 GR
+ 17 A$DAC_Control$573                                              00004A GR
+ 17 A$DAC_Control$574                                              00004C GR
+ 17 A$DAC_Control$575                                              00004E GR
+ 17 A$DAC_Control$576                                              00004F GR
+ 17 A$DAC_Control$577                                              000051 GR
+ 17 A$DAC_Control$578                                              000053 GR
+ 17 A$DAC_Control$579                                              000055 GR
+ 17 A$DAC_Control$580                                              000057 GR
+ 17 A$DAC_Control$581                                              000059 GR
+ 17 A$DAC_Control$582                                              00005B GR
+ 17 A$DAC_Control$583                                              00005D GR
+ 17 A$DAC_Control$584                                              00005F GR
+ 17 A$DAC_Control$585                                              000061 GR
+ 17 A$DAC_Control$586                                              000063 GR
+ 17 A$DAC_Control$587                                              000065 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 14.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$588                                              000067 GR
+ 17 A$DAC_Control$589                                              000068 GR
+ 17 A$DAC_Control$590                                              00006B GR
+ 17 A$DAC_Control$591                                              00006D GR
+ 17 A$DAC_Control$592                                              00006F GR
+ 17 A$DAC_Control$593                                              000071 GR
+ 17 A$DAC_Control$594                                              000072 GR
+ 17 A$DAC_Control$595                                              000074 GR
+ 17 A$DAC_Control$596                                              000076 GR
+ 17 A$DAC_Control$597                                              000078 GR
+ 17 A$DAC_Control$598                                              00007B GR
+ 17 A$DAC_Control$599                                              00007C GR
+ 17 A$DAC_Control$600                                              00007D GR
+ 17 A$DAC_Control$601                                              00007E GR
+ 17 A$DAC_Control$602                                              00007F GR
+ 17 A$DAC_Control$603                                              000080 GR
+ 17 A$DAC_Control$604                                              000081 GR
+ 17 A$DAC_Control$605                                              000082 GR
+ 17 A$DAC_Control$606                                              000083 GR
+ 17 A$DAC_Control$607                                              000084 GR
+ 17 A$DAC_Control$608                                              000085 GR
+ 17 A$DAC_Control$611                                              000086 GR
+ 17 A$DAC_Control$613                                              000088 GR
+ 17 A$DAC_Control$614                                              00008B GR
+ 17 A$DAC_Control$615                                              00008C GR
+ 17 A$DAC_Control$616                                              00008D GR
+ 17 A$DAC_Control$617                                              00008E GR
+ 17 A$DAC_Control$618                                              00008F GR
+ 17 A$DAC_Control$619                                              000090 GR
+ 17 A$DAC_Control$620                                              000091 GR
+ 17 A$DAC_Control$621                                              000092 GR
+ 17 A$DAC_Control$622                                              000093 GR
+ 17 A$DAC_Control$623                                              000094 GR
+ 17 A$DAC_Control$624                                              000095 GR
+ 17 A$DAC_Control$625                                              000096 GR
+ 17 A$DAC_Control$626                                              000098 GR
+ 17 A$DAC_Control$627                                              00009A GR
+ 17 A$DAC_Control$628                                              00009C GR
+ 17 A$DAC_Control$629                                              00009E GR
+ 17 A$DAC_Control$630                                              0000A0 GR
+ 17 A$DAC_Control$631                                              0000A2 GR
+ 17 A$DAC_Control$632                                              0000A4 GR
+ 17 A$DAC_Control$633                                              0000A6 GR
+ 17 A$DAC_Control$634                                              0000A8 GR
+ 17 A$DAC_Control$635                                              0000AA GR
+ 17 A$DAC_Control$636                                              0000AC GR
+ 17 A$DAC_Control$637                                              0000AE GR
+ 17 A$DAC_Control$638                                              0000B0 GR
+ 17 A$DAC_Control$639                                              0000B2 GR
+ 17 A$DAC_Control$640                                              0000B4 GR
+ 17 A$DAC_Control$641                                              0000B5 GR
+ 17 A$DAC_Control$642                                              0000B8 GR
+ 17 A$DAC_Control$643                                              0000BA GR
+ 17 A$DAC_Control$644                                              0000BC GR
+ 17 A$DAC_Control$645                                              0000BE GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 15.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$646                                              0000C0 GR
+ 17 A$DAC_Control$647                                              0000C2 GR
+ 17 A$DAC_Control$648                                              0000C4 GR
+ 17 A$DAC_Control$649                                              0000C6 GR
+ 17 A$DAC_Control$650                                              0000C8 GR
+ 17 A$DAC_Control$651                                              0000C9 GR
+ 17 A$DAC_Control$652                                              0000CB GR
+ 17 A$DAC_Control$653                                              0000CD GR
+ 17 A$DAC_Control$654                                              0000CF GR
+ 17 A$DAC_Control$655                                              0000D1 GR
+ 17 A$DAC_Control$656                                              0000D3 GR
+ 17 A$DAC_Control$657                                              0000D5 GR
+ 17 A$DAC_Control$658                                              0000D7 GR
+ 17 A$DAC_Control$659                                              0000D9 GR
+ 17 A$DAC_Control$660                                              0000DB GR
+ 17 A$DAC_Control$661                                              0000DD GR
+ 17 A$DAC_Control$662                                              0000DF GR
+ 17 A$DAC_Control$663                                              0000E1 GR
+ 17 A$DAC_Control$664                                              0000E2 GR
+ 17 A$DAC_Control$665                                              0000E5 GR
+ 17 A$DAC_Control$666                                              0000E7 GR
+ 17 A$DAC_Control$667                                              0000E9 GR
+ 17 A$DAC_Control$668                                              0000EB GR
+ 17 A$DAC_Control$669                                              0000EC GR
+ 17 A$DAC_Control$670                                              0000EE GR
+ 17 A$DAC_Control$671                                              0000F0 GR
+ 17 A$DAC_Control$672                                              0000F2 GR
+ 17 A$DAC_Control$673                                              0000F5 GR
+ 17 A$DAC_Control$674                                              0000F6 GR
+ 17 A$DAC_Control$675                                              0000F7 GR
+ 17 A$DAC_Control$676                                              0000F8 GR
+ 17 A$DAC_Control$677                                              0000F9 GR
+ 17 A$DAC_Control$678                                              0000FA GR
+ 17 A$DAC_Control$679                                              0000FB GR
+ 17 A$DAC_Control$680                                              0000FC GR
+ 17 A$DAC_Control$681                                              0000FD GR
+ 17 A$DAC_Control$682                                              0000FE GR
+ 17 A$DAC_Control$683                                              0000FF GR
+ 17 A$DAC_Control$684                                              000100 GR
+ 17 A$DAC_Control$688                                              000102 GR
+ 17 A$DAC_Control$689                                              000104 GR
+ 17 A$DAC_Control$690                                              000106 GR
+ 17 A$DAC_Control$691                                              000108 GR
+ 17 A$DAC_Control$692                                              00010A GR
+ 17 A$DAC_Control$693                                              00010C GR
+ 17 A$DAC_Control$694                                              00010E GR
+ 17 A$DAC_Control$695                                              000110 GR
+ 17 A$DAC_Control$698                                              000112 GR
+ 17 A$DAC_Control$699                                              000114 GR
+ 17 A$DAC_Control$700                                              000116 GR
+ 17 A$DAC_Control$701                                              000118 GR
+ 17 A$DAC_Control$702                                              000119 GR
+ 17 A$DAC_Control$703                                              00011C GR
+ 17 A$DAC_Control$704                                              00011F GR
+ 17 A$DAC_Control$705                                              000122 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 16.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$706                                              000125 GR
+ 17 A$DAC_Control$707                                              000127 GR
+ 17 A$DAC_Control$708                                              000129 GR
+ 17 A$DAC_Control$709                                              00012B GR
+ 17 A$DAC_Control$710                                              00012D GR
+ 17 A$DAC_Control$711                                              00012F GR
+ 17 A$DAC_Control$712                                              000131 GR
+ 17 A$DAC_Control$713                                              000133 GR
+ 17 A$DAC_Control$714                                              000135 GR
+ 17 A$DAC_Control$715                                              000137 GR
+ 17 A$DAC_Control$716                                              000139 GR
+ 17 A$DAC_Control$717                                              00013B GR
+ 17 A$DAC_Control$718                                              00013D GR
+ 17 A$DAC_Control$719                                              00013F GR
+ 17 A$DAC_Control$720                                              000141 GR
+ 17 A$DAC_Control$721                                              000143 GR
+ 17 A$DAC_Control$724                                              000145 GR
+ 17 A$DAC_Control$725                                              000148 GR
+ 17 A$DAC_Control$726                                              00014B GR
+ 17 A$DAC_Control$727                                              00014E GR
+ 17 A$DAC_Control$728                                              000150 GR
+ 17 A$DAC_Control$729                                              000153 GR
+ 17 A$DAC_Control$730                                              000156 GR
+ 17 A$DAC_Control$731                                              000159 GR
+ 17 A$DAC_Control$732                                              00015C GR
+ 17 A$DAC_Control$733                                              00015E GR
+ 17 A$DAC_Control$734                                              000160 GR
+ 17 A$DAC_Control$735                                              000162 GR
+ 17 A$DAC_Control$736                                              000164 GR
+ 17 A$DAC_Control$737                                              000166 GR
+ 17 A$DAC_Control$738                                              000168 GR
+ 17 A$DAC_Control$739                                              00016A GR
+ 17 A$DAC_Control$742                                              00016C GR
+ 17 A$DAC_Control$743                                              00016F GR
+ 17 A$DAC_Control$744                                              000172 GR
+ 17 A$DAC_Control$745                                              000175 GR
+ 17 A$DAC_Control$746                                              000177 GR
+ 17 A$DAC_Control$747                                              00017A GR
+ 17 A$DAC_Control$748                                              00017D GR
+ 17 A$DAC_Control$749                                              000180 GR
+ 17 A$DAC_Control$750                                              000183 GR
+ 17 A$DAC_Control$751                                              000185 GR
+ 17 A$DAC_Control$752                                              000187 GR
+ 17 A$DAC_Control$753                                              000189 GR
+ 17 A$DAC_Control$754                                              00018B GR
+ 17 A$DAC_Control$755                                              00018C GR
+ 17 A$DAC_Control$756                                              00018E GR
+ 17 A$DAC_Control$757                                              000190 GR
+ 17 A$DAC_Control$758                                              000192 GR
+ 17 A$DAC_Control$759                                              000194 GR
+ 17 A$DAC_Control$760                                              000196 GR
+ 17 A$DAC_Control$761                                              000198 GR
+ 17 A$DAC_Control$762                                              00019B GR
+ 17 A$DAC_Control$763                                              00019E GR
+ 17 A$DAC_Control$764                                              0001A1 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 17.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$765                                              0001A3 GR
+ 17 A$DAC_Control$766                                              0001A6 GR
+ 17 A$DAC_Control$767                                              0001A8 GR
+ 17 A$DAC_Control$768                                              0001AA GR
+ 17 A$DAC_Control$769                                              0001AC GR
+ 17 A$DAC_Control$770                                              0001AD GR
+ 17 A$DAC_Control$771                                              0001AF GR
+ 17 A$DAC_Control$772                                              0001B1 GR
+ 17 A$DAC_Control$773                                              0001B3 GR
+ 17 A$DAC_Control$774                                              0001B5 GR
+ 17 A$DAC_Control$775                                              0001B7 GR
+ 17 A$DAC_Control$776                                              0001B9 GR
+ 17 A$DAC_Control$777                                              0001BB GR
+ 17 A$DAC_Control$778                                              0001BD GR
+ 17 A$DAC_Control$779                                              0001BF GR
+ 17 A$DAC_Control$780                                              0001C1 GR
+ 17 A$DAC_Control$781                                              0001C3 GR
+ 17 A$DAC_Control$782                                              0001C5 GR
+ 17 A$DAC_Control$783                                              0001C7 GR
+ 17 A$DAC_Control$784                                              0001C9 GR
+ 17 A$DAC_Control$785                                              0001CA GR
+ 17 A$DAC_Control$786                                              0001CD GR
+ 17 A$DAC_Control$787                                              0001CF GR
+ 17 A$DAC_Control$788                                              0001D1 GR
+ 17 A$DAC_Control$789                                              0001D3 GR
+ 17 A$DAC_Control$790                                              0001D4 GR
+ 17 A$DAC_Control$791                                              0001D6 GR
+ 17 A$DAC_Control$792                                              0001D8 GR
+ 17 A$DAC_Control$793                                              0001DA GR
+ 17 A$DAC_Control$794                                              0001DC GR
+ 17 A$DAC_Control$795                                              0001DE GR
+ 17 A$DAC_Control$796                                              0001E0 GR
+ 17 A$DAC_Control$797                                              0001E2 GR
+ 17 A$DAC_Control$798                                              0001E3 GR
+ 17 A$DAC_Control$799                                              0001E5 GR
+ 17 A$DAC_Control$800                                              0001E7 GR
+ 17 A$DAC_Control$801                                              0001E9 GR
+ 17 A$DAC_Control$802                                              0001EB GR
+ 17 A$DAC_Control$803                                              0001ED GR
+ 17 A$DAC_Control$804                                              0001EF GR
+ 17 A$DAC_Control$805                                              0001F2 GR
+ 17 A$DAC_Control$806                                              0001F5 GR
+ 17 A$DAC_Control$807                                              0001F8 GR
+ 17 A$DAC_Control$808                                              0001FA GR
+ 17 A$DAC_Control$809                                              0001FD GR
+ 17 A$DAC_Control$810                                              0001FF GR
+ 17 A$DAC_Control$811                                              000201 GR
+ 17 A$DAC_Control$812                                              000203 GR
+ 17 A$DAC_Control$813                                              000204 GR
+ 17 A$DAC_Control$814                                              000206 GR
+ 17 A$DAC_Control$815                                              000208 GR
+ 17 A$DAC_Control$816                                              00020A GR
+ 17 A$DAC_Control$817                                              00020C GR
+ 17 A$DAC_Control$818                                              00020E GR
+ 17 A$DAC_Control$819                                              000210 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 18.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$820                                              000212 GR
+ 17 A$DAC_Control$821                                              000214 GR
+ 17 A$DAC_Control$822                                              000216 GR
+ 17 A$DAC_Control$823                                              000218 GR
+ 17 A$DAC_Control$824                                              00021A GR
+ 17 A$DAC_Control$825                                              00021C GR
+ 17 A$DAC_Control$826                                              00021E GR
+ 17 A$DAC_Control$827                                              000220 GR
+ 17 A$DAC_Control$828                                              000221 GR
+ 17 A$DAC_Control$829                                              000224 GR
+ 17 A$DAC_Control$830                                              000226 GR
+ 17 A$DAC_Control$831                                              000228 GR
+ 17 A$DAC_Control$832                                              00022A GR
+ 17 A$DAC_Control$833                                              00022B GR
+ 17 A$DAC_Control$834                                              00022D GR
+ 17 A$DAC_Control$835                                              00022F GR
+ 17 A$DAC_Control$836                                              000231 GR
+ 17 A$DAC_Control$837                                              000233 GR
+ 17 A$DAC_Control$838                                              000235 GR
+ 17 A$DAC_Control$839                                              000237 GR
+ 17 A$DAC_Control$844                                              000238 GR
+ 17 A$DAC_Control$865                                              000239 GR
+ 17 A$DAC_Control$866                                              00023B GR
+ 17 A$DAC_Control$867                                              00023D GR
+ 17 A$DAC_Control$868                                              00023F GR
+ 17 A$DAC_Control$869                                              000242 GR
+ 17 A$DAC_Control$870                                              000243 GR
+ 17 A$DAC_Control$871                                              000244 GR
+ 17 A$DAC_Control$872                                              000245 GR
+ 17 A$DAC_Control$873                                              000246 GR
+ 17 A$DAC_Control$874                                              000247 GR
+ 17 A$DAC_Control$875                                              000248 GR
+ 17 A$DAC_Control$878                                              000249 GR
+ 17 A$DAC_Control$879                                              00024C GR
+ 17 A$DAC_Control$880                                              00024D GR
+ 17 A$DAC_Control$881                                              00024F GR
+ 17 A$DAC_Control$882                                              000250 GR
+ 17 A$DAC_Control$883                                              000251 GR
+ 17 A$DAC_Control$884                                              000253 GR
+ 17 A$DAC_Control$885                                              000254 GR
+ 17 A$DAC_Control$886                                              000255 GR
+ 17 A$DAC_Control$887                                              000257 GR
+ 17 A$DAC_Control$888                                              00025A GR
+ 17 A$DAC_Control$889                                              00025B GR
+ 17 A$DAC_Control$890                                              00025C GR
+ 17 A$DAC_Control$891                                              00025D GR
+ 17 A$DAC_Control$892                                              00025E GR
+ 17 A$DAC_Control$893                                              00025F GR
+ 17 A$DAC_Control$894                                              000261 GR
+ 17 A$DAC_Control$896                                              000263 GR
+ 17 A$DAC_Control$897                                              000264 GR
+ 17 A$DAC_Control$898                                              000265 GR
+ 17 A$DAC_Control$899                                              000266 GR
+ 17 A$DAC_Control$900                                              000267 GR
+ 17 A$DAC_Control$901                                              000268 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 19.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$902                                              00026A GR
+ 17 A$DAC_Control$906                                              00026D GR
+ 17 A$DAC_Control$907                                              00026F GR
+ 17 A$DAC_Control$908                                              000271 GR
+ 17 A$DAC_Control$909                                              000273 GR
+ 17 A$DAC_Control$910                                              000275 GR
+ 17 A$DAC_Control$911                                              000277 GR
+ 17 A$DAC_Control$912                                              000279 GR
+ 17 A$DAC_Control$913                                              00027C GR
+ 17 A$DAC_Control$914                                              00027E GR
+ 17 A$DAC_Control$915                                              000280 GR
+ 17 A$DAC_Control$916                                              000282 GR
+ 17 A$DAC_Control$917                                              000283 GR
+ 17 A$DAC_Control$918                                              000285 GR
+ 17 A$DAC_Control$919                                              000287 GR
+ 17 A$DAC_Control$920                                              000289 GR
+ 17 A$DAC_Control$921                                              00028B GR
+ 17 A$DAC_Control$922                                              00028E GR
+ 17 A$DAC_Control$923                                              000291 GR
+ 17 A$DAC_Control$924                                              000293 GR
+ 17 A$DAC_Control$925                                              000296 GR
+ 17 A$DAC_Control$926                                              000299 GR
+ 17 A$DAC_Control$927                                              00029C GR
+ 17 A$DAC_Control$928                                              00029F GR
+ 17 A$DAC_Control$929                                              0002A1 GR
+ 17 A$DAC_Control$930                                              0002A3 GR
+ 17 A$DAC_Control$931                                              0002A5 GR
+ 17 A$DAC_Control$932                                              0002A7 GR
+ 17 A$DAC_Control$933                                              0002A9 GR
+ 17 A$DAC_Control$934                                              0002AB GR
+ 17 A$DAC_Control$935                                              0002AD GR
+ 17 A$DAC_Control$936                                              0002AF GR
+ 17 A$DAC_Control$937                                              0002B1 GR
+ 17 A$DAC_Control$938                                              0002B3 GR
+ 17 A$DAC_Control$939                                              0002B5 GR
+ 17 A$DAC_Control$940                                              0002B7 GR
+ 17 A$DAC_Control$941                                              0002B9 GR
+ 17 A$DAC_Control$942                                              0002BB GR
+ 17 A$DAC_Control$943                                              0002BE GR
+ 17 A$DAC_Control$944                                              0002C0 GR
+ 17 A$DAC_Control$945                                              0002C2 GR
+ 17 A$DAC_Control$946                                              0002C4 GR
+ 17 A$DAC_Control$947                                              0002C5 GR
+ 17 A$DAC_Control$948                                              0002C7 GR
+ 17 A$DAC_Control$949                                              0002C9 GR
+ 17 A$DAC_Control$950                                              0002CB GR
+ 17 A$DAC_Control$953                                              0002CD GR
+ 17 A$DAC_Control$954                                              0002D0 GR
+ 17 A$DAC_Control$955                                              0002D3 GR
+ 17 A$DAC_Control$956                                              0002D6 GR
+ 17 A$DAC_Control$957                                              0002D8 GR
+ 17 A$DAC_Control$958                                              0002DB GR
+ 17 A$DAC_Control$959                                              0002DD GR
+ 17 A$DAC_Control$960                                              0002DF GR
+ 17 A$DAC_Control$961                                              0002E1 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 20.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 A$DAC_Control$962                                              0002E2 GR
+ 17 A$DAC_Control$963                                              0002E4 GR
+ 17 A$DAC_Control$964                                              0002E6 GR
+ 17 A$DAC_Control$965                                              0002E8 GR
+ 17 A$DAC_Control$966                                              0002EA GR
+ 17 A$DAC_Control$967                                              0002EC GR
+ 17 A$DAC_Control$968                                              0002EE GR
+ 17 A$DAC_Control$969                                              0002EF GR
+ 17 A$DAC_Control$970                                              0002F2 GR
+ 17 A$DAC_Control$971                                              0002F4 GR
+ 17 A$DAC_Control$972                                              0002F6 GR
+ 17 A$DAC_Control$973                                              0002F8 GR
+ 17 A$DAC_Control$976                                              0002F9 GR
+ 17 A$DAC_Control$977                                              0002FA GR
+ 17 A$DAC_Control$978                                              0002FC GR
+ 17 A$DAC_Control$979                                              0002FE GR
+ 17 A$DAC_Control$980                                              000300 GR
+ 17 A$DAC_Control$981                                              000302 GR
+ 17 A$DAC_Control$982                                              000304 GR
+ 17 A$DAC_Control$983                                              000306 GR
+ 17 A$DAC_Control$984                                              000308 GR
+ 17 A$DAC_Control$985                                              00030A GR
+ 17 A$DAC_Control$986                                              00030C GR
+ 17 A$DAC_Control$987                                              00030D GR
+ 17 A$DAC_Control$988                                              000310 GR
+ 17 A$DAC_Control$989                                              000312 GR
+ 17 A$DAC_Control$990                                              000314 GR
+ 17 A$DAC_Control$991                                              000316 GR
+ 17 A$DAC_Control$992                                              000317 GR
+ 17 A$DAC_Control$993                                              000319 GR
+ 17 A$DAC_Control$994                                              00031B GR
+ 17 A$DAC_Control$995                                              00031D GR
+ 17 A$DAC_Control$996                                              00031F GR
+ 17 A$DAC_Control$997                                              000321 GR
+ 17 A$DAC_Control$998                                              000323 GR
+    A.0                                                         =  0000E0 L
+    A.1                                                         =  0000E1 L
+    A.2                                                         =  0000E2 L
+    A.3                                                         =  0000E3 L
+    A.4                                                         =  0000E4 L
+    A.5                                                         =  0000E5 L
+    A.6                                                         =  0000E6 L
+    A.7                                                         =  0000E7 L
+    AC                                                          =  0000D6 L
+    ACC                                                         =  0000E0 L
+    ACC.0                                                       =  0000E0 L
+    ACC.1                                                       =  0000E1 L
+    ACC.2                                                       =  0000E2 L
+    ACC.3                                                       =  0000E3 L
+    ACC.4                                                       =  0000E4 L
+    ACC.5                                                       =  0000E5 L
+    ACC.6                                                       =  0000E6 L
+    ACC.7                                                       =  0000E7 L
+    B                                                           =  0000F0 L
+    B.0                                                         =  0000F0 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 21.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    B.1                                                         =  0000F1 L
+    B.2                                                         =  0000F2 L
+    B.3                                                         =  0000F3 L
+    B.4                                                         =  0000F4 L
+    B.5                                                         =  0000F5 L
+    B.6                                                         =  0000F6 L
+    B.7                                                         =  0000F7 L
+ 17 C$DAC_Control.c$101$1_0$82                                  =  000443 GR
+ 17 C$DAC_Control.c$103$1_0$82                                  =  000446 GR
+ 17 C$DAC_Control.c$105$1_0$82                                  =  000449 GR
+ 17 C$DAC_Control.c$106$1_0$82                                  =  000452 GR
+ 17 C$DAC_Control.c$108$1_0$84                                  =  000453 GR
+ 17 C$DAC_Control.c$109$1_0$84                                  =  000453 GR
+ 17 C$DAC_Control.c$110$1_0$84                                  =  000456 GR
+ 17 C$DAC_Control.c$113$1_0$86                                  =  000457 GR
+ 17 C$DAC_Control.c$115$1_0$86                                  =  00045D GR
+ 17 C$DAC_Control.c$116$1_0$86                                  =  000460 GR
+ 17 C$DAC_Control.c$117$1_0$86                                  =  000465 GR
+ 17 C$DAC_Control.c$118$1_0$86                                  =  000468 GR
+ 17 C$DAC_Control.c$120$1_0$86                                  =  00046B GR
+ 17 C$DAC_Control.c$123$1_0$88                                  =  00046C GR
+ 17 C$DAC_Control.c$126$1_0$88                                  =  00046C GR
+ 17 C$DAC_Control.c$127$1_0$88                                  =  00046D GR
+ 17 C$DAC_Control.c$128$1_0$90                                  =  00046E GR
+ 17 C$DAC_Control.c$129$2_0$90                                  =  000474 GR
+ 17 C$DAC_Control.c$132$1_0$90                                  =  000479 GR
+ 17 C$DAC_Control.c$132$2_0$91                                  =  0004B9 GR
+ 17 C$DAC_Control.c$134$3_0$92                                  =  00047B GR
+ 17 C$DAC_Control.c$135$3_0$92                                  =  00048C GR
+ 17 C$DAC_Control.c$138$3_0$92                                  =  000492 GR
+ 17 C$DAC_Control.c$141$3_0$92                                  =  000499 GR
+ 17 C$DAC_Control.c$144$3_0$92                                  =  00049B GR
+ 17 C$DAC_Control.c$145$3_0$92                                  =  0004A2 GR
+ 17 C$DAC_Control.c$146$4_0$93                                  =  0004A5 GR
+ 17 C$DAC_Control.c$150$3_0$92                                  =  0004AD GR
+ 17 C$DAC_Control.c$153$3_0$92                                  =  0004B2 GR
+ 17 C$DAC_Control.c$156$3_0$92                                  =  0004B4 GR
+ 17 C$DAC_Control.c$159$1_0$90                                  =  0004BF GR
+ 17 C$DAC_Control.c$160$1_0$90                                  =  0004C3 GR
+ 17 C$DAC_Control.c$163$1_0$95                                  =  0004C6 GR
+ 17 C$DAC_Control.c$167$1_0$95                                  =  0004CC GR
+ 17 C$DAC_Control.c$171$1_0$95                                  =  0004CE GR
+ 17 C$DAC_Control.c$172$2_0$96                                  =  0004D4 GR
+ 17 C$DAC_Control.c$173$2_0$96                                  =  0004E7 GR
+ 17 C$DAC_Control.c$175$2_0$97                                  =  0004F6 GR
+ 17 C$DAC_Control.c$176$2_0$97                                  =  000509 GR
+ 17 C$DAC_Control.c$179$1_0$95                                  =  000516 GR
+ 17 C$DAC_Control.c$180$1_0$95                                  =  000518 GR
+ 17 C$DAC_Control.c$183$1_0$98                                  =  000519 GR
+ 17 C$DAC_Control.c$184$1_0$98                                  =  000519 GR
+ 17 C$DAC_Control.c$185$1_0$98                                  =  000527 GR
+ 17 C$DAC_Control.c$188$1_0$98                                  =  00052C GR
+ 17 C$DAC_Control.c$190$1_0$98                                  =  000532 GR
+ 17 C$DAC_Control.c$192$1_0$98                                  =  000532 GR
+ 17 C$DAC_Control.c$195$1_0$101                                 =  000533 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 22.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 C$DAC_Control.c$196$1_0$101                                 =  000533 GR
+ 17 C$DAC_Control.c$199$2_0$103                                 =  00053C GR
+ 17 C$DAC_Control.c$200$2_0$103                                 =  000558 GR
+ 17 C$DAC_Control.c$202$2_1$103                                 =  0005FB GR
+ 17 C$DAC_Control.c$202$3_1$104                                 =  00059E GR
+ 17 C$DAC_Control.c$203$3_1$104                                 =  0005A5 GR
+ 17 C$DAC_Control.c$204$3_1$104                                 =  0005DB GR
+ 17 C$DAC_Control.c$206$3_1$104                                 =  0005ED GR
+ 17 C$DAC_Control.c$207$3_1$104                                 =  0005F6 GR
+ 17 C$DAC_Control.c$209$2_1$101                                 =  0005FE GR
+ 17 C$DAC_Control.c$211$2_1$106                                 =  0005FF GR
+ 17 C$DAC_Control.c$216$3_0$109                                 =  0005FF GR
+ 17 C$DAC_Control.c$217$2_0$107                                 =  000601 GR
+ 17 C$DAC_Control.c$219$2_0$107                                 =  00060C GR
+ 17 C$DAC_Control.c$220$3_0$108                                 =  000614 GR
+ 17 C$DAC_Control.c$221$3_0$108                                 =  000620 GR
+ 17 C$DAC_Control.c$222$3_0$108                                 =  000629 GR
+ 17 C$DAC_Control.c$224$2_0$107                                 =  00062B GR
+ 17 C$DAC_Control.c$225$3_0$109                                 =  00063A GR
+ 17 C$DAC_Control.c$226$3_0$109                                 =  000647 GR
+ 17 C$DAC_Control.c$230$1_0$106                                 =  000656 GR
+ 17 C$DAC_Control.c$231$1_0$106                                 =  00065F GR
+ 17 C$DAC_Control.c$233$1_0$111                                 =  000660 GR
+ 17 C$DAC_Control.c$235$1_0$111                                 =  000660 GR
+ 17 C$DAC_Control.c$236$1_1$112                                 =  000669 GR
+ 17 C$DAC_Control.c$238$1_1$112                                 =  000670 GR
+ 17 C$DAC_Control.c$239$2_1$113                                 =  00067C GR
+ 17 C$DAC_Control.c$240$2_1$113                                 =  000685 GR
+ 17 C$DAC_Control.c$243$1_1$112                                 =  000687 GR
+ 17 C$DAC_Control.c$244$1_1$112                                 =  000690 GR
+ 17 C$DAC_Control.c$245$1_1$112                                 =  00068E GR
+ 17 C$DAC_Control.c$246$1_1$111                                 =  0006A7 GR
+ 17 C$DAC_Control.c$249$1_1$115                                 =  0006A8 GR
+ 17 C$DAC_Control.c$250$1_0$115                                 =  0006A8 GR
+ 17 C$DAC_Control.c$251$1_0$115                                 =  0006B1 GR
+ 17 C$DAC_Control.c$252$1_0$115                                 =  0006BA GR
+ 17 C$DAC_Control.c$253$1_0$115                                 =  0006C3 GR
+ 17 C$DAC_Control.c$254$1_0$115                                 =  0006CC GR
+ 17 C$DAC_Control.c$255$1_0$115                                 =  0006D5 GR
+ 17 C$DAC_Control.c$256$1_0$115                                 =  0006DE GR
+ 17 C$DAC_Control.c$257$1_0$115                                 =  0006E7 GR
+ 17 C$DAC_Control.c$258$1_0$115                                 =  0006F0 GR
+ 17 C$DAC_Control.c$261$1_0$117                                 =  0006F1 GR
+ 17 C$DAC_Control.c$264$1_0$117                                 =  0006F1 GR
+ 17 C$DAC_Control.c$265$1_0$117                                 =  0006F4 GR
+ 17 C$DAC_Control.c$266$1_0$117                                 =  000705 GR
+ 17 C$DAC_Control.c$268$1_0$117                                 =  000708 GR
+ 17 C$DAC_Control.c$269$2_0$118                                 =  000708 GR
+ 17 C$DAC_Control.c$270$2_0$118                                 =  000711 GR
+ 17 C$DAC_Control.c$271$2_0$118                                 =  000716 GR
+ 17 C$DAC_Control.c$272$2_0$118                                 =  000723 GR
+ 17 C$DAC_Control.c$274$2_0$118                                 =  00072E GR
+ 17 C$DAC_Control.c$275$3_0$119                                 =  000753 GR
+ 17 C$DAC_Control.c$276$3_0$119                                 =  000753 GR
+ 17 C$DAC_Control.c$277$3_0$119                                 =  000756 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 23.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 C$DAC_Control.c$279$3_0$119                                 =  000756 GR
+ 17 C$DAC_Control.c$280$3_0$119                                 =  000758 GR
+ 17 C$DAC_Control.c$281$3_0$119                                 =  000761 GR
+ 17 C$DAC_Control.c$282$4_0$120                                 =  000764 GR
+ 17 C$DAC_Control.c$284$6_0$121                                 =  000767 GR
+ 17 C$DAC_Control.c$286$3_0$119                                 =  0007AC GR
+ 17 C$DAC_Control.c$287$3_0$119                                 =  0007AF GR
+ 17 C$DAC_Control.c$288$3_0$119                                 =  0007B8 GR
+ 17 C$DAC_Control.c$290$3_0$119                                 =  0007BB GR
+ 17 C$DAC_Control.c$291$3_0$119                                 =  0007BB GR
+ 17 C$DAC_Control.c$292$3_0$119                                 =  0007BE GR
+ 17 C$DAC_Control.c$294$3_0$119                                 =  0007C1 GR
+ 17 C$DAC_Control.c$295$3_0$119                                 =  0007C1 GR
+ 17 C$DAC_Control.c$296$3_0$119                                 =  0007CB GR
+ 17 C$DAC_Control.c$297$4_0$122                                 =  0007D1 GR
+ 17 C$DAC_Control.c$299$4_0$123                                 =  0007D6 GR
+ 17 C$DAC_Control.c$301$3_0$119                                 =  0007D9 GR
+ 17 C$DAC_Control.c$302$3_0$119                                 =  000805 GR
+ 17 C$DAC_Control.c$305$3_0$119                                 =  000808 GR
+ 17 C$DAC_Control.c$306$3_0$119                                 =  000808 GR
+ 17 C$DAC_Control.c$307$3_0$119                                 =  00080B GR
+ 17 C$DAC_Control.c$309$3_0$119                                 =  00080E GR
+ 17 C$DAC_Control.c$310$3_0$119                                 =  00080E GR
+ 17 C$DAC_Control.c$312$1_0$117                                 =  000817 GR
+ 17 C$DAC_Control.c$315$1_0$117                                 =  00081A GR
+ 17 C$DAC_Control.c$316$1_0$117                                 =  00081A GR
+ 17 C$DAC_Control.c$37$0_0$68                                   =  000000 GR
+ 17 C$DAC_Control.c$39$1_0$68                                   =  000015 GR
+ 17 C$DAC_Control.c$40$1_0$68                                   =  000086 GR
+ 17 C$DAC_Control.c$43$1_1$68                                   =  000102 GR
+ 17 C$DAC_Control.c$44$1_1$68                                   =  000112 GR
+ 17 C$DAC_Control.c$45$1_1$68                                   =  000145 GR
+ 17 C$DAC_Control.c$47$1_1$68                                   =  00016C GR
+ 17 C$DAC_Control.c$48$1_1$68                                   =  000238 GR
+ 17 C$DAC_Control.c$49$1_1$72                                   =  000239 GR
+ 17 C$DAC_Control.c$50$2_0$72                                   =  0003A9 GR
+ 17 C$DAC_Control.c$50$3_0$73                                   =  000249 GR
+ 17 C$DAC_Control.c$53$2_0$72                                   =  00026D GR
+ 17 C$DAC_Control.c$54$2_0$72                                   =  0002CD GR
+ 17 C$DAC_Control.c$55$2_0$72                                   =  0002F9 GR
+ 17 C$DAC_Control.c$56$2_0$72                                   =  000325 GR
+ 17 C$DAC_Control.c$58$2_0$72                                   =  0003B5 GR
+ 17 C$DAC_Control.c$66$2_0$75                                   =  0003B6 GR
+ 17 C$DAC_Control.c$67$1_0$75                                   =  0003C1 GR
+ 17 C$DAC_Control.c$68$1_0$75                                   =  0003C4 GR
+ 17 C$DAC_Control.c$69$1_0$75                                   =  0003CE GR
+ 17 C$DAC_Control.c$70$1_0$75                                   =  0003D0 GR
+ 17 C$DAC_Control.c$71$1_0$75                                   =  0003D4 GR
+ 17 C$DAC_Control.c$73$1_0$77                                   =  0003D5 GR
+ 17 C$DAC_Control.c$74$1_0$77                                   =  0003D5 GR
+ 17 C$DAC_Control.c$75$1_0$77                                   =  0003D5 GR
+ 17 C$DAC_Control.c$76$1_0$77                                   =  0003DA GR
+ 17 C$DAC_Control.c$77$1_0$77                                   =  0003E2 GR
+ 17 C$DAC_Control.c$79$1_0$79                                   =  0003E3 GR
+ 17 C$DAC_Control.c$80$1_0$79                                   =  0003F3 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 24.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 C$DAC_Control.c$81$2_0$80                                   =  00040A GR
+ 17 C$DAC_Control.c$83$1_0$79                                   =  00043C GR
+ 17 C$DAC_Control.c$86$1_0$82                                   =  00043D GR
+ 17 C$DAC_Control.c$88$1_0$82                                   =  00043D GR
+ 17 C$DAC_Control.c$89$1_0$82                                   =  00043F GR
+ 17 C$DAC_Control.c$90$1_0$82                                   =  000441 GR
+    CPRL2                                                       =  0000C8 L
+    CT2                                                         =  0000C9 L
+    CY                                                          =  0000D7 L
+    DPH                                                         =  000083 L
+    DPL                                                         =  000082 L
+    EA                                                          =  0000AF L
+    ES                                                          =  0000AC L
+    ET0                                                         =  0000A9 L
+    ET1                                                         =  0000AB L
+    ET2                                                         =  0000AD L
+    EX0                                                         =  0000A8 L
+    EX1                                                         =  0000AA L
+    EXEN2                                                       =  0000CB L
+    EXF2                                                        =  0000CE L
+    F0                                                          =  0000D5 L
+ 18 FDAC_Control$__str_0$0_0$0                                  =  000000 GR
+ 17 FDAC_Control$__str_1$0_0$0                                  =  00081B GR
+ 17 FDAC_Control$__str_10$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_11$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_12$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_13$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_14$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_15$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_16$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_17$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_18$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_19$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_2$0_0$0                                  =  00081B GR
+ 17 FDAC_Control$__str_20$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_21$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_22$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_23$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_24$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_25$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_26$0_0$0                                 =  00081B GR
+ 17 FDAC_Control$__str_3$0_0$0                                  =  00081B GR
+ 17 FDAC_Control$__str_4$0_0$0                                  =  00081B GR
+ 17 FDAC_Control$__str_5$0_0$0                                  =  00081B GR
+ 17 FDAC_Control$__str_6$0_0$0                                  =  00081B GR
+ 17 FDAC_Control$__str_7$0_0$0                                  =  00081B GR
+ 17 FDAC_Control$__str_8$0_0$0                                  =  00081B GR
+ 17 FDAC_Control$__str_9$0_0$0                                  =  00081B GR
+ 19 FDAC_Control$__xinit_bit_bang_mode$0_0$0                    =  000003 GR
+ 19 FDAC_Control$__xinit_sin_index$0_0$0                        =  000000 GR
+ 19 FDAC_Control$__xinit_wave_frequency$0_0$0                   =  000001 GR
+    G$AC$0_0$0                                                  =  0000D6 G
+    G$ACC$0_0$0                                                 =  0000E0 G
+    G$B$0_0$0                                                   =  0000F0 G
+    G$CY$0_0$0                                                  =  0000D7 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 25.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    G$DPH$0_0$0                                                 =  000083 G
+    G$DPL$0_0$0                                                 =  000082 G
+    G$EA$0_0$0                                                  =  0000AF G
+    G$ES$0_0$0                                                  =  0000AC G
+    G$ET0$0_0$0                                                 =  0000A9 G
+    G$ET1$0_0$0                                                 =  0000AB G
+    G$EX0$0_0$0                                                 =  0000A8 G
+    G$EX1$0_0$0                                                 =  0000AA G
+    G$F0$0_0$0                                                  =  0000D5 G
+    G$F1$0_0$0                                                  =  0000D1 G
+    G$IE$0_0$0                                                  =  0000A8 G
+    G$IE0$0_0$0                                                 =  000089 G
+    G$IE1$0_0$0                                                 =  00008B G
+    G$INT0$0_0$0                                                =  0000B2 G
+    G$INT1$0_0$0                                                =  0000B3 G
+    G$IP$0_0$0                                                  =  0000B8 G
+    G$IT0$0_0$0                                                 =  000088 G
+    G$IT1$0_0$0                                                 =  00008A G
+    G$OV$0_0$0                                                  =  0000D2 G
+    G$P$0_0$0                                                   =  0000D0 G
+    G$P0$0_0$0                                                  =  000080 G
+    G$P0_0$0_0$0                                                =  000080 G
+    G$P0_1$0_0$0                                                =  000081 G
+    G$P0_2$0_0$0                                                =  000082 G
+    G$P0_3$0_0$0                                                =  000083 G
+    G$P0_4$0_0$0                                                =  000084 G
+    G$P0_5$0_0$0                                                =  000085 G
+    G$P0_6$0_0$0                                                =  000086 G
+    G$P0_7$0_0$0                                                =  000087 G
+    G$P1$0_0$0                                                  =  000090 G
+    G$P1_0$0_0$0                                                =  000090 G
+    G$P1_1$0_0$0                                                =  000091 G
+    G$P1_2$0_0$0                                                =  000092 G
+    G$P1_3$0_0$0                                                =  000093 G
+    G$P1_4$0_0$0                                                =  000094 G
+    G$P1_5$0_0$0                                                =  000095 G
+    G$P1_6$0_0$0                                                =  000096 G
+    G$P1_7$0_0$0                                                =  000097 G
+    G$P2$0_0$0                                                  =  0000A0 G
+    G$P2_0$0_0$0                                                =  0000A0 G
+    G$P2_1$0_0$0                                                =  0000A1 G
+    G$P2_2$0_0$0                                                =  0000A2 G
+    G$P2_3$0_0$0                                                =  0000A3 G
+    G$P2_4$0_0$0                                                =  0000A4 G
+    G$P2_5$0_0$0                                                =  0000A5 G
+    G$P2_6$0_0$0                                                =  0000A6 G
+    G$P2_7$0_0$0                                                =  0000A7 G
+    G$P3$0_0$0                                                  =  0000B0 G
+    G$P3_0$0_0$0                                                =  0000B0 G
+    G$P3_1$0_0$0                                                =  0000B1 G
+    G$P3_2$0_0$0                                                =  0000B2 G
+    G$P3_3$0_0$0                                                =  0000B3 G
+    G$P3_4$0_0$0                                                =  0000B4 G
+    G$P3_5$0_0$0                                                =  0000B5 G
+    G$P3_6$0_0$0                                                =  0000B6 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 26.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    G$P3_7$0_0$0                                                =  0000B7 G
+    G$PCON$0_0$0                                                =  000087 G
+    G$PS$0_0$0                                                  =  0000BC G
+    G$PSW$0_0$0                                                 =  0000D0 G
+    G$PT0$0_0$0                                                 =  0000B9 G
+    G$PT1$0_0$0                                                 =  0000BB G
+    G$PX0$0_0$0                                                 =  0000B8 G
+    G$PX1$0_0$0                                                 =  0000BA G
+    G$RB8$0_0$0                                                 =  00009A G
+    G$RD$0_0$0                                                  =  0000B7 G
+    G$REN$0_0$0                                                 =  00009C G
+    G$RI$0_0$0                                                  =  000098 G
+    G$RS0$0_0$0                                                 =  0000D3 G
+    G$RS1$0_0$0                                                 =  0000D4 G
+    G$RXD$0_0$0                                                 =  0000B0 G
+    G$SBUF$0_0$0                                                =  000099 G
+    G$SCON$0_0$0                                                =  000098 G
+    G$SM0$0_0$0                                                 =  00009F G
+    G$SM1$0_0$0                                                 =  00009E G
+    G$SM2$0_0$0                                                 =  00009D G
+    G$SP$0_0$0                                                  =  000081 G
+    G$SPCON$0_0$0                                               =  0000C3 G
+    G$SPDAT$0_0$0                                               =  0000C5 G
+    G$SPSTA$0_0$0                                               =  0000C4 G
+    G$T0$0_0$0                                                  =  0000B4 G
+    G$T1$0_0$0                                                  =  0000B5 G
+    G$TB8$0_0$0                                                 =  00009B G
+    G$TCON$0_0$0                                                =  000088 G
+    G$TF0$0_0$0                                                 =  00008D G
+    G$TF1$0_0$0                                                 =  00008F G
+    G$TH0$0_0$0                                                 =  00008C G
+    G$TH1$0_0$0                                                 =  00008D G
+    G$TI$0_0$0                                                  =  000099 G
+    G$TL0$0_0$0                                                 =  00008A G
+    G$TL1$0_0$0                                                 =  00008B G
+    G$TMOD$0_0$0                                                =  000089 G
+    G$TR0$0_0$0                                                 =  00008C G
+    G$TR1$0_0$0                                                 =  00008E G
+    G$TXD$0_0$0                                                 =  0000B1 G
+    G$WR$0_0$0                                                  =  0000B6 G
+ 17 G$_nop_$0$0                                                 =  00046C GR
+  D G$bit_bang_mode$0_0$0                                       =  000003 GR
+ 17 G$dac_write$0$0                                             =  0004C6 GR
+ 17 G$generate_sin_table$0$0                                    =  000239 GR
+ 17 G$generate_sin_wave$0$0                                     =  000519 GR
+ 17 G$get_number$0$0                                            =  0005FF GR
+ 17 G$getchar$0$0                                               =  0003D5 GR
+ 17 G$main$0$0                                                  =  0006F1 GR
+ 17 G$manual_dac_control$0$0                                    =  000660 GR
+ 17 G$print_menu$0$0                                            =  0006A8 GR
+ 17 G$putchar$0$0                                               =  0003B6 GR
+ 17 G$putstr$0$0                                                =  0003E3 GR
+ 17 G$simple_sin$0$0                                            =  000000 GR
+  D G$sin_index$0_0$0                                           =  000000 GR
+  B G$sin_table$0_0$0                                           =  000000 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 27.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 G$spi_deinit$0$0                                            =  000453 GR
+ 17 G$spi_init$0$0                                              =  00043D GR
+ 17 G$spi_transfer$0$0                                          =  000457 GR
+ 17 G$spi_transfer_bitbang$0$0                                  =  00046E GR
+ 17 G$test_dc_levels$0$0                                        =  000533 GR
+  D G$wave_frequency$0_0$0                                      =  000001 GR
+    IE                                                          =  0000A8 L
+    IE.0                                                        =  0000A8 L
+    IE.1                                                        =  0000A9 L
+    IE.2                                                        =  0000AA L
+    IE.3                                                        =  0000AB L
+    IE.4                                                        =  0000AC L
+    IE.5                                                        =  0000AD L
+    IE.7                                                        =  0000AF L
+    IE0                                                         =  000089 L
+    IE1                                                         =  00008B L
+    INT0                                                        =  0000B2 L
+    INT1                                                        =  0000B3 L
+    IP                                                          =  0000B8 L
+    IP.0                                                        =  0000B8 L
+    IP.1                                                        =  0000B9 L
+    IP.2                                                        =  0000BA L
+    IP.3                                                        =  0000BB L
+    IP.4                                                        =  0000BC L
+    IP.5                                                        =  0000BD L
+    IT0                                                         =  000088 L
+    IT1                                                         =  00008A L
+  B LDAC_Control.dac_write$value$1_0$94                         =  000111 GR
+  B LDAC_Control.generate_sin_table$size$1_0$70                 =  000104 GR
+  5 LDAC_Control.generate_sin_table$sloc0$0_1$0                 =  000008 GR
+  5 LDAC_Control.generate_sin_table$sloc1$0_1$0                 =  00000B GR
+  5 LDAC_Control.generate_sin_table$sloc2$0_1$0                 =  00000F GR
+  B LDAC_Control.generate_sin_table$table$1_0$70                =  000106 GR
+  B LDAC_Control.get_number$buffer$1_0$106                      =  000126 GR
+  B LDAC_Control.main$i$5_0$121                                 =  00012A GR
+  B LDAC_Control.putchar$c$1_0$74                               =  000109 GR
+  B LDAC_Control.putstr$s$1_0$78                                =  00010B GR
+  5 LDAC_Control.simple_sin$sloc0$0_1$0                         =  000000 GR
+  5 LDAC_Control.simple_sin$sloc1$0_1$0                         =  000004 GR
+  B LDAC_Control.simple_sin$x$1_0$67                            =  000100 GR
+  B LDAC_Control.spi_transfer$data$1_0$85                       =  00010E GR
+  B LDAC_Control.spi_transfer_bitbang$data$1_0$89               =  00010F GR
+  B LDAC_Control.spi_transfer_bitbang$received$1_0$90           =  000110 GR
+  B LDAC_Control.test_dc_levels$labels$1_1$102                  =  000117 GR
+  B LDAC_Control.test_dc_levels$test_values$1_1$102             =  000112 GR
+    OV                                                          =  0000D2 L
+    P                                                           =  0000D0 L
+    P0                                                          =  000080 L
+    P0.0                                                        =  000080 L
+    P0.1                                                        =  000081 L
+    P0.2                                                        =  000082 L
+    P0.3                                                        =  000083 L
+    P0.4                                                        =  000084 L
+    P0.5                                                        =  000085 L
+    P0.6                                                        =  000086 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 28.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    P0.7                                                        =  000087 L
+    P1                                                          =  000090 L
+    P1.0                                                        =  000090 L
+    P1.1                                                        =  000091 L
+    P1.2                                                        =  000092 L
+    P1.3                                                        =  000093 L
+    P1.4                                                        =  000094 L
+    P1.5                                                        =  000095 L
+    P1.6                                                        =  000096 L
+    P1.7                                                        =  000097 L
+    P2                                                          =  0000A0 L
+    P2.0                                                        =  0000A0 L
+    P2.1                                                        =  0000A1 L
+    P2.2                                                        =  0000A2 L
+    P2.3                                                        =  0000A3 L
+    P2.4                                                        =  0000A4 L
+    P2.5                                                        =  0000A5 L
+    P2.6                                                        =  0000A6 L
+    P2.7                                                        =  0000A7 L
+    P3                                                          =  0000B0 L
+    P3.0                                                        =  0000B0 L
+    P3.1                                                        =  0000B1 L
+    P3.2                                                        =  0000B2 L
+    P3.3                                                        =  0000B3 L
+    P3.4                                                        =  0000B4 L
+    P3.5                                                        =  0000B5 L
+    P3.6                                                        =  0000B6 L
+    P3.7                                                        =  0000B7 L
+    PCON                                                        =  000087 L
+    PS                                                          =  0000BC L
+    PSW                                                         =  0000D0 L
+    PSW.0                                                       =  0000D0 L
+    PSW.1                                                       =  0000D1 L
+    PSW.2                                                       =  0000D2 L
+    PSW.3                                                       =  0000D3 L
+    PSW.4                                                       =  0000D4 L
+    PSW.5                                                       =  0000D5 L
+    PSW.6                                                       =  0000D6 L
+    PSW.7                                                       =  0000D7 L
+    PT0                                                         =  0000B9 L
+    PT1                                                         =  0000BB L
+    PT2                                                         =  0000BD L
+    PX0                                                         =  0000B8 L
+    PX1                                                         =  0000BA L
+    RB8                                                         =  00009A L
+    RCAP2H                                                      =  0000CB L
+    RCAP2L                                                      =  0000CA L
+    RCLK                                                        =  0000CD L
+    REN                                                         =  00009C L
+    RI                                                          =  000098 L
+    RS0                                                         =  0000D3 L
+    RS1                                                         =  0000D4 L
+    RXD                                                         =  0000B0 L
+    SBUF                                                        =  000099 L
+    SCON                                                        =  000098 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 29.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    SCON.0                                                      =  000098 L
+    SCON.1                                                      =  000099 L
+    SCON.2                                                      =  00009A L
+    SCON.3                                                      =  00009B L
+    SCON.4                                                      =  00009C L
+    SCON.5                                                      =  00009D L
+    SCON.6                                                      =  00009E L
+    SCON.7                                                      =  00009F L
+    SM0                                                         =  00009F L
+    SM1                                                         =  00009E L
+    SM2                                                         =  00009D L
+    SP                                                          =  000081 L
+    T2CON                                                       =  0000C8 L
+    T2CON.0                                                     =  0000C8 L
+    T2CON.1                                                     =  0000C9 L
+    T2CON.2                                                     =  0000CA L
+    T2CON.3                                                     =  0000CB L
+    T2CON.4                                                     =  0000CC L
+    T2CON.5                                                     =  0000CD L
+    T2CON.6                                                     =  0000CE L
+    T2CON.7                                                     =  0000CF L
+    TB8                                                         =  00009B L
+    TCLK                                                        =  0000CC L
+    TCON                                                        =  000088 L
+    TCON.0                                                      =  000088 L
+    TCON.1                                                      =  000089 L
+    TCON.2                                                      =  00008A L
+    TCON.3                                                      =  00008B L
+    TCON.4                                                      =  00008C L
+    TCON.5                                                      =  00008D L
+    TCON.6                                                      =  00008E L
+    TCON.7                                                      =  00008F L
+    TF0                                                         =  00008D L
+    TF1                                                         =  00008F L
+    TF2                                                         =  0000CF L
+    TH0                                                         =  00008C L
+    TH1                                                         =  00008D L
+    TH2                                                         =  0000CD L
+    TI                                                          =  000099 L
+    TL0                                                         =  00008A L
+    TL1                                                         =  00008B L
+    TL2                                                         =  0000CC L
+    TMOD                                                        =  000089 L
+    TR0                                                         =  00008C L
+    TR1                                                         =  00008E L
+    TR2                                                         =  0000CA L
+    TXD                                                         =  0000B1 L
+ 17 XG$_nop_$0$0                                                =  00046D GR
+ 17 XG$dac_write$0$0                                            =  000518 GR
+ 17 XG$generate_sin_table$0$0                                   =  0003B5 GR
+ 17 XG$generate_sin_wave$0$0                                    =  000532 GR
+ 17 XG$get_number$0$0                                           =  00065F GR
+ 17 XG$getchar$0$0                                              =  0003E2 GR
+ 17 XG$main$0$0                                                 =  00081A GR
+ 17 XG$manual_dac_control$0$0                                   =  0006A7 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 30.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 17 XG$print_menu$0$0                                           =  0006F0 GR
+ 17 XG$putchar$0$0                                              =  0003D4 GR
+ 17 XG$putstr$0$0                                               =  00043C GR
+ 17 XG$simple_sin$0$0                                           =  000238 GR
+ 17 XG$spi_deinit$0$0                                           =  000456 GR
+ 17 XG$spi_init$0$0                                             =  000452 GR
+ 17 XG$spi_transfer$0$0                                         =  00046B GR
+ 17 XG$spi_transfer_bitbang$0$0                                 =  0004C3 GR
+ 17 XG$test_dc_levels$0$0                                       =  0005FE GR
+    _AC                                                         =  0000D6 G
+    _ACC                                                        =  0000E0 G
+    _B                                                          =  0000F0 G
+    _CY                                                         =  0000D7 G
+    _DPH                                                        =  000083 G
+    _DPL                                                        =  000082 G
+    _EA                                                         =  0000AF G
+    _ES                                                         =  0000AC G
+    _ET0                                                        =  0000A9 G
+    _ET1                                                        =  0000AB G
+    _EX0                                                        =  0000A8 G
+    _EX1                                                        =  0000AA G
+    _F0                                                         =  0000D5 G
+    _F1                                                         =  0000D1 G
+    _IE                                                         =  0000A8 G
+    _IE0                                                        =  000089 G
+    _IE1                                                        =  00008B G
+    _INT0                                                       =  0000B2 G
+    _INT1                                                       =  0000B3 G
+    _IP                                                         =  0000B8 G
+    _IT0                                                        =  000088 G
+    _IT1                                                        =  00008A G
+    _OV                                                         =  0000D2 G
+    _P                                                          =  0000D0 G
+    _P0                                                         =  000080 G
+    _P0_0                                                       =  000080 G
+    _P0_1                                                       =  000081 G
+    _P0_2                                                       =  000082 G
+    _P0_3                                                       =  000083 G
+    _P0_4                                                       =  000084 G
+    _P0_5                                                       =  000085 G
+    _P0_6                                                       =  000086 G
+    _P0_7                                                       =  000087 G
+    _P1                                                         =  000090 G
+    _P1_0                                                       =  000090 G
+    _P1_1                                                       =  000091 G
+    _P1_2                                                       =  000092 G
+    _P1_3                                                       =  000093 G
+    _P1_4                                                       =  000094 G
+    _P1_5                                                       =  000095 G
+    _P1_6                                                       =  000096 G
+    _P1_7                                                       =  000097 G
+    _P2                                                         =  0000A0 G
+    _P2_0                                                       =  0000A0 G
+    _P2_1                                                       =  0000A1 G
+    _P2_2                                                       =  0000A2 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 31.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    _P2_3                                                       =  0000A3 G
+    _P2_4                                                       =  0000A4 G
+    _P2_5                                                       =  0000A5 G
+    _P2_6                                                       =  0000A6 G
+    _P2_7                                                       =  0000A7 G
+    _P3                                                         =  0000B0 G
+    _P3_0                                                       =  0000B0 G
+    _P3_1                                                       =  0000B1 G
+    _P3_2                                                       =  0000B2 G
+    _P3_3                                                       =  0000B3 G
+    _P3_4                                                       =  0000B4 G
+    _P3_5                                                       =  0000B5 G
+    _P3_6                                                       =  0000B6 G
+    _P3_7                                                       =  0000B7 G
+    _PCON                                                       =  000087 G
+    _PS                                                         =  0000BC G
+    _PSW                                                        =  0000D0 G
+    _PT0                                                        =  0000B9 G
+    _PT1                                                        =  0000BB G
+    _PX0                                                        =  0000B8 G
+    _PX1                                                        =  0000BA G
+    _RB8                                                        =  00009A G
+    _RD                                                         =  0000B7 G
+    _REN                                                        =  00009C G
+    _RI                                                         =  000098 G
+    _RS0                                                        =  0000D3 G
+    _RS1                                                        =  0000D4 G
+    _RXD                                                        =  0000B0 G
+    _SBUF                                                       =  000099 G
+    _SCON                                                       =  000098 G
+    _SM0                                                        =  00009F G
+    _SM1                                                        =  00009E G
+    _SM2                                                        =  00009D G
+    _SP                                                         =  000081 G
+    _SPCON                                                      =  0000C3 G
+    _SPDAT                                                      =  0000C5 G
+    _SPSTA                                                      =  0000C4 G
+    _T0                                                         =  0000B4 G
+    _T1                                                         =  0000B5 G
+    _TB8                                                        =  00009B G
+    _TCON                                                       =  000088 G
+    _TF0                                                        =  00008D G
+    _TF1                                                        =  00008F G
+    _TH0                                                        =  00008C G
+    _TH1                                                        =  00008D G
+    _TI                                                         =  000099 G
+    _TL0                                                        =  00008A G
+    _TL1                                                        =  00008B G
+    _TMOD                                                       =  000089 G
+    _TR0                                                        =  00008C G
+    _TR1                                                        =  00008E G
+    _TXD                                                        =  0000B1 G
+    _WR                                                         =  0000B6 G
+    ___fs2uchar                                                    ****** GX
+    ___fsadd                                                       ****** GX
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 32.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    ___fsdiv                                                       ****** GX
+    ___fslt                                                        ****** GX
+    ___fsmul                                                       ****** GX
+    ___fssub                                                       ****** GX
+ 18 ___str_0                                                       000000 R
+ 18 ___str_1                                                       00001D R
+ 18 ___str_10                                                      0000AC R
+ 18 ___str_11                                                      0000C6 R
+ 18 ___str_12                                                      0000E3 R
+ 18 ___str_13                                                      0000F9 R
+ 18 ___str_14                                                      00011A R
+ 18 ___str_15                                                      00012E R
+ 18 ___str_16                                                      00013C R
+ 18 ___str_17                                                      000152 R
+ 18 ___str_18                                                      00016C R
+ 18 ___str_19                                                      000187 R
+ 18 ___str_2                                                       000024 R
+ 18 ___str_20                                                      0001B2 R
+ 18 ___str_21                                                      0001C2 R
+ 18 ___str_22                                                      0001E7 R
+ 18 ___str_23                                                      0001FA R
+ 18 ___str_24                                                      00020D R
+ 18 ___str_25                                                      000215 R
+ 18 ___str_26                                                      00021E R
+ 18 ___str_3                                                       00002F R
+ 18 ___str_4                                                       00003A R
+ 18 ___str_5                                                       000046 R
+ 18 ___str_6                                                       00004F R
+ 18 ___str_7                                                       00006C R
+ 18 ___str_8                                                       000086 R
+ 18 ___str_9                                                       0000A9 R
+    ___uint2fs                                                     ****** GX
+    __divuint                                                      ****** GX
+    __divuint_PARM_2                                               ****** GX
+    __gptrget                                                      ****** GX
+    __gptrput                                                      ****** GX
+  E __interrupt_vect                                               000000 R
+    __mcs51_genRAMCLEAR                                            ****** GX
+    __mcs51_genXINIT                                               ****** GX
+    __mcs51_genXRAMCLEAR                                           ****** GX
+ 17 __nop_                                                         00046C GR
+    __sdcc_gsinit_startup                                          ****** GX
+  E __sdcc_program_startup                                         000003 GR
+  6 __start__stack                                                 000000 GR
+ 19 __xinit__bit_bang_mode                                         000003 R
+ 19 __xinit__sin_index                                             000000 R
+ 19 __xinit__wave_frequency                                        000001 R
+    _atoi                                                          ****** GX
+  D _bit_bang_mode                                                 000003 GR
+ 17 _dac_write                                                     0004C6 GR
+  B _dac_write_value_65536_94                                      000111 R
+ 17 _generate_sin_table                                            000239 GR
+  B _generate_sin_table_PARM_2                                     000104 GR
+  5 _generate_sin_table_sloc0_1_0                                  000008 R
+  5 _generate_sin_table_sloc1_1_0                                  00000B R
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 33.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  5 _generate_sin_table_sloc2_1_0                                  00000F R
+  B _generate_sin_table_table_65536_70                             000106 R
+ 17 _generate_sin_wave                                             000519 GR
+ 17 _get_number                                                    0005FF GR
+  B _get_number_buffer_65536_106                                   000126 R
+ 17 _getchar                                                       0003D5 GR
+ 17 _main                                                          0006F1 GR
+  B _main_i_327680_121                                             00012A R
+ 17 _manual_dac_control                                            000660 GR
+ 17 _print_menu                                                    0006A8 GR
+    _printf                                                        ****** GX
+ 17 _putchar                                                       0003B6 GR
+  B _putchar_c_65536_74                                            000109 R
+ 17 _putstr                                                        0003E3 GR
+  B _putstr_s_65536_78                                             00010B R
+ 17 _simple_sin                                                    000000 GR
+  5 _simple_sin_sloc0_1_0                                          000000 R
+  5 _simple_sin_sloc1_1_0                                          000004 R
+  B _simple_sin_x_65536_67                                         000100 R
+  D _sin_index                                                     000000 GR
+  B _sin_table                                                     000000 GR
+ 17 _spi_deinit                                                    000453 GR
+ 17 _spi_init                                                      00043D GR
+ 17 _spi_transfer                                                  000457 GR
+ 17 _spi_transfer_bitbang                                          00046E GR
+  B _spi_transfer_bitbang_data_65536_89                            00010F R
+  B _spi_transfer_bitbang_received_65536_90                        000110 R
+  B _spi_transfer_data_65536_85                                    00010E R
+ 17 _test_dc_levels                                                000533 GR
+  B _test_dc_levels_labels_65537_102                               000117 R
+  B _test_dc_levels_test_values_65537_102                          000112 R
+  D _wave_frequency                                                000001 GR
+    a                                                           =  0000E0 L
+    a.0                                                         =  0000E0 L
+    a.1                                                         =  0000E1 L
+    a.2                                                         =  0000E2 L
+    a.3                                                         =  0000E3 L
+    a.4                                                         =  0000E4 L
+    a.5                                                         =  0000E5 L
+    a.6                                                         =  0000E6 L
+    a.7                                                         =  0000E7 L
+    ac                                                          =  0000D6 L
+    acc                                                         =  0000E0 L
+    acc.0                                                       =  0000E0 L
+    acc.1                                                       =  0000E1 L
+    acc.2                                                       =  0000E2 L
+    acc.3                                                       =  0000E3 L
+    acc.4                                                       =  0000E4 L
+    acc.5                                                       =  0000E5 L
+    acc.6                                                       =  0000E6 L
+    acc.7                                                       =  0000E7 L
+    ar0                                                         =  000000 
+    ar1                                                         =  000001 
+    ar2                                                         =  000002 
+    ar3                                                         =  000003 
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 34.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    ar4                                                         =  000004 
+    ar5                                                         =  000005 
+    ar6                                                         =  000006 
+    ar7                                                         =  000007 
+    b                                                           =  0000F0 L
+    b.0                                                         =  0000F0 L
+    b.1                                                         =  0000F1 L
+    b.2                                                         =  0000F2 L
+    b.3                                                         =  0000F3 L
+    b.4                                                         =  0000F4 L
+    b.5                                                         =  0000F5 L
+    b.6                                                         =  0000F6 L
+    b.7                                                         =  0000F7 L
+    cprl2                                                       =  0000C8 L
+    ct2                                                         =  0000C9 L
+    cy                                                          =  0000D7 L
+    dph                                                         =  000083 L
+    dpl                                                         =  000082 L
+    ea                                                          =  0000AF L
+    es                                                          =  0000AC L
+    et0                                                         =  0000A9 L
+    et1                                                         =  0000AB L
+    et2                                                         =  0000AD L
+    ex0                                                         =  0000A8 L
+    ex1                                                         =  0000AA L
+    exen2                                                       =  0000CB L
+    exf2                                                        =  0000CE L
+    f0                                                          =  0000D5 L
+    ie                                                          =  0000A8 L
+    ie.0                                                        =  0000A8 L
+    ie.1                                                        =  0000A9 L
+    ie.2                                                        =  0000AA L
+    ie.3                                                        =  0000AB L
+    ie.4                                                        =  0000AC L
+    ie.5                                                        =  0000AD L
+    ie.7                                                        =  0000AF L
+    ie0                                                         =  000089 L
+    ie1                                                         =  00008B L
+    int0                                                        =  0000B2 L
+    int1                                                        =  0000B3 L
+    ip                                                          =  0000B8 L
+    ip.0                                                        =  0000B8 L
+    ip.1                                                        =  0000B9 L
+    ip.2                                                        =  0000BA L
+    ip.3                                                        =  0000BB L
+    ip.4                                                        =  0000BC L
+    ip.5                                                        =  0000BD L
+    it0                                                         =  000088 L
+    it1                                                         =  00008A L
+    ov                                                          =  0000D2 L
+    p                                                           =  0000D0 L
+    p0                                                          =  000080 L
+    p0.0                                                        =  000080 L
+    p0.1                                                        =  000081 L
+    p0.2                                                        =  000082 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 35.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    p0.3                                                        =  000083 L
+    p0.4                                                        =  000084 L
+    p0.5                                                        =  000085 L
+    p0.6                                                        =  000086 L
+    p0.7                                                        =  000087 L
+    p1                                                          =  000090 L
+    p1.0                                                        =  000090 L
+    p1.1                                                        =  000091 L
+    p1.2                                                        =  000092 L
+    p1.3                                                        =  000093 L
+    p1.4                                                        =  000094 L
+    p1.5                                                        =  000095 L
+    p1.6                                                        =  000096 L
+    p1.7                                                        =  000097 L
+    p2                                                          =  0000A0 L
+    p2.0                                                        =  0000A0 L
+    p2.1                                                        =  0000A1 L
+    p2.2                                                        =  0000A2 L
+    p2.3                                                        =  0000A3 L
+    p2.4                                                        =  0000A4 L
+    p2.5                                                        =  0000A5 L
+    p2.6                                                        =  0000A6 L
+    p2.7                                                        =  0000A7 L
+    p3                                                          =  0000B0 L
+    p3.0                                                        =  0000B0 L
+    p3.1                                                        =  0000B1 L
+    p3.2                                                        =  0000B2 L
+    p3.3                                                        =  0000B3 L
+    p3.4                                                        =  0000B4 L
+    p3.5                                                        =  0000B5 L
+    p3.6                                                        =  0000B6 L
+    p3.7                                                        =  0000B7 L
+    pcon                                                        =  000087 L
+    ps                                                          =  0000BC L
+    psw                                                         =  0000D0 L
+    psw.0                                                       =  0000D0 L
+    psw.1                                                       =  0000D1 L
+    psw.2                                                       =  0000D2 L
+    psw.3                                                       =  0000D3 L
+    psw.4                                                       =  0000D4 L
+    psw.5                                                       =  0000D5 L
+    psw.6                                                       =  0000D6 L
+    psw.7                                                       =  0000D7 L
+    pt0                                                         =  0000B9 L
+    pt1                                                         =  0000BB L
+    pt2                                                         =  0000BD L
+    px0                                                         =  0000B8 L
+    px1                                                         =  0000BA L
+    rb8                                                         =  00009A L
+    rcap2h                                                      =  0000CB L
+    rcap2l                                                      =  0000CA L
+    rclk                                                        =  0000CD L
+    ren                                                         =  00009C L
+    ri                                                          =  000098 L
+    rs0                                                         =  0000D3 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 36.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    rs1                                                         =  0000D4 L
+    rxd                                                         =  0000B0 L
+    sbuf                                                        =  000099 L
+    scon                                                        =  000098 L
+    scon.0                                                      =  000098 L
+    scon.1                                                      =  000099 L
+    scon.2                                                      =  00009A L
+    scon.3                                                      =  00009B L
+    scon.4                                                      =  00009C L
+    scon.5                                                      =  00009D L
+    scon.6                                                      =  00009E L
+    scon.7                                                      =  00009F L
+    sm0                                                         =  00009F L
+    sm1                                                         =  00009E L
+    sm2                                                         =  00009D L
+    sp                                                          =  000081 L
+    t2con                                                       =  0000C8 L
+    t2con.0                                                     =  0000C8 L
+    t2con.1                                                     =  0000C9 L
+    t2con.2                                                     =  0000CA L
+    t2con.3                                                     =  0000CB L
+    t2con.4                                                     =  0000CC L
+    t2con.5                                                     =  0000CD L
+    t2con.6                                                     =  0000CE L
+    t2con.7                                                     =  0000CF L
+    tb8                                                         =  00009B L
+    tclk                                                        =  0000CC L
+    tcon                                                        =  000088 L
+    tcon.0                                                      =  000088 L
+    tcon.1                                                      =  000089 L
+    tcon.2                                                      =  00008A L
+    tcon.3                                                      =  00008B L
+    tcon.4                                                      =  00008C L
+    tcon.5                                                      =  00008D L
+    tcon.6                                                      =  00008E L
+    tcon.7                                                      =  00008F L
+    tf0                                                         =  00008D L
+    tf1                                                         =  00008F L
+    tf2                                                         =  0000CF L
+    th0                                                         =  00008C L
+    th1                                                         =  00008D L
+    th2                                                         =  0000CD L
+    ti                                                          =  000099 L
+    tl0                                                         =  00008A L
+    tl1                                                         =  00008B L
+    tl2                                                         =  0000CC L
+    tmod                                                        =  000089 L
+    tr0                                                         =  00008C L
+    tr1                                                         =  00008E L
+    tr2                                                         =  0000CA L
+    txd                                                         =  0000B1 L
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 37.
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size      0   flags    0
+   1 RSEG                                       size      0   flags    8
+   2 RSEG0                                      size      0   flags    8
+   3 RSEG1                                      size      0   flags    8
+   4 REG_BANK_0                                 size      8   flags    4
+   5 DSEG                                       size     12   flags    0
+   6 SSEG                                       size      1   flags    0
+   7 ISEG                                       size      0   flags    0
+   8 IABS                                       size      0   flags    8
+   9 BSEG                                       size      0   flags   80
+   A PSEG                                       size      0   flags   50
+   B XSEG                                       size    12C   flags   40
+   C XABS                                       size      0   flags   48
+   D XISEG                                      size      4   flags   40
+   E HOME                                       size      6   flags   20
+   F GSINIT0                                    size      0   flags   20
+  10 GSINIT1                                    size      0   flags   20
+  11 GSINIT2                                    size      0   flags   20
+  12 GSINIT3                                    size      0   flags   20
+  13 GSINIT4                                    size      0   flags   20
+  14 GSINIT5                                    size      0   flags   20
+  15 GSINIT                                     size      0   flags   20
+  16 GSFINAL                                    size      3   flags   20
+  17 CSEG                                       size    81B   flags   20
+  18 CONST                                      size    244   flags   20
+  19 XINIT                                      size      4   flags   20
+  1A CABS                                       size      0   flags   28
+

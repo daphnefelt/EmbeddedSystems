@@ -2,7 +2,7 @@
  * Daphne Felt
  * ECEN 5613 - Fall 2025 - Prof. McClure
  * University of Colorado Boulder
- * Edited 11/4/19
+ * Edited 11/4/25
  *  --------------------------------------------------------------------------------
  * LAB 4 Pt 2
  * Driving an LCD Screen
@@ -19,6 +19,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 // Memory addresses for LCD access -- ALL HAVE A15 HIGH
 #define LCD_CMD_ADDR     0x8000  // RS=0, RW=0 (write command)
@@ -45,8 +46,7 @@ typedef struct {
 } clock_t;
 
 volatile clock_t system_clock = {0, 0, 0, 1, 0}; // init clock at 0 and running
-// Accuracy test pin toggle
-sbit test_pin = P1^7;  // P1.7
+volatile bool timer_do_something = 0;
 
 // Cursor position tracking for ISR save/restore
 typedef struct {
@@ -67,7 +67,13 @@ volatile uint8_t __xdata *lcdputch_ptr = (volatile uint8_t __xdata *)lcdputch_AD
 volatile uint8_t __xdata *lcd_status_ptr = (volatile uint8_t __xdata *)LCD_STATUS_ADDR;
 volatile uint8_t __xdata *lcd_read_ptr = (volatile uint8_t __xdata *)LCD_READ_ADDR;
 
-// UART FUNCS
+// premade custom chars
+unsigned char custom_char_checker[8] = {0x15,0x0A,0x15,0x0A,0x15,0x0A,0x15,0x0A}; // Checker board
+unsigned char custom_char_heart[8] = {0x00,0x0A,0x15,0x11,0x0A,0x04,0x00,0x00}; // Heart
+unsigned char custom_char_face[8] = {0x00,0x0A,0x00,0x04,0x0A,0x04,0x11,0x1F}; // Face w/ big nose
+unsigned char custom_char_alpaca[8] = {0x02,0x03,0x02,0x12,0x0E,0x0A,0x0A,0x00}; // Alpaca
+unsigned char custom_char_giraffe[8] = {0x18,0x08,0x08,0x09,0x0E,0x0A,0x0A,0x00}; // Giraffe
+
 // putchar takes a char and TX's it. Blocking.
 int putchar (int c){
     while (!TI); // Wait till ready to transmit, TI = 1
@@ -150,7 +156,7 @@ void lcdgotoxy(unsigned char row, unsigned char col)
 {
     unsigned char address;
     current_row = row;
-    current_col = col;  
+    current_col = col;
 
     // Cap at max rows and cols
     if(row > (MAX_ROWS-1)) row = (MAX_ROWS-1);
@@ -163,6 +169,9 @@ void lcdgotoxy(unsigned char row, unsigned char col)
 // string output with automatic line wrapping
 void lcdputstr(char *ss)
 {
+    uint8_t current_row_local = 0;
+    uint8_t current_col_local = 0;
+
     // Get current cursor position by reading DDRAM address
     uint8_t ddram_addr = lcd_read_address();
 
@@ -170,34 +179,38 @@ void lcdputstr(char *ss)
     for(uint8_t i = 0; i < MAX_ROWS; i++) {
         if(ddram_addr >= row_addresses[i] &&
            ddram_addr < (row_addresses[i] + MAX_COLS)) {
-            current_row = i;
-            current_col = ddram_addr - row_addresses[i];
+            current_row_local = i;
+            current_col_local = ddram_addr - row_addresses[i];
             break;
         }
     }
 
     while(*ss) {
         // Check if we need to wrap to next line
-        if(current_col >= MAX_COLS) {
-            current_col = 0;
-            current_row++;
+        if(current_col_local >= MAX_COLS) {
+            current_col_local = 0;
+            current_row_local++;
 
             // Wrap to first line if we go past the last row
-            if(current_row >= MAX_ROWS) {
-                current_row = 0;
+            if(current_row_local >= MAX_ROWS) {
+                current_row_local = 0;
             }
 
             // Move cursor to beginning of next line
-            lcdgotoxy(current_row, current_col);
+            lcdgotoxy(current_row_local, current_col_local);
         }
 
         // Output the character
-        lcdputch(*ss++); // will inc current_col
+        lcdputch(*ss++);
+        current_col_local++;
     }
 }
 
 void lcdputstr_wordwrap(char *ss)
 {
+    uint8_t current_row_local = 0;
+    uint8_t current_col_local = 0;
+
     // Get current cursor position by reading DDRAM address
     uint8_t ddram_addr = lcd_read_address();
 
@@ -205,8 +218,8 @@ void lcdputstr_wordwrap(char *ss)
     for(uint8_t i = 0; i < MAX_ROWS; i++) {
         if(ddram_addr >= row_addresses[i] &&
            ddram_addr < (row_addresses[i] + MAX_COLS)) {
-            current_row = i;
-            current_col = ddram_addr - row_addresses[i];
+            current_row_local = i;
+            current_col_local = ddram_addr - row_addresses[i];
             break;
         }
     }
@@ -219,22 +232,23 @@ void lcdputstr_wordwrap(char *ss)
             uint8_t word_length = ss - word_start + ((*ss == ' ') ? 0 : 1);
 
             // If word doesn't fit, move to next line
-            if(current_col + word_length > MAX_COLS) {
-                current_col = 0;
-                current_row++;
+            if(current_col_local + word_length > MAX_COLS) {
+                current_col_local = 0;
+                current_row_local++;
 
                 // Wrap to first line if we go past the last row
-                if(current_row >= MAX_ROWS) {
-                    current_row = 0;
+                if(current_row_local >= MAX_ROWS) {
+                    current_row_local = 0;
                 }
 
                 // Move cursor to beginning of next line
-                lcdgotoxy(current_row, current_col);
+                lcdgotoxy(current_row_local, current_col_local);
             }
 
             // Output the word
             for(char *p = word_start; p <= ss; p++) {
-                lcdputch(*p); // will inc current_col
+                lcdputch(*p);
+                current_col_local++;
             }
 
             word_start = ss + 1; // Move to start of next word
@@ -384,24 +398,25 @@ void restore_cursor_position(void)
 void display_clock(void)
 {
     char time_str[9];  // "MM:SS.S" + null terminator
-    
+
     // make time string
-    time_str[0] = '0' + (system_clock.minutes / 10);
-    time_str[1] = '0' + (system_clock.minutes % 10);
-    time_str[2] = ':';
-    time_str[3] = '0' + (system_clock.seconds / 10);
-    time_str[4] = '0' + (system_clock.seconds % 10);
-    time_str[5] = '.';
-    time_str[6] = '0' + system_clock.tenths;
-    time_str[7] = '\0';
-    
+    time_str[0] = ' '; // diff clock from rest of text
+    time_str[1] = '0' + (system_clock.minutes / 10);
+    time_str[2] = '0' + (system_clock.minutes % 10);
+    time_str[3] = ':';
+    time_str[4] = '0' + (system_clock.seconds / 10);
+    time_str[5] = '0' + (system_clock.seconds % 10);
+    time_str[6] = '.';
+    time_str[7] = '0' + system_clock.tenths;
+    time_str[8] = '\0';
+
     // Save current cursor position
     save_cursor_position();
-    
+
     // Display clock at bottom right
     lcdgotoxy(CLOCK_ROW, CLOCK_COL);
     lcdputstr(time_str);
-    
+
     // Restore cursor position
     restore_cursor_position();
 }
@@ -427,48 +442,62 @@ void clock_reset(void)
 }
 
 // Timer and ISR
+// My preload value calculations: want 100ms
+// Frequency is 11.0592 MHz so time for one clock cycle is 1/11.0592MHz = 0.0904us
+// And one machine cycle is 12 clock cycles = 1.0848 us
+// 100ms / 1.0848 us = 92,182 machine cycles
+
+// Timer0 in mode 1 (16-bit timer) so it overflows at 2^16 = 65536 - or every 71 ms
+// 100 ms / 71 ms = 1.4 overflows - so I'm just gonna do 2 overflows
+// 92182 cycles / 2 = 46091 cycles per overflow
+// Preloading the timer makes it start at a later value so it overflows sooner
+// So need to load timer with 65536 - 46091 = 19445
+
+// Needs to be split into high and low bytes
+// 19445 = 0x4BF5
+// High byte = 0x4B
+// Low byte = 0xF5
+
 void timer_init(void)
 {
-    // Configure Timer 1 for 100ms (0.1 second) intervals
-    // 11.0592MHz crystal
-    
-    TMOD &= 0x0F;   // Clear Timer 1 bits
-    TMOD |= 0x10;   // Timer 1, Mode 1 (16-bit timer)
-    
-    // Calculate reload value for 100ms at 11.0592MHz
-    // Timer frequency = 11.0592MHz / 12 = 921.6kHz
-    // For 100ms: Count = 0.1 * 921.6kHz = 92160 cycles
-    // Reload = 65536 - 92160 = -26624 = 0xD800
-    TH1 = 0xD8;
-    TL1 = 0x00;
-    
-    ET1 = 1;        // Enable Timer 1 interrupt
-    TR1 = 1;        // Start Timer 1
-    EA = 1;         // Enable global interrupts
+    ET0 = 1;
+    EA = 1;
+
+    TMOD |= 0x01;
+    TH0 = 0x4B;
+    TL0 = 0xF5;
+
+    TR0 = 1;
 }
 
-// Timer 1 ISR - Called every 100ms (0.1 second)
-void timer1_isr(void) __interrupt (3)
+// Timer 0 ISR - Called every 50ms
+void timer0_isr(void) __interrupt (TF0_VECTOR)
 {
-    // Reload timer for next 100ms interval
-    TH1 = 0xD8;
-    TL1 = 0x00;
-    
+    timer_do_something = !timer_do_something; // only want to actually execute half the time, every 100ms
+
+    // Reload timer for next 50ms interval
+    TH0 = 0x4B;
+    TL0 = 0xF5;
+
+    if (!timer_do_something){
+        return; // if not supposed to do something this time, don't
+    }
+
     // Toggle test pin for accuracy measurement
-    test_pin = ~test_pin;
-    
+    P1_3 = !P1_3;
+
     // Update clock if running
     if(system_clock.running) {
         system_clock.tenths++;
-        
+
         if(system_clock.tenths >= 10) {
             system_clock.tenths = 0;
             system_clock.seconds++;
-            
+
             if(system_clock.seconds >= 60) {
                 system_clock.seconds = 0;
                 system_clock.minutes++;
-                
+
                 if(system_clock.minutes >= 100) {
                     system_clock.minutes = 0;  // Wrap at 99:59.9
                 }
@@ -480,23 +509,177 @@ void timer1_isr(void) __interrupt (3)
     }
 }
 
-int main(void)
-{
-    lcdinit();
-    timer_init();
-    test_pin = 0; // Initialize test pin
-    display_clock(); // Initial clock display
+// Function to get 5 binary digits from user. Showing # for 1 and space for 0
+unsigned char get_binary_row(void) {
+    char bits[6]; // 5 bits + null terminator
+    uint8_t count = 0;
+    char c;
+    unsigned char result = 0;
+    
+    while (count < 5) {
+        c = getchar();
+        
+        if (c == '0') {
+            bits[count] = c;
+            putchar(' '); // Show space for 0
+            count++;
+        }
+        else if (c == '1') {
+            bits[count] = c;
+            putchar('#'); // Show # for 1. Most filled in char I could find
+            count++;
+        }
+        else if (c == '\b' || c == 0x7F) { // Backspace
+            if (count > 0) {
+                count--;
 
-    // Write at specific positions
-    lcd_putchar_at(0, 5, 'H');     // Row 0, Col 5: 'H'
-    lcd_putchar_at(0, 6, 'i');     // Row 0, Col 6: 'i'
+                putchar('\b');
+                putchar(' ');
+                putchar('\b');
+            }
+        }
+    }
+    
+    // Convert binary string to byte value
+    for (uint8_t i = 0; i < 5; i++) {
+        if (bits[i] == '1') {
+            result |= (1 << (4 - i)); // MSB first (leftmost bit = bit 4)
+        }
+    }
+    
+    return result;
+}
 
-    // Write strings at specific positions
-    lcd_string_at(1, 0, "aAbBcCdDeEfFgGhHiIjJlLkKmMnNoOpP"); // Row 1, Col 0 (should go into row 2)
+void lcdcreatechar(unsigned char ccode, unsigned char row_vals[]) {
 
+    save_cursor_position();
+
+    uint8_t i;
+    for(i = 0; i < 8; i++) {
+        lcd_cmd(0x40 | (ccode << 3) | i); // bits: 0 + 1 + ccode + row number
+        lcdputch(row_vals[i]); // Send row data
+    }
+    
+    restore_cursor_position();
+}
+
+void let_user_create_char(void) {
+    // Get the char code they want to use
+    putstr("Enter custom character code (0-7): ");
+    uint8_t ccode = (uint8_t)get_number();
+    
+    if (ccode > 7) {
+        putstr("Error: Custom character code must be between 0 and 7.\n\r");
+        return;
+    }
+
+    // Get the 8 rows of data (5 bits each)
+    unsigned char row_vals[8];
+    putstr("Enter 5 bits per row (0 or 1), press Enter after each row:\n\r");
+    
+    for (uint8_t i = 0; i < 8; i++) {
+        char prompt[30];
+        sprintf(prompt, "Row %d: ", i);
+        putstr(prompt);
+        
+        row_vals[i] = get_binary_row(); // this also shows visual preview as you type
+        putstr("\n\r");
+    }
+    
+    // Send the custom character
+    lcdcreatechar(ccode, row_vals);
+    putstr("Custom character made :) \n\r");
+}
+
+void hex_dump_ddram(void) {
+    putstr("\n\rLCD DDRAM HEX DUMP\n\r");
+    putstr("[Row] [Address]: Data (16 bytes per row)\n\r");
+    putstr("------------------------------------------------\n\r");
+    
+    save_cursor_position();
+    
+    for(uint8_t row = 0; row < MAX_ROWS; row++) {
+        // Move to start of this row
+        lcdgotoaddr(row_addresses[row]);
+        
+        char header[20];
+        sprintf(header, "Row %d [0x%02X]:\n\r", row, row_addresses[row]);
+        putstr(header);
+        
+        // Read 16 bytes from this row
+        for(uint8_t col = 0; col < MAX_COLS; col++) {
+            lcdgotoaddr(row_addresses[row] + col);
+            lcdbusywait();
+            uint8_t data = *lcd_read_ptr;
+            
+            // Format and print hex value
+            char buf[8];
+            sprintf(buf, "0x%02X ", data);
+            putstr(buf);
+        }
+        putstr("\n\r\n\r");
+    }
+        
+    restore_cursor_position();
+}
+
+void hex_dump_cgram(void) {
+    putstr("LCD CGRAM HEX DUMP\n\r");
+    putstr("[Char] [Row]: Data (8 characters x 8 rows each)\n\r");
+    putstr("--------------------------------------------------\n\r");
+    
+    save_cursor_position();
+    
+    // Read all 8 custom characters (0-7)
+    for(uint8_t char_code = 0; char_code < 8; char_code++) {
+        putstr("Character ");
+        putchar('0' + char_code);
+        putstr(":\n\r");
+        
+        for(uint8_t row = 0; row < 8; row++) {
+            // Set CGRAM address: 0x40 | (char_code << 3) | row
+            uint8_t cgram_addr = 0x40 | (char_code << 3) | row;
+            lcd_cmd(cgram_addr);
+            lcdbusywait();
+            uint8_t pattern = *lcd_read_ptr;
+            
+            // Print formatted output
+            char buf[30];
+            sprintf(buf, "  Row %d [0x%02X]: 0x%02X = ", row, cgram_addr, pattern);
+            putstr(buf);
+            
+            // Show binary visual preview
+            for(int8_t bit = 4; bit >= 0; bit--) {
+                if(pattern & (1 << bit)) {
+                    putchar('#');
+                } else {
+                    putchar(' ');
+                }
+            }
+            putstr("\n\r");
+        }
+        putstr("\n\r");
+    }
+    
+    // put back cursor
+    restore_cursor_position();
+}
+
+void hex_dump_complete(void) {
+    putstr("\n\r");
+
+    // Dump DDRAM first
+    hex_dump_ddram();
+    putstr("\n\r");
+    // Then dump CGRAM
+    hex_dump_cgram();
+}
+
+void menu_print(void){
     // MENU
     putstr("\n\r");
     putstr("Here is everything you can do:\n\r");
+    putstr("--------------------------------------\n\r");
     putstr("0. Put a character at wherever the cursor is \n\r");
     putstr("a. Put a character somewhere \n\r");
     putstr("b. Put a string somewhere (letter wrap) \n\r");
@@ -504,11 +687,53 @@ int main(void)
     putstr("d. Clear screen \n\r");
     putstr("e. Re-init screen \n\r");
     putstr("--------------------------------------\n\r");
+    putstr("f. Create Custom Character \n\r");
+    putstr("g. Put Custom Character somewhere \n\r");
+    putstr("h. Help Menu \n\r");
+    putstr("i. Hex Dump \n\r");
+    putstr("--------------------------------------\n\r");
     putstr("Clock Menu: \n\r");
     putstr("s. Start Clock\n\r");
     putstr("t. Stop Clock\n\r");
     putstr("r. Reset Clock\n\r");
     putstr("--------------------------------------\n\r");
+}
+
+int main(void)
+{
+    lcdinit();
+    putstr("LCD Initialized \n\r");
+    timer_init();
+    putstr("Timer Initialized \n\r");
+    P1_3 = 0; // Initialize test pin
+    display_clock(); // Initial clock display
+    putstr("Clock Display Started \n\r");
+
+    // Write at specific positions
+    lcd_putchar_at(1, 1, 'H');     // Row 0, Col 5: 'H'
+    lcd_putchar_at(1, 2, 'i');     // Row 0, Col 6: 'i'
+
+    // special chars!
+    // Make them first
+    lcdcreatechar(0, custom_char_checker);
+    lcdcreatechar(1, custom_char_heart);
+    lcdcreatechar(2, custom_char_face);
+    lcdcreatechar(3, custom_char_alpaca);
+    lcdcreatechar(4, custom_char_giraffe);
+    // now add to board
+    lcd_putchar_at(1, 13, 1);
+    lcd_putchar_at(1, 4, 2);
+    // some animals chilling
+    lcd_putchar_at(1, 7, 3);
+    lcd_putchar_at(1, 8, 3);
+    lcd_putchar_at(1, 9, 4);
+    lcd_putchar_at(1, 10, 3);
+    lcd_putchar_at(1, 11, 4);
+
+    // Write strings at specific positions
+    // lcd_string_at(1, 0, "aAbBcCdDeEfFgGhHiIjJlLkKmMnNoOpP"); // Row 1, Col 0 (should go into row 2)
+
+    menu_print();
 
     char choice;
 
@@ -580,6 +805,35 @@ int main(void)
                 lcdinit();
                 break;
 
+            case 'f':
+                let_user_create_char();
+                break;
+
+            case 'g':
+                putstr("Enter the custom character number: ");
+                get_user_input(char_buffer, 2);
+
+                if ((*char_buffer < '0') || (*char_buffer > '7')) {
+                    putstr("Error: Custom character code must be between 0 and 7.\n\r");
+                    break;
+                }
+
+                putstr("What row?:");
+                row = get_number();
+                putstr("And what col?:");
+                col = get_number();
+                // send command
+                lcd_putchar_at(row, col, *char_buffer - '0'); // Convert char to number
+                break;
+
+            case 'h':
+                menu_print();
+                break;
+
+            case 'i':
+                hex_dump_complete();
+                break;
+
             case 's':
                 clock_start();
                 break;
@@ -594,6 +848,7 @@ int main(void)
 
             default:
                 printf("Invalid option\n\r");
+                menu_print();
                 break;
         }
 

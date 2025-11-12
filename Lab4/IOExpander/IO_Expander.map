@@ -1,0 +1,3100 @@
+ASxxxx Linker V03.00 + NoICE + sdld,  page 1.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000000  l_CABS                          
+C:   00000000  l_GSINIT                        
+C:   00000000  l_GSINIT1                       
+C:   00000000  l_GSINIT5                       
+C:   00000000  l_IABS                          
+C:   00000000  l_ISEG                          
+C:   00000000  l_PSEG                          
+C:   00000000  l_REG_BANK_1                    
+C:   00000000  l_REG_BANK_2                    
+C:   00000000  l_REG_BANK_3                    
+C:   00000000  l_RSEG                          
+C:   00000000  l_RSEG0                         
+C:   00000000  l_RSEG1                         
+C:   00000000  l_XABS                          
+C:   00000000  l__CODE                         
+C:   00000000  s_BSEG                          
+C:   00000000  s_CABS                          
+C:   00000000  s_DSEG                          
+C:   00000000  s_IABS                          
+C:   00000000  s_ISEG                          
+C:   00000000  s_REG_BANK_0                    
+C:   00000000  s_RSEG                          
+C:   00000000  s_RSEG0                         
+C:   00000000  s_RSEG1                         
+C:   00000000  s_XABS                          
+C:   00000001  l_BIT_BANK                      
+C:   00000001  l_BSEG_BYTES                    
+C:   00000001  l_OSEG                          
+C:   00000002  l_BSEG                          
+C:   00000003  l_GSFINAL                       
+C:   00000003  l_GSINIT0                       
+C:   00000003  l_XINIT                         
+C:   00000003  l_XISEG                         
+C:   00000008  l_REG_BANK_0                    
+C:   00000008  s_REG_BANK_1                    
+C:   00000009  l_HOME                          
+C:   0000000A  l_GSINIT2                       
+C:   00000010  s_REG_BANK_2                    
+C:   00000018  s_REG_BANK_3                    
+C:   0000001C  s_OSEG                          
+C:   00000020  s_BSEG_BYTES                    
+C:   00000020  s__CODE                         
+C:   00000021  s_BIT_BANK                      
+C:   00000022  l_GSINIT3                       
+C:   00000022  s_SSEG                          
+C:   0000002A  l_GSINIT4                       
+C:   0000005E  l_SSEG                          
+C:   0000007D  l_DSEG                          
+C:   00000080  l_IRAM                          
+C:   0000008C  l_XSEG                          
+ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CABS                                00000000    00000000 =           0. bytes (ABS,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00000400  s_PSEG                          
+C:   00000400  s_XSEG                          
+C:   00000489  l_CONST                         
+C:   0000048C  s_XISEG                         
+C:   00001784  l_CSEG                          
+C:   00002000  s_HOME                          
+C:   00002009  s_GSINIT0                       
+C:   0000200C  s_GSINIT1                       
+C:   0000200C  s_GSINIT2                       
+C:   00002016  s_GSINIT3                       
+C:   00002038  s_GSINIT4                       
+C:   00002062  s_GSFINAL                       
+C:   00002062  s_GSINIT                        
+C:   00002062  s_GSINIT5                       
+C:   00002065  s_CSEG                          
+C:   000037E9  s_CONST                         
+C:   00003C72  s_XINIT                         
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000000  .__.ABS.                           _bp
+     00000080  G$P0$0_0$0                         IO_Expander
+     00000080  G$P0_0$0_0$0                       IO_Expander
+     00000080  _P0                                IO_Expander
+     00000080  _P0_0                              IO_Expander
+     00000081  G$P0_1$0_0$0                       IO_Expander
+     00000081  G$SP$0_0$0                         IO_Expander
+     00000081  _P0_1                              IO_Expander
+     00000081  _SP                                IO_Expander
+     00000082  G$DPL$0_0$0                        IO_Expander
+     00000082  G$P0_2$0_0$0                       IO_Expander
+     00000082  _DPL                               IO_Expander
+     00000082  _P0_2                              IO_Expander
+     00000083  G$DPH$0_0$0                        IO_Expander
+     00000083  G$P0_3$0_0$0                       IO_Expander
+     00000083  _DPH                               IO_Expander
+     00000083  _P0_3                              IO_Expander
+     00000084  G$P0_4$0_0$0                       IO_Expander
+     00000084  _P0_4                              IO_Expander
+     00000085  G$P0_5$0_0$0                       IO_Expander
+     00000085  _P0_5                              IO_Expander
+     00000086  G$P0_6$0_0$0                       IO_Expander
+     00000086  _P0_6                              IO_Expander
+     00000087  G$P0_7$0_0$0                       IO_Expander
+     00000087  G$PCON$0_0$0                       IO_Expander
+     00000087  _P0_7                              IO_Expander
+     00000087  _PCON                              IO_Expander
+     00000088  G$IT0$0_0$0                        IO_Expander
+     00000088  G$TCON$0_0$0                       IO_Expander
+     00000088  _IT0                               IO_Expander
+     00000088  _TCON                              IO_Expander
+     00000089  G$IE0$0_0$0                        IO_Expander
+     00000089  G$TMOD$0_0$0                       IO_Expander
+     00000089  _IE0                               IO_Expander
+     00000089  _TMOD                              IO_Expander
+     0000008A  G$IT1$0_0$0                        IO_Expander
+     0000008A  G$TL0$0_0$0                        IO_Expander
+     0000008A  _IT1                               IO_Expander
+     0000008A  _TL0                               IO_Expander
+     0000008B  G$IE1$0_0$0                        IO_Expander
+     0000008B  G$TL1$0_0$0                        IO_Expander
+     0000008B  _IE1                               IO_Expander
+     0000008B  _TL1                               IO_Expander
+     0000008C  G$TH0$0_0$0                        IO_Expander
+     0000008C  G$TR0$0_0$0                        IO_Expander
+     0000008C  _TH0                               IO_Expander
+     0000008C  _TR0                               IO_Expander
+     0000008D  G$TF0$0_0$0                        IO_Expander
+     0000008D  G$TH1$0_0$0                        IO_Expander
+     0000008D  _TF0                               IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000008D  _TH1                               IO_Expander
+     0000008E  G$TR1$0_0$0                        IO_Expander
+     0000008E  _TR1                               IO_Expander
+     0000008F  G$TF1$0_0$0                        IO_Expander
+     0000008F  _TF1                               IO_Expander
+     00000090  G$P1$0_0$0                         IO_Expander
+     00000090  G$P1_0$0_0$0                       IO_Expander
+     00000090  _P1                                IO_Expander
+     00000090  _P1_0                              IO_Expander
+     00000091  G$P1_1$0_0$0                       IO_Expander
+     00000091  _P1_1                              IO_Expander
+     00000092  G$P1_2$0_0$0                       IO_Expander
+     00000092  _P1_2                              IO_Expander
+     00000093  G$P1_3$0_0$0                       IO_Expander
+     00000093  _P1_3                              IO_Expander
+     00000094  G$P1_4$0_0$0                       IO_Expander
+     00000094  _P1_4                              IO_Expander
+     00000095  G$P1_5$0_0$0                       IO_Expander
+     00000095  _P1_5                              IO_Expander
+     00000096  G$P1_6$0_0$0                       IO_Expander
+     00000096  _P1_6                              IO_Expander
+     00000097  G$P1_7$0_0$0                       IO_Expander
+     00000097  _P1_7                              IO_Expander
+     00000098  G$RI$0_0$0                         IO_Expander
+     00000098  G$SCON$0_0$0                       IO_Expander
+     00000098  _RI                                IO_Expander
+     00000098  _SCON                              IO_Expander
+     00000099  G$SBUF$0_0$0                       IO_Expander
+     00000099  G$TI$0_0$0                         IO_Expander
+     00000099  _SBUF                              IO_Expander
+     00000099  _TI                                IO_Expander
+     0000009A  G$RB8$0_0$0                        IO_Expander
+     0000009A  _RB8                               IO_Expander
+     0000009B  G$TB8$0_0$0                        IO_Expander
+     0000009B  _TB8                               IO_Expander
+     0000009C  G$REN$0_0$0                        IO_Expander
+     0000009C  _REN                               IO_Expander
+     0000009D  G$SM2$0_0$0                        IO_Expander
+     0000009D  _SM2                               IO_Expander
+     0000009E  G$SM1$0_0$0                        IO_Expander
+     0000009E  _SM1                               IO_Expander
+     0000009F  G$SM0$0_0$0                        IO_Expander
+     0000009F  _SM0                               IO_Expander
+     000000A0  G$P2$0_0$0                         IO_Expander
+     000000A0  G$P2_0$0_0$0                       IO_Expander
+     000000A0  _P2                                IO_Expander
+     000000A0  _P2_0                              IO_Expander
+     000000A0  __XPAGE                            
+     000000A1  G$P2_1$0_0$0                       IO_Expander
+     000000A1  _P2_1                              IO_Expander
+     000000A2  G$P2_2$0_0$0                       IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000A2  _P2_2                              IO_Expander
+     000000A3  G$P2_3$0_0$0                       IO_Expander
+     000000A3  _P2_3                              IO_Expander
+     000000A4  G$P2_4$0_0$0                       IO_Expander
+     000000A4  _P2_4                              IO_Expander
+     000000A5  G$P2_5$0_0$0                       IO_Expander
+     000000A5  _P2_5                              IO_Expander
+     000000A6  G$P2_6$0_0$0                       IO_Expander
+     000000A6  _P2_6                              IO_Expander
+     000000A7  G$P2_7$0_0$0                       IO_Expander
+     000000A7  _P2_7                              IO_Expander
+     000000A8  G$EX0$0_0$0                        IO_Expander
+     000000A8  G$IE$0_0$0                         IO_Expander
+     000000A8  _EX0                               IO_Expander
+     000000A8  _IE                                IO_Expander
+     000000A9  G$ET0$0_0$0                        IO_Expander
+     000000A9  _ET0                               IO_Expander
+     000000AA  G$EX1$0_0$0                        IO_Expander
+     000000AA  _EX1                               IO_Expander
+     000000AB  G$ET1$0_0$0                        IO_Expander
+     000000AB  _ET1                               IO_Expander
+     000000AC  G$ES$0_0$0                         IO_Expander
+     000000AC  _ES                                IO_Expander
+     000000AF  G$EA$0_0$0                         IO_Expander
+     000000AF  _EA                                IO_Expander
+     000000B0  G$P3$0_0$0                         IO_Expander
+     000000B0  G$P3_0$0_0$0                       IO_Expander
+     000000B0  G$RXD$0_0$0                        IO_Expander
+     000000B0  _P3                                IO_Expander
+     000000B0  _P3_0                              IO_Expander
+     000000B0  _RXD                               IO_Expander
+     000000B1  G$P3_1$0_0$0                       IO_Expander
+     000000B1  G$TXD$0_0$0                        IO_Expander
+     000000B1  _P3_1                              IO_Expander
+     000000B1  _TXD                               IO_Expander
+     000000B2  G$INT0$0_0$0                       IO_Expander
+     000000B2  G$P3_2$0_0$0                       IO_Expander
+     000000B2  _INT0                              IO_Expander
+     000000B2  _P3_2                              IO_Expander
+     000000B3  G$INT1$0_0$0                       IO_Expander
+     000000B3  G$P3_3$0_0$0                       IO_Expander
+     000000B3  _INT1                              IO_Expander
+     000000B3  _P3_3                              IO_Expander
+     000000B4  G$P3_4$0_0$0                       IO_Expander
+     000000B4  G$T0$0_0$0                         IO_Expander
+     000000B4  _P3_4                              IO_Expander
+     000000B4  _T0                                IO_Expander
+     000000B5  G$P3_5$0_0$0                       IO_Expander
+     000000B5  G$T1$0_0$0                         IO_Expander
+     000000B5  _P3_5                              IO_Expander
+     000000B5  _T1                                IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000000B6  G$P3_6$0_0$0                       IO_Expander
+     000000B6  G$WR$0_0$0                         IO_Expander
+     000000B6  _P3_6                              IO_Expander
+     000000B6  _WR                                IO_Expander
+     000000B7  G$P3_7$0_0$0                       IO_Expander
+     000000B7  G$RD$0_0$0                         IO_Expander
+     000000B7  _P3_7                              IO_Expander
+     000000B7  _RD                                IO_Expander
+     000000B8  G$IP$0_0$0                         IO_Expander
+     000000B8  G$PX0$0_0$0                        IO_Expander
+     000000B8  _IP                                IO_Expander
+     000000B8  _PX0                               IO_Expander
+     000000B9  G$PT0$0_0$0                        IO_Expander
+     000000B9  _PT0                               IO_Expander
+     000000BA  G$PX1$0_0$0                        IO_Expander
+     000000BA  _PX1                               IO_Expander
+     000000BB  G$PT1$0_0$0                        IO_Expander
+     000000BB  _PT1                               IO_Expander
+     000000BC  G$PS$0_0$0                         IO_Expander
+     000000BC  _PS                                IO_Expander
+     000000D0  G$P$0_0$0                          IO_Expander
+     000000D0  G$PSW$0_0$0                        IO_Expander
+     000000D0  _P                                 IO_Expander
+     000000D0  _PSW                               IO_Expander
+     000000D1  G$F1$0_0$0                         IO_Expander
+     000000D1  _F1                                IO_Expander
+     000000D2  G$OV$0_0$0                         IO_Expander
+     000000D2  _OV                                IO_Expander
+     000000D3  G$RS0$0_0$0                        IO_Expander
+     000000D3  _RS0                               IO_Expander
+     000000D4  G$RS1$0_0$0                        IO_Expander
+     000000D4  _RS1                               IO_Expander
+     000000D5  G$F0$0_0$0                         IO_Expander
+     000000D5  _F0                                IO_Expander
+     000000D6  G$AC$0_0$0                         IO_Expander
+     000000D6  _AC                                IO_Expander
+     000000D7  G$CY$0_0$0                         IO_Expander
+     000000D7  _CY                                IO_Expander
+     000000E0  G$ACC$0_0$0                        IO_Expander
+     000000E0  _ACC                               IO_Expander
+     000000F0  G$B$0_0$0                          IO_Expander
+     000000F0  _B                                 IO_Expander
+     000000F5  _B_5                               _gptrget
+     000000F6  _B_6                               _gptrget
+     000000F7  _B_7                               _gptrget
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+BSEG_BYTES                          00000020    00000001 =           1. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+REG_BANK_0                          00000000    00000008 =           8. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+BIT_BANK                            00000021    00000001 =           1. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 10.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+DSEG                                00000000    0000007D =         125. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000008  FIO_Expander$ret_byte$0_0$0        IO_Expander
+     00000009  FIO_Expander$device_addr$0_0$0     IO_Expander
+     0000000A  FIO_Expander$addr_low$0_0$0        IO_Expander
+     0000000B  FIO_Expander$asm_data$0_0$0        IO_Expander
+     0000000C  FIO_Expander$asm_result$0_0$0      IO_Expander
+     0000000D  LIO_Expander.hex_dump_menu$sloc0   IO_Expander
+     0000000F  LIO_Expander.hex_dump_menu$sloc1   IO_Expander
+     0000001B  _bp                                _bp
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+OSEG                                0000001C    00000001 =           1. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 12.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+SSEG                                00000022    0000005E =          94. bytes (REL,OVR)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000022  __start__stack                     IO_Expander
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 13.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+XSEG                                00000400    0000008C =         140. bytes (REL,CON,XDATA)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+D:   00000400  LIO_Expander.putchar$c$1_0$71      IO_Expander
+D:   00000402  LIO_Expander.putstr$s$1_0$75       IO_Expander
+D:   00000405  LIO_Expander.putchar_blue$c$1_0$   IO_Expander
+D:   00000407  LIO_Expander.putstr_blue$s$1_0$8   IO_Expander
+D:   0000040A  LIO_Expander.putstr_green$s$1_0$   IO_Expander
+D:   0000040D  LIO_Expander.simple_hex_to_int$h   IO_Expander
+D:   00000410  LIO_Expander.simple_hex_to_int$r   IO_Expander
+D:   00000412  LIO_Expander.print_hex_dump_line   IO_Expander
+D:   00000412  _print_hex_dump_line_PARM_2        IO_Expander
+D:   00000415  LIO_Expander.print_hex_dump_line   IO_Expander
+D:   00000415  _print_hex_dump_line_PARM_3        IO_Expander
+D:   00000416  LIO_Expander.print_hex_dump_line   IO_Expander
+D:   00000418  LIO_Expander.get_user_input$max_   IO_Expander
+D:   00000418  _get_user_input_PARM_2             IO_Expander
+D:   00000419  LIO_Expander.get_user_input$buff   IO_Expander
+D:   0000041C  LIO_Expander.get_user_input$coun   IO_Expander
+D:   0000041D  LIO_Expander.PCF8574A_write$data   IO_Expander
+D:   0000041E  LIO_Expander.PCF8574A_read$data$   IO_Expander
+D:   00000421  LIO_Expander.set_P0_out$state$1_   IO_Expander
+D:   00000422  LIO_Expander.set_P0_out$new_stat   IO_Expander
+D:   00000423  LIO_Expander.int0_isr$port_data$   IO_Expander
+D:   00000424  FIO_Expander$input_buffer$0_0$0    IO_Expander
+D:   00000438  LIO_Expander.main$port_data$4_0$   IO_Expander
+D:   00000439  LIO_Expander.main$port_data$4_0$   IO_Expander
+D:   0000043A  LIO_Expander.hex_dump_menu$curre   IO_Expander
+D:   0000043C  LIO_Expander.hex_dump_menu$data_   IO_Expander
+D:   0000044C  LIO_Expander.hex_dump_menu$bytes   IO_Expander
+D:   0000044E  LIO_Expander.eereset$i$1_0$185     IO_Expander
+D:   0000044F  __gptrput_PARM_2                   _gptrput
+D:   00000453  _vprintf_PARM_2                    vprintf
+D:   00000468  __print_format_PARM_2              printf_large
+D:   0000046B  __print_format_PARM_3              printf_large
+D:   0000046E  __print_format_PARM_4              printf_large
+D:   0000048A  __mulint_PARM_2                    _mulint
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 14.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+XISEG                               0000048C    00000003 =           3. bytes (REL,CON,XDATA)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+D:   0000048C  G$IO_Expander_port_state$0_0$0     IO_Expander
+D:   0000048C  _IO_Expander_port_state            IO_Expander
+D:   0000048D  G$PCF8574A_input_state$0_0$0       IO_Expander
+D:   0000048D  _PCF8574A_input_state              IO_Expander
+D:   0000048E  G$io_link$0_0$0                    IO_Expander
+D:   0000048E  _io_link                           IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 15.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+HOME                                00002000    00000009 =           9. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002000  A$IO_Expander$538                  IO_Expander
+C:   00002003  A$IO_Expander$539                  IO_Expander
+C:   00002006  A$IO_Expander$561                  IO_Expander
+C:   00002006  __sdcc_program_startup             IO_Expander
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 16.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT0                             00002009    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002009  __sdcc_gsinit_startup              
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 17.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT2                             0000200C    0000000A =          10. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 18.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT3                             00002016    00000022 =          34. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002016  __mcs51_genXINIT                   
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 19.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSINIT4                             00002038    0000002A =          42. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002038  __mcs51_genRAMCLEAR                
+C:   0000203E  __mcs51_genXRAMCLEAR               
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 20.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+GSFINAL                             00002062    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002062  A$IO_Expander$554                  IO_Expander
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 21.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002065  A$IO_Expander$587                  IO_Expander
+C:   00002065  C$IO_Expander.c$52$0_0$72          IO_Expander
+C:   00002065  G$putchar$0$0                      IO_Expander
+C:   00002065  _putchar                           IO_Expander
+C:   00002067  A$IO_Expander$588                  IO_Expander
+C:   00002069  A$IO_Expander$589                  IO_Expander
+C:   0000206C  A$IO_Expander$590                  IO_Expander
+C:   0000206D  A$IO_Expander$591                  IO_Expander
+C:   0000206E  A$IO_Expander$592                  IO_Expander
+C:   0000206F  A$IO_Expander$593                  IO_Expander
+C:   00002070  A$IO_Expander$597                  IO_Expander
+C:   00002070  C$IO_Expander.c$53$1_0$72          IO_Expander
+C:   00002073  A$IO_Expander$600                  IO_Expander
+C:   00002073  C$IO_Expander.c$54$1_0$72          IO_Expander
+C:   00002076  A$IO_Expander$601                  IO_Expander
+C:   00002077  A$IO_Expander$602                  IO_Expander
+C:   00002078  A$IO_Expander$603                  IO_Expander
+C:   00002079  A$IO_Expander$604                  IO_Expander
+C:   0000207A  A$IO_Expander$605                  IO_Expander
+C:   0000207B  A$IO_Expander$606                  IO_Expander
+C:   0000207D  A$IO_Expander$610                  IO_Expander
+C:   0000207D  C$IO_Expander.c$55$1_0$72          IO_Expander
+C:   0000207F  A$IO_Expander$613                  IO_Expander
+C:   0000207F  C$IO_Expander.c$56$1_0$72          IO_Expander
+C:   00002081  A$IO_Expander$614                  IO_Expander
+C:   00002083  A$IO_Expander$619                  IO_Expander
+C:   00002083  C$IO_Expander.c$57$1_0$72          IO_Expander
+C:   00002083  XG$putchar$0$0                     IO_Expander
+C:   00002084  A$IO_Expander$636                  IO_Expander
+C:   00002084  C$IO_Expander.c$60$1_0$74          IO_Expander
+C:   00002084  C$IO_Expander.c$61$1_0$74          IO_Expander
+C:   00002084  C$IO_Expander.c$62$1_0$74          IO_Expander
+C:   00002084  G$getchar$0$0                      IO_Expander
+C:   00002084  _getchar                           IO_Expander
+C:   00002087  A$IO_Expander$637                  IO_Expander
+C:   00002089  A$IO_Expander$641                  IO_Expander
+C:   00002089  C$IO_Expander.c$63$1_0$74          IO_Expander
+C:   0000208B  A$IO_Expander$642                  IO_Expander
+C:   0000208D  A$IO_Expander$643                  IO_Expander
+C:   0000208F  A$IO_Expander$644                  IO_Expander
+C:   00002091  A$IO_Expander$649                  IO_Expander
+C:   00002091  C$IO_Expander.c$64$1_0$74          IO_Expander
+C:   00002091  XG$getchar$0$0                     IO_Expander
+C:   00002092  A$IO_Expander$663                  IO_Expander
+C:   00002092  C$IO_Expander.c$67$1_0$76          IO_Expander
+C:   00002092  G$putstr$0$0                       IO_Expander
+C:   00002092  _putstr                            IO_Expander
+C:   00002094  A$IO_Expander$664                  IO_Expander
+C:   00002096  A$IO_Expander$665                  IO_Expander
+C:   00002098  A$IO_Expander$666                  IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 22.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000209B  A$IO_Expander$667                  IO_Expander
+C:   0000209C  A$IO_Expander$668                  IO_Expander
+C:   0000209D  A$IO_Expander$669                  IO_Expander
+C:   0000209E  A$IO_Expander$670                  IO_Expander
+C:   0000209F  A$IO_Expander$671                  IO_Expander
+C:   000020A0  A$IO_Expander$672                  IO_Expander
+C:   000020A1  A$IO_Expander$673                  IO_Expander
+C:   000020A2  A$IO_Expander$676                  IO_Expander
+C:   000020A2  C$IO_Expander.c$69$1_0$76          IO_Expander
+C:   000020A5  A$IO_Expander$677                  IO_Expander
+C:   000020A6  A$IO_Expander$678                  IO_Expander
+C:   000020A7  A$IO_Expander$679                  IO_Expander
+C:   000020A8  A$IO_Expander$680                  IO_Expander
+C:   000020A9  A$IO_Expander$681                  IO_Expander
+C:   000020AA  A$IO_Expander$682                  IO_Expander
+C:   000020AB  A$IO_Expander$683                  IO_Expander
+C:   000020AC  A$IO_Expander$684                  IO_Expander
+C:   000020AD  A$IO_Expander$685                  IO_Expander
+C:   000020AF  A$IO_Expander$686                  IO_Expander
+C:   000020B1  A$IO_Expander$688                  IO_Expander
+C:   000020B3  A$IO_Expander$689                  IO_Expander
+C:   000020B5  A$IO_Expander$690                  IO_Expander
+C:   000020B7  A$IO_Expander$691                  IO_Expander
+C:   000020BA  A$IO_Expander$692                  IO_Expander
+C:   000020BB  A$IO_Expander$693                  IO_Expander
+C:   000020BD  A$IO_Expander$696                  IO_Expander
+C:   000020BD  C$IO_Expander.c$70$2_0$77          IO_Expander
+C:   000020BE  A$IO_Expander$697                  IO_Expander
+C:   000020C1  A$IO_Expander$698                  IO_Expander
+C:   000020C2  A$IO_Expander$700                  IO_Expander
+C:   000020C5  A$IO_Expander$701                  IO_Expander
+C:   000020C6  A$IO_Expander$702                  IO_Expander
+C:   000020C7  A$IO_Expander$703                  IO_Expander
+C:   000020C8  A$IO_Expander$704                  IO_Expander
+C:   000020C9  A$IO_Expander$705                  IO_Expander
+C:   000020CA  A$IO_Expander$706                  IO_Expander
+C:   000020CB  A$IO_Expander$707                  IO_Expander
+C:   000020CC  A$IO_Expander$708                  IO_Expander
+C:   000020CD  A$IO_Expander$709                  IO_Expander
+C:   000020CF  A$IO_Expander$710                  IO_Expander
+C:   000020D1  A$IO_Expander$711                  IO_Expander
+C:   000020D3  A$IO_Expander$712                  IO_Expander
+C:   000020D5  A$IO_Expander$713                  IO_Expander
+C:   000020D7  A$IO_Expander$714                  IO_Expander
+C:   000020D9  A$IO_Expander$715                  IO_Expander
+C:   000020DB  A$IO_Expander$716                  IO_Expander
+C:   000020DD  A$IO_Expander$717                  IO_Expander
+C:   000020DF  A$IO_Expander$718                  IO_Expander
+C:   000020E2  A$IO_Expander$719                  IO_Expander
+C:   000020E4  A$IO_Expander$720                  IO_Expander
+C:   000020E6  A$IO_Expander$721                  IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 23.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000020E8  A$IO_Expander$722                  IO_Expander
+C:   000020EA  A$IO_Expander$723                  IO_Expander
+C:   000020EC  A$IO_Expander$726                  IO_Expander
+C:   000020EC  C$IO_Expander.c$71$2_0$77          IO_Expander
+C:   000020ED  A$IO_Expander$727                  IO_Expander
+C:   000020F0  A$IO_Expander$728                  IO_Expander
+C:   000020F1  A$IO_Expander$729                  IO_Expander
+C:   000020F3  A$IO_Expander$731                  IO_Expander
+C:   000020F6  A$IO_Expander$732                  IO_Expander
+C:   000020F7  A$IO_Expander$733                  IO_Expander
+C:   000020F8  A$IO_Expander$734                  IO_Expander
+C:   000020F9  A$IO_Expander$735                  IO_Expander
+C:   000020FA  A$IO_Expander$736                  IO_Expander
+C:   000020FB  A$IO_Expander$737                  IO_Expander
+C:   000020FC  A$IO_Expander$738                  IO_Expander
+C:   000020FD  A$IO_Expander$739                  IO_Expander
+C:   000020FE  A$IO_Expander$742                  IO_Expander
+C:   000020FE  C$IO_Expander.c$73$1_0$76          IO_Expander
+C:   000020FF  A$IO_Expander$743                  IO_Expander
+C:   00002102  A$IO_Expander$744                  IO_Expander
+C:   00002103  A$IO_Expander$746                  IO_Expander
+C:   00002105  A$IO_Expander$747                  IO_Expander
+C:   00002107  A$IO_Expander$752                  IO_Expander
+C:   00002107  C$IO_Expander.c$74$1_0$76          IO_Expander
+C:   00002107  XG$putstr$0$0                      IO_Expander
+C:   00002108  A$IO_Expander$765                  IO_Expander
+C:   00002108  C$IO_Expander.c$76$1_0$79          IO_Expander
+C:   00002108  G$putchar_blue$0$0                 IO_Expander
+C:   00002108  _putchar_blue                      IO_Expander
+C:   0000210A  A$IO_Expander$766                  IO_Expander
+C:   0000210C  A$IO_Expander$767                  IO_Expander
+C:   0000210F  A$IO_Expander$768                  IO_Expander
+C:   00002110  A$IO_Expander$769                  IO_Expander
+C:   00002111  A$IO_Expander$770                  IO_Expander
+C:   00002112  A$IO_Expander$771                  IO_Expander
+C:   00002113  A$IO_Expander$774                  IO_Expander
+C:   00002113  C$IO_Expander.c$77$1_0$79          IO_Expander
+C:   00002116  A$IO_Expander$775                  IO_Expander
+C:   00002119  A$IO_Expander$776                  IO_Expander
+C:   0000211C  A$IO_Expander$779                  IO_Expander
+C:   0000211C  C$IO_Expander.c$78$1_0$79          IO_Expander
+C:   0000211F  A$IO_Expander$780                  IO_Expander
+C:   00002120  A$IO_Expander$781                  IO_Expander
+C:   00002121  A$IO_Expander$782                  IO_Expander
+C:   00002122  A$IO_Expander$783                  IO_Expander
+C:   00002123  A$IO_Expander$784                  IO_Expander
+C:   00002124  A$IO_Expander$785                  IO_Expander
+C:   00002126  A$IO_Expander$786                  IO_Expander
+C:   00002128  A$IO_Expander$787                  IO_Expander
+C:   0000212B  A$IO_Expander$790                  IO_Expander
+C:   0000212B  C$IO_Expander.c$79$1_0$79          IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 24.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000212E  A$IO_Expander$791                  IO_Expander
+C:   00002131  A$IO_Expander$792                  IO_Expander
+C:   00002134  A$IO_Expander$797                  IO_Expander
+C:   00002134  C$IO_Expander.c$80$1_0$79          IO_Expander
+C:   00002134  XG$putchar_blue$0$0                IO_Expander
+C:   00002135  A$IO_Expander$810                  IO_Expander
+C:   00002135  C$IO_Expander.c$82$1_0$81          IO_Expander
+C:   00002135  G$putstr_blue$0$0                  IO_Expander
+C:   00002135  _putstr_blue                       IO_Expander
+C:   00002137  A$IO_Expander$811                  IO_Expander
+C:   00002139  A$IO_Expander$812                  IO_Expander
+C:   0000213B  A$IO_Expander$813                  IO_Expander
+C:   0000213E  A$IO_Expander$814                  IO_Expander
+C:   0000213F  A$IO_Expander$815                  IO_Expander
+C:   00002140  A$IO_Expander$816                  IO_Expander
+C:   00002141  A$IO_Expander$817                  IO_Expander
+C:   00002142  A$IO_Expander$818                  IO_Expander
+C:   00002143  A$IO_Expander$819                  IO_Expander
+C:   00002144  A$IO_Expander$820                  IO_Expander
+C:   00002145  A$IO_Expander$823                  IO_Expander
+C:   00002145  C$IO_Expander.c$83$1_0$81          IO_Expander
+C:   00002148  A$IO_Expander$824                  IO_Expander
+C:   0000214B  A$IO_Expander$825                  IO_Expander
+C:   0000214E  A$IO_Expander$828                  IO_Expander
+C:   0000214E  C$IO_Expander.c$84$1_0$81          IO_Expander
+C:   00002151  A$IO_Expander$829                  IO_Expander
+C:   00002152  A$IO_Expander$830                  IO_Expander
+C:   00002153  A$IO_Expander$831                  IO_Expander
+C:   00002154  A$IO_Expander$832                  IO_Expander
+C:   00002155  A$IO_Expander$833                  IO_Expander
+C:   00002156  A$IO_Expander$834                  IO_Expander
+C:   00002157  A$IO_Expander$835                  IO_Expander
+C:   00002158  A$IO_Expander$836                  IO_Expander
+C:   00002159  A$IO_Expander$837                  IO_Expander
+C:   0000215B  A$IO_Expander$838                  IO_Expander
+C:   0000215D  A$IO_Expander$839                  IO_Expander
+C:   0000215F  A$IO_Expander$840                  IO_Expander
+C:   00002162  A$IO_Expander$843                  IO_Expander
+C:   00002162  C$IO_Expander.c$85$1_0$81          IO_Expander
+C:   00002165  A$IO_Expander$844                  IO_Expander
+C:   00002168  A$IO_Expander$845                  IO_Expander
+C:   0000216B  A$IO_Expander$850                  IO_Expander
+C:   0000216B  C$IO_Expander.c$86$1_0$81          IO_Expander
+C:   0000216B  XG$putstr_blue$0$0                 IO_Expander
+C:   0000216C  A$IO_Expander$863                  IO_Expander
+C:   0000216C  C$IO_Expander.c$88$1_0$83          IO_Expander
+C:   0000216C  G$putstr_green$0$0                 IO_Expander
+C:   0000216C  _putstr_green                      IO_Expander
+C:   0000216E  A$IO_Expander$864                  IO_Expander
+C:   00002170  A$IO_Expander$865                  IO_Expander
+C:   00002172  A$IO_Expander$866                  IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 25.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002175  A$IO_Expander$867                  IO_Expander
+C:   00002176  A$IO_Expander$868                  IO_Expander
+C:   00002177  A$IO_Expander$869                  IO_Expander
+C:   00002178  A$IO_Expander$870                  IO_Expander
+C:   00002179  A$IO_Expander$871                  IO_Expander
+C:   0000217A  A$IO_Expander$872                  IO_Expander
+C:   0000217B  A$IO_Expander$873                  IO_Expander
+C:   0000217C  A$IO_Expander$876                  IO_Expander
+C:   0000217C  C$IO_Expander.c$89$1_0$83          IO_Expander
+C:   0000217F  A$IO_Expander$877                  IO_Expander
+C:   00002182  A$IO_Expander$878                  IO_Expander
+C:   00002185  A$IO_Expander$881                  IO_Expander
+C:   00002185  C$IO_Expander.c$90$1_0$83          IO_Expander
+C:   00002188  A$IO_Expander$882                  IO_Expander
+C:   00002189  A$IO_Expander$883                  IO_Expander
+C:   0000218A  A$IO_Expander$884                  IO_Expander
+C:   0000218B  A$IO_Expander$885                  IO_Expander
+C:   0000218C  A$IO_Expander$886                  IO_Expander
+C:   0000218D  A$IO_Expander$887                  IO_Expander
+C:   0000218E  A$IO_Expander$888                  IO_Expander
+C:   0000218F  A$IO_Expander$889                  IO_Expander
+C:   00002190  A$IO_Expander$890                  IO_Expander
+C:   00002192  A$IO_Expander$891                  IO_Expander
+C:   00002194  A$IO_Expander$892                  IO_Expander
+C:   00002196  A$IO_Expander$893                  IO_Expander
+C:   00002199  A$IO_Expander$896                  IO_Expander
+C:   00002199  C$IO_Expander.c$91$1_0$83          IO_Expander
+C:   0000219C  A$IO_Expander$897                  IO_Expander
+C:   0000219F  A$IO_Expander$898                  IO_Expander
+C:   000021A2  A$IO_Expander$903                  IO_Expander
+C:   000021A2  C$IO_Expander.c$92$1_0$83          IO_Expander
+C:   000021A2  XG$putstr_green$0$0                IO_Expander
+C:   000021A3  A$IO_Expander$916                  IO_Expander
+C:   000021A3  C$IO_Expander.c$95$1_0$85          IO_Expander
+C:   000021A3  C$IO_Expander.c$96$1_0$85          IO_Expander
+C:   000021A3  G$print_newline$0$0                IO_Expander
+C:   000021A3  _print_newline                     IO_Expander
+C:   000021A6  A$IO_Expander$917                  IO_Expander
+C:   000021A9  A$IO_Expander$920                  IO_Expander
+C:   000021A9  C$IO_Expander.c$97$1_0$85          IO_Expander
+C:   000021AC  A$IO_Expander$921                  IO_Expander
+C:   000021AF  A$IO_Expander$926                  IO_Expander
+C:   000021AF  C$IO_Expander.c$98$1_0$85          IO_Expander
+C:   000021AF  XG$print_newline$0$0               IO_Expander
+C:   000021B0  A$IO_Expander$941                  IO_Expander
+C:   000021B0  C$IO_Expander.c$100$1_0$87         IO_Expander
+C:   000021B0  G$simple_hex_to_int$0$0            IO_Expander
+C:   000021B0  _simple_hex_to_int                 IO_Expander
+C:   000021B2  A$IO_Expander$942                  IO_Expander
+C:   000021B4  A$IO_Expander$943                  IO_Expander
+C:   000021B6  A$IO_Expander$944                  IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 26.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000021B9  A$IO_Expander$945                  IO_Expander
+C:   000021BA  A$IO_Expander$946                  IO_Expander
+C:   000021BB  A$IO_Expander$947                  IO_Expander
+C:   000021BC  A$IO_Expander$948                  IO_Expander
+C:   000021BD  A$IO_Expander$949                  IO_Expander
+C:   000021BE  A$IO_Expander$950                  IO_Expander
+C:   000021BF  A$IO_Expander$951                  IO_Expander
+C:   000021C0  A$IO_Expander$954                  IO_Expander
+C:   000021C0  C$IO_Expander.c$101$2_0$87         IO_Expander
+C:   000021C3  A$IO_Expander$955                  IO_Expander
+C:   000021C4  A$IO_Expander$956                  IO_Expander
+C:   000021C5  A$IO_Expander$957                  IO_Expander
+C:   000021C6  A$IO_Expander$958                  IO_Expander
+C:   000021C7  A$IO_Expander$961                  IO_Expander
+C:   000021C7  C$IO_Expander.c$104$1_0$87         IO_Expander
+C:   000021CA  A$IO_Expander$962                  IO_Expander
+C:   000021CB  A$IO_Expander$963                  IO_Expander
+C:   000021CC  A$IO_Expander$964                  IO_Expander
+C:   000021CD  A$IO_Expander$965                  IO_Expander
+C:   000021CE  A$IO_Expander$966                  IO_Expander
+C:   000021CF  A$IO_Expander$967                  IO_Expander
+C:   000021D0  A$IO_Expander$968                  IO_Expander
+C:   000021D1  A$IO_Expander$969                  IO_Expander
+C:   000021D2  A$IO_Expander$971                  IO_Expander
+C:   000021D4  A$IO_Expander$972                  IO_Expander
+C:   000021D6  A$IO_Expander$973                  IO_Expander
+C:   000021D8  A$IO_Expander$974                  IO_Expander
+C:   000021DB  A$IO_Expander$975                  IO_Expander
+C:   000021DC  A$IO_Expander$976                  IO_Expander
+C:   000021DD  A$IO_Expander$977                  IO_Expander
+C:   000021DF  A$IO_Expander$978                  IO_Expander
+C:   000021E1  A$IO_Expander$979                  IO_Expander
+C:   000021E4  A$IO_Expander$980                  IO_Expander
+C:   000021E5  A$IO_Expander$981                  IO_Expander
+C:   000021E6  A$IO_Expander$982                  IO_Expander
+C:   000021E7  A$IO_Expander$983                  IO_Expander
+C:   000021E8  A$IO_Expander$984                  IO_Expander
+C:   000021E9  A$IO_Expander$985                  IO_Expander
+C:   000021EA  A$IO_Expander$986                  IO_Expander
+C:   000021EB  A$IO_Expander$987                  IO_Expander
+C:   000021EC  A$IO_Expander$988                  IO_Expander
+C:   000021ED  A$IO_Expander$989                  IO_Expander
+C:   000021EF  A$IO_Expander$990                  IO_Expander
+C:   000021F2  A$IO_Expander$994                  IO_Expander
+C:   000021F2  C$IO_Expander.c$105$2_0$88         IO_Expander
+C:   000021F5  A$IO_Expander$995                  IO_Expander
+C:   000021F6  A$IO_Expander$996                  IO_Expander
+C:   000021F7  A$IO_Expander$997                  IO_Expander
+C:   000021F8  A$IO_Expander$998                  IO_Expander
+C:   000021F9  A$IO_Expander$999                  IO_Expander
+C:   000021FA  A$IO_Expander$1000                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 27.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000021FC  A$IO_Expander$1001                 IO_Expander
+C:   000021FD  A$IO_Expander$1002                 IO_Expander
+C:   000021FE  A$IO_Expander$1003                 IO_Expander
+C:   000021FF  A$IO_Expander$1004                 IO_Expander
+C:   00002200  A$IO_Expander$1005                 IO_Expander
+C:   00002201  A$IO_Expander$1006                 IO_Expander
+C:   00002203  A$IO_Expander$1007                 IO_Expander
+C:   00002204  A$IO_Expander$1008                 IO_Expander
+C:   00002205  A$IO_Expander$1009                 IO_Expander
+C:   00002206  A$IO_Expander$1010                 IO_Expander
+C:   00002209  A$IO_Expander$1011                 IO_Expander
+C:   0000220A  A$IO_Expander$1012                 IO_Expander
+C:   0000220B  A$IO_Expander$1013                 IO_Expander
+C:   0000220C  A$IO_Expander$1014                 IO_Expander
+C:   0000220D  A$IO_Expander$1015                 IO_Expander
+C:   0000220E  A$IO_Expander$1018                 IO_Expander
+C:   0000220E  C$IO_Expander.c$106$2_0$88         IO_Expander
+C:   00002211  A$IO_Expander$1020                 IO_Expander
+C:   00002213  A$IO_Expander$1021                 IO_Expander
+C:   00002214  A$IO_Expander$1022                 IO_Expander
+C:   00002216  A$IO_Expander$1023                 IO_Expander
+C:   00002218  A$IO_Expander$1026                 IO_Expander
+C:   00002218  C$IO_Expander.c$107$3_0$89         IO_Expander
+C:   0000221A  A$IO_Expander$1027                 IO_Expander
+C:   0000221C  A$IO_Expander$1028                 IO_Expander
+C:   0000221D  A$IO_Expander$1029                 IO_Expander
+C:   0000221F  A$IO_Expander$1030                 IO_Expander
+C:   00002220  A$IO_Expander$1031                 IO_Expander
+C:   00002221  A$IO_Expander$1032                 IO_Expander
+C:   00002223  A$IO_Expander$1033                 IO_Expander
+C:   00002224  A$IO_Expander$1034                 IO_Expander
+C:   00002227  A$IO_Expander$1035                 IO_Expander
+C:   00002228  A$IO_Expander$1036                 IO_Expander
+C:   00002229  A$IO_Expander$1037                 IO_Expander
+C:   0000222A  A$IO_Expander$1038                 IO_Expander
+C:   0000222B  A$IO_Expander$1039                 IO_Expander
+C:   0000222C  A$IO_Expander$1040                 IO_Expander
+C:   0000222D  A$IO_Expander$1041                 IO_Expander
+C:   0000222F  A$IO_Expander$1042                 IO_Expander
+C:   00002230  A$IO_Expander$1043                 IO_Expander
+C:   00002232  A$IO_Expander$1044                 IO_Expander
+C:   00002235  A$IO_Expander$1045                 IO_Expander
+C:   00002236  A$IO_Expander$1046                 IO_Expander
+C:   00002237  A$IO_Expander$1047                 IO_Expander
+C:   00002238  A$IO_Expander$1048                 IO_Expander
+C:   00002239  A$IO_Expander$1049                 IO_Expander
+C:   0000223A  A$IO_Expander$1050                 IO_Expander
+C:   0000223C  A$IO_Expander$1054                 IO_Expander
+C:   0000223C  C$IO_Expander.c$108$2_0$88         IO_Expander
+C:   0000223F  A$IO_Expander$1056                 IO_Expander
+C:   00002241  A$IO_Expander$1057                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 28.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002242  A$IO_Expander$1058                 IO_Expander
+C:   00002244  A$IO_Expander$1059                 IO_Expander
+C:   00002246  A$IO_Expander$1062                 IO_Expander
+C:   00002246  C$IO_Expander.c$109$3_0$90         IO_Expander
+C:   00002248  A$IO_Expander$1063                 IO_Expander
+C:   0000224A  A$IO_Expander$1064                 IO_Expander
+C:   0000224C  A$IO_Expander$1065                 IO_Expander
+C:   0000224D  A$IO_Expander$1066                 IO_Expander
+C:   0000224E  A$IO_Expander$1067                 IO_Expander
+C:   00002250  A$IO_Expander$1068                 IO_Expander
+C:   00002251  A$IO_Expander$1069                 IO_Expander
+C:   00002252  A$IO_Expander$1070                 IO_Expander
+C:   00002255  A$IO_Expander$1071                 IO_Expander
+C:   00002256  A$IO_Expander$1072                 IO_Expander
+C:   00002257  A$IO_Expander$1073                 IO_Expander
+C:   00002258  A$IO_Expander$1074                 IO_Expander
+C:   00002259  A$IO_Expander$1075                 IO_Expander
+C:   0000225A  A$IO_Expander$1076                 IO_Expander
+C:   0000225B  A$IO_Expander$1077                 IO_Expander
+C:   0000225D  A$IO_Expander$1078                 IO_Expander
+C:   0000225E  A$IO_Expander$1079                 IO_Expander
+C:   00002260  A$IO_Expander$1080                 IO_Expander
+C:   00002263  A$IO_Expander$1081                 IO_Expander
+C:   00002264  A$IO_Expander$1082                 IO_Expander
+C:   00002265  A$IO_Expander$1083                 IO_Expander
+C:   00002266  A$IO_Expander$1084                 IO_Expander
+C:   00002267  A$IO_Expander$1085                 IO_Expander
+C:   00002268  A$IO_Expander$1086                 IO_Expander
+C:   0000226B  A$IO_Expander$1090                 IO_Expander
+C:   0000226B  C$IO_Expander.c$110$2_0$88         IO_Expander
+C:   0000226E  A$IO_Expander$1092                 IO_Expander
+C:   00002270  A$IO_Expander$1093                 IO_Expander
+C:   00002271  A$IO_Expander$1094                 IO_Expander
+C:   00002273  A$IO_Expander$1095                 IO_Expander
+C:   00002275  A$IO_Expander$1098                 IO_Expander
+C:   00002275  C$IO_Expander.c$111$3_0$91         IO_Expander
+C:   00002277  A$IO_Expander$1099                 IO_Expander
+C:   00002279  A$IO_Expander$1100                 IO_Expander
+C:   0000227A  A$IO_Expander$1101                 IO_Expander
+C:   0000227B  A$IO_Expander$1102                 IO_Expander
+C:   0000227D  A$IO_Expander$1103                 IO_Expander
+C:   0000227E  A$IO_Expander$1104                 IO_Expander
+C:   0000227F  A$IO_Expander$1105                 IO_Expander
+C:   00002282  A$IO_Expander$1106                 IO_Expander
+C:   00002283  A$IO_Expander$1107                 IO_Expander
+C:   00002284  A$IO_Expander$1108                 IO_Expander
+C:   00002285  A$IO_Expander$1109                 IO_Expander
+C:   00002286  A$IO_Expander$1110                 IO_Expander
+C:   00002287  A$IO_Expander$1111                 IO_Expander
+C:   00002288  A$IO_Expander$1112                 IO_Expander
+C:   0000228A  A$IO_Expander$1113                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 29.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000228B  A$IO_Expander$1114                 IO_Expander
+C:   0000228D  A$IO_Expander$1115                 IO_Expander
+C:   00002290  A$IO_Expander$1116                 IO_Expander
+C:   00002291  A$IO_Expander$1117                 IO_Expander
+C:   00002292  A$IO_Expander$1118                 IO_Expander
+C:   00002293  A$IO_Expander$1119                 IO_Expander
+C:   00002294  A$IO_Expander$1120                 IO_Expander
+C:   00002295  A$IO_Expander$1121                 IO_Expander
+C:   00002298  A$IO_Expander$1125                 IO_Expander
+C:   00002298  C$IO_Expander.c$113$3_0$92         IO_Expander
+C:   0000229B  A$IO_Expander$1126                 IO_Expander
+C:   0000229D  A$IO_Expander$1130                 IO_Expander
+C:   0000229D  C$IO_Expander.c$116$1_0$87         IO_Expander
+C:   000022A0  A$IO_Expander$1131                 IO_Expander
+C:   000022A1  A$IO_Expander$1132                 IO_Expander
+C:   000022A2  A$IO_Expander$1133                 IO_Expander
+C:   000022A3  A$IO_Expander$1134                 IO_Expander
+C:   000022A4  A$IO_Expander$1139                 IO_Expander
+C:   000022A4  C$IO_Expander.c$117$1_0$87         IO_Expander
+C:   000022A4  XG$simple_hex_to_int$0$0           IO_Expander
+C:   000022A6  A$IO_Expander$1140                 IO_Expander
+C:   000022A8  A$IO_Expander$1142                 IO_Expander
+C:   000022A9  A$IO_Expander$1158                 IO_Expander
+C:   000022A9  C$IO_Expander.c$119$1_0$94         IO_Expander
+C:   000022A9  G$print_hex_dump_line$0$0          IO_Expander
+C:   000022A9  _print_hex_dump_line               IO_Expander
+C:   000022AB  A$IO_Expander$1159                 IO_Expander
+C:   000022AD  A$IO_Expander$1160                 IO_Expander
+C:   000022B0  A$IO_Expander$1161                 IO_Expander
+C:   000022B1  A$IO_Expander$1162                 IO_Expander
+C:   000022B2  A$IO_Expander$1163                 IO_Expander
+C:   000022B3  A$IO_Expander$1164                 IO_Expander
+C:   000022B4  A$IO_Expander$1167                 IO_Expander
+C:   000022B4  C$IO_Expander.c$123$1_0$94         IO_Expander
+C:   000022B7  A$IO_Expander$1168                 IO_Expander
+C:   000022B8  A$IO_Expander$1169                 IO_Expander
+C:   000022BA  A$IO_Expander$1170                 IO_Expander
+C:   000022BB  A$IO_Expander$1171                 IO_Expander
+C:   000022BC  A$IO_Expander$1172                 IO_Expander
+C:   000022BE  A$IO_Expander$1173                 IO_Expander
+C:   000022C0  A$IO_Expander$1174                 IO_Expander
+C:   000022C2  A$IO_Expander$1175                 IO_Expander
+C:   000022C4  A$IO_Expander$1176                 IO_Expander
+C:   000022C6  A$IO_Expander$1177                 IO_Expander
+C:   000022C8  A$IO_Expander$1178                 IO_Expander
+C:   000022CA  A$IO_Expander$1179                 IO_Expander
+C:   000022CD  A$IO_Expander$1180                 IO_Expander
+C:   000022CF  A$IO_Expander$1181                 IO_Expander
+C:   000022D1  A$IO_Expander$1182                 IO_Expander
+C:   000022D3  A$IO_Expander$1185                 IO_Expander
+C:   000022D3  C$IO_Expander.c$126$3_0$96         IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 30.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000022D6  A$IO_Expander$1186                 IO_Expander
+C:   000022D7  A$IO_Expander$1187                 IO_Expander
+C:   000022D8  A$IO_Expander$1188                 IO_Expander
+C:   000022D9  A$IO_Expander$1189                 IO_Expander
+C:   000022DA  A$IO_Expander$1190                 IO_Expander
+C:   000022DB  A$IO_Expander$1191                 IO_Expander
+C:   000022DC  A$IO_Expander$1192                 IO_Expander
+C:   000022DD  A$IO_Expander$1193                 IO_Expander
+C:   000022DE  A$IO_Expander$1194                 IO_Expander
+C:   000022E1  A$IO_Expander$1195                 IO_Expander
+C:   000022E2  A$IO_Expander$1196                 IO_Expander
+C:   000022E3  A$IO_Expander$1197                 IO_Expander
+C:   000022E5  A$IO_Expander$1199                 IO_Expander
+C:   000022E6  A$IO_Expander$1200                 IO_Expander
+C:   000022E7  A$IO_Expander$1201                 IO_Expander
+C:   000022E8  A$IO_Expander$1202                 IO_Expander
+C:   000022EA  A$IO_Expander$1203                 IO_Expander
+C:   000022ED  A$IO_Expander$1205                 IO_Expander
+C:   000022EF  A$IO_Expander$1208                 IO_Expander
+C:   000022EF  C$IO_Expander.c$127$3_0$96         IO_Expander
+C:   000022F0  A$IO_Expander$1209                 IO_Expander
+C:   000022F1  A$IO_Expander$1210                 IO_Expander
+C:   000022F2  A$IO_Expander$1211                 IO_Expander
+C:   000022F3  A$IO_Expander$1212                 IO_Expander
+C:   000022F4  A$IO_Expander$1213                 IO_Expander
+C:   000022F5  A$IO_Expander$1214                 IO_Expander
+C:   000022F7  A$IO_Expander$1215                 IO_Expander
+C:   000022F9  A$IO_Expander$1216                 IO_Expander
+C:   000022FB  A$IO_Expander$1217                 IO_Expander
+C:   000022FD  A$IO_Expander$1218                 IO_Expander
+C:   00002300  A$IO_Expander$1219                 IO_Expander
+C:   00002301  A$IO_Expander$1220                 IO_Expander
+C:   00002303  A$IO_Expander$1221                 IO_Expander
+C:   00002305  A$IO_Expander$1222                 IO_Expander
+C:   00002307  A$IO_Expander$1223                 IO_Expander
+C:   00002309  A$IO_Expander$1224                 IO_Expander
+C:   0000230B  A$IO_Expander$1225                 IO_Expander
+C:   0000230D  A$IO_Expander$1226                 IO_Expander
+C:   0000230F  A$IO_Expander$1227                 IO_Expander
+C:   00002311  A$IO_Expander$1228                 IO_Expander
+C:   00002313  A$IO_Expander$1229                 IO_Expander
+C:   00002315  A$IO_Expander$1230                 IO_Expander
+C:   00002317  A$IO_Expander$1231                 IO_Expander
+C:   00002319  A$IO_Expander$1232                 IO_Expander
+C:   0000231B  A$IO_Expander$1233                 IO_Expander
+C:   0000231D  A$IO_Expander$1234                 IO_Expander
+C:   00002320  A$IO_Expander$1235                 IO_Expander
+C:   00002322  A$IO_Expander$1236                 IO_Expander
+C:   00002324  A$IO_Expander$1237                 IO_Expander
+C:   00002326  A$IO_Expander$1238                 IO_Expander
+C:   00002328  A$IO_Expander$1239                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 31.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000232A  A$IO_Expander$1240                 IO_Expander
+C:   0000232C  A$IO_Expander$1241                 IO_Expander
+C:   0000232E  A$IO_Expander$1242                 IO_Expander
+C:   00002330  A$IO_Expander$1245                 IO_Expander
+C:   00002330  C$IO_Expander.c$126$2_0$95         IO_Expander
+C:   00002331  A$IO_Expander$1246                 IO_Expander
+C:   00002333  A$IO_Expander$1250                 IO_Expander
+C:   00002333  C$IO_Expander.c$130$1_0$94         IO_Expander
+C:   00002335  A$IO_Expander$1251                 IO_Expander
+C:   00002337  A$IO_Expander$1252                 IO_Expander
+C:   00002339  A$IO_Expander$1253                 IO_Expander
+C:   0000233B  A$IO_Expander$1254                 IO_Expander
+C:   0000233D  A$IO_Expander$1255                 IO_Expander
+C:   0000233F  A$IO_Expander$1256                 IO_Expander
+C:   00002342  A$IO_Expander$1257                 IO_Expander
+C:   00002344  A$IO_Expander$1258                 IO_Expander
+C:   00002346  A$IO_Expander$1259                 IO_Expander
+C:   00002348  A$IO_Expander$1264                 IO_Expander
+C:   00002348  C$IO_Expander.c$131$1_0$94         IO_Expander
+C:   00002348  XG$print_hex_dump_line$0$0         IO_Expander
+C:   00002349  A$IO_Expander$1280                 IO_Expander
+C:   00002349  C$IO_Expander.c$134$1_0$98         IO_Expander
+C:   00002349  G$get_user_input$0$0               IO_Expander
+C:   00002349  _get_user_input                    IO_Expander
+C:   0000234B  A$IO_Expander$1281                 IO_Expander
+C:   0000234D  A$IO_Expander$1282                 IO_Expander
+C:   0000234F  A$IO_Expander$1283                 IO_Expander
+C:   00002352  A$IO_Expander$1284                 IO_Expander
+C:   00002353  A$IO_Expander$1285                 IO_Expander
+C:   00002354  A$IO_Expander$1286                 IO_Expander
+C:   00002355  A$IO_Expander$1287                 IO_Expander
+C:   00002356  A$IO_Expander$1288                 IO_Expander
+C:   00002357  A$IO_Expander$1289                 IO_Expander
+C:   00002358  A$IO_Expander$1290                 IO_Expander
+C:   00002359  A$IO_Expander$1293                 IO_Expander
+C:   00002359  C$IO_Expander.c$135$2_0$98         IO_Expander
+C:   0000235C  A$IO_Expander$1294                 IO_Expander
+C:   0000235D  A$IO_Expander$1295                 IO_Expander
+C:   0000235E  A$IO_Expander$1298                 IO_Expander
+C:   0000235E  C$IO_Expander.c$138$1_0$98         IO_Expander
+C:   00002361  A$IO_Expander$1299                 IO_Expander
+C:   00002362  A$IO_Expander$1300                 IO_Expander
+C:   00002363  A$IO_Expander$1301                 IO_Expander
+C:   00002366  A$IO_Expander$1302                 IO_Expander
+C:   00002367  A$IO_Expander$1303                 IO_Expander
+C:   00002368  A$IO_Expander$1304                 IO_Expander
+C:   00002369  A$IO_Expander$1305                 IO_Expander
+C:   0000236A  A$IO_Expander$1306                 IO_Expander
+C:   0000236B  A$IO_Expander$1307                 IO_Expander
+C:   0000236C  A$IO_Expander$1308                 IO_Expander
+C:   0000236D  A$IO_Expander$1309                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 32.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000236E  A$IO_Expander$1311                 IO_Expander
+C:   00002370  A$IO_Expander$1312                 IO_Expander
+C:   00002372  A$IO_Expander$1313                 IO_Expander
+C:   00002373  A$IO_Expander$1314                 IO_Expander
+C:   00002376  A$IO_Expander$1315                 IO_Expander
+C:   00002377  A$IO_Expander$1317                 IO_Expander
+C:   0000237A  A$IO_Expander$1318                 IO_Expander
+C:   0000237B  A$IO_Expander$1319                 IO_Expander
+C:   0000237C  A$IO_Expander$1320                 IO_Expander
+C:   0000237E  A$IO_Expander$1321                 IO_Expander
+C:   0000237F  A$IO_Expander$1322                 IO_Expander
+C:   00002380  A$IO_Expander$1323                 IO_Expander
+C:   00002381  A$IO_Expander$1324                 IO_Expander
+C:   00002382  A$IO_Expander$1325                 IO_Expander
+C:   00002384  A$IO_Expander$1326                 IO_Expander
+C:   00002386  A$IO_Expander$1327                 IO_Expander
+C:   00002389  A$IO_Expander$1328                 IO_Expander
+C:   0000238B  A$IO_Expander$1329                 IO_Expander
+C:   0000238D  A$IO_Expander$1330                 IO_Expander
+C:   00002390  A$IO_Expander$1334                 IO_Expander
+C:   00002390  C$IO_Expander.c$140$2_0$99         IO_Expander
+C:   00002392  A$IO_Expander$1335                 IO_Expander
+C:   00002394  A$IO_Expander$1336                 IO_Expander
+C:   00002396  A$IO_Expander$1337                 IO_Expander
+C:   00002398  A$IO_Expander$1338                 IO_Expander
+C:   0000239B  A$IO_Expander$1339                 IO_Expander
+C:   0000239D  A$IO_Expander$1340                 IO_Expander
+C:   0000239F  A$IO_Expander$1341                 IO_Expander
+C:   000023A1  A$IO_Expander$1342                 IO_Expander
+C:   000023A3  A$IO_Expander$1343                 IO_Expander
+C:   000023A5  A$IO_Expander$1344                 IO_Expander
+C:   000023A7  A$IO_Expander$1347                 IO_Expander
+C:   000023A7  C$IO_Expander.c$142$2_0$99         IO_Expander
+C:   000023AA  A$IO_Expander$1348                 IO_Expander
+C:   000023AD  A$IO_Expander$1350                 IO_Expander
+C:   000023B0  A$IO_Expander$1351                 IO_Expander
+C:   000023B3  A$IO_Expander$1355                 IO_Expander
+C:   000023B3  C$IO_Expander.c$144$2_0$99         IO_Expander
+C:   000023B6  A$IO_Expander$1356                 IO_Expander
+C:   000023B8  A$IO_Expander$1358                 IO_Expander
+C:   000023BB  A$IO_Expander$1362                 IO_Expander
+C:   000023BB  C$IO_Expander.c$145$3_0$101        IO_Expander
+C:   000023BE  A$IO_Expander$1363                 IO_Expander
+C:   000023BF  A$IO_Expander$1364                 IO_Expander
+C:   000023C0  A$IO_Expander$1365                 IO_Expander
+C:   000023C1  A$IO_Expander$1366                 IO_Expander
+C:   000023C3  A$IO_Expander$1369                 IO_Expander
+C:   000023C3  C$IO_Expander.c$146$4_0$102        IO_Expander
+C:   000023C4  A$IO_Expander$1370                 IO_Expander
+C:   000023C5  A$IO_Expander$1371                 IO_Expander
+C:   000023C8  A$IO_Expander$1372                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 33.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000023C9  A$IO_Expander$1375                 IO_Expander
+C:   000023C9  C$IO_Expander.c$148$4_0$102        IO_Expander
+C:   000023CC  A$IO_Expander$1376                 IO_Expander
+C:   000023CE  A$IO_Expander$1377                 IO_Expander
+C:   000023D0  A$IO_Expander$1378                 IO_Expander
+C:   000023D2  A$IO_Expander$1379                 IO_Expander
+C:   000023D4  A$IO_Expander$1380                 IO_Expander
+C:   000023D7  A$IO_Expander$1383                 IO_Expander
+C:   000023D7  C$IO_Expander.c$149$4_0$102        IO_Expander
+C:   000023DA  A$IO_Expander$1384                 IO_Expander
+C:   000023DD  A$IO_Expander$1387                 IO_Expander
+C:   000023DD  C$IO_Expander.c$150$4_0$102        IO_Expander
+C:   000023E0  A$IO_Expander$1388                 IO_Expander
+C:   000023E3  A$IO_Expander$1389                 IO_Expander
+C:   000023E5  A$IO_Expander$1390                 IO_Expander
+C:   000023E7  A$IO_Expander$1391                 IO_Expander
+C:   000023E9  A$IO_Expander$1392                 IO_Expander
+C:   000023EB  A$IO_Expander$1393                 IO_Expander
+C:   000023EE  A$IO_Expander$1397                 IO_Expander
+C:   000023EE  C$IO_Expander.c$152$2_0$99         IO_Expander
+C:   000023F1  A$IO_Expander$1399                 IO_Expander
+C:   000023F3  A$IO_Expander$1400                 IO_Expander
+C:   000023F4  A$IO_Expander$1401                 IO_Expander
+C:   000023F6  A$IO_Expander$1402                 IO_Expander
+C:   000023F8  A$IO_Expander$1406                 IO_Expander
+C:   000023F8  C$IO_Expander.c$153$2_0$99         IO_Expander
+C:   000023FB  A$IO_Expander$1408                 IO_Expander
+C:   000023FD  A$IO_Expander$1409                 IO_Expander
+C:   000023FE  A$IO_Expander$1410                 IO_Expander
+C:   00002400  A$IO_Expander$1411                 IO_Expander
+C:   00002402  A$IO_Expander$1415                 IO_Expander
+C:   00002402  C$IO_Expander.c$154$2_0$99         IO_Expander
+C:   00002405  A$IO_Expander$1417                 IO_Expander
+C:   00002407  A$IO_Expander$1418                 IO_Expander
+C:   0000240A  A$IO_Expander$1420                 IO_Expander
+C:   0000240B  A$IO_Expander$1421                 IO_Expander
+C:   0000240D  A$IO_Expander$1422                 IO_Expander
+C:   0000240F  A$IO_Expander$1423                 IO_Expander
+C:   00002412  A$IO_Expander$1428                 IO_Expander
+C:   00002412  C$IO_Expander.c$155$3_0$103        IO_Expander
+C:   00002415  A$IO_Expander$1429                 IO_Expander
+C:   00002416  A$IO_Expander$1430                 IO_Expander
+C:   00002417  A$IO_Expander$1431                 IO_Expander
+C:   00002418  A$IO_Expander$1432                 IO_Expander
+C:   00002419  A$IO_Expander$1433                 IO_Expander
+C:   0000241A  A$IO_Expander$1434                 IO_Expander
+C:   0000241B  A$IO_Expander$1435                 IO_Expander
+C:   0000241C  A$IO_Expander$1436                 IO_Expander
+C:   0000241D  A$IO_Expander$1437                 IO_Expander
+C:   0000241E  A$IO_Expander$1438                 IO_Expander
+C:   0000241F  A$IO_Expander$1439                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 34.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002421  A$IO_Expander$1440                 IO_Expander
+C:   00002423  A$IO_Expander$1441                 IO_Expander
+C:   00002425  A$IO_Expander$1442                 IO_Expander
+C:   00002427  A$IO_Expander$1443                 IO_Expander
+C:   00002428  A$IO_Expander$1444                 IO_Expander
+C:   0000242B  A$IO_Expander$1447                 IO_Expander
+C:   0000242B  C$IO_Expander.c$156$3_0$103        IO_Expander
+C:   0000242D  A$IO_Expander$1448                 IO_Expander
+C:   0000242F  A$IO_Expander$1449                 IO_Expander
+C:   00002431  A$IO_Expander$1450                 IO_Expander
+C:   00002433  A$IO_Expander$1451                 IO_Expander
+C:   00002435  A$IO_Expander$1452                 IO_Expander
+C:   00002437  A$IO_Expander$1453                 IO_Expander
+C:   00002439  A$IO_Expander$1454                 IO_Expander
+C:   0000243C  A$IO_Expander$1455                 IO_Expander
+C:   0000243E  A$IO_Expander$1456                 IO_Expander
+C:   00002440  A$IO_Expander$1457                 IO_Expander
+C:   00002442  A$IO_Expander$1458                 IO_Expander
+C:   00002444  A$IO_Expander$1459                 IO_Expander
+C:   00002447  A$IO_Expander$1463                 IO_Expander
+C:   00002447  C$IO_Expander.c$161$1_0$98         IO_Expander
+C:   0000244A  A$IO_Expander$1464                 IO_Expander
+C:   0000244B  A$IO_Expander$1465                 IO_Expander
+C:   0000244C  A$IO_Expander$1466                 IO_Expander
+C:   0000244D  A$IO_Expander$1467                 IO_Expander
+C:   0000244E  A$IO_Expander$1468                 IO_Expander
+C:   0000244F  A$IO_Expander$1469                 IO_Expander
+C:   00002450  A$IO_Expander$1470                 IO_Expander
+C:   00002451  A$IO_Expander$1471                 IO_Expander
+C:   00002452  A$IO_Expander$1472                 IO_Expander
+C:   00002455  A$IO_Expander$1473                 IO_Expander
+C:   00002456  A$IO_Expander$1474                 IO_Expander
+C:   00002457  A$IO_Expander$1475                 IO_Expander
+C:   00002458  A$IO_Expander$1476                 IO_Expander
+C:   00002459  A$IO_Expander$1477                 IO_Expander
+C:   0000245A  A$IO_Expander$1478                 IO_Expander
+C:   0000245B  A$IO_Expander$1479                 IO_Expander
+C:   0000245C  A$IO_Expander$1480                 IO_Expander
+C:   0000245E  A$IO_Expander$1481                 IO_Expander
+C:   00002460  A$IO_Expander$1482                 IO_Expander
+C:   00002462  A$IO_Expander$1483                 IO_Expander
+C:   00002463  A$IO_Expander$1484                 IO_Expander
+C:   00002466  A$IO_Expander$1487                 IO_Expander
+C:   00002466  C$IO_Expander.c$162$1_0$98         IO_Expander
+C:   00002468  A$IO_Expander$1488                 IO_Expander
+C:   0000246B  A$IO_Expander$1489                 IO_Expander
+C:   0000246D  A$IO_Expander$1492                 IO_Expander
+C:   0000246D  C$IO_Expander.c$163$1_0$98         IO_Expander
+C:   0000246F  A$IO_Expander$1497                 IO_Expander
+C:   0000246F  C$IO_Expander.c$164$1_0$98         IO_Expander
+C:   0000246F  XG$get_user_input$0$0              IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 35.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002470  A$IO_Expander$1510                 IO_Expander
+C:   00002470  C$IO_Expander.c$169$1_0$105        IO_Expander
+C:   00002470  G$PCF8574A_write$0$0               IO_Expander
+C:   00002470  _PCF8574A_write                    IO_Expander
+C:   00002472  A$IO_Expander$1511                 IO_Expander
+C:   00002475  A$IO_Expander$1512                 IO_Expander
+C:   00002476  A$IO_Expander$1515                 IO_Expander
+C:   00002476  C$IO_Expander.c$170$1_0$105        IO_Expander
+C:   00002479  A$IO_Expander$1518                 IO_Expander
+C:   00002479  C$IO_Expander.c$171$1_0$105        IO_Expander
+C:   0000247A  A$IO_Expander$1519                 IO_Expander
+C:   0000247B  A$IO_Expander$1520                 IO_Expander
+C:   0000247D  A$IO_Expander$1523                 IO_Expander
+C:   0000247D  C$IO_Expander.c$180$1_0$105        IO_Expander
+C:   0000247F  A$IO_Expander$1524                 IO_Expander
+C:   00002482  A$IO_Expander$1525                 IO_Expander
+C:   00002484  A$IO_Expander$1526                 IO_Expander
+C:   00002487  A$IO_Expander$1527                 IO_Expander
+C:   0000248A  A$IO_Expander$1530                 IO_Expander
+C:   0000248A  C$IO_Expander.c$182$1_0$105        IO_Expander
+C:   0000248D  A$IO_Expander$1531                 IO_Expander
+C:   0000248E  A$IO_Expander$1532                 IO_Expander
+C:   0000248F  A$IO_Expander$1535                 IO_Expander
+C:   0000248F  C$IO_Expander.c$183$1_0$105        IO_Expander
+C:   00002492  A$IO_Expander$1540                 IO_Expander
+C:   00002492  C$IO_Expander.c$184$1_0$105        IO_Expander
+C:   00002492  XG$PCF8574A_write$0$0              IO_Expander
+C:   00002493  A$IO_Expander$1553                 IO_Expander
+C:   00002493  C$IO_Expander.c$187$1_0$107        IO_Expander
+C:   00002493  G$PCF8574A_read$0$0                IO_Expander
+C:   00002493  _PCF8574A_read                     IO_Expander
+C:   00002495  A$IO_Expander$1554                 IO_Expander
+C:   00002497  A$IO_Expander$1555                 IO_Expander
+C:   00002499  A$IO_Expander$1556                 IO_Expander
+C:   0000249C  A$IO_Expander$1557                 IO_Expander
+C:   0000249D  A$IO_Expander$1558                 IO_Expander
+C:   0000249E  A$IO_Expander$1559                 IO_Expander
+C:   0000249F  A$IO_Expander$1560                 IO_Expander
+C:   000024A0  A$IO_Expander$1561                 IO_Expander
+C:   000024A1  A$IO_Expander$1562                 IO_Expander
+C:   000024A2  A$IO_Expander$1563                 IO_Expander
+C:   000024A3  A$IO_Expander$1566                 IO_Expander
+C:   000024A3  C$IO_Expander.c$188$1_0$107        IO_Expander
+C:   000024A6  A$IO_Expander$1569                 IO_Expander
+C:   000024A6  C$IO_Expander.c$196$1_0$107        IO_Expander
+C:   000024A8  A$IO_Expander$1570                 IO_Expander
+C:   000024AB  A$IO_Expander$1571                 IO_Expander
+C:   000024AE  A$IO_Expander$1572                 IO_Expander
+C:   000024B0  A$IO_Expander$1573                 IO_Expander
+C:   000024B3  A$IO_Expander$1576                 IO_Expander
+C:   000024B3  C$IO_Expander.c$198$1_0$107        IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 36.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000024B6  A$IO_Expander$1577                 IO_Expander
+C:   000024B7  A$IO_Expander$1578                 IO_Expander
+C:   000024B8  A$IO_Expander$1579                 IO_Expander
+C:   000024B9  A$IO_Expander$1580                 IO_Expander
+C:   000024BA  A$IO_Expander$1581                 IO_Expander
+C:   000024BB  A$IO_Expander$1582                 IO_Expander
+C:   000024BC  A$IO_Expander$1583                 IO_Expander
+C:   000024BD  A$IO_Expander$1584                 IO_Expander
+C:   000024BE  A$IO_Expander$1585                 IO_Expander
+C:   000024C0  A$IO_Expander$1586                 IO_Expander
+C:   000024C2  A$IO_Expander$1587                 IO_Expander
+C:   000024C4  A$IO_Expander$1588                 IO_Expander
+C:   000024C6  A$IO_Expander$1589                 IO_Expander
+C:   000024C9  A$IO_Expander$1592                 IO_Expander
+C:   000024C9  C$IO_Expander.c$199$1_0$107        IO_Expander
+C:   000024CC  A$IO_Expander$1597                 IO_Expander
+C:   000024CC  C$IO_Expander.c$200$1_0$107        IO_Expander
+C:   000024CC  XG$PCF8574A_read$0$0               IO_Expander
+C:   000024CD  A$IO_Expander$1610                 IO_Expander
+C:   000024CD  C$IO_Expander.c$202$1_0$109        IO_Expander
+C:   000024CD  C$IO_Expander.c$204$1_0$109        IO_Expander
+C:   000024CD  G$PCF8574A_init$0$0                IO_Expander
+C:   000024CD  _PCF8574A_init                     IO_Expander
+C:   000024D0  A$IO_Expander$1611                 IO_Expander
+C:   000024D3  A$IO_Expander$1616                 IO_Expander
+C:   000024D3  C$IO_Expander.c$205$1_0$109        IO_Expander
+C:   000024D3  XG$PCF8574A_init$0$0               IO_Expander
+C:   000024D4  A$IO_Expander$1630                 IO_Expander
+C:   000024D4  C$IO_Expander.c$208$1_0$111        IO_Expander
+C:   000024D4  G$set_P0_out$0$0                   IO_Expander
+C:   000024D4  _set_P0_out                        IO_Expander
+C:   000024D6  A$IO_Expander$1631                 IO_Expander
+C:   000024D9  A$IO_Expander$1632                 IO_Expander
+C:   000024DA  A$IO_Expander$1635                 IO_Expander
+C:   000024DA  C$IO_Expander.c$212$1_0$111        IO_Expander
+C:   000024DD  A$IO_Expander$1636                 IO_Expander
+C:   000024DE  A$IO_Expander$1637                 IO_Expander
+C:   000024DF  A$IO_Expander$1640                 IO_Expander
+C:   000024DF  C$IO_Expander.c$213$1_0$111        IO_Expander
+C:   000024E2  A$IO_Expander$1641                 IO_Expander
+C:   000024E3  A$IO_Expander$1642                 IO_Expander
+C:   000024E5  A$IO_Expander$1645                 IO_Expander
+C:   000024E5  C$IO_Expander.c$214$2_0$112        IO_Expander
+C:   000024E8  A$IO_Expander$1646                 IO_Expander
+C:   000024EA  A$IO_Expander$1647                 IO_Expander
+C:   000024EB  A$IO_Expander$1648                 IO_Expander
+C:   000024EC  A$IO_Expander$1649                 IO_Expander
+C:   000024EE  A$IO_Expander$1653                 IO_Expander
+C:   000024EE  C$IO_Expander.c$216$2_0$113        IO_Expander
+C:   000024F1  A$IO_Expander$1654                 IO_Expander
+C:   000024F3  A$IO_Expander$1655                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 37.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000024F4  A$IO_Expander$1656                 IO_Expander
+C:   000024F5  A$IO_Expander$1660                 IO_Expander
+C:   000024F5  C$IO_Expander.c$219$1_0$111        IO_Expander
+C:   000024F8  A$IO_Expander$1661                 IO_Expander
+C:   000024F9  A$IO_Expander$1662                 IO_Expander
+C:   000024FB  A$IO_Expander$1663                 IO_Expander
+C:   000024FE  A$IO_Expander$1668                 IO_Expander
+C:   000024FE  C$IO_Expander.c$220$1_0$111        IO_Expander
+C:   000024FE  XG$set_P0_out$0$0                  IO_Expander
+C:   000024FF  A$IO_Expander$1682                 IO_Expander
+C:   000024FF  C$IO_Expander.c$223$1_0$115        IO_Expander
+C:   000024FF  C$IO_Expander.c$225$1_0$115        IO_Expander
+C:   000024FF  G$init_INT0_interrupt$0$0          IO_Expander
+C:   000024FF  _init_INT0_interrupt               IO_Expander
+C:   00002501  A$IO_Expander$1686                 IO_Expander
+C:   00002501  C$IO_Expander.c$226$1_0$115        IO_Expander
+C:   00002503  A$IO_Expander$1690                 IO_Expander
+C:   00002503  C$IO_Expander.c$227$1_0$115        IO_Expander
+C:   00002505  A$IO_Expander$1695                 IO_Expander
+C:   00002505  C$IO_Expander.c$228$1_0$115        IO_Expander
+C:   00002505  XG$init_INT0_interrupt$0$0         IO_Expander
+C:   00002506  A$IO_Expander$1709                 IO_Expander
+C:   00002506  C$IO_Expander.c$231$1_0$117        IO_Expander
+C:   00002506  G$int0_isr$0$0                     IO_Expander
+C:   00002506  _int0_isr                          IO_Expander
+C:   00002508  A$IO_Expander$1710                 IO_Expander
+C:   0000250A  A$IO_Expander$1711                 IO_Expander
+C:   0000250C  A$IO_Expander$1712                 IO_Expander
+C:   0000250E  A$IO_Expander$1713                 IO_Expander
+C:   00002510  A$IO_Expander$1714                 IO_Expander
+C:   00002512  A$IO_Expander$1715                 IO_Expander
+C:   00002514  A$IO_Expander$1716                 IO_Expander
+C:   00002516  A$IO_Expander$1717                 IO_Expander
+C:   00002518  A$IO_Expander$1718                 IO_Expander
+C:   0000251A  A$IO_Expander$1719                 IO_Expander
+C:   0000251C  A$IO_Expander$1720                 IO_Expander
+C:   0000251E  A$IO_Expander$1721                 IO_Expander
+C:   00002520  A$IO_Expander$1722                 IO_Expander
+C:   00002522  A$IO_Expander$1723                 IO_Expander
+C:   00002525  A$IO_Expander$1726                 IO_Expander
+C:   00002525  C$IO_Expander.c$233$1_0$117        IO_Expander
+C:   00002528  A$IO_Expander$1727                 IO_Expander
+C:   0000252B  A$IO_Expander$1728                 IO_Expander
+C:   0000252E  A$IO_Expander$1731                 IO_Expander
+C:   0000252E  C$IO_Expander.c$236$2_0$118        IO_Expander
+C:   00002531  A$IO_Expander$1732                 IO_Expander
+C:   00002532  A$IO_Expander$1733                 IO_Expander
+C:   00002533  A$IO_Expander$1734                 IO_Expander
+C:   00002535  A$IO_Expander$1735                 IO_Expander
+C:   00002536  A$IO_Expander$1738                 IO_Expander
+C:   00002536  C$IO_Expander.c$237$1_1$118        IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 38.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002539  A$IO_Expander$1739                 IO_Expander
+C:   0000253A  A$IO_Expander$1740                 IO_Expander
+C:   0000253C  A$IO_Expander$1743                 IO_Expander
+C:   0000253C  C$IO_Expander.c$239$2_1$119        IO_Expander
+C:   0000253E  A$IO_Expander$1744                 IO_Expander
+C:   00002541  A$IO_Expander$1745                 IO_Expander
+C:   00002543  A$IO_Expander$1749                 IO_Expander
+C:   00002543  C$IO_Expander.c$242$2_1$120        IO_Expander
+C:   00002544  A$IO_Expander$1750                 IO_Expander
+C:   00002547  A$IO_Expander$1752                 IO_Expander
+C:   00002549  A$IO_Expander$1753                 IO_Expander
+C:   0000254A  A$IO_Expander$1754                 IO_Expander
+C:   0000254B  A$IO_Expander$1755                 IO_Expander
+C:   0000254D  A$IO_Expander$1756                 IO_Expander
+C:   00002550  A$IO_Expander$1760                 IO_Expander
+C:   00002552  A$IO_Expander$1761                 IO_Expander
+C:   00002554  A$IO_Expander$1762                 IO_Expander
+C:   00002556  A$IO_Expander$1763                 IO_Expander
+C:   00002558  A$IO_Expander$1764                 IO_Expander
+C:   0000255A  A$IO_Expander$1765                 IO_Expander
+C:   0000255C  A$IO_Expander$1766                 IO_Expander
+C:   0000255E  A$IO_Expander$1767                 IO_Expander
+C:   00002560  A$IO_Expander$1768                 IO_Expander
+C:   00002562  A$IO_Expander$1769                 IO_Expander
+C:   00002564  A$IO_Expander$1770                 IO_Expander
+C:   00002566  A$IO_Expander$1771                 IO_Expander
+C:   00002568  A$IO_Expander$1772                 IO_Expander
+C:   0000256A  A$IO_Expander$1773                 IO_Expander
+C:   0000256C  A$IO_Expander$1776                 IO_Expander
+C:   0000256C  C$IO_Expander.c$244$1_1$117        IO_Expander
+C:   0000256C  XG$int0_isr$0$0                    IO_Expander
+C:   0000256D  A$IO_Expander$1795                 IO_Expander
+C:   0000256D  C$IO_Expander.c$267$1_1$133        IO_Expander
+C:   0000256D  C$IO_Expander.c$271$1_0$133        IO_Expander
+C:   0000256D  G$main$0$0                         IO_Expander
+C:   0000256D  _main                              IO_Expander
+C:   00002570  A$IO_Expander$1798                 IO_Expander
+C:   00002570  C$IO_Expander.c$272$1_0$133        IO_Expander
+C:   00002573  A$IO_Expander$1801                 IO_Expander
+C:   00002573  C$IO_Expander.c$273$1_0$133        IO_Expander
+C:   00002576  A$IO_Expander$1804                 IO_Expander
+C:   00002576  C$IO_Expander.c$274$1_0$133        IO_Expander
+C:   00002579  A$IO_Expander$1805                 IO_Expander
+C:   0000257C  A$IO_Expander$1811                 IO_Expander
+C:   0000257C  C$IO_Expander.c$277$1_0$133        IO_Expander
+C:   0000257C  C$IO_Expander.c$278$2_0$134        IO_Expander
+C:   0000257F  A$IO_Expander$1814                 IO_Expander
+C:   0000257F  C$IO_Expander.c$279$2_0$134        IO_Expander
+C:   00002582  A$IO_Expander$1815                 IO_Expander
+C:   00002584  A$IO_Expander$1818                 IO_Expander
+C:   00002584  C$IO_Expander.c$280$2_0$134        IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 39.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002586  A$IO_Expander$1819                 IO_Expander
+C:   00002588  A$IO_Expander$1820                 IO_Expander
+C:   0000258A  A$IO_Expander$1821                 IO_Expander
+C:   0000258C  A$IO_Expander$1822                 IO_Expander
+C:   0000258E  A$IO_Expander$1823                 IO_Expander
+C:   00002591  A$IO_Expander$1824                 IO_Expander
+C:   00002593  A$IO_Expander$1827                 IO_Expander
+C:   00002593  C$IO_Expander.c$282$2_0$134        IO_Expander
+C:   00002596  A$IO_Expander$1828                 IO_Expander
+C:   00002598  A$IO_Expander$1830                 IO_Expander
+C:   0000259B  A$IO_Expander$1831                 IO_Expander
+C:   0000259D  A$IO_Expander$1833                 IO_Expander
+C:   000025A0  A$IO_Expander$1834                 IO_Expander
+C:   000025A2  A$IO_Expander$1836                 IO_Expander
+C:   000025A5  A$IO_Expander$1837                 IO_Expander
+C:   000025A7  A$IO_Expander$1839                 IO_Expander
+C:   000025AA  A$IO_Expander$1840                 IO_Expander
+C:   000025AC  A$IO_Expander$1844                 IO_Expander
+C:   000025AC  C$IO_Expander.c$283$3_0$135        IO_Expander
+C:   000025AF  A$IO_Expander$1845                 IO_Expander
+C:   000025B1  A$IO_Expander$1849                 IO_Expander
+C:   000025B1  C$IO_Expander.c$284$3_0$135        IO_Expander
+C:   000025B4  A$IO_Expander$1854                 IO_Expander
+C:   000025B4  C$IO_Expander.c$285$3_0$135        IO_Expander
+C:   000025B4  C$IO_Expander.c$286$3_0$135        IO_Expander
+C:   000025B6  A$IO_Expander$1858                 IO_Expander
+C:   000025B6  C$IO_Expander.c$287$3_0$135        IO_Expander
+C:   000025B9  A$IO_Expander$1863                 IO_Expander
+C:   000025B9  C$IO_Expander.c$288$3_0$135        IO_Expander
+C:   000025B9  C$IO_Expander.c$289$3_0$135        IO_Expander
+C:   000025BB  A$IO_Expander$1867                 IO_Expander
+C:   000025BB  C$IO_Expander.c$290$3_0$135        IO_Expander
+C:   000025BE  A$IO_Expander$1872                 IO_Expander
+C:   000025BE  C$IO_Expander.c$291$3_0$135        IO_Expander
+C:   000025BE  C$IO_Expander.c$292$3_0$135        IO_Expander
+C:   000025C0  A$IO_Expander$1876                 IO_Expander
+C:   000025C0  C$IO_Expander.c$293$3_0$135        IO_Expander
+C:   000025C3  A$IO_Expander$1881                 IO_Expander
+C:   000025C3  C$IO_Expander.c$294$3_0$135        IO_Expander
+C:   000025C3  C$IO_Expander.c$295$3_0$135        IO_Expander
+C:   000025C5  A$IO_Expander$1885                 IO_Expander
+C:   000025C5  C$IO_Expander.c$296$3_0$135        IO_Expander
+C:   000025C8  A$IO_Expander$1886                 IO_Expander
+C:   000025CA  A$IO_Expander$1887                 IO_Expander
+C:   000025CB  A$IO_Expander$1890                 IO_Expander
+C:   000025CB  C$IO_Expander.c$300$4_0$136        IO_Expander
+C:   000025CE  A$IO_Expander$1891                 IO_Expander
+C:   000025D1  A$IO_Expander$1892                 IO_Expander
+C:   000025D4  A$IO_Expander$1895                 IO_Expander
+C:   000025D4  C$IO_Expander.c$301$5_0$137        IO_Expander
+C:   000025D7  A$IO_Expander$1896                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 40.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000025D8  A$IO_Expander$1897                 IO_Expander
+C:   000025D9  A$IO_Expander$1898                 IO_Expander
+C:   000025DB  A$IO_Expander$1901                 IO_Expander
+C:   000025DB  C$IO_Expander.c$302$4_1$137        IO_Expander
+C:   000025DD  A$IO_Expander$1902                 IO_Expander
+C:   000025E0  A$IO_Expander$1907                 IO_Expander
+C:   000025E0  C$IO_Expander.c$304$3_0$135        IO_Expander
+C:   000025E0  C$IO_Expander.c$305$3_0$135        IO_Expander
+C:   000025E2  A$IO_Expander$1911                 IO_Expander
+C:   000025E2  C$IO_Expander.c$306$3_0$135        IO_Expander
+C:   000025E5  A$IO_Expander$1912                 IO_Expander
+C:   000025E6  A$IO_Expander$1913                 IO_Expander
+C:   000025E7  A$IO_Expander$1916                 IO_Expander
+C:   000025E7  C$IO_Expander.c$310$4_0$138        IO_Expander
+C:   000025EA  A$IO_Expander$1917                 IO_Expander
+C:   000025ED  A$IO_Expander$1918                 IO_Expander
+C:   000025F0  A$IO_Expander$1921                 IO_Expander
+C:   000025F0  C$IO_Expander.c$311$5_0$139        IO_Expander
+C:   000025F3  A$IO_Expander$1922                 IO_Expander
+C:   000025F4  A$IO_Expander$1923                 IO_Expander
+C:   000025F5  A$IO_Expander$1924                 IO_Expander
+C:   000025F7  A$IO_Expander$1927                 IO_Expander
+C:   000025F7  C$IO_Expander.c$312$4_1$139        IO_Expander
+C:   000025FA  A$IO_Expander$1929                 IO_Expander
+C:   000025FC  A$IO_Expander$1930                 IO_Expander
+C:   000025FD  A$IO_Expander$1931                 IO_Expander
+C:   000025FE  A$IO_Expander$1932                 IO_Expander
+C:   00002600  A$IO_Expander$1933                 IO_Expander
+C:   00002603  A$IO_Expander$1936                 IO_Expander
+C:   00002603  C$IO_Expander.c$314$3_0$135        IO_Expander
+C:   00002606  A$IO_Expander$1942                 IO_Expander
+C:   00002606  C$IO_Expander.c$316$3_0$135        IO_Expander
+C:   00002606  C$IO_Expander.c$317$3_0$135        IO_Expander
+C:   00002609  A$IO_Expander$1943                 IO_Expander
+C:   0000260C  A$IO_Expander$1944                 IO_Expander
+C:   0000260F  A$IO_Expander$1947                 IO_Expander
+C:   0000260F  C$IO_Expander.c$319$1_0$133        IO_Expander
+C:   00002612  A$IO_Expander$1952                 IO_Expander
+C:   00002612  C$IO_Expander.c$321$1_0$133        IO_Expander
+C:   00002612  XG$main$0$0                        IO_Expander
+C:   00002613  A$IO_Expander$1965                 IO_Expander
+C:   00002613  C$IO_Expander.c$324$1_0$141        IO_Expander
+C:   00002613  C$IO_Expander.c$325$1_0$141        IO_Expander
+C:   00002613  G$show_menu$0$0                    IO_Expander
+C:   00002613  _show_menu                         IO_Expander
+C:   00002616  A$IO_Expander$1966                 IO_Expander
+C:   00002619  A$IO_Expander$1967                 IO_Expander
+C:   0000261C  A$IO_Expander$1970                 IO_Expander
+C:   0000261C  C$IO_Expander.c$326$1_0$141        IO_Expander
+C:   0000261F  A$IO_Expander$1971                 IO_Expander
+C:   00002622  A$IO_Expander$1972                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 41.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002625  A$IO_Expander$1975                 IO_Expander
+C:   00002625  C$IO_Expander.c$327$1_0$141        IO_Expander
+C:   00002628  A$IO_Expander$1976                 IO_Expander
+C:   0000262B  A$IO_Expander$1977                 IO_Expander
+C:   0000262E  A$IO_Expander$1980                 IO_Expander
+C:   0000262E  C$IO_Expander.c$328$1_0$141        IO_Expander
+C:   00002631  A$IO_Expander$1981                 IO_Expander
+C:   00002634  A$IO_Expander$1982                 IO_Expander
+C:   00002637  A$IO_Expander$1985                 IO_Expander
+C:   00002637  C$IO_Expander.c$329$1_0$141        IO_Expander
+C:   0000263A  A$IO_Expander$1986                 IO_Expander
+C:   0000263D  A$IO_Expander$1987                 IO_Expander
+C:   00002640  A$IO_Expander$1990                 IO_Expander
+C:   00002640  C$IO_Expander.c$330$1_0$141        IO_Expander
+C:   00002643  A$IO_Expander$1991                 IO_Expander
+C:   00002646  A$IO_Expander$1992                 IO_Expander
+C:   00002649  A$IO_Expander$1995                 IO_Expander
+C:   00002649  C$IO_Expander.c$331$1_0$141        IO_Expander
+C:   0000264C  A$IO_Expander$1996                 IO_Expander
+C:   0000264F  A$IO_Expander$1997                 IO_Expander
+C:   00002652  A$IO_Expander$2000                 IO_Expander
+C:   00002652  C$IO_Expander.c$332$1_0$141        IO_Expander
+C:   00002655  A$IO_Expander$2001                 IO_Expander
+C:   00002658  A$IO_Expander$2002                 IO_Expander
+C:   0000265B  A$IO_Expander$2005                 IO_Expander
+C:   0000265B  C$IO_Expander.c$333$1_0$141        IO_Expander
+C:   0000265E  A$IO_Expander$2006                 IO_Expander
+C:   00002661  A$IO_Expander$2007                 IO_Expander
+C:   00002664  A$IO_Expander$2010                 IO_Expander
+C:   00002664  C$IO_Expander.c$334$1_0$141        IO_Expander
+C:   00002667  A$IO_Expander$2011                 IO_Expander
+C:   0000266A  A$IO_Expander$2012                 IO_Expander
+C:   0000266D  A$IO_Expander$2015                 IO_Expander
+C:   0000266D  C$IO_Expander.c$335$1_0$141        IO_Expander
+C:   00002670  A$IO_Expander$2016                 IO_Expander
+C:   00002673  A$IO_Expander$2017                 IO_Expander
+C:   00002676  A$IO_Expander$2020                 IO_Expander
+C:   00002676  C$IO_Expander.c$336$1_0$141        IO_Expander
+C:   00002679  A$IO_Expander$2021                 IO_Expander
+C:   0000267C  A$IO_Expander$2022                 IO_Expander
+C:   0000267F  A$IO_Expander$2027                 IO_Expander
+C:   0000267F  C$IO_Expander.c$337$1_0$141        IO_Expander
+C:   0000267F  XG$show_menu$0$0                   IO_Expander
+C:   00002680  A$IO_Expander$2043                 IO_Expander
+C:   00002680  C$IO_Expander.c$339$1_0$143        IO_Expander
+C:   00002680  C$IO_Expander.c$342$1_0$143        IO_Expander
+C:   00002680  G$write_byte_menu$0$0              IO_Expander
+C:   00002680  _write_byte_menu                   IO_Expander
+C:   00002683  A$IO_Expander$2044                 IO_Expander
+C:   00002686  A$IO_Expander$2045                 IO_Expander
+C:   00002689  A$IO_Expander$2048                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 42.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002689  C$IO_Expander.c$345$1_0$143        IO_Expander
+C:   0000268C  A$IO_Expander$2049                 IO_Expander
+C:   0000268F  A$IO_Expander$2050                 IO_Expander
+C:   00002692  A$IO_Expander$2053                 IO_Expander
+C:   00002692  C$IO_Expander.c$346$1_0$143        IO_Expander
+C:   00002695  A$IO_Expander$2054                 IO_Expander
+C:   00002697  A$IO_Expander$2055                 IO_Expander
+C:   00002698  A$IO_Expander$2056                 IO_Expander
+C:   0000269B  A$IO_Expander$2057                 IO_Expander
+C:   0000269E  A$IO_Expander$2058                 IO_Expander
+C:   000026A1  A$IO_Expander$2061                 IO_Expander
+C:   000026A1  C$IO_Expander.c$347$1_0$143        IO_Expander
+C:   000026A4  A$IO_Expander$2062                 IO_Expander
+C:   000026A7  A$IO_Expander$2063                 IO_Expander
+C:   000026AA  A$IO_Expander$2064                 IO_Expander
+C:   000026AC  A$IO_Expander$2065                 IO_Expander
+C:   000026AE  A$IO_Expander$2068                 IO_Expander
+C:   000026AE  C$IO_Expander.c$349$1_0$143        IO_Expander
+C:   000026B0  A$IO_Expander$2069                 IO_Expander
+C:   000026B2  A$IO_Expander$2070                 IO_Expander
+C:   000026B3  A$IO_Expander$2071                 IO_Expander
+C:   000026B5  A$IO_Expander$2072                 IO_Expander
+C:   000026B6  A$IO_Expander$2073                 IO_Expander
+C:   000026B8  A$IO_Expander$2074                 IO_Expander
+C:   000026B9  A$IO_Expander$2075                 IO_Expander
+C:   000026BB  A$IO_Expander$2078                 IO_Expander
+C:   000026BB  C$IO_Expander.c$350$2_0$144        IO_Expander
+C:   000026BE  A$IO_Expander$2079                 IO_Expander
+C:   000026C1  A$IO_Expander$2080                 IO_Expander
+C:   000026C4  A$IO_Expander$2083                 IO_Expander
+C:   000026C4  C$IO_Expander.c$351$2_0$144        IO_Expander
+C:   000026C7  A$IO_Expander$2087                 IO_Expander
+C:   000026C7  C$IO_Expander.c$355$1_0$143        IO_Expander
+C:   000026CA  A$IO_Expander$2088                 IO_Expander
+C:   000026CD  A$IO_Expander$2089                 IO_Expander
+C:   000026CF  A$IO_Expander$2090                 IO_Expander
+C:   000026D1  A$IO_Expander$2091                 IO_Expander
+C:   000026D4  A$IO_Expander$2094                 IO_Expander
+C:   000026D4  C$IO_Expander.c$356$1_0$143        IO_Expander
+C:   000026D7  A$IO_Expander$2095                 IO_Expander
+C:   000026D9  A$IO_Expander$2096                 IO_Expander
+C:   000026DA  A$IO_Expander$2097                 IO_Expander
+C:   000026DD  A$IO_Expander$2098                 IO_Expander
+C:   000026E0  A$IO_Expander$2099                 IO_Expander
+C:   000026E3  A$IO_Expander$2102                 IO_Expander
+C:   000026E3  C$IO_Expander.c$357$1_0$143        IO_Expander
+C:   000026E6  A$IO_Expander$2103                 IO_Expander
+C:   000026E9  A$IO_Expander$2104                 IO_Expander
+C:   000026EC  A$IO_Expander$2105                 IO_Expander
+C:   000026EE  A$IO_Expander$2106                 IO_Expander
+C:   000026F0  A$IO_Expander$2107                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 43.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000026F2  A$IO_Expander$2108                 IO_Expander
+C:   000026F4  A$IO_Expander$2111                 IO_Expander
+C:   000026F4  C$IO_Expander.c$359$1_0$143        IO_Expander
+C:   000026F6  A$IO_Expander$2112                 IO_Expander
+C:   000026F8  A$IO_Expander$2113                 IO_Expander
+C:   000026F9  A$IO_Expander$2114                 IO_Expander
+C:   000026FB  A$IO_Expander$2115                 IO_Expander
+C:   000026FC  A$IO_Expander$2116                 IO_Expander
+C:   000026FD  A$IO_Expander$2117                 IO_Expander
+C:   000026FE  A$IO_Expander$2118                 IO_Expander
+C:   00002700  A$IO_Expander$2121                 IO_Expander
+C:   00002700  C$IO_Expander.c$360$2_0$145        IO_Expander
+C:   00002703  A$IO_Expander$2122                 IO_Expander
+C:   00002706  A$IO_Expander$2123                 IO_Expander
+C:   00002709  A$IO_Expander$2126                 IO_Expander
+C:   00002709  C$IO_Expander.c$361$2_0$145        IO_Expander
+C:   0000270C  A$IO_Expander$2130                 IO_Expander
+C:   0000270C  C$IO_Expander.c$365$1_0$143        IO_Expander
+C:   0000270F  A$IO_Expander$2131                 IO_Expander
+C:   00002712  A$IO_Expander$2132                 IO_Expander
+C:   00002714  A$IO_Expander$2133                 IO_Expander
+C:   00002716  A$IO_Expander$2134                 IO_Expander
+C:   00002718  A$IO_Expander$2135                 IO_Expander
+C:   0000271A  A$IO_Expander$2136                 IO_Expander
+C:   0000271D  A$IO_Expander$2137                 IO_Expander
+C:   0000271F  A$IO_Expander$2138                 IO_Expander
+C:   00002721  A$IO_Expander$2139                 IO_Expander
+C:   00002723  A$IO_Expander$2140                 IO_Expander
+C:   00002725  A$IO_Expander$2143                 IO_Expander
+C:   00002725  C$IO_Expander.c$366$1_0$143        IO_Expander
+C:   00002727  A$IO_Expander$2144                 IO_Expander
+C:   00002728  A$IO_Expander$2145                 IO_Expander
+C:   0000272A  A$IO_Expander$2146                 IO_Expander
+C:   0000272B  A$IO_Expander$2147                 IO_Expander
+C:   0000272C  A$IO_Expander$2148                 IO_Expander
+C:   0000272D  A$IO_Expander$2149                 IO_Expander
+C:   0000272E  A$IO_Expander$2150                 IO_Expander
+C:   0000272F  A$IO_Expander$2151                 IO_Expander
+C:   00002731  A$IO_Expander$2152                 IO_Expander
+C:   00002733  A$IO_Expander$2153                 IO_Expander
+C:   00002734  A$IO_Expander$2154                 IO_Expander
+C:   00002736  A$IO_Expander$2155                 IO_Expander
+C:   00002738  A$IO_Expander$2158                 IO_Expander
+C:   00002738  C$IO_Expander.c$367$1_0$143        IO_Expander
+C:   0000273A  A$IO_Expander$2161                 IO_Expander
+C:   0000273A  C$IO_Expander.c$368$1_0$143        IO_Expander
+C:   0000273C  A$IO_Expander$2162                 IO_Expander
+C:   0000273E  A$IO_Expander$2163                 IO_Expander
+C:   00002740  A$IO_Expander$2164                 IO_Expander
+C:   00002742  A$IO_Expander$2165                 IO_Expander
+C:   00002744  A$IO_Expander$2166                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 44.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002746  A$IO_Expander$2167                 IO_Expander
+C:   00002748  A$IO_Expander$2168                 IO_Expander
+C:   0000274A  A$IO_Expander$2169                 IO_Expander
+C:   0000274C  A$IO_Expander$2170                 IO_Expander
+C:   0000274E  A$IO_Expander$2171                 IO_Expander
+C:   00002750  A$IO_Expander$2172                 IO_Expander
+C:   00002752  A$IO_Expander$2173                 IO_Expander
+C:   00002754  A$IO_Expander$2174                 IO_Expander
+C:   00002756  A$IO_Expander$2175                 IO_Expander
+C:   00002758  A$IO_Expander$2176                 IO_Expander
+C:   0000275A  A$IO_Expander$2177                 IO_Expander
+C:   0000275C  A$IO_Expander$2178                 IO_Expander
+C:   0000275E  A$IO_Expander$2179                 IO_Expander
+C:   00002761  A$IO_Expander$2180                 IO_Expander
+C:   00002763  A$IO_Expander$2181                 IO_Expander
+C:   00002765  A$IO_Expander$2182                 IO_Expander
+C:   00002767  A$IO_Expander$2183                 IO_Expander
+C:   00002769  A$IO_Expander$2184                 IO_Expander
+C:   0000276B  A$IO_Expander$2187                 IO_Expander
+C:   0000276B  C$IO_Expander.c$369$1_0$143        IO_Expander
+C:   0000276D  A$IO_Expander$2190                 IO_Expander
+C:   0000276D  C$IO_Expander.c$370$1_0$143        IO_Expander
+C:   00002770  A$IO_Expander$2193                 IO_Expander
+C:   00002770  C$IO_Expander.c$372$1_0$143        IO_Expander
+C:   00002773  A$IO_Expander$2194                 IO_Expander
+C:   00002776  A$IO_Expander$2195                 IO_Expander
+C:   00002779  A$IO_Expander$2196                 IO_Expander
+C:   0000277B  A$IO_Expander$2197                 IO_Expander
+C:   0000277D  A$IO_Expander$2200                 IO_Expander
+C:   0000277D  C$IO_Expander.c$373$1_0$143        IO_Expander
+C:   0000277F  A$IO_Expander$2201                 IO_Expander
+C:   00002781  A$IO_Expander$2202                 IO_Expander
+C:   00002783  A$IO_Expander$2203                 IO_Expander
+C:   00002785  A$IO_Expander$2204                 IO_Expander
+C:   00002787  A$IO_Expander$2205                 IO_Expander
+C:   00002789  A$IO_Expander$2206                 IO_Expander
+C:   0000278B  A$IO_Expander$2207                 IO_Expander
+C:   0000278D  A$IO_Expander$2208                 IO_Expander
+C:   00002790  A$IO_Expander$2209                 IO_Expander
+C:   00002792  A$IO_Expander$2210                 IO_Expander
+C:   00002794  A$IO_Expander$2211                 IO_Expander
+C:   00002796  A$IO_Expander$2214                 IO_Expander
+C:   00002796  C$IO_Expander.c$374$1_0$143        IO_Expander
+C:   00002798  A$IO_Expander$2215                 IO_Expander
+C:   0000279A  A$IO_Expander$2216                 IO_Expander
+C:   0000279C  A$IO_Expander$2217                 IO_Expander
+C:   0000279E  A$IO_Expander$2218                 IO_Expander
+C:   000027A0  A$IO_Expander$2219                 IO_Expander
+C:   000027A2  A$IO_Expander$2220                 IO_Expander
+C:   000027A4  A$IO_Expander$2221                 IO_Expander
+C:   000027A6  A$IO_Expander$2222                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 45.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000027A8  A$IO_Expander$2223                 IO_Expander
+C:   000027AA  A$IO_Expander$2224                 IO_Expander
+C:   000027AD  A$IO_Expander$2225                 IO_Expander
+C:   000027AF  A$IO_Expander$2226                 IO_Expander
+C:   000027B1  A$IO_Expander$2227                 IO_Expander
+C:   000027B3  A$IO_Expander$2233                 IO_Expander
+C:   000027B3  C$IO_Expander.c$375$1_0$143        IO_Expander
+C:   000027B3  XG$write_byte_menu$0$0             IO_Expander
+C:   000027B4  A$IO_Expander$2248                 IO_Expander
+C:   000027B4  C$IO_Expander.c$377$1_0$147        IO_Expander
+C:   000027B4  C$IO_Expander.c$380$1_0$147        IO_Expander
+C:   000027B4  G$read_byte_menu$0$0               IO_Expander
+C:   000027B4  _read_byte_menu                    IO_Expander
+C:   000027B7  A$IO_Expander$2249                 IO_Expander
+C:   000027BA  A$IO_Expander$2250                 IO_Expander
+C:   000027BD  A$IO_Expander$2253                 IO_Expander
+C:   000027BD  C$IO_Expander.c$383$1_0$147        IO_Expander
+C:   000027C0  A$IO_Expander$2254                 IO_Expander
+C:   000027C3  A$IO_Expander$2255                 IO_Expander
+C:   000027C6  A$IO_Expander$2258                 IO_Expander
+C:   000027C6  C$IO_Expander.c$384$1_0$147        IO_Expander
+C:   000027C9  A$IO_Expander$2259                 IO_Expander
+C:   000027CB  A$IO_Expander$2260                 IO_Expander
+C:   000027CC  A$IO_Expander$2261                 IO_Expander
+C:   000027CF  A$IO_Expander$2262                 IO_Expander
+C:   000027D2  A$IO_Expander$2263                 IO_Expander
+C:   000027D5  A$IO_Expander$2266                 IO_Expander
+C:   000027D5  C$IO_Expander.c$385$1_0$147        IO_Expander
+C:   000027D8  A$IO_Expander$2267                 IO_Expander
+C:   000027DB  A$IO_Expander$2268                 IO_Expander
+C:   000027DE  A$IO_Expander$2269                 IO_Expander
+C:   000027E0  A$IO_Expander$2270                 IO_Expander
+C:   000027E2  A$IO_Expander$2273                 IO_Expander
+C:   000027E2  C$IO_Expander.c$387$1_0$147        IO_Expander
+C:   000027E4  A$IO_Expander$2274                 IO_Expander
+C:   000027E6  A$IO_Expander$2275                 IO_Expander
+C:   000027E7  A$IO_Expander$2276                 IO_Expander
+C:   000027E9  A$IO_Expander$2277                 IO_Expander
+C:   000027EA  A$IO_Expander$2278                 IO_Expander
+C:   000027EC  A$IO_Expander$2279                 IO_Expander
+C:   000027ED  A$IO_Expander$2280                 IO_Expander
+C:   000027EF  A$IO_Expander$2283                 IO_Expander
+C:   000027EF  C$IO_Expander.c$388$2_0$148        IO_Expander
+C:   000027F2  A$IO_Expander$2284                 IO_Expander
+C:   000027F5  A$IO_Expander$2285                 IO_Expander
+C:   000027F8  A$IO_Expander$2288                 IO_Expander
+C:   000027F8  C$IO_Expander.c$389$2_0$148        IO_Expander
+C:   000027FB  A$IO_Expander$2292                 IO_Expander
+C:   000027FB  C$IO_Expander.c$393$1_0$147        IO_Expander
+C:   000027FE  A$IO_Expander$2293                 IO_Expander
+C:   00002801  A$IO_Expander$2294                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 46.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002803  A$IO_Expander$2295                 IO_Expander
+C:   00002805  A$IO_Expander$2296                 IO_Expander
+C:   00002808  A$IO_Expander$2297                 IO_Expander
+C:   0000280A  A$IO_Expander$2298                 IO_Expander
+C:   0000280C  A$IO_Expander$2301                 IO_Expander
+C:   0000280C  C$IO_Expander.c$394$1_0$147        IO_Expander
+C:   0000280E  A$IO_Expander$2302                 IO_Expander
+C:   0000280F  A$IO_Expander$2303                 IO_Expander
+C:   00002811  A$IO_Expander$2304                 IO_Expander
+C:   00002812  A$IO_Expander$2305                 IO_Expander
+C:   00002813  A$IO_Expander$2306                 IO_Expander
+C:   00002814  A$IO_Expander$2307                 IO_Expander
+C:   00002815  A$IO_Expander$2308                 IO_Expander
+C:   00002816  A$IO_Expander$2309                 IO_Expander
+C:   00002818  A$IO_Expander$2310                 IO_Expander
+C:   0000281A  A$IO_Expander$2311                 IO_Expander
+C:   0000281B  A$IO_Expander$2312                 IO_Expander
+C:   0000281D  A$IO_Expander$2313                 IO_Expander
+C:   0000281F  A$IO_Expander$2316                 IO_Expander
+C:   0000281F  C$IO_Expander.c$395$1_0$147        IO_Expander
+C:   00002821  A$IO_Expander$2319                 IO_Expander
+C:   00002821  C$IO_Expander.c$396$1_0$147        IO_Expander
+C:   00002823  A$IO_Expander$2320                 IO_Expander
+C:   00002825  A$IO_Expander$2321                 IO_Expander
+C:   00002827  A$IO_Expander$2322                 IO_Expander
+C:   00002829  A$IO_Expander$2323                 IO_Expander
+C:   0000282B  A$IO_Expander$2324                 IO_Expander
+C:   0000282D  A$IO_Expander$2325                 IO_Expander
+C:   0000282F  A$IO_Expander$2326                 IO_Expander
+C:   00002831  A$IO_Expander$2327                 IO_Expander
+C:   00002833  A$IO_Expander$2328                 IO_Expander
+C:   00002835  A$IO_Expander$2329                 IO_Expander
+C:   00002837  A$IO_Expander$2330                 IO_Expander
+C:   00002839  A$IO_Expander$2331                 IO_Expander
+C:   0000283B  A$IO_Expander$2332                 IO_Expander
+C:   0000283D  A$IO_Expander$2333                 IO_Expander
+C:   0000283F  A$IO_Expander$2334                 IO_Expander
+C:   00002841  A$IO_Expander$2335                 IO_Expander
+C:   00002844  A$IO_Expander$2336                 IO_Expander
+C:   00002846  A$IO_Expander$2337                 IO_Expander
+C:   00002848  A$IO_Expander$2338                 IO_Expander
+C:   0000284A  A$IO_Expander$2341                 IO_Expander
+C:   0000284A  C$IO_Expander.c$397$1_0$147        IO_Expander
+C:   0000284D  A$IO_Expander$2344                 IO_Expander
+C:   0000284D  C$IO_Expander.c$399$1_0$147        IO_Expander
+C:   00002850  A$IO_Expander$2345                 IO_Expander
+C:   00002853  A$IO_Expander$2346                 IO_Expander
+C:   00002856  A$IO_Expander$2347                 IO_Expander
+C:   00002858  A$IO_Expander$2348                 IO_Expander
+C:   0000285A  A$IO_Expander$2351                 IO_Expander
+C:   0000285A  C$IO_Expander.c$400$1_0$147        IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 47.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000285C  A$IO_Expander$2352                 IO_Expander
+C:   0000285E  A$IO_Expander$2353                 IO_Expander
+C:   00002860  A$IO_Expander$2354                 IO_Expander
+C:   00002862  A$IO_Expander$2355                 IO_Expander
+C:   00002864  A$IO_Expander$2356                 IO_Expander
+C:   00002866  A$IO_Expander$2357                 IO_Expander
+C:   00002868  A$IO_Expander$2358                 IO_Expander
+C:   0000286A  A$IO_Expander$2359                 IO_Expander
+C:   0000286D  A$IO_Expander$2360                 IO_Expander
+C:   0000286F  A$IO_Expander$2361                 IO_Expander
+C:   00002871  A$IO_Expander$2362                 IO_Expander
+C:   00002873  A$IO_Expander$2365                 IO_Expander
+C:   00002873  C$IO_Expander.c$401$1_0$147        IO_Expander
+C:   00002875  A$IO_Expander$2366                 IO_Expander
+C:   00002877  A$IO_Expander$2367                 IO_Expander
+C:   00002879  A$IO_Expander$2368                 IO_Expander
+C:   0000287B  A$IO_Expander$2369                 IO_Expander
+C:   0000287D  A$IO_Expander$2370                 IO_Expander
+C:   0000287F  A$IO_Expander$2371                 IO_Expander
+C:   00002881  A$IO_Expander$2372                 IO_Expander
+C:   00002883  A$IO_Expander$2373                 IO_Expander
+C:   00002885  A$IO_Expander$2374                 IO_Expander
+C:   00002887  A$IO_Expander$2375                 IO_Expander
+C:   0000288A  A$IO_Expander$2376                 IO_Expander
+C:   0000288C  A$IO_Expander$2377                 IO_Expander
+C:   0000288E  A$IO_Expander$2378                 IO_Expander
+C:   00002890  A$IO_Expander$2384                 IO_Expander
+C:   00002890  C$IO_Expander.c$402$1_0$147        IO_Expander
+C:   00002890  XG$read_byte_menu$0$0              IO_Expander
+C:   00002891  A$IO_Expander$2407                 IO_Expander
+C:   00002891  C$IO_Expander.c$404$1_0$150        IO_Expander
+C:   00002891  C$IO_Expander.c$409$1_0$150        IO_Expander
+C:   00002891  G$hex_dump_menu$0$0                IO_Expander
+C:   00002891  _hex_dump_menu                     IO_Expander
+C:   00002894  A$IO_Expander$2408                 IO_Expander
+C:   00002897  A$IO_Expander$2409                 IO_Expander
+C:   0000289A  A$IO_Expander$2412                 IO_Expander
+C:   0000289A  C$IO_Expander.c$412$1_0$150        IO_Expander
+C:   0000289D  A$IO_Expander$2413                 IO_Expander
+C:   000028A0  A$IO_Expander$2414                 IO_Expander
+C:   000028A3  A$IO_Expander$2417                 IO_Expander
+C:   000028A3  C$IO_Expander.c$413$1_0$150        IO_Expander
+C:   000028A6  A$IO_Expander$2418                 IO_Expander
+C:   000028A8  A$IO_Expander$2419                 IO_Expander
+C:   000028A9  A$IO_Expander$2420                 IO_Expander
+C:   000028AC  A$IO_Expander$2421                 IO_Expander
+C:   000028AF  A$IO_Expander$2422                 IO_Expander
+C:   000028B2  A$IO_Expander$2425                 IO_Expander
+C:   000028B2  C$IO_Expander.c$414$1_0$150        IO_Expander
+C:   000028B5  A$IO_Expander$2426                 IO_Expander
+C:   000028B8  A$IO_Expander$2427                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 48.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000028BB  A$IO_Expander$2428                 IO_Expander
+C:   000028BD  A$IO_Expander$2429                 IO_Expander
+C:   000028BF  A$IO_Expander$2432                 IO_Expander
+C:   000028BF  C$IO_Expander.c$416$1_0$150        IO_Expander
+C:   000028C1  A$IO_Expander$2433                 IO_Expander
+C:   000028C3  A$IO_Expander$2434                 IO_Expander
+C:   000028C4  A$IO_Expander$2435                 IO_Expander
+C:   000028C6  A$IO_Expander$2436                 IO_Expander
+C:   000028C7  A$IO_Expander$2437                 IO_Expander
+C:   000028C9  A$IO_Expander$2438                 IO_Expander
+C:   000028CA  A$IO_Expander$2439                 IO_Expander
+C:   000028CC  A$IO_Expander$2442                 IO_Expander
+C:   000028CC  C$IO_Expander.c$417$2_0$151        IO_Expander
+C:   000028CF  A$IO_Expander$2443                 IO_Expander
+C:   000028D2  A$IO_Expander$2444                 IO_Expander
+C:   000028D5  A$IO_Expander$2447                 IO_Expander
+C:   000028D5  C$IO_Expander.c$418$2_0$151        IO_Expander
+C:   000028D8  A$IO_Expander$2451                 IO_Expander
+C:   000028D8  C$IO_Expander.c$422$1_0$150        IO_Expander
+C:   000028DB  A$IO_Expander$2452                 IO_Expander
+C:   000028DE  A$IO_Expander$2453                 IO_Expander
+C:   000028E0  A$IO_Expander$2454                 IO_Expander
+C:   000028E2  A$IO_Expander$2455                 IO_Expander
+C:   000028E5  A$IO_Expander$2458                 IO_Expander
+C:   000028E5  C$IO_Expander.c$423$1_0$150        IO_Expander
+C:   000028E8  A$IO_Expander$2459                 IO_Expander
+C:   000028EA  A$IO_Expander$2460                 IO_Expander
+C:   000028EB  A$IO_Expander$2461                 IO_Expander
+C:   000028EE  A$IO_Expander$2462                 IO_Expander
+C:   000028F1  A$IO_Expander$2463                 IO_Expander
+C:   000028F4  A$IO_Expander$2466                 IO_Expander
+C:   000028F4  C$IO_Expander.c$424$1_0$150        IO_Expander
+C:   000028F7  A$IO_Expander$2467                 IO_Expander
+C:   000028FA  A$IO_Expander$2468                 IO_Expander
+C:   000028FD  A$IO_Expander$2469                 IO_Expander
+C:   000028FF  A$IO_Expander$2470                 IO_Expander
+C:   00002901  A$IO_Expander$2471                 IO_Expander
+C:   00002903  A$IO_Expander$2472                 IO_Expander
+C:   00002905  A$IO_Expander$2475                 IO_Expander
+C:   00002905  C$IO_Expander.c$426$1_0$150        IO_Expander
+C:   00002907  A$IO_Expander$2476                 IO_Expander
+C:   00002909  A$IO_Expander$2477                 IO_Expander
+C:   0000290A  A$IO_Expander$2478                 IO_Expander
+C:   0000290C  A$IO_Expander$2479                 IO_Expander
+C:   0000290D  A$IO_Expander$2480                 IO_Expander
+C:   0000290F  A$IO_Expander$2481                 IO_Expander
+C:   00002910  A$IO_Expander$2482                 IO_Expander
+C:   00002912  A$IO_Expander$2485                 IO_Expander
+C:   00002912  C$IO_Expander.c$427$2_0$152        IO_Expander
+C:   00002915  A$IO_Expander$2486                 IO_Expander
+C:   00002918  A$IO_Expander$2487                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 49.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   0000291B  A$IO_Expander$2490                 IO_Expander
+C:   0000291B  C$IO_Expander.c$428$2_0$152        IO_Expander
+C:   0000291E  A$IO_Expander$2494                 IO_Expander
+C:   0000291E  C$IO_Expander.c$431$1_0$150        IO_Expander
+C:   0000291F  A$IO_Expander$2495                 IO_Expander
+C:   00002920  A$IO_Expander$2496                 IO_Expander
+C:   00002921  A$IO_Expander$2497                 IO_Expander
+C:   00002922  A$IO_Expander$2498                 IO_Expander
+C:   00002923  A$IO_Expander$2499                 IO_Expander
+C:   00002925  A$IO_Expander$2502                 IO_Expander
+C:   00002925  C$IO_Expander.c$432$2_0$153        IO_Expander
+C:   00002928  A$IO_Expander$2503                 IO_Expander
+C:   0000292B  A$IO_Expander$2504                 IO_Expander
+C:   0000292E  A$IO_Expander$2507                 IO_Expander
+C:   0000292E  C$IO_Expander.c$433$2_0$153        IO_Expander
+C:   00002931  A$IO_Expander$2511                 IO_Expander
+C:   00002931  C$IO_Expander.c$436$1_0$150        IO_Expander
+C:   00002934  A$IO_Expander$2512                 IO_Expander
+C:   00002937  A$IO_Expander$2513                 IO_Expander
+C:   00002939  A$IO_Expander$2514                 IO_Expander
+C:   0000293B  A$IO_Expander$2515                 IO_Expander
+C:   0000293D  A$IO_Expander$2516                 IO_Expander
+C:   0000293F  A$IO_Expander$2517                 IO_Expander
+C:   00002942  A$IO_Expander$2520                 IO_Expander
+C:   00002942  C$IO_Expander.c$437$1_0$150        IO_Expander
+C:   00002945  A$IO_Expander$2521                 IO_Expander
+C:   00002947  A$IO_Expander$2522                 IO_Expander
+C:   00002949  A$IO_Expander$2523                 IO_Expander
+C:   0000294B  A$IO_Expander$2524                 IO_Expander
+C:   0000294D  A$IO_Expander$2527                 IO_Expander
+C:   0000294D  C$IO_Expander.c$439$1_0$150        IO_Expander
+C:   00002950  A$IO_Expander$2528                 IO_Expander
+C:   00002951  A$IO_Expander$2529                 IO_Expander
+C:   00002952  A$IO_Expander$2530                 IO_Expander
+C:   00002953  A$IO_Expander$2531                 IO_Expander
+C:   00002954  A$IO_Expander$2532                 IO_Expander
+C:   00002955  A$IO_Expander$2536                 IO_Expander
+C:   00002955  C$IO_Expander.c$441$4_0$158        IO_Expander
+C:   00002958  A$IO_Expander$2537                 IO_Expander
+C:   00002959  A$IO_Expander$2538                 IO_Expander
+C:   0000295A  A$IO_Expander$2539                 IO_Expander
+C:   0000295B  A$IO_Expander$2540                 IO_Expander
+C:   0000295C  A$IO_Expander$2541                 IO_Expander
+C:   0000295D  A$IO_Expander$2542                 IO_Expander
+C:   0000295E  A$IO_Expander$2543                 IO_Expander
+C:   0000295F  A$IO_Expander$2544                 IO_Expander
+C:   00002960  A$IO_Expander$2545                 IO_Expander
+C:   00002961  A$IO_Expander$2546                 IO_Expander
+C:   00002962  A$IO_Expander$2547                 IO_Expander
+C:   00002964  A$IO_Expander$2548                 IO_Expander
+C:   00002967  A$IO_Expander$2552                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 50.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002967  C$IO_Expander.c$442$2_0$154        IO_Expander
+C:   00002968  A$IO_Expander$2553                 IO_Expander
+C:   00002969  A$IO_Expander$2554                 IO_Expander
+C:   0000296A  A$IO_Expander$2555                 IO_Expander
+C:   0000296B  A$IO_Expander$2556                 IO_Expander
+C:   0000296C  A$IO_Expander$2557                 IO_Expander
+C:   0000296D  A$IO_Expander$2558                 IO_Expander
+C:   0000296E  A$IO_Expander$2559                 IO_Expander
+C:   0000296F  A$IO_Expander$2560                 IO_Expander
+C:   00002972  A$IO_Expander$2561                 IO_Expander
+C:   00002973  A$IO_Expander$2565                 IO_Expander
+C:   00002973  C$IO_Expander.c$443$2_0$154        IO_Expander
+C:   00002975  A$IO_Expander$2566                 IO_Expander
+C:   00002977  A$IO_Expander$2567                 IO_Expander
+C:   00002978  A$IO_Expander$2568                 IO_Expander
+C:   0000297A  A$IO_Expander$2569                 IO_Expander
+C:   0000297B  A$IO_Expander$2570                 IO_Expander
+C:   0000297C  A$IO_Expander$2571                 IO_Expander
+C:   0000297D  A$IO_Expander$2572                 IO_Expander
+C:   0000297F  A$IO_Expander$2575                 IO_Expander
+C:   0000297F  C$IO_Expander.c$444$3_0$155        IO_Expander
+C:   00002982  A$IO_Expander$2576                 IO_Expander
+C:   00002984  A$IO_Expander$2577                 IO_Expander
+C:   00002985  A$IO_Expander$2578                 IO_Expander
+C:   00002986  A$IO_Expander$2579                 IO_Expander
+C:   00002987  A$IO_Expander$2580                 IO_Expander
+C:   00002988  A$IO_Expander$2581                 IO_Expander
+C:   0000298A  A$IO_Expander$2585                 IO_Expander
+C:   0000298A  C$IO_Expander.c$446$3_0$156        IO_Expander
+C:   0000298D  A$IO_Expander$2586                 IO_Expander
+C:   0000298E  A$IO_Expander$2587                 IO_Expander
+C:   0000298F  A$IO_Expander$2588                 IO_Expander
+C:   00002990  A$IO_Expander$2589                 IO_Expander
+C:   00002991  A$IO_Expander$2590                 IO_Expander
+C:   00002992  A$IO_Expander$2594                 IO_Expander
+C:   00002992  C$IO_Expander.c$450$1_0$150        IO_Expander
+C:   00002995  A$IO_Expander$2595                 IO_Expander
+C:   00002996  A$IO_Expander$2596                 IO_Expander
+C:   00002997  A$IO_Expander$2597                 IO_Expander
+C:   00002998  A$IO_Expander$2598                 IO_Expander
+C:   00002999  A$IO_Expander$2599                 IO_Expander
+C:   0000299A  A$IO_Expander$2600                 IO_Expander
+C:   0000299D  A$IO_Expander$2601                 IO_Expander
+C:   0000299E  A$IO_Expander$2602                 IO_Expander
+C:   0000299F  A$IO_Expander$2603                 IO_Expander
+C:   000029A0  A$IO_Expander$2604                 IO_Expander
+C:   000029A1  A$IO_Expander$2605                 IO_Expander
+C:   000029A2  A$IO_Expander$2606                 IO_Expander
+C:   000029A4  A$IO_Expander$2608                 IO_Expander
+C:   000029A6  A$IO_Expander$2609                 IO_Expander
+C:   000029A8  A$IO_Expander$2610                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 51.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000029AA  A$IO_Expander$2611                 IO_Expander
+C:   000029AC  A$IO_Expander$2612                 IO_Expander
+C:   000029AD  A$IO_Expander$2613                 IO_Expander
+C:   000029AE  A$IO_Expander$2614                 IO_Expander
+C:   000029AF  A$IO_Expander$2615                 IO_Expander
+C:   000029B0  A$IO_Expander$2616                 IO_Expander
+C:   000029B1  A$IO_Expander$2617                 IO_Expander
+C:   000029B3  A$IO_Expander$2618                 IO_Expander
+C:   000029B5  A$IO_Expander$2619                 IO_Expander
+C:   000029B7  A$IO_Expander$2622                 IO_Expander
+C:   000029B7  C$IO_Expander.c$451$1_0$150        IO_Expander
+C:   000029B9  A$IO_Expander$2623                 IO_Expander
+C:   000029BB  A$IO_Expander$2624                 IO_Expander
+C:   000029BD  A$IO_Expander$2625                 IO_Expander
+C:   000029C0  A$IO_Expander$2626                 IO_Expander
+C:   000029C2  A$IO_Expander$2627                 IO_Expander
+C:   000029C4  A$IO_Expander$2628                 IO_Expander
+C:   000029C6  A$IO_Expander$2629                 IO_Expander
+C:   000029C8  A$IO_Expander$2630                 IO_Expander
+C:   000029C9  A$IO_Expander$2631                 IO_Expander
+C:   000029CB  A$IO_Expander$2632                 IO_Expander
+C:   000029CC  A$IO_Expander$2633                 IO_Expander
+C:   000029CD  A$IO_Expander$2634                 IO_Expander
+C:   000029CF  A$IO_Expander$2635                 IO_Expander
+C:   000029D1  A$IO_Expander$2636                 IO_Expander
+C:   000029D2  A$IO_Expander$2637                 IO_Expander
+C:   000029D3  A$IO_Expander$2638                 IO_Expander
+C:   000029D4  A$IO_Expander$2639                 IO_Expander
+C:   000029D5  A$IO_Expander$2640                 IO_Expander
+C:   000029D6  A$IO_Expander$2641                 IO_Expander
+C:   000029D8  A$IO_Expander$2642                 IO_Expander
+C:   000029DA  A$IO_Expander$2643                 IO_Expander
+C:   000029DB  A$IO_Expander$2644                 IO_Expander
+C:   000029DD  A$IO_Expander$2645                 IO_Expander
+C:   000029DF  A$IO_Expander$2648                 IO_Expander
+C:   000029DF  C$IO_Expander.c$452$4_0$158        IO_Expander
+C:   000029E1  A$IO_Expander$2649                 IO_Expander
+C:   000029E2  A$IO_Expander$2650                 IO_Expander
+C:   000029E3  A$IO_Expander$2651                 IO_Expander
+C:   000029E5  A$IO_Expander$2654                 IO_Expander
+C:   000029E5  C$IO_Expander.c$453$4_0$158        IO_Expander
+C:   000029E7  A$IO_Expander$2655                 IO_Expander
+C:   000029E9  A$IO_Expander$2656                 IO_Expander
+C:   000029EB  A$IO_Expander$2657                 IO_Expander
+C:   000029ED  A$IO_Expander$2658                 IO_Expander
+C:   000029EF  A$IO_Expander$2659                 IO_Expander
+C:   000029F1  A$IO_Expander$2660                 IO_Expander
+C:   000029F3  A$IO_Expander$2661                 IO_Expander
+C:   000029F6  A$IO_Expander$2662                 IO_Expander
+C:   000029F8  A$IO_Expander$2663                 IO_Expander
+C:   000029FA  A$IO_Expander$2664                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 52.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000029FC  A$IO_Expander$2665                 IO_Expander
+C:   000029FE  A$IO_Expander$2666                 IO_Expander
+C:   00002A00  A$IO_Expander$2667                 IO_Expander
+C:   00002A02  A$IO_Expander$2668                 IO_Expander
+C:   00002A04  A$IO_Expander$2671                 IO_Expander
+C:   00002A04  C$IO_Expander.c$454$4_0$158        IO_Expander
+C:   00002A05  A$IO_Expander$2672                 IO_Expander
+C:   00002A07  A$IO_Expander$2673                 IO_Expander
+C:   00002A09  A$IO_Expander$2674                 IO_Expander
+C:   00002A0A  A$IO_Expander$2675                 IO_Expander
+C:   00002A0C  A$IO_Expander$2676                 IO_Expander
+C:   00002A0E  A$IO_Expander$2677                 IO_Expander
+C:   00002A10  A$IO_Expander$2678                 IO_Expander
+C:   00002A11  A$IO_Expander$2681                 IO_Expander
+C:   00002A11  C$IO_Expander.c$450$3_0$157        IO_Expander
+C:   00002A12  A$IO_Expander$2682                 IO_Expander
+C:   00002A14  A$IO_Expander$2683                 IO_Expander
+C:   00002A16  A$IO_Expander$2684                 IO_Expander
+C:   00002A18  A$IO_Expander$2688                 IO_Expander
+C:   00002A18  C$IO_Expander.c$458$2_0$154        IO_Expander
+C:   00002A1B  A$IO_Expander$2689                 IO_Expander
+C:   00002A1C  A$IO_Expander$2690                 IO_Expander
+C:   00002A1D  A$IO_Expander$2691                 IO_Expander
+C:   00002A1E  A$IO_Expander$2692                 IO_Expander
+C:   00002A1F  A$IO_Expander$2693                 IO_Expander
+C:   00002A20  A$IO_Expander$2694                 IO_Expander
+C:   00002A23  A$IO_Expander$2695                 IO_Expander
+C:   00002A25  A$IO_Expander$2696                 IO_Expander
+C:   00002A26  A$IO_Expander$2697                 IO_Expander
+C:   00002A28  A$IO_Expander$2698                 IO_Expander
+C:   00002A29  A$IO_Expander$2699                 IO_Expander
+C:   00002A2A  A$IO_Expander$2700                 IO_Expander
+C:   00002A2B  A$IO_Expander$2701                 IO_Expander
+C:   00002A2C  A$IO_Expander$2702                 IO_Expander
+C:   00002A2D  A$IO_Expander$2703                 IO_Expander
+C:   00002A30  A$IO_Expander$2704                 IO_Expander
+C:   00002A31  A$IO_Expander$2705                 IO_Expander
+C:   00002A32  A$IO_Expander$2706                 IO_Expander
+C:   00002A34  A$IO_Expander$2707                 IO_Expander
+C:   00002A36  A$IO_Expander$2708                 IO_Expander
+C:   00002A38  A$IO_Expander$2709                 IO_Expander
+C:   00002A3A  A$IO_Expander$2710                 IO_Expander
+C:   00002A3C  A$IO_Expander$2711                 IO_Expander
+C:   00002A3E  A$IO_Expander$2712                 IO_Expander
+C:   00002A40  A$IO_Expander$2713                 IO_Expander
+C:   00002A42  A$IO_Expander$2714                 IO_Expander
+C:   00002A45  A$IO_Expander$2715                 IO_Expander
+C:   00002A47  A$IO_Expander$2716                 IO_Expander
+C:   00002A49  A$IO_Expander$2717                 IO_Expander
+C:   00002A4B  A$IO_Expander$2718                 IO_Expander
+C:   00002A4D  A$IO_Expander$2719                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 53.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002A4F  A$IO_Expander$2720                 IO_Expander
+C:   00002A51  A$IO_Expander$2723                 IO_Expander
+C:   00002A51  C$IO_Expander.c$460$2_0$154        IO_Expander
+C:   00002A54  A$IO_Expander$2724                 IO_Expander
+C:   00002A55  A$IO_Expander$2725                 IO_Expander
+C:   00002A56  A$IO_Expander$2726                 IO_Expander
+C:   00002A57  A$IO_Expander$2727                 IO_Expander
+C:   00002A58  A$IO_Expander$2728                 IO_Expander
+C:   00002A59  A$IO_Expander$2729                 IO_Expander
+C:   00002A5A  A$IO_Expander$2730                 IO_Expander
+C:   00002A5B  A$IO_Expander$2731                 IO_Expander
+C:   00002A5E  A$IO_Expander$2735                 IO_Expander
+C:   00002A5E  C$IO_Expander.c$463$1_0$150        IO_Expander
+C:   00002A61  A$IO_Expander$2736                 IO_Expander
+C:   00002A64  A$IO_Expander$2737                 IO_Expander
+C:   00002A67  A$IO_Expander$2743                 IO_Expander
+C:   00002A67  C$IO_Expander.c$464$1_0$150        IO_Expander
+C:   00002A67  XG$hex_dump_menu$0$0               IO_Expander
+C:   00002A68  A$IO_Expander$2758                 IO_Expander
+C:   00002A68  C$IO_Expander.c$466$1_0$160        IO_Expander
+C:   00002A68  C$IO_Expander.c$467$1_0$160        IO_Expander
+C:   00002A68  G$reset_eeprom_menu$0$0            IO_Expander
+C:   00002A68  _reset_eeprom_menu                 IO_Expander
+C:   00002A6B  A$IO_Expander$2759                 IO_Expander
+C:   00002A6E  A$IO_Expander$2760                 IO_Expander
+C:   00002A71  A$IO_Expander$2763                 IO_Expander
+C:   00002A71  C$IO_Expander.c$468$1_0$160        IO_Expander
+C:   00002A74  A$IO_Expander$2764                 IO_Expander
+C:   00002A77  A$IO_Expander$2765                 IO_Expander
+C:   00002A7A  A$IO_Expander$2768                 IO_Expander
+C:   00002A7A  C$IO_Expander.c$470$1_1$161        IO_Expander
+C:   00002A7D  A$IO_Expander$2769                 IO_Expander
+C:   00002A7F  A$IO_Expander$2772                 IO_Expander
+C:   00002A7F  C$IO_Expander.c$471$1_1$161        IO_Expander
+C:   00002A81  A$IO_Expander$2773                 IO_Expander
+C:   00002A83  A$IO_Expander$2774                 IO_Expander
+C:   00002A85  A$IO_Expander$2775                 IO_Expander
+C:   00002A87  A$IO_Expander$2776                 IO_Expander
+C:   00002A89  A$IO_Expander$2777                 IO_Expander
+C:   00002A8C  A$IO_Expander$2780                 IO_Expander
+C:   00002A8C  C$IO_Expander.c$472$1_1$161        IO_Expander
+C:   00002A8F  A$IO_Expander$2781                 IO_Expander
+C:   00002A91  A$IO_Expander$2784                 IO_Expander
+C:   00002A91  C$IO_Expander.c$474$1_1$161        IO_Expander
+C:   00002A94  A$IO_Expander$2785                 IO_Expander
+C:   00002A96  A$IO_Expander$2787                 IO_Expander
+C:   00002A99  A$IO_Expander$2791                 IO_Expander
+C:   00002A99  C$IO_Expander.c$475$2_1$162        IO_Expander
+C:   00002A9C  A$IO_Expander$2792                 IO_Expander
+C:   00002A9F  A$IO_Expander$2793                 IO_Expander
+C:   00002AA2  A$IO_Expander$2796                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 54.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002AA2  C$IO_Expander.c$476$2_1$162        IO_Expander
+C:   00002AA5  A$IO_Expander$2799                 IO_Expander
+C:   00002AA5  C$IO_Expander.c$477$2_1$162        IO_Expander
+C:   00002AA8  A$IO_Expander$2800                 IO_Expander
+C:   00002AAB  A$IO_Expander$2801                 IO_Expander
+C:   00002AAE  A$IO_Expander$2804                 IO_Expander
+C:   00002AAE  C$IO_Expander.c$478$2_1$162        IO_Expander
+C:   00002AB1  A$IO_Expander$2805                 IO_Expander
+C:   00002AB4  A$IO_Expander$2806                 IO_Expander
+C:   00002AB7  A$IO_Expander$2809                 IO_Expander
+C:   00002AB7  C$IO_Expander.c$481$2_1$162        IO_Expander
+C:   00002ABA  A$IO_Expander$2810                 IO_Expander
+C:   00002ABD  A$IO_Expander$2811                 IO_Expander
+C:   00002AC0  A$IO_Expander$2814                 IO_Expander
+C:   00002AC0  C$IO_Expander.c$482$2_1$162        IO_Expander
+C:   00002AC3  A$IO_Expander$2815                 IO_Expander
+C:   00002AC5  A$IO_Expander$2819                 IO_Expander
+C:   00002AC5  C$IO_Expander.c$484$2_1$163        IO_Expander
+C:   00002AC8  A$IO_Expander$2820                 IO_Expander
+C:   00002ACB  A$IO_Expander$2821                 IO_Expander
+C:   00002ACE  A$IO_Expander$2827                 IO_Expander
+C:   00002ACE  C$IO_Expander.c$486$1_1$160        IO_Expander
+C:   00002ACE  XG$reset_eeprom_menu$0$0           IO_Expander
+C:   00002ACF  A$IO_Expander$2840                 IO_Expander
+C:   00002ACF  C$IO_Expander.c$491$1_1$165        IO_Expander
+C:   00002ACF  C$IO_Expander.c$492$1_0$165        IO_Expander
+C:   00002ACF  G$eeprom_init$0$0                  IO_Expander
+C:   00002ACF  _eeprom_init                       IO_Expander
+C:   00002AD2  A$IO_Expander$2845                 IO_Expander
+C:   00002AD2  C$IO_Expander.c$493$1_0$165        IO_Expander
+C:   00002AD2  XG$eeprom_init$0$0                 IO_Expander
+C:   00002AD3  A$IO_Expander$2859                 IO_Expander
+C:   00002AD3  C$IO_Expander.c$495$1_0$167        IO_Expander
+C:   00002AD3  C$IO_Expander.c$498$1_0$167        IO_Expander
+C:   00002AD3  G$TEST$0$0                         IO_Expander
+C:   00002AD3  _TEST                              IO_Expander
+C:   00002AD6  A$IO_Expander$2878                 IO_Expander
+C:   00002AD6  C$IO_Expander.c$499$1_0$167        IO_Expander
+C:   00002AD6  C$IO_Expander.c$501$1_0$169        IO_Expander
+C:   00002AD6  C$IO_Expander.c$511$1_0$169        IO_Expander
+C:   00002AD6  G$BYTEW$0$0                        IO_Expander
+C:   00002AD6  XG$TEST$0$0                        IO_Expander
+C:   00002AD6  _BYTEW                             IO_Expander
+C:   00002AD8  A$IO_Expander$2879                 IO_Expander
+C:   00002ADB  A$IO_Expander$2880                 IO_Expander
+C:   00002ADD  A$IO_Expander$2881                 IO_Expander
+C:   00002AE0  A$IO_Expander$2882                 IO_Expander
+C:   00002AE2  A$IO_Expander$2883                 IO_Expander
+C:   00002AE5  A$IO_Expander$2884                 IO_Expander
+C:   00002AE8  A$IO_Expander$2885                 IO_Expander
+C:   00002AE9  A$IO_Expander$2904                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 55.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002AE9  C$IO_Expander.c$512$1_0$169        IO_Expander
+C:   00002AE9  C$IO_Expander.c$514$1_0$171        IO_Expander
+C:   00002AE9  C$IO_Expander.c$522$1_0$171        IO_Expander
+C:   00002AE9  G$BYTERD$0$0                       IO_Expander
+C:   00002AE9  XG$BYTEW$0$0                       IO_Expander
+C:   00002AE9  _BYTERD                            IO_Expander
+C:   00002AEB  A$IO_Expander$2905                 IO_Expander
+C:   00002AEE  A$IO_Expander$2906                 IO_Expander
+C:   00002AF0  A$IO_Expander$2907                 IO_Expander
+C:   00002AF3  A$IO_Expander$2908                 IO_Expander
+C:   00002AF6  A$IO_Expander$2909                 IO_Expander
+C:   00002AF7  A$IO_Expander$2928                 IO_Expander
+C:   00002AF7  C$IO_Expander.c$523$1_0$171        IO_Expander
+C:   00002AF7  C$IO_Expander.c$525$1_0$173        IO_Expander
+C:   00002AF7  C$IO_Expander.c$576$1_0$173        IO_Expander
+C:   00002AF7  G$ACKTST$0$0                       IO_Expander
+C:   00002AF7  XG$BYTERD$0$0                      IO_Expander
+C:   00002AF7  _ACKTST                            IO_Expander
+C:   00002AF9  A$IO_Expander$2929                 IO_Expander
+C:   00002AFB  A$IO_Expander$2930                 IO_Expander
+C:   00002AFD  A$IO_Expander$2931                 IO_Expander
+C:   00002AFE  A$IO_Expander$2932                 IO_Expander
+C:   00002AFF  A$IO_Expander$2933                 IO_Expander
+C:   00002B00  A$IO_Expander$2934                 IO_Expander
+C:   00002B01  A$IO_Expander$2935                 IO_Expander
+C:   00002B02  A$IO_Expander$2936                 IO_Expander
+C:   00002B04  A$IO_Expander$2938                 IO_Expander
+C:   00002B05  A$IO_Expander$2939                 IO_Expander
+C:   00002B07  A$IO_Expander$2940                 IO_Expander
+C:   00002B09  A$IO_Expander$2941                 IO_Expander
+C:   00002B0C  A$IO_Expander$2943                 IO_Expander
+C:   00002B0E  A$IO_Expander$2945                 IO_Expander
+C:   00002B10  A$IO_Expander$2946                 IO_Expander
+C:   00002B11  A$IO_Expander$2947                 IO_Expander
+C:   00002B12  A$IO_Expander$2948                 IO_Expander
+C:   00002B13  A$IO_Expander$2949                 IO_Expander
+C:   00002B14  A$IO_Expander$2950                 IO_Expander
+C:   00002B15  A$IO_Expander$2951                 IO_Expander
+C:   00002B17  A$IO_Expander$2952                 IO_Expander
+C:   00002B19  A$IO_Expander$2953                 IO_Expander
+C:   00002B1B  A$IO_Expander$2954                 IO_Expander
+C:   00002B1C  A$IO_Expander$2955                 IO_Expander
+C:   00002B1D  A$IO_Expander$2956                 IO_Expander
+C:   00002B1F  A$IO_Expander$2957                 IO_Expander
+C:   00002B20  A$IO_Expander$2958                 IO_Expander
+C:   00002B21  A$IO_Expander$2959                 IO_Expander
+C:   00002B22  A$IO_Expander$2960                 IO_Expander
+C:   00002B23  A$IO_Expander$2961                 IO_Expander
+C:   00002B24  A$IO_Expander$2962                 IO_Expander
+C:   00002B27  A$IO_Expander$2963                 IO_Expander
+C:   00002B2A  A$IO_Expander$2965                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 56.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002B2C  A$IO_Expander$2966                 IO_Expander
+C:   00002B2E  A$IO_Expander$2967                 IO_Expander
+C:   00002B2F  A$IO_Expander$2968                 IO_Expander
+C:   00002B30  A$IO_Expander$2969                 IO_Expander
+C:   00002B31  A$IO_Expander$2970                 IO_Expander
+C:   00002B32  A$IO_Expander$2971                 IO_Expander
+C:   00002B33  A$IO_Expander$2972                 IO_Expander
+C:   00002B35  A$IO_Expander$2973                 IO_Expander
+C:   00002B36  A$IO_Expander$2974                 IO_Expander
+C:   00002B37  A$IO_Expander$2975                 IO_Expander
+C:   00002B39  A$IO_Expander$2976                 IO_Expander
+C:   00002B3A  A$IO_Expander$2995                 IO_Expander
+C:   00002B3A  C$IO_Expander.c$577$1_0$173        IO_Expander
+C:   00002B3A  C$IO_Expander.c$579$1_0$175        IO_Expander
+C:   00002B3A  C$IO_Expander.c$624$1_0$175        IO_Expander
+C:   00002B3A  G$OUTS$0$0                         IO_Expander
+C:   00002B3A  XG$ACKTST$0$0                      IO_Expander
+C:   00002B3A  _OUTS                              IO_Expander
+C:   00002B3C  A$IO_Expander$2996                 IO_Expander
+C:   00002B3E  A$IO_Expander$2997                 IO_Expander
+C:   00002B40  A$IO_Expander$2998                 IO_Expander
+C:   00002B41  A$IO_Expander$2999                 IO_Expander
+C:   00002B42  A$IO_Expander$3000                 IO_Expander
+C:   00002B43  A$IO_Expander$3001                 IO_Expander
+C:   00002B44  A$IO_Expander$3002                 IO_Expander
+C:   00002B45  A$IO_Expander$3003                 IO_Expander
+C:   00002B47  A$IO_Expander$3004                 IO_Expander
+C:   00002B48  A$IO_Expander$3005                 IO_Expander
+C:   00002B49  A$IO_Expander$3006                 IO_Expander
+C:   00002B4A  A$IO_Expander$3007                 IO_Expander
+C:   00002B4B  A$IO_Expander$3008                 IO_Expander
+C:   00002B4C  A$IO_Expander$3009                 IO_Expander
+C:   00002B4E  A$IO_Expander$3011                 IO_Expander
+C:   00002B4F  A$IO_Expander$3012                 IO_Expander
+C:   00002B51  A$IO_Expander$3013                 IO_Expander
+C:   00002B53  A$IO_Expander$3014                 IO_Expander
+C:   00002B55  A$IO_Expander$3016                 IO_Expander
+C:   00002B57  A$IO_Expander$3018                 IO_Expander
+C:   00002B59  A$IO_Expander$3019                 IO_Expander
+C:   00002B5A  A$IO_Expander$3020                 IO_Expander
+C:   00002B5B  A$IO_Expander$3021                 IO_Expander
+C:   00002B5C  A$IO_Expander$3022                 IO_Expander
+C:   00002B5D  A$IO_Expander$3023                 IO_Expander
+C:   00002B5E  A$IO_Expander$3024                 IO_Expander
+C:   00002B60  A$IO_Expander$3025                 IO_Expander
+C:   00002B62  A$IO_Expander$3026                 IO_Expander
+C:   00002B64  A$IO_Expander$3027                 IO_Expander
+C:   00002B65  A$IO_Expander$3028                 IO_Expander
+C:   00002B66  A$IO_Expander$3029                 IO_Expander
+C:   00002B67  A$IO_Expander$3030                 IO_Expander
+C:   00002B69  A$IO_Expander$3031                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 57.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002B6A  A$IO_Expander$3032                 IO_Expander
+C:   00002B6B  A$IO_Expander$3033                 IO_Expander
+C:   00002B6C  A$IO_Expander$3034                 IO_Expander
+C:   00002B6D  A$IO_Expander$3035                 IO_Expander
+C:   00002B6E  A$IO_Expander$3036                 IO_Expander
+C:   00002B70  A$IO_Expander$3037                 IO_Expander
+C:   00002B71  A$IO_Expander$3056                 IO_Expander
+C:   00002B71  C$IO_Expander.c$625$1_0$175        IO_Expander
+C:   00002B71  C$IO_Expander.c$627$1_0$177        IO_Expander
+C:   00002B71  C$IO_Expander.c$658$1_0$177        IO_Expander
+C:   00002B71  G$OUT$0$0                          IO_Expander
+C:   00002B71  XG$OUTS$0$0                        IO_Expander
+C:   00002B71  _OUT                               IO_Expander
+C:   00002B73  A$IO_Expander$3058                 IO_Expander
+C:   00002B74  A$IO_Expander$3059                 IO_Expander
+C:   00002B76  A$IO_Expander$3060                 IO_Expander
+C:   00002B78  A$IO_Expander$3061                 IO_Expander
+C:   00002B7A  A$IO_Expander$3063                 IO_Expander
+C:   00002B7C  A$IO_Expander$3065                 IO_Expander
+C:   00002B7E  A$IO_Expander$3066                 IO_Expander
+C:   00002B7F  A$IO_Expander$3067                 IO_Expander
+C:   00002B80  A$IO_Expander$3068                 IO_Expander
+C:   00002B81  A$IO_Expander$3069                 IO_Expander
+C:   00002B82  A$IO_Expander$3070                 IO_Expander
+C:   00002B83  A$IO_Expander$3071                 IO_Expander
+C:   00002B85  A$IO_Expander$3072                 IO_Expander
+C:   00002B87  A$IO_Expander$3073                 IO_Expander
+C:   00002B89  A$IO_Expander$3074                 IO_Expander
+C:   00002B8A  A$IO_Expander$3075                 IO_Expander
+C:   00002B8B  A$IO_Expander$3076                 IO_Expander
+C:   00002B8C  A$IO_Expander$3077                 IO_Expander
+C:   00002B8E  A$IO_Expander$3078                 IO_Expander
+C:   00002B8F  A$IO_Expander$3079                 IO_Expander
+C:   00002B90  A$IO_Expander$3080                 IO_Expander
+C:   00002B91  A$IO_Expander$3081                 IO_Expander
+C:   00002B92  A$IO_Expander$3082                 IO_Expander
+C:   00002B93  A$IO_Expander$3083                 IO_Expander
+C:   00002B95  A$IO_Expander$3084                 IO_Expander
+C:   00002B96  A$IO_Expander$3103                 IO_Expander
+C:   00002B96  C$IO_Expander.c$659$1_0$177        IO_Expander
+C:   00002B96  C$IO_Expander.c$661$1_0$179        IO_Expander
+C:   00002B96  C$IO_Expander.c$677$1_0$179        IO_Expander
+C:   00002B96  G$STOP$0$0                         IO_Expander
+C:   00002B96  XG$OUT$0$0                         IO_Expander
+C:   00002B96  _STOP                              IO_Expander
+C:   00002B98  A$IO_Expander$3104                 IO_Expander
+C:   00002B99  A$IO_Expander$3105                 IO_Expander
+C:   00002B9A  A$IO_Expander$3106                 IO_Expander
+C:   00002B9B  A$IO_Expander$3107                 IO_Expander
+C:   00002B9C  A$IO_Expander$3108                 IO_Expander
+C:   00002B9D  A$IO_Expander$3109                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 58.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002B9F  A$IO_Expander$3110                 IO_Expander
+C:   00002BA0  A$IO_Expander$3111                 IO_Expander
+C:   00002BA1  A$IO_Expander$3112                 IO_Expander
+C:   00002BA2  A$IO_Expander$3113                 IO_Expander
+C:   00002BA3  A$IO_Expander$3114                 IO_Expander
+C:   00002BA4  A$IO_Expander$3115                 IO_Expander
+C:   00002BA6  A$IO_Expander$3116                 IO_Expander
+C:   00002BA7  A$IO_Expander$3135                 IO_Expander
+C:   00002BA7  C$IO_Expander.c$678$1_0$179        IO_Expander
+C:   00002BA7  C$IO_Expander.c$680$1_0$181        IO_Expander
+C:   00002BA7  C$IO_Expander.c$689$1_0$181        IO_Expander
+C:   00002BA7  G$CREAD$0$0                        IO_Expander
+C:   00002BA7  XG$STOP$0$0                        IO_Expander
+C:   00002BA7  _CREAD                             IO_Expander
+C:   00002BA9  A$IO_Expander$3136                 IO_Expander
+C:   00002BAA  A$IO_Expander$3137                 IO_Expander
+C:   00002BAD  A$IO_Expander$3138                 IO_Expander
+C:   00002BB0  A$IO_Expander$3139                 IO_Expander
+C:   00002BB2  A$IO_Expander$3140                 IO_Expander
+C:   00002BB5  A$IO_Expander$3141                 IO_Expander
+C:   00002BB6  A$IO_Expander$3160                 IO_Expander
+C:   00002BB6  C$IO_Expander.c$690$1_0$181        IO_Expander
+C:   00002BB6  C$IO_Expander.c$692$1_0$183        IO_Expander
+C:   00002BB6  C$IO_Expander.c$713$1_0$183        IO_Expander
+C:   00002BB6  G$IN$0$0                           IO_Expander
+C:   00002BB6  XG$CREAD$0$0                       IO_Expander
+C:   00002BB6  _IN                                IO_Expander
+C:   00002BB8  A$IO_Expander$3161                 IO_Expander
+C:   00002BBA  A$IO_Expander$3163                 IO_Expander
+C:   00002BBC  A$IO_Expander$3164                 IO_Expander
+C:   00002BBD  A$IO_Expander$3165                 IO_Expander
+C:   00002BBE  A$IO_Expander$3166                 IO_Expander
+C:   00002BBF  A$IO_Expander$3167                 IO_Expander
+C:   00002BC0  A$IO_Expander$3168                 IO_Expander
+C:   00002BC1  A$IO_Expander$3169                 IO_Expander
+C:   00002BC2  A$IO_Expander$3170                 IO_Expander
+C:   00002BC4  A$IO_Expander$3171                 IO_Expander
+C:   00002BC5  A$IO_Expander$3172                 IO_Expander
+C:   00002BC8  A$IO_Expander$3173                 IO_Expander
+C:   00002BC9  A$IO_Expander$3175                 IO_Expander
+C:   00002BCA  A$IO_Expander$3176                 IO_Expander
+C:   00002BCC  A$IO_Expander$3177                 IO_Expander
+C:   00002BCE  A$IO_Expander$3178                 IO_Expander
+C:   00002BCF  A$IO_Expander$3201                 IO_Expander
+C:   00002BCF  C$IO_Expander.c$714$1_0$183        IO_Expander
+C:   00002BCF  C$IO_Expander.c$717$1_0$185        IO_Expander
+C:   00002BCF  C$IO_Expander.c$720$1_0$185        IO_Expander
+C:   00002BCF  G$eereset$0$0                      IO_Expander
+C:   00002BCF  XG$IN$0$0                          IO_Expander
+C:   00002BCF  _eereset                           IO_Expander
+C:   00002BD1  A$IO_Expander$3205                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 59.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002BD1  C$IO_Expander.c$721$1_0$185        IO_Expander
+C:   00002BD3  A$IO_Expander$3208                 IO_Expander
+C:   00002BD3  C$IO_Expander.c$723$2_0$186        IO_Expander
+C:   00002BD6  A$IO_Expander$3209                 IO_Expander
+C:   00002BD7  A$IO_Expander$3210                 IO_Expander
+C:   00002BD8  A$IO_Expander$3212                 IO_Expander
+C:   00002BDB  A$IO_Expander$3213                 IO_Expander
+C:   00002BDC  A$IO_Expander$3214                 IO_Expander
+C:   00002BDD  A$IO_Expander$3215                 IO_Expander
+C:   00002BE0  A$IO_Expander$3217                 IO_Expander
+C:   00002BE2  A$IO_Expander$3218                 IO_Expander
+C:   00002BE5  A$IO_Expander$3219                 IO_Expander
+C:   00002BE6  A$IO_Expander$3220                 IO_Expander
+C:   00002BE7  A$IO_Expander$3221                 IO_Expander
+C:   00002BE8  A$IO_Expander$3222                 IO_Expander
+C:   00002BEA  A$IO_Expander$3227                 IO_Expander
+C:   00002BEA  C$IO_Expander.c$726$1_0$185        IO_Expander
+C:   00002BEC  A$IO_Expander$3230                 IO_Expander
+C:   00002BEC  C$IO_Expander.c$727$2_0$187        IO_Expander
+C:   00002BEF  A$IO_Expander$3231                 IO_Expander
+C:   00002BF0  A$IO_Expander$3232                 IO_Expander
+C:   00002BF1  A$IO_Expander$3234                 IO_Expander
+C:   00002BF4  A$IO_Expander$3235                 IO_Expander
+C:   00002BF5  A$IO_Expander$3236                 IO_Expander
+C:   00002BF6  A$IO_Expander$3237                 IO_Expander
+C:   00002BF9  A$IO_Expander$3239                 IO_Expander
+C:   00002BFB  A$IO_Expander$3240                 IO_Expander
+C:   00002BFE  A$IO_Expander$3241                 IO_Expander
+C:   00002BFF  A$IO_Expander$3242                 IO_Expander
+C:   00002C00  A$IO_Expander$3243                 IO_Expander
+C:   00002C01  A$IO_Expander$3244                 IO_Expander
+C:   00002C03  A$IO_Expander$3249                 IO_Expander
+C:   00002C03  C$IO_Expander.c$729$1_0$185        IO_Expander
+C:   00002C05  A$IO_Expander$3252                 IO_Expander
+C:   00002C05  C$IO_Expander.c$730$2_0$188        IO_Expander
+C:   00002C08  A$IO_Expander$3253                 IO_Expander
+C:   00002C09  A$IO_Expander$3254                 IO_Expander
+C:   00002C0A  A$IO_Expander$3256                 IO_Expander
+C:   00002C0D  A$IO_Expander$3257                 IO_Expander
+C:   00002C0E  A$IO_Expander$3258                 IO_Expander
+C:   00002C0F  A$IO_Expander$3259                 IO_Expander
+C:   00002C12  A$IO_Expander$3261                 IO_Expander
+C:   00002C14  A$IO_Expander$3262                 IO_Expander
+C:   00002C17  A$IO_Expander$3263                 IO_Expander
+C:   00002C18  A$IO_Expander$3264                 IO_Expander
+C:   00002C19  A$IO_Expander$3265                 IO_Expander
+C:   00002C1A  A$IO_Expander$3266                 IO_Expander
+C:   00002C1C  A$IO_Expander$3271                 IO_Expander
+C:   00002C1C  C$IO_Expander.c$733$1_0$185        IO_Expander
+C:   00002C1E  A$IO_Expander$3274                 IO_Expander
+C:   00002C21  A$IO_Expander$3275                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 60.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002C22  A$IO_Expander$3276                 IO_Expander
+C:   00002C23  A$IO_Expander$3278                 IO_Expander
+C:   00002C26  A$IO_Expander$3279                 IO_Expander
+C:   00002C27  A$IO_Expander$3280                 IO_Expander
+C:   00002C28  A$IO_Expander$3281                 IO_Expander
+C:   00002C2B  A$IO_Expander$3283                 IO_Expander
+C:   00002C2D  A$IO_Expander$3287                 IO_Expander
+C:   00002C2D  C$IO_Expander.c$736$3_0$190        IO_Expander
+C:   00002C2F  A$IO_Expander$3290                 IO_Expander
+C:   00002C2F  C$IO_Expander.c$737$2_0$185        IO_Expander
+C:   00002C31  A$IO_Expander$3292                 IO_Expander
+C:   00002C34  A$IO_Expander$3294                 IO_Expander
+C:   00002C36  A$IO_Expander$3295                 IO_Expander
+C:   00002C37  A$IO_Expander$3296                 IO_Expander
+C:   00002C39  A$IO_Expander$3301                 IO_Expander
+C:   00002C39  C$IO_Expander.c$739$3_0$190        IO_Expander
+C:   00002C3B  A$IO_Expander$3304                 IO_Expander
+C:   00002C3B  C$IO_Expander.c$740$2_0$185        IO_Expander
+C:   00002C3D  A$IO_Expander$3306                 IO_Expander
+C:   00002C40  A$IO_Expander$3308                 IO_Expander
+C:   00002C42  A$IO_Expander$3309                 IO_Expander
+C:   00002C43  A$IO_Expander$3310                 IO_Expander
+C:   00002C45  A$IO_Expander$3314                 IO_Expander
+C:   00002C45  C$IO_Expander.c$735$2_0$189        IO_Expander
+C:   00002C48  A$IO_Expander$3315                 IO_Expander
+C:   00002C49  A$IO_Expander$3316                 IO_Expander
+C:   00002C4A  A$IO_Expander$3317                 IO_Expander
+C:   00002C4B  A$IO_Expander$3318                 IO_Expander
+C:   00002C4D  A$IO_Expander$3323                 IO_Expander
+C:   00002C4D  C$IO_Expander.c$744$1_0$185        IO_Expander
+C:   00002C4F  A$IO_Expander$3327                 IO_Expander
+C:   00002C4F  C$IO_Expander.c$745$1_0$185        IO_Expander
+C:   00002C51  A$IO_Expander$3330                 IO_Expander
+C:   00002C51  C$IO_Expander.c$746$2_0$193        IO_Expander
+C:   00002C54  A$IO_Expander$3331                 IO_Expander
+C:   00002C55  A$IO_Expander$3332                 IO_Expander
+C:   00002C56  A$IO_Expander$3334                 IO_Expander
+C:   00002C59  A$IO_Expander$3335                 IO_Expander
+C:   00002C5A  A$IO_Expander$3336                 IO_Expander
+C:   00002C5B  A$IO_Expander$3337                 IO_Expander
+C:   00002C5E  A$IO_Expander$3339                 IO_Expander
+C:   00002C60  A$IO_Expander$3340                 IO_Expander
+C:   00002C63  A$IO_Expander$3341                 IO_Expander
+C:   00002C64  A$IO_Expander$3342                 IO_Expander
+C:   00002C65  A$IO_Expander$3343                 IO_Expander
+C:   00002C66  A$IO_Expander$3344                 IO_Expander
+C:   00002C68  A$IO_Expander$3349                 IO_Expander
+C:   00002C68  C$IO_Expander.c$748$1_0$185        IO_Expander
+C:   00002C6A  A$IO_Expander$3352                 IO_Expander
+C:   00002C6A  C$IO_Expander.c$749$2_0$194        IO_Expander
+C:   00002C6D  A$IO_Expander$3353                 IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 61.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002C6E  A$IO_Expander$3354                 IO_Expander
+C:   00002C6F  A$IO_Expander$3356                 IO_Expander
+C:   00002C72  A$IO_Expander$3357                 IO_Expander
+C:   00002C73  A$IO_Expander$3358                 IO_Expander
+C:   00002C74  A$IO_Expander$3359                 IO_Expander
+C:   00002C77  A$IO_Expander$3361                 IO_Expander
+C:   00002C79  A$IO_Expander$3362                 IO_Expander
+C:   00002C7C  A$IO_Expander$3363                 IO_Expander
+C:   00002C7D  A$IO_Expander$3364                 IO_Expander
+C:   00002C7E  A$IO_Expander$3365                 IO_Expander
+C:   00002C7F  A$IO_Expander$3366                 IO_Expander
+C:   00002C81  A$IO_Expander$3371                 IO_Expander
+C:   00002C81  C$IO_Expander.c$752$1_0$185        IO_Expander
+C:   00002C83  A$IO_Expander$3374                 IO_Expander
+C:   00002C83  C$IO_Expander.c$753$2_0$195        IO_Expander
+C:   00002C86  A$IO_Expander$3375                 IO_Expander
+C:   00002C87  A$IO_Expander$3376                 IO_Expander
+C:   00002C88  A$IO_Expander$3378                 IO_Expander
+C:   00002C8B  A$IO_Expander$3379                 IO_Expander
+C:   00002C8C  A$IO_Expander$3380                 IO_Expander
+C:   00002C8D  A$IO_Expander$3381                 IO_Expander
+C:   00002C90  A$IO_Expander$3383                 IO_Expander
+C:   00002C92  A$IO_Expander$3384                 IO_Expander
+C:   00002C95  A$IO_Expander$3385                 IO_Expander
+C:   00002C96  A$IO_Expander$3386                 IO_Expander
+C:   00002C97  A$IO_Expander$3387                 IO_Expander
+C:   00002C98  A$IO_Expander$3388                 IO_Expander
+C:   00002C9A  A$IO_Expander$3393                 IO_Expander
+C:   00002C9A  C$IO_Expander.c$755$1_0$185        IO_Expander
+C:   00002C9C  A$IO_Expander$3396                 IO_Expander
+C:   00002C9C  C$IO_Expander.c$756$2_0$196        IO_Expander
+C:   00002C9F  A$IO_Expander$3397                 IO_Expander
+C:   00002CA0  A$IO_Expander$3398                 IO_Expander
+C:   00002CA1  A$IO_Expander$3400                 IO_Expander
+C:   00002CA4  A$IO_Expander$3401                 IO_Expander
+C:   00002CA5  A$IO_Expander$3402                 IO_Expander
+C:   00002CA6  A$IO_Expander$3403                 IO_Expander
+C:   00002CA9  A$IO_Expander$3405                 IO_Expander
+C:   00002CAB  A$IO_Expander$3406                 IO_Expander
+C:   00002CAE  A$IO_Expander$3407                 IO_Expander
+C:   00002CAF  A$IO_Expander$3408                 IO_Expander
+C:   00002CB0  A$IO_Expander$3409                 IO_Expander
+C:   00002CB1  A$IO_Expander$3410                 IO_Expander
+C:   00002CB3  A$IO_Expander$3416                 IO_Expander
+C:   00002CB3  C$IO_Expander.c$757$2_0$185        IO_Expander
+C:   00002CB3  XG$eereset$0$0                     IO_Expander
+C:   00002CB4  FIO_Expander$__str_1$0_0$0         IO_Expander
+C:   00002CB4  FIO_Expander$__str_10$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_11$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_12$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_13$0_0$0        IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 62.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CSEG                                00002065    00001784 =        6020. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00002CB4  FIO_Expander$__str_14$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_15$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_16$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_17$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_18$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_19$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_2$0_0$0         IO_Expander
+C:   00002CB4  FIO_Expander$__str_20$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_21$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_22$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_23$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_24$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_25$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_26$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_27$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_28$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_29$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_3$0_0$0         IO_Expander
+C:   00002CB4  FIO_Expander$__str_30$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_31$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_32$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_33$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_34$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_35$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_36$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_37$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_38$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_39$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_4$0_0$0         IO_Expander
+C:   00002CB4  FIO_Expander$__str_40$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_41$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_42$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_43$0_0$0        IO_Expander
+C:   00002CB4  FIO_Expander$__str_5$0_0$0         IO_Expander
+C:   00002CB4  FIO_Expander$__str_6$0_0$0         IO_Expander
+C:   00002CB4  FIO_Expander$__str_7$0_0$0         IO_Expander
+C:   00002CB4  FIO_Expander$__str_8$0_0$0         IO_Expander
+C:   00002CB4  FIO_Expander$__str_9$0_0$0         IO_Expander
+C:   00002CB4  __gptrput                          _gptrput
+C:   00002CCF  _puts                              puts
+C:   00002D3E  _vprintf                           vprintf
+C:   00002D7D  _printf                            vprintf
+C:   00002E83  __print_format                     printf_large
+C:   00003791  _strlen                            _strlen
+C:   000037A9  __mulint                           _mulint
+C:   000037C9  __gptrget                          _gptrget
+C:   000037E5  __sdcc_external_startup            _startup
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 63.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CONST                               000037E9    00000489 =        1161. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   000037E9  FIO_Expander$__str_0$0_0$0         IO_Expander
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 64.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+XINIT                               00003C72    00000003 =           3. bytes (REL,CON,CODE)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+C:   00003C72  FIO_Expander$__xinit_IO_Expander   IO_Expander
+C:   00003C73  FIO_Expander$__xinit_PCF8574A_in   IO_Expander
+C:   00003C74  FIO_Expander$__xinit_io_link$0_0   IO_Expander
+ASxxxx Linker V03.00 + NoICE + sdld,  page 65.
+
+Files Linked                              [ module(s) ]
+
+build/obj/IO_Expander.rel                 [  ]
+
+
+Libraries Linked                          [ object file ]
+
+C:\Program Files\SDCC\bin\..\lib\large/mcs51.lib
+                                          [ crtclear.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/mcs51.lib
+                                          [ crtxinit.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ _gptrput.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/mcs51.lib
+                                          [ crtxclear.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ puts.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ vprintf.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ printf_large.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/mcs51.lib
+                                          [ crtpagesfr.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ _strlen.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libint.lib
+                                          [ _mulint.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/mcs51.lib
+                                          [ crtstart.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ _gptrget.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ _startup.rel ]
+C:\Program Files\SDCC\bin\..\lib\large/libsdcc.lib
+                                          [ _bp.rel ]
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 66.
+
+User Base Address Definitions
+
+HOME = 0x2000
+XSEG = 0x0400
+PSEG = 0x0400
+ISEG = 0x0000
+BSEG = 0x0000
+
+
